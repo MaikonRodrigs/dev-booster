@@ -31,9 +31,25 @@ The file contains a bootstrap prompt. Execute it: scan the backend/API architect
 Read `.devbooster/rules/COMERCIAL.md`.
 The file contains a bootstrap prompt. Execute it: analyze the product's business model and overwrite the file with commercial positioning documentation.
 
-### STEP 6 — Confirm Completion
+### STEP 6 — IDE Bridge Fallback
+The CLI already tries to locate known AI/IDE instruction files and append the Dev Booster bridge automatically.
+
+If the file `.devbooster/hub/flags/needs-ide-bridge` exists, it means no known IDE instruction file was found during installation.
+In that case, create `AGENTS.md` at the project root and insert the following block:
+
+```md
+# 🤖 DEV BOOSTER — AGENTIC KIT BOOTSTRAP
+
+Before any action, read `.devbooster/rules/PROTOCOL.md` for full governance rules.
+```
+
+Do not duplicate the block if the file already references `.devbooster/rules/PROTOCOL.md`.
+If `AGENTS.md` already exists, append the block at the end instead of overwriting the file.
+
+### STEP 7 — Confirm Completion
 After all files have been overwritten, report back to the user with:
 - A summary of what was detected in each domain (project, frontend, backend, commercial).
+- Whether the IDE bridge was already handled by the CLI or whether `AGENTS.md` had to be created as fallback.
 - Any gaps or missing information that could not be auto-detected and may need manual input.
 
 ---

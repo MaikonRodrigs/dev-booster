@@ -6,6 +6,12 @@
 npx dev-booster
 ```
 
+To update an existing kit installation safely:
+
+```bash
+npx dev-booster --update
+```
+
 ---
 
 ## What it does
@@ -51,6 +57,20 @@ The AI will:
 3. Report what it found and flag any gaps it couldn't auto-detect
 
 This process only needs to run once. The `DEVBOOSTER_INIT.md` stays in your project — if you need to re-run after a major architectural change, just ask again.
+
+For later kit updates, use:
+
+```bash
+npx dev-booster --update
+```
+
+This refreshes:
+- `.devbooster/boosters/`
+- `.devbooster/hub/`
+
+And preserves:
+- `.devbooster/rules/`
+- `DEVBOOSTER_INIT.md`
 
 ---
 

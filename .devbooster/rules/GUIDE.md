@@ -108,4 +108,20 @@ Depois da ativação, envie o próximo passo normalmente.
 Exemplo:
 "[arquivo planning.md enviado no chat]"
 "Agora quero validar se já fechamos contexto suficiente para seguir para implementation."
+
+---
+
+💡 COMO ATUALIZAR O KIT:
+Se este projeto já tem Dev Booster instalado e você quiser receber uma versão mais nova do kit,
+use no terminal:
+
+`npx dev-booster --update`
+
+O update:
+- atualiza `.devbooster/boosters/`
+- atualiza `.devbooster/hub/`
+- preserva `.devbooster/rules/`
+- preserva `DEVBOOSTER_INIT.md`
+
+Isso existe para manter seguras as regras e ajustes locais do projeto.
 ```

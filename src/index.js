@@ -11,6 +11,12 @@ const TEMPLATE_DIR = path.resolve(__dirname, '..', 'template')
 // Destination: the user's current working directory (where they ran npx)
 const TARGET_DIR = process.cwd()
 const args = process.argv.slice(2)
+const GITIGNORE_BLOCK = [
+  '# DEV-BOOSTER',
+  '.devbooster/',
+  'DEVBOOSTER_INIT.md',
+]
+const GITIGNORE_MARKER = '# DEV-BOOSTER'
 const IDE_BRIDGE_BLOCK = [
   '# 🤖 DEV BOOSTER — AGENTIC KIT BOOTSTRAP',
   '',
@@ -70,16 +76,16 @@ function ensureTrailingNewline(content) {
   return content.endsWith('\n') ? content : `${content}\n`
 }
 
-function appendUniqueLines(filePath, lines) {
+function appendUniqueBlock(filePath, blockLines, marker) {
   const existing = fs.existsSync(filePath) ? fs.readFileSync(filePath, 'utf8') : ''
-  const normalized = ensureTrailingNewline(existing)
-  const missingLines = lines.filter((line) => !existing.includes(line))
-
-  if (missingLines.length === 0) {
+  if (existing.includes(marker)) {
     return false
   }
 
-  const nextContent = `${normalized}${missingLines.join('\n')}\n`
+  const trimmedEnd = existing.replace(/\s*$/, '')
+  const prefix = trimmedEnd.length > 0 ? `${trimmedEnd}\n\n` : ''
+  const nextContent = `${prefix}${blockLines.join('\n')}\n`
+  fs.mkdirSync(path.dirname(filePath), { recursive: true })
   fs.writeFileSync(filePath, nextContent)
   return true
 }
@@ -117,29 +123,16 @@ async function maybeAddDevBoosterToGitignore() {
   }
 
   const gitignorePath = path.join(TARGET_DIR, '.gitignore')
-  const changed = appendUniqueLines(gitignorePath, ['.devbooster/', 'DEVBOOSTER_INIT.md'])
+  const changed = appendUniqueBlock(gitignorePath, GITIGNORE_BLOCK, GITIGNORE_MARKER)
 
   console.log('▸ .gitignore')
   if (changed) {
     console.log('  status: updated')
-    console.log('  entries: .devbooster/, DEVBOOSTER_INIT.md\n')
+    console.log('  entries: # DEV-BOOSTER, .devbooster/, DEVBOOSTER_INIT.md\n')
   } else {
     console.log('  status: already configured')
-    console.log('  entries: .devbooster/, DEVBOOSTER_INIT.md\n')
+    console.log('  entries: # DEV-BOOSTER, .devbooster/, DEVBOOSTER_INIT.md\n')
   }
-}
-
-function appendUniqueBlock(filePath, blockLines, marker) {
-  const existing = fs.existsSync(filePath) ? fs.readFileSync(filePath, 'utf8') : ''
-  if (existing.includes(marker)) {
-    return false
-  }
-
-  const normalized = ensureTrailingNewline(existing)
-  const nextContent = `${normalized}${blockLines.join('\n')}\n`
-  fs.mkdirSync(path.dirname(filePath), { recursive: true })
-  fs.writeFileSync(filePath, nextContent)
-  return true
 }
 
 function writeIdeBridgeFallbackFlag() {

@@ -1,6 +1,6 @@
 {
   "name": "dev-booster",
-  "version": "1.1.1",
+  "version": "1.1.3",
   "description": "Reusable AI development kit with manual boosters, governance, and project bootstrap",
   "type": "module",
   "scripts": {

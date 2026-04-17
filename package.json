@@ -1,0 +1,41 @@
+{
+  "name": "dev-booster",
+  "version": "1.0.1",
+  "description": "Reusable AI development kit with manual boosters, governance, and project bootstrap",
+  "type": "module",
+  "scripts": {
+    "sync-template": "node ./src/sync-template.js"
+  },
+  "bin": {
+    "dev-booster": "./bin/dev-booster.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "template"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "ai",
+    "agent",
+    "cli",
+    "booster",
+    "agentic",
+    "cursor",
+    "gemini",
+    "claude",
+    "copilot"
+  ],
+  "author": "Maikon Rodrigs",
+  "homepage": "https://github.com/MaikonRodrigs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaikonRodrigs/dev-booster.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MaikonRodrigs/dev-booster/issues"
+  },
+  "license": "MIT"
+}

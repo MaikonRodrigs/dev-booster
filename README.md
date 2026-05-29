@@ -31,7 +31,7 @@ After running the command, your project gets:
 ```
 .devbooster/
 ├── MANIFEST.md          ← inventory of all agents, skills, and boosters
-├── boosters/            ← 23 expert activators (debug, review, design, deploy...)
+├── boosters/            ← 24 expert activators (debug, review, design, deploy...)
 ├── hub/                 ← 40+ skills and operational scripts
 └── rules/
     ├── PROTOCOL.md      ← governance and conduct rules
@@ -88,9 +88,11 @@ Boosters are expert activators you invoke manually during development.
 | `security.md` | Security posture audit |
 | `refactor.md` | Cleaning technical debt |
 | `planning.md` | Validating readiness, risks, and gaps before implementation |
+| `global-documentation.md` | Transferable technical documentation for mature feature context |
+| `internal-documentation.md` | Internal project map with absolute paths, files, assets, scripts, and edit boundaries |
 | `discovery.md` | Product brainstorm |
 | `performance.md` | Core Web Vitals / bundle issues |
-| + 13 more | See `.devbooster/MANIFEST.md` |
+| + 12 more | See `.devbooster/MANIFEST.md` |
 
 The practical activation flow is simple:
 - drag a booster file into the chat
@@ -138,18 +140,20 @@ What this gives you:
 - clarification of business rules and gaps
 - a structured path into execution only after the context is mature
 
-### 3. Mature context to technical documentation
+### 3. Mature context to global technical documentation
 
 Use this after discovery or investigation has already produced enough context.
 
 Flow:
 1. `investigation.md` or `discovery.md`
-2. `documentation.md`
+2. `global-documentation.md`
 
 What this gives you:
 - synthesis of the current conversation context
 - confirmation before generation
 - a reusable technical document instead of fragmented chat history
+
+For repository-specific internal maps with absolute paths, use `internal-documentation.md` instead of `global-documentation.md`.
 
 ### 4. Safe review in a fresh chat
 

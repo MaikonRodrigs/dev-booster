@@ -1,4 +1,4 @@
-# 🌐 BOOSTER: DOCUMENTATION (UNIVERSAL)
+# 🌐 BOOSTER: GLOBAL DOCUMENTATION (UNIVERSAL)
 You are being activated to create universal, transferable technical documentation. 
 
 ## 0. DEV BOOSTER ACTIVATION CONTRACT
@@ -15,9 +15,9 @@ If the user invokes this booster alone, or uses it only to activate the mode:
 Use this activation response format:
 
 ```md
-## 🤖 [DEV BOOSTER // DOCUMENTATION]
+## 🤖 [DEV BOOSTER // GLOBAL DOCUMENTATION]
 
-[Localized mode label]: Documentation
+[Localized mode label]: Global Documentation
 [Localized status label]: Context Reviewed
 
 [Localized context summary label]:

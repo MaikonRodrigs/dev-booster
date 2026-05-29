@@ -7,3 +7,8 @@ node_modules/
 # Environment
 .env
 .env.local
+.antigravitycli
+
+# Internal Maintenance Rules
+RULES.md
+RELEASE_GUIDE.md

@@ -21,8 +21,12 @@ Ele foi formatado como bloco de código para facilitar a leitura direta na IDE.
 • implementation.md -> Mestre de Implementação. Faz a triagem da complexidade (P, M, G) 
                        e escolhe o template correto antes de gerar o plano após confirmação.
                        
-• documentation.md  -> Documentação Técnica. Gera um documento estruturado de 17 seções a partir do contexto consolidado
-                       para prever todos os requisitos técnicos rigorosos.
+• global-documentation.md
+                    -> Documentação Global. Gera um documento técnico transferível de 17 seções a partir do contexto consolidado
+                       para prever todos os requisitos técnicos rigorosos e reutilizáveis.
+• internal-documentation.md
+                    -> Documentação Interna. Gera um mapa interno do projeto com caminhos absolutos,
+                       arquivos, assets, scripts, regras runtime e limites de edição.
 • atomic.md         -> Execução Atômica. Protocolo para execução passo a passo, 
                        focada em uma única alteração cirúrgica por vez.
 • review.md         -> Auditoria Elite. Ativa orquestração mult-agente para validar 
@@ -38,6 +42,7 @@ Ele foi formatado como bloco de código para facilitar a leitura direta na IDE.
                        antes de seguir para implementation.
 • investigation.md  -> Pré-Orquestrador de Contexto. Faz análise profunda do repositório 
                        (no-code analysis) antes de propor mudanças.
+• context.md        -> Assimilador de Contexto. Lê e memoriza fluxos de código e dependências em silêncio absoluto.
 • advisor.md        -> Consultor do Kit (GPS). Ajuda a escolher qual booster usar.
 
 ---
@@ -100,7 +105,8 @@ Padrões de comportamento:
 
 Exemplos práticos:
 - Arraste `.devbooster/boosters/planning.md` no chat e envie.
-- Arraste `.devbooster/boosters/documentation.md` no chat e envie.
+- Arraste `.devbooster/boosters/global-documentation.md` no chat e envie.
+- Arraste `.devbooster/boosters/internal-documentation.md` no chat e envie.
 - Arraste `.devbooster/boosters/changelog.md` no chat e envie.
 - Arraste `.devbooster/boosters/review.md` no chat e envie.
 

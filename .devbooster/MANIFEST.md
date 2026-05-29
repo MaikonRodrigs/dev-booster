@@ -105,13 +105,15 @@
 | `accessibility.md` | Accessibility Auditor — ensures WCAG compliance and semantic HTML. |
 | `refactor.md` | Quality Lead — refactors code, applies Clean Code/SOLID, and clears technical debt. |
 | `implementation.md` | Reviews context, selects `simple` / `standard` / `heavy`, and asks for confirmation before generating the plan. |
-| `documentation.md` | Generates the 17-section universal technical documentation spec. |
+| `global-documentation.md` | Generates the 17-section universal technical documentation spec. |
+| `internal-documentation.md` | Generates repository-specific internal documentation with absolute paths and file/asset maps. |
 | `atomic.md` | Surgical, single-step implementation spec (final execution stage). |
 | `advisor.md` | Hub Consultant — recommends the best booster path for the user's task. |
 | `review.md` | Elite Auditor — multi-agent orchestration for plan validation. |
 | `debug.md` | Systematic Root Cause Analysis with hypothesis engine. |
 | `discovery.md` | Strategic Product Consultant — 3-path brainstorm protocol. |
 | `investigation.md` | Context Pre-Orchestrator — no-code analysis before implementation. |
+| `context.md` | Context Assimilator — silent, non-proactive mapping of code flows and file context. |
 | `design.md` | UI/UX Design standards and component audit. |
 | `deploy.md` | Pre-flight checks and deployment execution protocol. |
 | `security.md` | Security posture audit and threat modeling. |
@@ -164,7 +166,7 @@
 |---|---|
 | **Total Agents** | 20 |
 | **Total Skills** | 40+ |
-| **Master Boosters** | 23 |
+| **Master Boosters** | 24 |
 | **Operational Scripts** | 2 (Master) + 21 (Skill-level) |
 | **Coverage** | ~95% Full-stack Web/Mobile |
 

@@ -52,6 +52,9 @@ After all files have been overwritten, report back to the user with:
 - Whether the IDE bridge was already handled by the CLI or whether `AGENTS.md` had to be created as fallback.
 - Any gaps or missing information that could not be auto-detected and may need manual input.
 
+The completion report shown in chat must follow the global language configured for the active LLM/environment.
+The generated project artifacts and technical file contents may remain in technical English when appropriate.
+
 ---
 
 > [!NOTE]

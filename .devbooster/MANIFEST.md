@@ -109,7 +109,8 @@
 | `internal-documentation.md` | Generates repository-specific internal documentation with absolute paths and file/asset maps. |
 | `atomic.md` | Surgical, single-step implementation spec (final execution stage). |
 | `advisor.md` | Hub Consultant — recommends the best booster path for the user's task. |
-| `review.md` | Elite Auditor — multi-agent orchestration for plan validation. |
+| `review.md` | Elite Auditor — multi-agent orchestration for plan and architecture validation. |
+| `code-audit.md` | Strict Code Auditor — syntax, linting, and React Doctor diagnostics for the codebase. |
 | `debug.md` | Systematic Root Cause Analysis with hypothesis engine. |
 | `discovery.md` | Strategic Product Consultant — 3-path brainstorm protocol. |
 | `investigation.md` | Context Pre-Orchestrator — no-code analysis before implementation. |
@@ -177,3 +178,24 @@ When the user asks "How can the kit help?", the Advisor MUST:
 1. Scan requirements.
 2. Recommend the best **Booster** entry point for the task.
 3. Suggest supporting boosters only when the task clearly spans multiple phases or domains.
+
+---
+
+## 📂 7. ARTIFACT ENGINE (SHADOW MEMORY)
+Dev Booster acts as a continuous document generator. As boosters execute, they MUST write their history, findings, audits, and implementation plans into a structured, machine-readable format. This avoids context loss in long AI conversations and builds a tangible paper trail for the developer.
+
+**Target Root Path:** `@booster-generated/`
+
+### Artifact Mapping by Domain:
+- `@booster-generated/contexts/` → Managed by `context.md` (Save State for conversation continuity).
+- `@booster-generated/plans/` → Managed by `planning.md` (Implementation roadmap and risk mapping).
+- `@booster-generated/implementations/` → Managed by `frontend.md`, `backend.md`, `mobile.md`, `atomic.md`.
+- `@booster-generated/advisory/` → Managed by `advisor.md` (Architectural decisions and mentorship notes).
+- `@booster-generated/discoveries/` → Managed by `investigation.md`, `discovery.md` (Brainstorms, flow mapping).
+- `@booster-generated/troubleshooting/` → Managed by `debug.md` (Root Cause Analysis and bug fixes).
+- `@booster-generated/audits/` → Managed by `security.md`, `performance.md`, `accessibility.md`, `seo.md`.
+- `@booster-generated/reviews/` → Managed by `review.md` (Code review feedback, React Doctor JSON diagnostics).
+- `@booster-generated/changelogs/` → Managed by `changelog.md` (Release notes drafts).
+- `@booster-generated/rollouts/` → Managed by `deploy.md` (Pre-flight checks and deployment history).
+
+When a booster mandates `ARTIFACT GENERATION & STATE BACKUP`, the AI MUST respect this mapping and maintain the `.md` file continuously in the background.

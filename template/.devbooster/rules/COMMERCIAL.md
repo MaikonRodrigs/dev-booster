@@ -18,12 +18,12 @@
 - What are the main objections and how to counter them?
 - What are the core sales arguments (Time saving, cost reduction, etc)?
 
-**STEP 3: Generate Elite Rule (OUTPUT IN PT-BR):**
-Rewrite this entire file (COMERCIAL.md) in **PORTUGUESE (PT-BR)**. You MUST create a high-impact commercial guide following the 'Pattern Reference' below. Use persuasive language (Copywriting), focus on benefits instead of features, and define the brand's 'tone of voice'. The goal is to provide a guide that could be used by a marketing or sales team to position the product accurately."
+**STEP 3: Generate Elite Rule:**
+Rewrite this entire file (COMMERCIAL.md) in the **USER'S NATIVE LANGUAGE**. You MUST create a high-impact commercial guide following the 'Pattern Reference' below. Use persuasive language (Copywriting), focus on benefits instead of features, and define the brand's 'tone of voice'. The goal is to provide a guide that could be used by a marketing or sales team to position the product accurately."
 
 ---
 
-## 🏗️ EXPECTED STRUCTURE (IN PORTUGUESE)
+## 🏗️ EXPECTED STRUCTURE (IN USER'S NATIVE LANGUAGE)
 1. **O que é o Produto**: Definição comercial (o que ele vende de verdade).
 2. **Promessa e Posicionamento**: Headlines e subheadlines magnéticas.
 3. **Público-Alvo e Dores**: Quem compra e qual problema estamos resolvendo.
@@ -66,4 +66,4 @@ O empresário sente que 'trabalha para a empresa' e não o contrário. Ele não 
 
 1. Scan the project as instructed.
 2. Analyze the commercial and positioning patterns.
-3. Overwrite this entire file with the project-specific commercial documentation **IN PORTUGUESE (PT-BR)**.
+3. Overwrite this entire file with the project-specific commercial documentation in the **USER'S NATIVE LANGUAGE**.

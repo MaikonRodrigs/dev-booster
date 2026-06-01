@@ -23,6 +23,7 @@ Unlike generic agent folders, **Dev Booster** uses a manual, activation-first mo
 - most boosters use lazy loading instead of loading the full kit immediately
 - context is pulled only when the task, artifact, or pain point actually requires it
 - each booster has a distinct operational role, instead of behaving like a generic prompt blob
+- many boosters act as continuous document generators (Artifact Engine), maintaining structured state files in the background to prevent context loss during long conversations
 
 This gives the kit a stronger product identity and helps avoid unnecessary context bloat.
 
@@ -31,17 +32,33 @@ After running the command, your project gets:
 ```
 .devbooster/
 ├── MANIFEST.md          ← inventory of all agents, skills, and boosters
-├── boosters/            ← 24 expert activators (debug, review, design, deploy...)
+├── boosters/            ← 26 expert activators (debug, review, design, deploy...)
 ├── hub/                 ← 40+ skills and operational scripts
 └── rules/
     ├── PROTOCOL.md      ← governance and conduct rules
     ├── PROJECT.md       ← whitelabel → auto-fills with your architecture
     ├── FRONTEND.md      ← whitelabel → auto-fills with your frontend stack
     ├── BACKEND.md       ← whitelabel → auto-fills with your backend stack
-    ├── COMERCIAL.md     ← whitelabel → auto-fills with your business model
+    ├── COMMERCIAL.md     ← whitelabel → auto-fills with your business model
     └── USER_PREFERENCES.md
 DEVBOOSTER_INIT.md                  ← bootstrap orchestrator (read below)
 ```
+
+---
+
+## Safe Testing (`--dry-run`)
+
+If you want to see exactly what Dev Booster will install or update in your project without actually making any changes, you can use the `--dry-run` flag:
+
+```bash
+npx dev-booster --dry-run
+```
+For updates:
+```bash
+npx dev-booster update --dry-run
+```
+
+This will run a full simulation of the command and print a detailed report of which files would be created, updated, or preserved, giving you complete peace of mind before executing the real installation.
 
 ---
 
@@ -92,7 +109,8 @@ Boosters are expert activators you invoke manually during development.
 | `internal-documentation.md` | Internal project map with absolute paths, files, assets, scripts, and edit boundaries |
 | `discovery.md` | Product brainstorm |
 | `performance.md` | Core Web Vitals / bundle issues |
-| + 12 more | See `.devbooster/MANIFEST.md` |
+| `code-audit.md` | Strict Code Auditor (Syntax, React Doctor) before PR |
+| + 14 more | See `.devbooster/MANIFEST.md` |
 
 The practical activation flow is simple:
 - drag a booster file into the chat
@@ -106,16 +124,47 @@ Many boosters now use a two-step flow:
 
 ---
 
+## The Artifact Engine
+
+Dev Booster operates an internal **Artifact Engine** (Shadow Memory). As boosters execute, they automatically generate and update machine-readable `.md` files in the background to track history, audits, and architectural decisions. 
+
+This creates a persistent "paper trail" that ensures the AI never loses context, even if you continue the work in a brand new chat session.
+
+Files are systematically organized in the `@booster-generated/` root directory:
+- `@booster-generated/contexts/` (Continuous save state for conversation continuity)
+- `@booster-generated/plans/` (Implementation roadmaps and risk mapping)
+- `@booster-generated/troubleshooting/` (Systematic RCA and bug fix logs)
+- `@booster-generated/audits/` (Security, accessibility, and performance reports)
+
+### Manual Triggers
+
+While the AI updates these files automatically, you can also take manual control at any time using explicit Chat Triggers:
+
+- **`@SaveState`**: Forces the AI to instantly summarize the current conversation context and update the active booster's state file. Perfect for explicitly bookmarking complex decisions before continuing in a fresh chat.
+- **`@SavePattern`**: Instructs the AI to extract a newly resolved technical rule or code pattern and persist it to `.devbooster/rules/USER_PREFERENCES.md`.
+- **`@LogTask`**: Tells the AI to capture a pending technical task mentioned in the chat and document it systematically in your operational backlog at `@booster-generated/tasks.md`.
+
+---
+
 ## Smart Usage Patterns
 
 One of the main strengths of Dev Booster is that boosters can be used in sequence, not just in isolation.
 
-### 1. Investigate before implementation
+### 1. Use Advisor when you are unsure
+
+If you do not know which booster should come first:
+1. activate `advisor.md`
+2. describe the task in one message
+3. let it recommend the smallest effective booster path
+
+The advisor recommends boosters only, keeping the path clean and focused.
+
+### 2. Investigate before implementation
 
 Use this when the repository is complex and you do not want the AI to jump straight into coding.
 
 Flow:
-1. `investigation.md`
+1. `context.md` (or `investigation.md` for deep PO/PM mapping)
 2. `planning.md`
 3. `implementation.md`
 4. `review.md`
@@ -126,7 +175,7 @@ What this gives you:
 - the right implementation template (`simple`, `standard`, or `heavy`)
 - a stronger validation pass at the end
 
-### 2. Product idea to executable plan
+### 3. Product idea to executable plan
 
 Use this when the idea is still being shaped.
 
@@ -140,7 +189,7 @@ What this gives you:
 - clarification of business rules and gaps
 - a structured path into execution only after the context is mature
 
-### 3. Mature context to global technical documentation
+### 4. Mature context to global technical documentation
 
 Use this after discovery or investigation has already produced enough context.
 
@@ -155,7 +204,7 @@ What this gives you:
 
 For repository-specific internal maps with absolute paths, use `internal-documentation.md` instead of `global-documentation.md`.
 
-### 4. Safe review in a fresh chat
+### 5. Safe review in a fresh chat
 
 Use this when you want a stronger validation pass with minimal prior bias.
 
@@ -169,7 +218,7 @@ What this gives you:
 - artifact-first review
 - skill/persona loading only after the review target is provided
 
-### 5. Release note generation from real Git state
+### 6. Release note generation from real Git state
 
 Use this when you want changelogs based on what actually changed, not on memory.
 
@@ -186,7 +235,7 @@ What this gives you:
   - `C` = technical
 - always includes changed files and changed lines
 
-### 6. Domain mode plus execution mode
+### 7. Domain mode plus execution mode
 
 Boosters can also be combined by role.
 
@@ -198,15 +247,6 @@ Example flow:
 This works well when:
 - you know the task belongs to a domain
 - but you still want alignment and execution discipline before building
-
-### 7. Use Advisor when you are unsure
-
-If you do not know which booster should come first:
-1. activate `advisor.md`
-2. describe the task in one message
-3. let it recommend the smallest effective booster path
-
-The advisor recommends boosters only, keeping the path clean and focused.
 
 ---
 

@@ -93,4 +93,9 @@ Organize your response as follows:
 - Initially, analyze ONLY the `package.json` to understand the project structure and stack.
 - Do NOT be proactive in execution. Your goal is certainty and lack of ambiguity.
 
+## ARTIFACT GENERATION & STATE BACKUP
+During your execution, you MUST create or update a machine-readable state file at `@booster-generated/discoveries/<slug-name>.md`. 
+This file must continuously track the history, decisions, rules, and outcomes related to this booster's execution in a dense, non-conversational format.
+You must update this file silently in the background as the context evolves or when explicitly commanded by the user.
+
 **Reply:** On activation only, use the armed-mode banner above with a professional investigation opening. After the first real request arrives, load the minimum required investigation context and continue in the global language configured for the active LLM/environment.

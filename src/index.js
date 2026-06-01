@@ -72,21 +72,27 @@ function isUpdateMode() {
   return args.includes('--update') || args.includes('update')
 }
 
+function isDryRunMode() {
+  return args.includes('--dry-run') || args.includes('dry-run')
+}
+
 function ensureTrailingNewline(content) {
   return content.endsWith('\n') ? content : `${content}\n`
 }
 
-function appendUniqueBlock(filePath, blockLines, marker) {
+function appendUniqueBlock(filePath, blockLines, marker, dryRun = false) {
   const existing = fs.existsSync(filePath) ? fs.readFileSync(filePath, 'utf8') : ''
   if (existing.includes(marker)) {
     return false
   }
 
-  const trimmedEnd = existing.replace(/\s*$/, '')
-  const prefix = trimmedEnd.length > 0 ? `${trimmedEnd}\n\n` : ''
-  const nextContent = `${prefix}${blockLines.join('\n')}\n`
-  fs.mkdirSync(path.dirname(filePath), { recursive: true })
-  fs.writeFileSync(filePath, nextContent)
+  if (!dryRun) {
+    const trimmedEnd = existing.replace(/\s*$/, '')
+    const prefix = trimmedEnd.length > 0 ? `${trimmedEnd}\n\n` : ''
+    const nextContent = `${prefix}${blockLines.join('\n')}\n`
+    fs.mkdirSync(path.dirname(filePath), { recursive: true })
+    fs.writeFileSync(filePath, nextContent)
+  }
   return true
 }
 
@@ -113,7 +119,7 @@ async function askYesNo(question, defaultYes = true) {
   }
 }
 
-async function maybeAddDevBoosterToGitignore() {
+async function maybeAddDevBoosterToGitignore(dryRun) {
   const shouldIgnore = await askYesNo('Add Dev Booster to your .gitignore?', true)
 
   if (!shouldIgnore) {
@@ -123,11 +129,11 @@ async function maybeAddDevBoosterToGitignore() {
   }
 
   const gitignorePath = path.join(TARGET_DIR, '.gitignore')
-  const changed = appendUniqueBlock(gitignorePath, GITIGNORE_BLOCK, GITIGNORE_MARKER)
+  const changed = appendUniqueBlock(gitignorePath, GITIGNORE_BLOCK, GITIGNORE_MARKER, dryRun)
 
   console.log('▸ .gitignore')
   if (changed) {
-    console.log('  status: updated')
+    console.log(`  status: ${dryRun ? 'would be updated' : 'updated'}`)
     console.log('  entries: # DEV-BOOSTER, .devbooster/, DEVBOOSTER_INIT.md\n')
   } else {
     console.log('  status: already configured')
@@ -148,28 +154,28 @@ function clearIdeBridgeFallbackFlag() {
   }
 }
 
-function setupIdeBridgeFiles() {
+function setupIdeBridgeFiles(dryRun) {
   const touchedFiles = []
 
   for (const relativeTarget of IDE_BRIDGE_TARGETS) {
     const targetPath = path.join(TARGET_DIR, relativeTarget)
     if (!fs.existsSync(targetPath)) continue
 
-    appendUniqueBlock(targetPath, IDE_BRIDGE_BLOCK, IDE_BRIDGE_MARKER)
-    touchedFiles.push(relativeTarget)
+    const wouldChange = appendUniqueBlock(targetPath, IDE_BRIDGE_BLOCK, IDE_BRIDGE_MARKER, dryRun)
+    if (wouldChange) touchedFiles.push(relativeTarget)
   }
 
   console.log('▸ IDE bridge files')
   if (touchedFiles.length > 0) {
-    clearIdeBridgeFallbackFlag()
-    console.log('  status: bridge instructions appended where applicable')
+    if (!dryRun) clearIdeBridgeFallbackFlag()
+    console.log(`  status: bridge instructions ${dryRun ? 'would be appended' : 'appended'} where applicable`)
     console.log(`  files: ${touchedFiles.join(', ')}\n`)
     return
   }
 
-  writeIdeBridgeFallbackFlag()
+  if (!dryRun) writeIdeBridgeFallbackFlag()
   console.log('  status: no known IDE instruction file found')
-  console.log('  action: bootstrap fallback flag created for DEVBOOSTER_INIT.md\n')
+  console.log(`  action: bootstrap fallback flag ${dryRun ? 'would be created' : 'created'} for DEVBOOSTER_INIT.md\n`)
 }
 
 function printHeader(subtitle) {
@@ -182,7 +188,9 @@ function printHeader(subtitle) {
 }
 
 async function runInstall() {
+  const dryRun = isDryRunMode()
   printHeader('agentic kit installer')
+  if (dryRun) console.log('🔍 [DRY RUN MODE] No real changes will be made.\n')
 
   // 1. Copy the full .devbooster/ kit to the user's project
   const agentSrc = path.join(TEMPLATE_DIR, '.devbooster')
@@ -194,9 +202,9 @@ async function runInstall() {
     console.log('  action: copy skipped to avoid overwrite')
     console.log('  tip: rename or remove the folder if you want a fresh install\n')
   } else {
-    copyDir(agentSrc, agentDest)
+    if (!dryRun) copyDir(agentSrc, agentDest)
     console.log('▸ .devbooster/')
-    console.log('  status: installed successfully\n')
+    console.log(`  status: ${dryRun ? 'would be installed' : 'installed successfully'}\n`)
   }
 
   // 2. Drop DEVBOOSTER_INIT.md at the root of the user's project
@@ -208,13 +216,13 @@ async function runInstall() {
     console.log('  status: already exists in this project')
     console.log('  action: creation skipped\n')
   } else {
-    fs.copyFileSync(initSrc, initDest)
+    if (!dryRun) fs.copyFileSync(initSrc, initDest)
     console.log('▸ DEVBOOSTER_INIT.md')
-    console.log('  status: created at project root\n')
+    console.log(`  status: ${dryRun ? 'would be created' : 'created'} at project root\n`)
   }
 
-  await maybeAddDevBoosterToGitignore()
-  setupIdeBridgeFiles()
+  await maybeAddDevBoosterToGitignore(dryRun)
+  setupIdeBridgeFiles(dryRun)
 
   console.log(`
 ╭──────────────────────────────────────────────╮
@@ -230,7 +238,9 @@ The kit will configure itself based on your project's stack.
 }
 
 function runUpdate() {
+  const dryRun = isDryRunMode()
   printHeader('safe kit update')
+  if (dryRun) console.log('🔍 [DRY RUN MODE] No real changes will be made.\n')
 
   const kitRoot = path.join(TARGET_DIR, '.devbooster')
   const templateRoot = path.join(TEMPLATE_DIR, '.devbooster')
@@ -248,9 +258,9 @@ function runUpdate() {
   ]
 
   for (const target of updateTargets) {
-    syncDir(target.src, target.dest)
+    if (!dryRun) syncDir(target.src, target.dest)
     console.log(`▸ .devbooster/${target.name}/`)
-    console.log('  status: updated successfully')
+    console.log(`  status: ${dryRun ? 'would be updated' : 'updated successfully'}`)
   }
 
   console.log('')

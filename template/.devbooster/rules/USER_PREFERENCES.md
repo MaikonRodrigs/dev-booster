@@ -1,33 +1,33 @@
 ---
 name: user-preferences
 priority: P0.2 (Preferences)
-description: Caderno de Rascunhos Dinâmico - Padrões experimentais e regras recém aprovadas.
+description: Dynamic Scratchpad - Experimental patterns and recently approved rules.
 ---
 
-# 🧠 PROJECT PATTERNS MEMORY (Rascunho)
+# 🧠 PROJECT PATTERNS MEMORY (Scratchpad)
 
-Este arquivo opera como um "caderno de rascunhos em tempo real" da IA e do Desenvolvedor. O núcleo da arquitetura do projeto vive em `FRONTEND.md`, `BACKEND.md` e `PROJECT.md`.
+This file operates as a "real-time scratchpad" for the AI and the Developer. The core of the project's architecture lives in `FRONTEND.md`, `BACKEND.md`, and `PROJECT.md`.
 
 ## 🛠️ THE ENCYCLOPEDIA TRIGGER
-Toda vez que o usuário digitar estritamente a frase **"bota na enciclopédia"** (ou variações como "bota na enciclopedia"), referindo-se a um padrão de código que acabamos de resolver e aprovar na sessão atual, a IA **deve extrair a regra técnica** e anotá-la aqui.
+Every time the user strictly types the phrase **"bota na enciclopédia"** (or variations like "bota na enciclopedia"), referring to a code pattern we just resolved and approved in the current session, the AI **must extract the technical rule** and annotate it here.
 
-- Este arquivo capta preferências de desenvolvimento e decisões emergentes para garantir consistência no curto prazo.
-- Periodicamente (ou ao refatorar a base), os padrões consolidados que nascerem aqui serão migrados para as pastas oficiais de front-end ou back-end e removidos daqui.
+- This file captures development preferences and emergent decisions to ensure consistency in the short term.
+- Periodically (or when refactoring the base), the consolidated patterns born here will be migrated to the official frontend or backend folders and removed from here.
 
 ---
 
 ## 📝 EXPERIMENTAL PATTERNS & NEW RULES
-*(A IA salvará os recém descobertos padrões abaixo desta linha, categorizando-os apropriadamente)*
+*(The AI will save newly discovered patterns below this line, categorizing them appropriately)*
 
 ---
 
-### 🔄 AUTOMATION: PROMPT DE MIGRAÇÃO (MODO EXPERT)
-*Guarde este prompt. Cole no chat quando a área acima começar a ficar cheia para automatizar a limpeza:*
+### 🔄 AUTOMATION: MIGRATION PROMPT (EXPERT MODE)
+*Save this prompt. Paste it in the chat when the area above starts getting crowded to automate the cleanup:*
 
-> **Prompt para a IA:**
-> "Atue como um Arquiteto de Software. Leia a seção 'EXPERIMENTAL PATTERNS' no meu `USER_PREFERENCES.md`. Pegue todas as regras ali listadas e realize a migração seguindo estas diretrizes:
+> **Prompt for the AI:**
+> "Act as a Software Architect. Read the 'EXPERIMENTAL PATTERNS' section in my `USER_PREFERENCES.md`. Take all the rules listed there and perform the migration following these guidelines:
 > 
-> 1. **Mapeamento:** Identifique se a regra pertence a `FRONTEND.md`, `BACKEND.md` ou `PROJECT.md`.
-> 2. **Documentação Pro-Max:** NÃO faça colagem rasa. Ao mover, escreva a regra seguindo o padrão estabelecido nos arquivos de destino: Explicação densa + Exemplo de Código (se aplicável) + Contexto de 'Por que fazemos assim'.
-> 3. **Integração Orgânica:** Encaixe a nova regra em seções existentes ou crie novas categorias que mantenham a hierarquia e organização lógica do documento.
-> 4. **Limpeza:** Após confirmar que as informações foram integradas com sucesso nos manuais definitivos e que a integridade dos arquivos foi mantida, limpe a seção 'EXPERIMENTAL PATTERNS' de `USER_PREFERENCES.md` deixando apenas o cabeçalho e este prompt."
+> 1. **Mapping:** Identify whether the rule belongs to `FRONTEND.md`, `BACKEND.md`, or `PROJECT.md`.
+> 2. **Pro-Max Documentation:** DO NOT just copy and paste blindly. When moving, write the rule following the standard established in the destination files: Dense Explanation + Code Example (if applicable) + 'Why we do it this way' Context.
+> 3. **Organic Integration:** Fit the new rule into existing sections or create new categories that maintain the document's hierarchy and logical organization.
+> 4. **Cleanup:** After confirming that the information was successfully integrated into the definitive manuals and that file integrity was maintained, clear the 'EXPERIMENTAL PATTERNS' section of `USER_PREFERENCES.md` leaving only the header and this prompt."

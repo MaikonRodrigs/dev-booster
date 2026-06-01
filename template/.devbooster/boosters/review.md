@@ -8,7 +8,6 @@ If the user invokes this booster alone, or uses it only to activate the mode:
 - Do NOT start the review immediately.
 - Do NOT load personas, skills, or scripts yet.
 - Do NOT assume the review target is already available in the conversation.
-- Ask the user to provide or reference the documentation or implementation to be reviewed.
 - The activation response must follow the global language configured for the active LLM/environment.
 
 Use this activation response format:

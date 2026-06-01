@@ -1,133 +1,133 @@
 ```text
-🧭 GUIA DO DEV BOOSTER KIT (BOOSTERS)
+🧭 DEV BOOSTER KIT GUIDE (BOOSTERS)
 
-Este guia serve como referência rápida para entender a função de cada Booster (ativador manual).
-Ele foi formatado como bloco de código para facilitar a leitura direta na IDE.
+This guide serves as a quick reference to understand the role of each Booster (manual activator).
+It has been formatted as a code block to facilitate direct reading in the IDE.
 
 ---
 
-[ 🛠️ ENGENHARIA E EXECUÇÃO ]
+[ 🛠️ ENGINEERING & EXECUTION ]
 
-• create.md         -> Arquiteto Mestre. Focado em Scaffolding e criação de novas 
-                       funcionalidades ou apps do zero, integrando FRONTEND.md e BACKEND.md.
-• performance.md    -> Engenheiro de Performance. Focado em Core Web Vitals, 
-                       velocidade de carregamento e otimização de Next.js.
-• i18n.md           -> Especialista de Internacionalização. Extração de textos e 
-                       configuração de múltiplos idiomas.
-• accessibility.md  -> Auditor de Acessibilidade. Garante conformidade WCAG e 
-                       uso correto de semântica HTML/ARIA.
-• refactor.md       -> Líder de Qualidade. Focado em limpar dívida técnica, implementar 
-                       SOLID e reforçar o Clean Code.
-• implementation.md -> Mestre de Implementação. Faz a triagem da complexidade (P, M, G) 
-                       e escolhe o template correto antes de gerar o plano após confirmação.
-                       
+• create.md         -> Master Architect. Focused on Scaffolding and creating new 
+                       features or apps from scratch, integrating FRONTEND.md and BACKEND.md.
+• performance.md    -> Performance Engineer. Focused on Core Web Vitals, 
+                       load speed, and Next.js optimization.
+• i18n.md           -> Internationalization Expert. Text extraction and 
+                       multi-language configuration.
+• accessibility.md  -> Accessibility Auditor. Ensures WCAG compliance and 
+                       correct usage of HTML/ARIA semantics.
+• refactor.md       -> Quality Lead. Focused on cleaning technical debt, implementing 
+                       SOLID principles, and enforcing Clean Code.
+• implementation.md -> Implementation Master. Triages complexity (S, M, L) 
+                       and chooses the correct template before generating the plan upon confirmation.
 • global-documentation.md
-                    -> Documentação Global. Gera um documento técnico transferível de 17 seções a partir do contexto consolidado
-                       para prever todos os requisitos técnicos rigorosos e reutilizáveis.
+                    -> Global Documentation. Generates a transferable 17-section technical document 
+                       from the consolidated context to foresee all rigorous and reusable technical requirements.
 • internal-documentation.md
-                    -> Documentação Interna. Gera um mapa interno do projeto com caminhos absolutos,
-                       arquivos, assets, scripts, regras runtime e limites de edição.
-• atomic.md         -> Execução Atômica. Protocolo para execução passo a passo, 
-                       focada em uma única alteração cirúrgica por vez.
-• review.md         -> Auditoria Elite. Ativa orquestração mult-agente para validar 
-                       se um plano ou código segue os padrões do projeto.
+                    -> Internal Documentation. Generates an internal project map with absolute paths,
+                       files, assets, scripts, runtime rules, and editing boundaries.
+• atomic.md         -> Atomic Execution. Protocol for step-by-step execution, 
+                       focused on a single surgical change at a time.
+• review.md         -> Elite Audit. Triggers multi-agent orchestration to validate 
+                       if a plan or code follows project standards.
 
 ---
 
-[ 🔍 DESCOBERTA E PLANEJAMENTO ]
+[ 🔍 DISCOVERY & PLANNING ]
 
-• discovery.md      -> Consultor Estratégico. Usa brainstorm de 3 caminhos para validar 
-                       ideias de produto e regras de negócio.
-• planning.md       -> Alinhamento e Prontidão. Consolida decisões, mapeia riscos/gaps e valida se está pronto para implementation 
-                       antes de seguir para implementation.
-• investigation.md  -> Pré-Orquestrador de Contexto. Faz análise profunda do repositório 
-                       (no-code analysis) antes de propor mudanças.
-• context.md        -> Assimilador de Contexto. Lê e memoriza fluxos de código e dependências em silêncio absoluto.
-• advisor.md        -> Consultor do Kit (GPS). Ajuda a escolher qual booster usar.
-
----
-
-[ 🐞 CORREÇÃO E QUALIDADE ]
-
-• debug.md          -> Análise de Causa Raiz. Usa motor de hipóteses para investigar bugs 
-                       de forma sistemática.
-• testing.md        -> Estrategista de Testes. Define estratégia de cobertura (Unit, E2E) 
-                       e coordena a execução.
-• changelog.md      -> Gerador de Histórico. Cria notas de release estruturadas e organiza 
-                       o histórico de alterações.
+• discovery.md      -> Strategic Consultant. Uses a 3-path brainstorm to validate 
+                       product ideas and business rules.
+• planning.md       -> Alignment & Readiness. Consolidates decisions, maps risks/gaps, and validates readiness 
+                       before proceeding to implementation.
+• investigation.md  -> Context Pre-Orchestrator. Performs deep repository analysis 
+                       (no-code analysis) before proposing changes.
+• context.md        -> Context Assimilator. Reads and memorizes code flows and dependencies in absolute silence.
+• advisor.md        -> Kit Consultant (GPS). Helps you choose the right booster to use.
 
 ---
 
-[ 🎨 ESPECIALIDADES E STACK ]
+[ 🐞 FIX & QUALITY ]
 
-• frontend.md       -> Especialista de Frontend. Ativa regras de Next.js, React e UI/UX.
-• backend.md        -> Especialista de Backend. Focado em APIs, tRPC, Banco de Dados e Servidor.
-• design.md         -> Auditoria de UI/UX. Verifica se os componentes estão seguindo 
-                       padrões premium e acessibilidade.
-• seo.md            -> Guardião de SEO. Valida HTML semântico e metatags para indexação.
-• mobile.md         -> Mestre de Mobile. Ativa padrões de React Native, Expo e touch UX.
-
----
-
-[ 🛡️ SEGURANÇA E DEPLOY ]
-
-• security.md       -> Auditoria de Segurança. Analisa vulnerabilidades, vazamento de 
-                       segredos e modelagem de ameaças.
-• deploy.md         -> Protocolo de Lançamento. Faz os "pre-flight checks" para garantir 
-                       que o código está pronto para produção.
+• debug.md          -> Root Cause Analysis. Uses a hypothesis engine to systematically investigate bugs.
+• code-audit.md     -> Code Audit. Strict inspector for syntax, typing, 
+                       and diagnostics (React Doctor) pre-PR.
+• testing.md        -> Test Strategist. Defines coverage strategy (Unit, E2E) 
+                       and coordinates execution.
+• changelog.md      -> History Generator. Creates structured release notes and organizes 
+                       the change history.
 
 ---
 
-💡 COMO USAR AGORA:
-Os Boosters agora funcionam como modos manuais do Dev Booster.
-Na maioria dos casos, a ativação NÃO executa tudo imediatamente.
+[ 🎨 SPECIALTIES & STACK ]
 
-Fluxo padrão:
-1. Ative o Booster pelo nome.
-2. O Booster entra no modo correto.
-3. Depois envie a tarefa, ideia, contexto, artefato ou objetivo real.
-4. Só então ele carrega o necessário e continua.
-
-Exemplos de ativação:
-- Arraste `.devbooster/boosters/frontend.md` no chat e envie.
-- Arraste `.devbooster/boosters/discovery.md` no chat e envie.
-- Arraste `.devbooster/boosters/advisor.md` no chat e envie.
-
-Padrões de comportamento:
-- Boosters de domínio, como frontend, backend, testing e performance:
-  ativam rápido, entram em modo armado e carregam contexto depois da primeira dor real.
-- Boosters de síntese, como documentation e planning:
-  resumem o contexto atual e pedem confirmação antes de continuar.
-- Boosters de entrada de artefato, como review:
-  pedem a documentação, implementação, arquivo ou referência antes de carregar o restante.
-- Boosters operacionais como changelog:
-  usam o estado real do Git como fonte principal e fazem apenas as perguntas mínimas.
-
-Exemplos práticos:
-- Arraste `.devbooster/boosters/planning.md` no chat e envie.
-- Arraste `.devbooster/boosters/global-documentation.md` no chat e envie.
-- Arraste `.devbooster/boosters/internal-documentation.md` no chat e envie.
-- Arraste `.devbooster/boosters/changelog.md` no chat e envie.
-- Arraste `.devbooster/boosters/review.md` no chat e envie.
-
-Depois da ativação, envie o próximo passo normalmente.
-Exemplo:
-"[arquivo planning.md enviado no chat]"
-"Agora quero validar se já fechamos contexto suficiente para seguir para implementation."
+• frontend.md       -> Frontend Expert. Activates rules for Next.js, React, and UI/UX.
+• backend.md        -> Backend Expert. Focused on APIs, tRPC, Databases, and Server.
+• design.md         -> UI/UX Audit. Verifies if components are following 
+                       premium standards and accessibility.
+• seo.md            -> SEO Guardian. Validates semantic HTML and metatags for indexing.
+• mobile.md         -> Mobile Master. Activates patterns for React Native, Expo, and touch UX.
 
 ---
 
-💡 COMO ATUALIZAR O KIT:
-Se este projeto já tem Dev Booster instalado e você quiser receber uma versão mais nova do kit,
-use no terminal:
+[ 🛡️ SECURITY & DEPLOY ]
+
+• security.md       -> Security Audit. Analyzes vulnerabilities, secret leaks, 
+                       and threat modeling.
+• deploy.md         -> Release Protocol. Runs "pre-flight checks" to ensure 
+                       the code is ready for production.
+
+---
+
+💡 HOW TO USE NOW:
+Boosters now work as manual modes of the Dev Booster.
+In most cases, activation DOES NOT execute everything immediately.
+
+Standard flow:
+1. Activate the Booster by name.
+2. The Booster enters the correct mode.
+3. Then send the task, idea, context, artifact, or real objective.
+4. Only then will it load what is necessary and continue.
+
+Activation examples:
+- Drag `.devbooster/boosters/frontend.md` into the chat and send.
+- Drag `.devbooster/boosters/discovery.md` into the chat and send.
+- Drag `.devbooster/boosters/advisor.md` into the chat and send.
+
+Behavioral patterns:
+- Domain boosters, such as frontend, backend, testing, and performance:
+  activate quickly, enter armed mode, and load context only after the first real pain point.
+- Synthesis boosters, such as documentation and planning:
+  summarize the current context and ask for confirmation before proceeding.
+- Artifact input boosters, such as review:
+  ask for documentation, implementation, file, or reference before loading the rest.
+- Operational boosters, such as changelog:
+  use the actual Git state as the primary source and ask only minimal questions.
+
+Practical examples:
+- Drag `.devbooster/boosters/planning.md` into the chat and send.
+- Drag `.devbooster/boosters/global-documentation.md` into the chat and send.
+- Drag `.devbooster/boosters/internal-documentation.md` into the chat and send.
+- Drag `.devbooster/boosters/changelog.md` into the chat and send.
+- Drag `.devbooster/boosters/review.md` into the chat and send.
+
+After activation, send the next step normally.
+Example:
+"[planning.md file sent in chat]"
+"Now I want to validate if we have established enough context to move to implementation."
+
+---
+
+💡 HOW TO UPDATE THE KIT:
+If this project already has Dev Booster installed and you want to receive a newer version of the kit,
+use in the terminal:
 
 `npx dev-booster --update`
 
-O update:
-- atualiza `.devbooster/boosters/`
-- atualiza `.devbooster/hub/`
-- preserva `.devbooster/rules/`
-- preserva `DEVBOOSTER_INIT.md`
+The update:
+- updates `.devbooster/boosters/`
+- updates `.devbooster/hub/`
+- preserves `.devbooster/rules/`
+- preserves `DEVBOOSTER_INIT.md`
 
-Isso existe para manter seguras as regras e ajustes locais do projeto.
+This ensures that local project rules and adjustments remain safe.
 ```

@@ -27,8 +27,8 @@ The file contains a bootstrap prompt. Execute it: scan the frontend stack and ov
 Read `.devbooster/rules/BACKEND.md`.
 The file contains a bootstrap prompt. Execute it: scan the backend/API architecture and overwrite the file with stack-specific backend rules.
 
-### STEP 5 — Bootstrap COMERCIAL.md
-Read `.devbooster/rules/COMERCIAL.md`.
+### STEP 5 — Bootstrap COMMERCIAL.md
+Read `.devbooster/rules/COMMERCIAL.md`.
 The file contains a bootstrap prompt. Execute it: analyze the product's business model and overwrite the file with commercial positioning documentation.
 
 ### STEP 6 — IDE Bridge Fallback

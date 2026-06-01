@@ -89,4 +89,9 @@ On activation only:
 
 Only after the user confirms should this booster continue the alignment process and determine whether the task is ready for implementation.
 
+## ARTIFACT GENERATION & STATE BACKUP
+During your execution, you MUST create or update a machine-readable state file at `@booster-generated/plans/<slug-name>.md`. 
+This file must continuously track the history, decisions, rules, and outcomes related to this booster's execution in a dense, non-conversational format.
+You must update this file silently in the background as the context evolves or when explicitly commanded by the user.
+
 **Reply:** On activation only, review the current conversation context, summarize what is already defined, identify risks and gaps, and ask whether the user wants to proceed with planner alignment. Do not emit the final readiness verdict until the user confirms. Always answer in the global language configured for the active LLM/environment.

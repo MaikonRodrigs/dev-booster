@@ -72,4 +72,9 @@ After presenting the options, ask the user:
 1. Which direction aligns best with your current priority?
 2. Are there any specific constraints we should consider for the chosen path?
 
+## ARTIFACT GENERATION & STATE BACKUP
+During your execution, you MUST create or update a machine-readable state file at `@booster-generated/discoveries/<slug-name>.md`. 
+This file must continuously track the history, decisions, rules, and outcomes related to this booster's execution in a dense, non-conversational format.
+You must update this file silently in the background as the context evolves or when explicitly commanded by the user.
+
 **Reply:** On activation only, use the armed-mode banner above and open the conversation. After the first real idea arrives, load the minimum required discovery context and continue with the discovery flow in the global language configured for the active LLM/environment.

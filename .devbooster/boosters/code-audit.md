@@ -54,10 +54,10 @@ Only switch to execution mode after the user provides the commit scope.
 3. **Run Operational Audit Scripts:**
     - **Mandatory when relevant:** `security_scan.py`, `type_coverage.py`, `lint_runner.py` (if they exist).
 4. **React/Next.js Frontend Triage (3-Phase Flow):** ONLY IF the project uses React/Next.js:
-    - **Run Silently**: Execute `npx -y react-doctor@latest --json --diff <scope> --yes > @booster-generated/diagnostics/<slug-name-audit>.json` in the background, scoped to the user's requested commits.
-    - **Timeout Safety**: If the command hangs for more than 30 seconds, manually abort it (Kill/Ctrl+C) and proceed with the rest of the audit, gracefully skipping the React Doctor step.
+    - **Execute & Wait**: Run `npx -y react-doctor@latest --json --diff <scope> --yes > @booster-generated/diagnostics/<slug-name-audit>.json` synchronously. You MUST wait for the command to fully complete before moving to the next step. Do not run it in the background.
+    - **Timeout Safety**: If the command hangs for more than 300 seconds (5 minutes), manually abort it (Kill/Ctrl+C) and proceed with the rest of the audit, gracefully skipping the React Doctor step.
     - **Filter (Python)**: Run `.devbooster/hub/scripts/doctor_parser.py @booster-generated/diagnostics/<slug-name-audit>.json` to process the JSON.
-    - **Report & Decide**: Present "Immediate Actions" (Critical errors) in detail by line. Present "Cosmetic Debt" (Style rules) as a grouped numerical summary. Append "Content extracted from diagnostics.json".
+    - **Report & Decide**: Present "Immediate Actions" (Critical errors) in detail by line. For "Cosmetic Debt" (Warnings), create a dedicated section that groups the warnings by Rule/Category (e.g., "Tailwind Sorting: 70 issues", "Unused Variables: 20 issues"). Provide a 1-line explanation for the most frequent categories so the user understands the nature of the debt without being overwhelmed.
     - **ZERO Auto-Fix**: Do NOT modify code automatically. Ask the user: "Do you want to fix only the critical recommendations, everything, or specific items?" and wait for authorization.
 
 ## 4. OUTPUT STRUCTURE (MANDATORY)
@@ -69,10 +69,13 @@ Your response MUST be an **Audit Report**:
 - [Findings based on the project's specific stack (React, Angular, Vue, etc.)]
 
 **2. Specialized Diagnostics**
-- *(If React)*: [React Doctor Findings (Critical Issues by Line & Cosmetic Debt Summary)]
+- *(If React)*: 
+  - **Critical Issues:** [Detailed list by line]
+  - **Cosmetic Debt (Warnings):** [Grouped by Rule/Category with issue counts and short explanations]
 - *(If Non-React)*: [Framework-specific standard violations or architectural anti-patterns]
 
 **3. Action Plan**
+- [Explicitly state that the full line-by-line list of all warnings/errors is available in `@booster-generated/diagnostics/<slug-name-audit>.json` for manual review]
 - [Waiting for user permission to apply fixes]
 
 ## ARTIFACT GENERATION & STATE BACKUP

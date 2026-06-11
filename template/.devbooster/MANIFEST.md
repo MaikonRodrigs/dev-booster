@@ -125,6 +125,8 @@
 | `backend.md` | Backend specialist activation with API/DB constraints. |
 | `seo.md` | SEO audit and semantic HTML compliance check. |
 | `mobile.md` | Mobile UX activation (React Native / Expo patterns). |
+| `builder.md` | Builder Specialist — executes implementation plans and writes actual code. |
+| `coder.md` | Co-Creative Coder — debates folder patterns and code design, writes code only under command. |
 
 ---
 
@@ -167,7 +169,7 @@
 |---|---|
 | **Total Agents** | 20 |
 | **Total Skills** | 40+ |
-| **Master Boosters** | 24 |
+| **Master Boosters** | 26 |
 | **Operational Scripts** | 2 (Master) + 21 (Skill-level) |
 | **Coverage** | ~95% Full-stack Web/Mobile |
 
@@ -189,7 +191,8 @@ Dev Booster acts as a continuous document generator. As boosters execute, they M
 ### Artifact Mapping by Domain:
 - `@booster-generated/contexts/` → Managed by `context.md` (Save State for conversation continuity).
 - `@booster-generated/plans/` → Managed by `planning.md` (Implementation roadmap and risk mapping).
-- `@booster-generated/implementations/` → Managed by `frontend.md`, `backend.md`, `mobile.md`, `atomic.md`.
+- `@booster-generated/implementations/` → Managed by `frontend.md`, `backend.md`, `mobile.md`, `atomic.md`, `builder.md`.
+- `@booster-generated/coder/` → Managed by `coder.md` (Design discussions and incremental coding logs).
 - `@booster-generated/advisory/` → Managed by `advisor.md` (Architectural decisions and mentorship notes).
 - `@booster-generated/discoveries/` → Managed by `investigation.md`, `discovery.md` (Brainstorms, flow mapping).
 - `@booster-generated/troubleshooting/` → Managed by `debug.md` (Root Cause Analysis and bug fixes).

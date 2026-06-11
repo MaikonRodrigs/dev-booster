@@ -34,25 +34,9 @@
     - **Chat:** Follow the global language configured for the active LLM/environment.
     - **Logs, Code, Comments, Variables:** English, unless the project explicitly requires another convention.
 
-## 📚 5. PERSISTENCE (MEMORIALIZATION)
-- **THE TRIGGER:** `@SavePattern`
-    1. Extract the technical rule or pattern from the current context.
-    2. Document in Technical English.
-    3. Update/Persist specifically in `./.devbooster/rules/USER_PREFERENCES.md`.
-
-- **THE ARTIFACT TRIGGER:** `@SaveState`
-    1. When invoked, instantly update the machine-readable state file for the currently active booster (e.g., in `@booster-generated/...`).
-    2. Ensure the state file captures the latest architectural decisions, flow logic, and context in a dense, non-conversational format without prompt ping-pong.
-
-### ✅ 5.1 TASK CAPTURE (DO LATER BACKLOG)
-- **THE TRIGGER:** `@LogTask`
-- **THE ACTION:**
-    1. Capture the identified technical task.
-    2. Update/Persist specifically in `./@booster-generated/tasks.md` (at the project root).
-    3. Follow this strict format when adding new items:
-       `- [ ] Short title of the task.`
-       `  Resumo: detailed explanation of the task.`
-       `  Referências: file paths and concepts related to the task.`
+## 📚 5. PERSISTENCE & SHORTCUTS (TRIGGERS)
+- **TRIGGER ROUTING:** Whenever the user references a `@` trigger (e.g., `@Coder`, `@SaveState`, `@SavePattern`), you MUST refer specifically to `.devbooster/rules/TRIGGERS.md` to identify the trigger's contract, load the corresponding files, and execute the behavior mode or background action.
+- **RESTRICTION:** Execute code edits, file writes, or log updates ONLY when explicitly instructed by the trigger contract or a direct user command.
 
 ---
 *Elite Sovereignty Framework - Conduct Governance 2026*

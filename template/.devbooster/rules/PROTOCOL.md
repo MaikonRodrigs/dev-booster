@@ -54,5 +54,12 @@
        `  Resumo: detailed explanation of the task.`
        `  Referências: file paths and concepts related to the task.`
 
+### 💻 5.2 CO-CREATIVE CODING (INCREMENTAL IMPLEMENTATION)
+- **THE TRIGGER:** `@Coder`
+- **THE ACTION:**
+    1. Instantly activate or transition to the `coder.md` booster execution mode.
+    2. Execute surgical file edits, creations, or deletions ONLY upon explicit user instruction.
+    3. Silently update the project's design scratchpad file at `@booster-generated/coder/coder-<task-slug>.md`.
+
 ---
 *Elite Sovereignty Framework - Conduct Governance 2026*

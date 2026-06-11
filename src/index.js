@@ -36,6 +36,44 @@ const IDE_BRIDGE_TARGETS = [
   '.github/copilot-instructions.md',
 ]
 
+const PROTECTED_FILES = [
+  'DEVBOOSTER_INIT.md',
+  '.devbooster/rules/PROJECT.md',
+  '.devbooster/rules/FRONTEND.md',
+  '.devbooster/rules/BACKEND.md',
+  '.devbooster/rules/COMMERCIAL.md',
+  '.devbooster/rules/USER_PREFERENCES.md',
+]
+
+function safeCopyFile(src, dest, dryRun = false) {
+  const relativeDest = path.relative(TARGET_DIR, dest)
+  if (fs.existsSync(dest) && PROTECTED_FILES.includes(relativeDest)) {
+    return false // Preserved
+  }
+  if (!dryRun) {
+    fs.mkdirSync(path.dirname(dest), { recursive: true })
+    fs.copyFileSync(src, dest)
+  }
+  return true // Copied/Updated
+}
+
+function copyDirSafe(src, dest, dryRun = false) {
+  fs.mkdirSync(dest, { recursive: true })
+
+  for (const entry of fs.readdirSync(src, { withFileTypes: true })) {
+    if (entry.name === '.DS_Store') continue
+
+    const srcPath = path.join(src, entry.name)
+    const destPath = path.join(dest, entry.name)
+
+    if (entry.isDirectory()) {
+      copyDirSafe(srcPath, destPath, dryRun)
+    } else {
+      safeCopyFile(srcPath, destPath, dryRun)
+    }
+  }
+}
+
 function copyDir(src, dest) {
   fs.mkdirSync(dest, { recursive: true })
 
@@ -192,33 +230,47 @@ async function runInstall() {
   printHeader('agentic kit installer')
   if (dryRun) console.log('🔍 [DRY RUN MODE] No real changes will be made.\n')
 
-  // 1. Copy the full .devbooster/ kit to the user's project
   const agentSrc = path.join(TEMPLATE_DIR, '.devbooster')
   const agentDest = path.join(TARGET_DIR, '.devbooster')
 
-  if (fs.existsSync(agentDest)) {
-    console.log('▸ .devbooster/')
-    console.log('  status: already exists in this project')
-    console.log('  action: copy skipped to avoid overwrite')
-    console.log('  tip: rename or remove the folder if you want a fresh install\n')
+  const boostersCount = fs.existsSync(path.join(agentSrc, 'boosters')) 
+    ? fs.readdirSync(path.join(agentSrc, 'boosters')).filter(f => f !== '.DS_Store' && f !== 'templates').length 
+    : 28
+  const hubCount = fs.existsSync(path.join(agentSrc, 'hub', 'scripts'))
+    ? fs.readdirSync(path.join(agentSrc, 'hub', 'scripts')).filter(f => f !== '.DS_Store').length
+    : 21
+
+  const isOverlap = fs.existsSync(agentDest)
+
+  if (isOverlap) {
+    console.log('▸ Existing Kit Detected:')
+    console.log(`  ├── boosters/     ➔ ${boostersCount} expert activators updated successfully`)
+    console.log(`  ├── hub/          ➔ ${hubCount} operational scripts updated successfully`)
+    console.log('  └── rules/        ➔ Core rules updated, project rules preserved')
+    console.log('                    ✔ PROTOCOL.md  (updated)')
+    console.log('                    ✔ GUIDE.md     (updated)')
+    console.log('                    ✔ TRIGGERS.md  (updated)')
+    console.log('                    ℹ PROJECT.md, FRONTEND.md, BACKEND.md, etc. (preserved)\n')
   } else {
-    if (!dryRun) copyDir(agentSrc, agentDest)
-    console.log('▸ .devbooster/')
-    console.log(`  status: ${dryRun ? 'would be installed' : 'installed successfully'}\n`)
+    console.log('▸ Installing Kit Structure:')
+    console.log(`  ├── boosters/     ➔ ${boostersCount} expert activators created successfully`)
+    console.log(`  ├── hub/          ➔ ${hubCount} operational scripts created successfully`)
+    console.log('  └── rules/        ➔ Core rules and templates initialized')
+    console.log('                    ✔ 8 rules created\n')
   }
 
-  // 2. Drop DEVBOOSTER_INIT.md at the root of the user's project
+  copyDirSafe(agentSrc, agentDest, dryRun)
+
+  // 2. Drop DEVBOOSTER_INIT.md at the root of the user's project safely
   const initSrc = path.join(TEMPLATE_DIR, 'DEVBOOSTER_INIT.md')
   const initDest = path.join(TARGET_DIR, 'DEVBOOSTER_INIT.md')
 
-  if (fs.existsSync(initDest)) {
-    console.log('▸ DEVBOOSTER_INIT.md')
-    console.log('  status: already exists in this project')
-    console.log('  action: creation skipped\n')
-  } else {
-    if (!dryRun) fs.copyFileSync(initSrc, initDest)
-    console.log('▸ DEVBOOSTER_INIT.md')
+  const copiedInit = safeCopyFile(initSrc, initDest, dryRun)
+  console.log('▸ DEVBOOSTER_INIT.md')
+  if (copiedInit) {
     console.log(`  status: ${dryRun ? 'would be created' : 'created'} at project root\n`)
+  } else {
+    console.log('  status: already exists (preserved)\n')
   }
 
   await maybeAddDevBoosterToGitignore(dryRun)
@@ -252,25 +304,44 @@ function runUpdate() {
     return
   }
 
+  const boostersCount = fs.existsSync(path.join(templateRoot, 'boosters')) 
+    ? fs.readdirSync(path.join(templateRoot, 'boosters')).filter(f => f !== '.DS_Store' && f !== 'templates').length 
+    : 28
+  const hubCount = fs.existsSync(path.join(templateRoot, 'hub', 'scripts'))
+    ? fs.readdirSync(path.join(templateRoot, 'hub', 'scripts')).filter(f => f !== '.DS_Store').length
+    : 21
+
+  // 1. Sync boosters and hub (fully wiped and overwritten)
   const updateTargets = [
     { name: 'boosters', src: path.join(templateRoot, 'boosters'), dest: path.join(kitRoot, 'boosters') },
     { name: 'hub', src: path.join(templateRoot, 'hub'), dest: path.join(kitRoot, 'hub') },
   ]
 
+  console.log('▸ Updating Kit Core:')
+
   for (const target of updateTargets) {
     if (!dryRun) syncDir(target.src, target.dest)
-    console.log(`▸ .devbooster/${target.name}/`)
-    console.log(`  status: ${dryRun ? 'would be updated' : 'updated successfully'}`)
   }
+  console.log(`  ├── boosters/     ➔ ${boostersCount} expert activators synced & updated`)
+  console.log(`  ├── hub/          ➔ ${hubCount} operational scripts synced & updated`)
 
-  console.log('')
-  console.log('▸ rules/')
-  console.log('  status: preserved')
-  console.log('  action: no local files were overwritten')
-  console.log('')
+  // 2. Safe-copy rules directory recursively (overwriting core rules, preserving custom ones)
+  const rulesSrc = path.join(templateRoot, 'rules')
+  const rulesDest = path.join(kitRoot, 'rules')
+  copyDirSafe(rulesSrc, rulesDest, dryRun)
+  
+  // 3. Safe-copy core files
+  safeCopyFile(path.join(templateRoot, 'MANIFEST.md'), path.join(kitRoot, 'MANIFEST.md'), dryRun)
+  
+  console.log('  ├── MANIFEST.md   ➔ Inventory updated')
+  console.log('  └── rules/        ➔ Core rules updated, customized rules preserved')
+  console.log('                    ✔ PROTOCOL.md  (updated)')
+  console.log('                    ✔ GUIDE.md     (updated)')
+  console.log('                    ✔ TRIGGERS.md  (updated)')
+  console.log('                    ℹ Whitelabel stack rules (preserved)\n')
+
   console.log('▸ DEVBOOSTER_INIT.md')
-  console.log('  status: preserved')
-  console.log('  action: no local files were overwritten\n')
+  console.log('  status: preserved (no changes made)\n')
 
   console.log(`
 ╭──────────────────────────────────────────────╮

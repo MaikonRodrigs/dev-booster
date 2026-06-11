@@ -30,6 +30,10 @@ It has been formatted as a code block to facilitate direct reading in the IDE.
                        focused on a single surgical change at a time.
 • review.md         -> Elite Audit. Triggers multi-agent orchestration to validate 
                        if a plan or code follows project standards.
+• coder.md          -> Co-Creative Coder. Debates folder patterns and architecture 
+                       ideas, writing code only under command.
+• builder.md        -> Builder Specialist. Executes implementation plans and writes 
+                       actual code surgically.
 
 ---
 
@@ -114,6 +118,13 @@ After activation, send the next step normally.
 Example:
 "[planning.md file sent in chat]"
 "Now I want to validate if we have established enough context to move to implementation."
+
+---
+
+💡 INSTANT ROUTING (SHORTCUT TRIGGERS):
+Instead of dragging booster files, you can instantly activate any booster behavior contract
+by typing its corresponding trigger in the chat (e.g., @Context, @Coder, @Builder, @Planning).
+Refer to `.devbooster/rules/TRIGGERS.md` for the complete trigger dictionary.
 
 ---
 

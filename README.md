@@ -32,7 +32,7 @@ After running the command, your project gets:
 ```
 .devbooster/
 ├── MANIFEST.md          ← inventory of all agents, skills, and boosters
-├── boosters/            ← 26 expert activators (debug, review, design, deploy...)
+├── boosters/            ← 28 expert activators (debug, review, design, deploy...)
 ├── hub/                 ← 40+ skills and operational scripts
 └── rules/
     ├── PROTOCOL.md      ← governance and conduct rules
@@ -110,7 +110,7 @@ Boosters are expert activators you invoke manually during development.
 | `discovery.md` | Product brainstorm |
 | `performance.md` | Core Web Vitals / bundle issues |
 | `code-audit.md` | Strict Code Auditor (Syntax, React Doctor) before PR |
-| + 14 more | See `.devbooster/MANIFEST.md` |
+| + 16 more | See `.devbooster/MANIFEST.md` |
 
 The practical activation flow is simple:
 - drag a booster file into the chat
@@ -136,13 +136,26 @@ Files are systematically organized in the `@booster-generated/` root directory:
 - `@booster-generated/troubleshooting/` (Systematic RCA and bug fix logs)
 - `@booster-generated/audits/` (Security, accessibility, and performance reports)
 
-### Manual Triggers
+### Manual & Shortcut Triggers
 
-While the AI updates these files automatically, you can also take manual control at any time using explicit Chat Triggers:
+You can take manual control of the kit's governance or instantly route behavior modes at any time using explicit Chat Triggers:
 
-- **`@SaveState`**: Forces the AI to instantly summarize the current conversation context and update the active booster's state file. Perfect for explicitly bookmarking complex decisions before continuing in a fresh chat.
+#### 👥 Governance Triggers
+- **`@SaveState`**: Forces the AI to instantly summarize the current conversation context and update the active booster's state file under `@booster-generated/`.
 - **`@SavePattern`**: Instructs the AI to extract a newly resolved technical rule or code pattern and persist it to `.devbooster/rules/USER_PREFERENCES.md`.
-- **`@LogTask`**: Tells the AI to capture a pending technical task mentioned in the chat and document it systematically in your operational backlog at `@booster-generated/tasks.md`.
+- **`@LogTask`**: Tells the AI to capture a pending technical task and document it systematically in your backlog at `@booster-generated/tasks.md`.
+
+#### ⚡ Booster Shortcut Triggers
+Instead of dragging booster files into the chat, you can instantly activate any booster behavior contract by typing its shortcut trigger:
+- **`@Context`** ➔ Activates `context.md` (Silent Sponge context mapping).
+- **`@Coder`** ➔ Activates `coder.md` (Co-Creative design/writing).
+- **`@Builder`** ➔ Activates `builder.md` (Senior plan audit & execution).
+- **`@Planning`** ➔ Activates `planning.md` (Readiness check).
+- **`@Implementation`** ➔ Activates `implementation.md` (Plan sizing & generation).
+- **`@Atomic`** ➔ Activates `atomic.md` (Surgical step-by-step writing).
+- **`@Review`** ➔ Activates `review.md` (Elite code audit).
+- **`@Advisor`** ➔ Activates `advisor.md` (Kit GPS consultant).
+- *See `.devbooster/rules/TRIGGERS.md` for the complete trigger list.*
 
 ---
 

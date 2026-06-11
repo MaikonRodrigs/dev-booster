@@ -8,11 +8,9 @@ description: Dynamic Scratchpad - Experimental patterns and recently approved ru
 
 This file operates as a "real-time scratchpad" for the AI and the Developer. The core of the project's architecture lives in `FRONTEND.md`, `BACKEND.md`, and `PROJECT.md`.
 
-## 🛠️ THE ENCYCLOPEDIA TRIGGER
-Every time the user strictly types the phrase **"bota na enciclopédia"** (or variations like "bota na enciclopedia"), referring to a code pattern we just resolved and approved in the current session, the AI **must extract the technical rule** and annotate it here.
+- This file captures development preferences and emergent decisions using the `@SavePattern` trigger (defined in `PROTOCOL.md`).
+- It ensures consistency in the short term. Periodically, the consolidated patterns born here will be migrated to the official frontend or backend files and removed from here.
 
-- This file captures development preferences and emergent decisions to ensure consistency in the short term.
-- Periodically (or when refactoring the base), the consolidated patterns born here will be migrated to the official frontend or backend folders and removed from here.
 
 ---
 

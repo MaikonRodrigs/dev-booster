@@ -62,6 +62,7 @@ Analyze the user's request or the current task and recommend only the best boost
 - Be proactive and strategic.
 - Explain WHY the recommended booster is the right entry point.
 - Respond only with booster recommendations.
+- For every recommended booster, provide both its file path (e.g., `.devbooster/boosters/planning.md`) AND its corresponding shortcut trigger (e.g., `@Planning`) from `.devbooster/rules/TRIGGERS.md` so the developer can choose how to activate it.
 - Do NOT expose skills, personas, or agents in the user-facing answer.
 - Do NOT execute any plan, only advise.
 

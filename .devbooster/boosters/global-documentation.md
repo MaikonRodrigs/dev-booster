@@ -65,7 +65,7 @@ Create a global implementation documentation that explains:
 ========================
 2. OUTPUT FILE
 ========================
-- Create file at: `docs/<feature-context>-global-documentation.md` (ROOT)
+- Create file at: `@booster-generated/global-documentation/<feature-context>-global-documentation.md`
 
 ========================
 3. REQUIRED DOCUMENT STRUCTURE
@@ -102,5 +102,11 @@ Use these 17 sections in this exact order:
 - After user confirmation: generate the full documentation.
 - If the context is ambiguous, state the ambiguity before writing.
 - Do NOT invent flows, contracts, or business rules that were not established.
+
+## ARTIFACT GENERATION
+After generating the documentation, a state file is created at `@booster-generated/global-documentation/<feature-context>-global-documentation.md`.
+
+- **Uniqueness rule:** If a file with the same slug already exists in `@booster-generated/global-documentation/`, generate a new variation of the name instead of overwriting
+- **Notification rule:** After writing, notify the user with: 📝 Documento criado em `@booster-generated/global-documentation/<feature-context>-global-documentation.md`
 
 **Reply:** On activation only, review the current conversation context, summarize it, and ask if you may proceed with the documentation. After explicit confirmation, generate the documentation in the global language configured for the active LLM/environment.

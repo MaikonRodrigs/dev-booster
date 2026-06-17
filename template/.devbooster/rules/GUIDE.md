@@ -30,6 +30,12 @@ It has been formatted as a code block to facilitate direct reading in the IDE.
                        focused on a single surgical change at a time.
 • review.md         -> Elite Audit. Triggers multi-agent orchestration to validate 
                        if a plan or code follows project standards.
+• coder.md          -> Co-Creative Coder. Debates folder patterns and architecture 
+                       ideas, writing code only under command.
+• builder.md        -> Builder Specialist. Executes implementation plans and writes 
+                       actual code surgically.
+• save-context.md   -> Save Context. Compacta toda a conversa em YAML para continuar 
+                       em um novo chat sem perda de contexto.
 
 ---
 
@@ -49,6 +55,7 @@ It has been formatted as a code block to facilitate direct reading in the IDE.
 [ 🐞 FIX & QUALITY ]
 
 • debug.md          -> Root Cause Analysis. Uses a hypothesis engine to systematically investigate bugs.
+• diff-review.md    -> Diff Review. Analisa o diff como um dev sênior revisando PR — naming, padrões do projeto, complexidade e boas práticas.
 • code-audit.md     -> Code Audit. Strict inspector for syntax, typing, 
                        and diagnostics (React Doctor) pre-PR.
 • testing.md        -> Test Strategist. Defines coverage strategy (Unit, E2E) 
@@ -114,6 +121,13 @@ After activation, send the next step normally.
 Example:
 "[planning.md file sent in chat]"
 "Now I want to validate if we have established enough context to move to implementation."
+
+---
+
+💡 INSTANT ROUTING (SHORTCUT TRIGGERS):
+Instead of dragging booster files, you can instantly activate any booster behavior contract
+by typing its corresponding trigger in the chat (e.g., @Context, @Coder, @Builder, @Planning).
+Refer to `.devbooster/rules/TRIGGERS.md` for the complete trigger dictionary.
 
 ---
 

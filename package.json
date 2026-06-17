@@ -1,10 +1,10 @@
 {
   "name": "dev-booster",
-  "version": "1.10.0",
+  "version": "1.12.0",
   "description": "Reusable AI development kit with manual boosters, governance, and project bootstrap",
   "type": "module",
   "scripts": {
-    "sync-template": "node ./src/sync-template.js"
+    "sync-template": "node ./scripts/sync-template.js"
   },
   "bin": {
     "dev-booster": "./bin/dev-booster.js"

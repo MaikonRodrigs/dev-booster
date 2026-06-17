@@ -13,7 +13,7 @@ Execute each step in order. Do not skip steps. Do not ask for confirmation betwe
 
 ### STEP 1 — Read the Governance Protocol
 Read `.devbooster/rules/PROTOCOL.md` in full.
-This defines your conduct rules, communication style, and architectural constraints for this project.
+This defines your conduct rules, communication style, and architectural constraints. It also delegates instant command shortcuts (like `@Coder`, `@Builder`) to `.devbooster/rules/TRIGGERS.md`.
 
 ### STEP 2 — Bootstrap PROJECT.md
 Read `.devbooster/rules/PROJECT.md`.

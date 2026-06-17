@@ -30,18 +30,16 @@ If the user gives an explicit code modification command (e.g. "change this for m
 - Execute the INITIAL LOAD STRATEGY (Section 0.1) immediately.
 - Implement the requested change surgically.
 
-## 0.1 INITIAL LOAD STRATEGY (LAZY LOADING)
-Upon receiving the first code modification command (either direct in Route B or during the conversation in Route A):
-1. Identify which files will be modified (Frontend, Backend, etc.).
-2. Load ONLY the relevant rule files from `.devbooster/rules/` (`rules/FRONTEND.md`, `rules/BACKEND.md`, and/or `rules/USER_PREFERENCES.md`).
-3. Mentally activate the required engineering personas for the task (`agent_frontend-specialist`, `agent_backend-specialist`, and/or `agent_debugger`).
-4. Execute the changes surgically.
+## 0.1 INITIAL LOAD STRATEGY (PARALLEL SINGLE-TURN INGESTION)
+Upon receiving a code modification command (either direct in Route B or during the conversation in Route A):
+- **PARALLEL INGESTION:** Perform all checks and read all necessary files (evaluating target files to be modified, reading Section 1 of `.devbooster/MANIFEST.md` to identify personas, and loading stack-specific rules from `.devbooster/rules/` like `rules/FRONTEND.md` or `rules/BACKEND.md`) in a **single parallel tool call batch**.
+- Do NOT split these reads into sequential chat turns. Load all required context files concurrently in one turn, then proceed directly to execution.
 
 ## 1. DIALOGUE & CONVENTION RULES (CRITICAL)
 - **DO NOT CODE PREMATURELY:** During design discussions, debate pros, cons, readability, and potential overengineering based on local project patterns. Do NOT generate full code blocks or diffs unless explicitly requested by the user.
 - **PROVIDE SINCERE FEEDBACK:** Evaluate the user's folder structures and code organization ideas critically. Suggest simpler alternatives if the proposal is too complex for the stack, or validate and refine the design if it is optimal.
 - **INCREMENTAL DEVELOPMENT:** Promote step-by-step creation. When asked to code, implement in small increments, ask for feedback, and adjust before moving to the next part.
-- **CONTINUOUS CONTEXT BACKUP:** Maintain a dynamic, dense, machine-readable log file at `@booster-generated/coder/coder-<task-slug>.md` (replace `<task-slug>` with a slug representing the active demand). Silently update this file in the background with design decisions made and pending steps, ensuring no conversational filler is added.
+- **CONTEXT CONTINUITY:** Do NOT create local state files. If the conversation becomes too long or the user wants to continue in a fresh chat, recommend `@SaveContext`, which creates a full YAML snapshot at `@booster-generated/saved-context/context-<slug>.yaml`.
 
 ## 2. ANTI-PREMATURE CONCLUSIONS (MANDATORY SEARCH)
 - **SEARCH BEFORE ASSUMING:** Do NOT assume a route, file, helper, or component does not exist in the project just because it is not in the immediate chat history.

@@ -34,6 +34,8 @@ It has been formatted as a code block to facilitate direct reading in the IDE.
                        ideas, writing code only under command.
 • builder.md        -> Builder Specialist. Executes implementation plans and writes 
                        actual code surgically.
+• save-context.md   -> Save Context. Compacta toda a conversa em YAML para continuar 
+                       em um novo chat sem perda de contexto.
 
 ---
 
@@ -53,6 +55,7 @@ It has been formatted as a code block to facilitate direct reading in the IDE.
 [ 🐞 FIX & QUALITY ]
 
 • debug.md          -> Root Cause Analysis. Uses a hypothesis engine to systematically investigate bugs.
+• diff-review.md    -> Diff Review. Analisa o diff como um dev sênior revisando PR — naming, padrões do projeto, complexidade e boas práticas.
 • code-audit.md     -> Code Audit. Strict inspector for syntax, typing, 
                        and diagnostics (React Doctor) pre-PR.
 • testing.md        -> Test Strategist. Defines coverage strategy (Unit, E2E) 

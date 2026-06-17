@@ -3,14 +3,18 @@
 > Drop a production-grade AI governance kit into any project — in one command.
 
 ```bash
-npx dev-booster
+npx --yes dev-booster@latest
 ```
 
 To update an existing kit installation safely:
 
 ```bash
-npx dev-booster --update
+npx --yes dev-booster@latest --update
 ```
+
+> **Important:** although npm shows `npm i dev-booster`, Dev Booster is intended to be used as a one-off CLI, not as a runtime project dependency.
+> Prefer `npx --yes dev-booster@latest` so you always run the newest published version.
+> If you install it with `npm i dev-booster`, future `npx dev-booster --update` calls may use the locally installed old version and miss newly published boosters.
 
 ---
 
@@ -32,7 +36,7 @@ After running the command, your project gets:
 ```
 .devbooster/
 ├── MANIFEST.md          ← inventory of all agents, skills, and boosters
-├── boosters/            ← 28 expert activators (debug, review, design, deploy...)
+├── boosters/            ← 30 expert activators (debug, review, design, deploy...)
 ├── hub/                 ← 40+ skills and operational scripts
 └── rules/
     ├── PROTOCOL.md      ← governance and conduct rules
@@ -51,11 +55,11 @@ DEVBOOSTER_INIT.md                  ← bootstrap orchestrator (read below)
 If you want to see exactly what Dev Booster will install or update in your project without actually making any changes, you can use the `--dry-run` flag:
 
 ```bash
-npx dev-booster --dry-run
+npx --yes dev-booster@latest --dry-run
 ```
 For updates:
 ```bash
-npx dev-booster update --dry-run
+npx --yes dev-booster@latest --update --dry-run
 ```
 
 This will run a full simulation of the command and print a detailed report of which files would be created, updated, or preserved, giving you complete peace of mind before executing the real installation.
@@ -78,7 +82,7 @@ This process only needs to run once. The `DEVBOOSTER_INIT.md` stays in your proj
 For later kit updates, use:
 
 ```bash
-npx dev-booster --update
+npx --yes dev-booster@latest --update
 ```
 
 This refreshes:
@@ -110,7 +114,7 @@ Boosters are expert activators you invoke manually during development.
 | `discovery.md` | Product brainstorm |
 | `performance.md` | Core Web Vitals / bundle issues |
 | `code-audit.md` | Strict Code Auditor (Syntax, React Doctor) before PR |
-| + 16 more | See `.devbooster/MANIFEST.md` |
+| + 18 more | See `.devbooster/MANIFEST.md` |
 
 The practical activation flow is simple:
 - drag a booster file into the chat
@@ -130,18 +134,21 @@ Dev Booster operates an internal **Artifact Engine** (Shadow Memory). As booster
 
 This creates a persistent "paper trail" that ensures the AI never loses context, even if you continue the work in a brand new chat session.
 
-Files are systematically organized in the `@booster-generated/` root directory:
-- `@booster-generated/contexts/` (Continuous save state for conversation continuity)
-- `@booster-generated/plans/` (Implementation roadmaps and risk mapping)
-- `@booster-generated/troubleshooting/` (Systematic RCA and bug fix logs)
-- `@booster-generated/audits/` (Security, accessibility, and performance reports)
+Files are systematically organized in the `@booster-generated/` root directory, each booster writing to its own folder:
+- `@booster-generated/context/` (Context assimilation state)
+- `@booster-generated/planning/` (Implementation roadmaps and risk mapping)
+- `@booster-generated/debug/` (Systematic RCA and bug fix logs)
+- `@booster-generated/security/` (Security audit reports)
+- `@booster-generated/code-audit/` (Code audit and diagnostics)
+- `@booster-generated/saved-context/` (Conversation snapshots for chat continuity)
+- `@booster-generated/discovery/`, `@booster-generated/investigation/`, `@booster-generated/advisor/`, `@booster-generated/deploy/`, and more.
 
 ### Manual & Shortcut Triggers
 
 You can take manual control of the kit's governance or instantly route behavior modes at any time using explicit Chat Triggers:
 
 #### 👥 Governance Triggers
-- **`@SaveState`**: Forces the AI to instantly summarize the current conversation context and update the active booster's state file under `@booster-generated/`.
+- **`@SaveContext`**: Compacta toda a conversa em YAML para continuar em um novo chat sem perda de contexto. Gera em `@booster-generated/saved-context/context-<slug>.yaml`.
 - **`@SavePattern`**: Instructs the AI to extract a newly resolved technical rule or code pattern and persist it to `.devbooster/rules/USER_PREFERENCES.md`.
 - **`@LogTask`**: Tells the AI to capture a pending technical task and document it systematically in your backlog at `@booster-generated/tasks.md`.
 

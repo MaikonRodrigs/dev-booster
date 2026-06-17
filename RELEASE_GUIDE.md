@@ -44,6 +44,10 @@ Isso garante que:
 - `template/.devbooster/` receba a cópia atualizada
 - `template/DEVBOOSTER_INIT.md` fique alinhado com o arquivo raiz
 
+> **⚠️ Importante:** nunca edits `template/` diretamente. A fonte de verdade é a raiz (`.devbooster/`, `DEVBOOSTER_INIT.md`, `src/`, `bin/`).
+> O `template/` é apenas um espelho do que vai no npm — ele atualiza-se sozinho via `npm run sync-template`.
+> Se editares diretamente o `template/`, as alterações perdem-se no próximo sync.
+
 ### 3. Revise o pacote antes de publicar
 
 ```bash
@@ -135,6 +139,11 @@ npm version patch
 ```
 
 em vez de alterar o campo `"version"` manualmente.
+
+### A fonte de verdade é a raiz, não o template
+
+**Nunca edites `template/` diretamente.** A raiz do repositório (`.devbooster/`, `DEVBOOSTER_INIT.md`, `src/index.js`, etc.) é a fonte de verdade em modo dev.
+O `template/` é sincronizado automaticamente com `npm run sync-template` e serve apenas como o pacote que sobe para o npm.
 
 ### Nem toda mudança local precisa de publish
 

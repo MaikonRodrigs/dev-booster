@@ -54,9 +54,9 @@ Only switch to execution mode after the user provides the commit scope.
 3. **Run Operational Audit Scripts:**
     - **Mandatory when relevant:** `security_scan.py`, `type_coverage.py`, `lint_runner.py` (if they exist).
 4. **React/Next.js Frontend Triage (3-Phase Flow):** ONLY IF the project uses React/Next.js:
-    - **Execute & Wait**: Run `npx -y react-doctor@latest --json --diff <scope> --yes > @booster-generated/diagnostics/<slug-name-audit>.json` synchronously. You MUST wait for the command to fully complete before moving to the next step. Do not run it in the background.
+    - **Execute & Wait**: Run `npx -y react-doctor@latest --json --diff <scope> --yes > @booster-generated/code-audit/diagnostics-<task-slug>.json` synchronously. You MUST wait for the command to fully complete before moving to the next step. Do not run it in the background.
     - **Timeout Safety**: If the command hangs for more than 300 seconds (5 minutes), manually abort it (Kill/Ctrl+C) and proceed with the rest of the audit, gracefully skipping the React Doctor step.
-    - **Filter (Python)**: Run `.devbooster/hub/scripts/doctor_parser.py @booster-generated/diagnostics/<slug-name-audit>.json` to process the JSON.
+    - **Filter (Python)**: Run `.devbooster/hub/scripts/doctor_parser.py @booster-generated/code-audit/diagnostics-<task-slug>.json` to process the JSON.
     - **Report & Decide**: Present "Immediate Actions" (Critical errors) in detail by line. For "Cosmetic Debt" (Warnings), create a dedicated section that groups the warnings by Rule/Category (e.g., "Tailwind Sorting: 70 issues", "Unused Variables: 20 issues"). Provide a 1-line explanation for the most frequent categories so the user understands the nature of the debt without being overwhelmed.
     - **ZERO Auto-Fix**: Do NOT modify code automatically. Ask the user: "Do you want to fix only the critical recommendations, everything, or specific items?" and wait for authorization.
 
@@ -75,12 +75,15 @@ Your response MUST be an **Audit Report**:
 - *(If Non-React)*: [Framework-specific standard violations or architectural anti-patterns]
 
 **3. Action Plan**
-- [Explicitly state that the full line-by-line list of all warnings/errors is available in `@booster-generated/diagnostics/<slug-name-audit>.json` for manual review]
+- [Explicitly state that the full line-by-line list of all warnings/errors is available in `@booster-generated/code-audit/diagnostics-<task-slug>.json` for manual review]
 - [Waiting for user permission to apply fixes]
 
-## ARTIFACT GENERATION & STATE BACKUP
-During your execution, you MUST create or update a machine-readable state file at `@booster-generated/audits/<slug-name>.md`. 
-This file must continuously track the history, decisions, rules, and outcomes related to this booster's execution in a dense, non-conversational format.
-You must update this file silently in the background as the context evolves or when explicitly commanded by the user.
+## ARTIFACT GENERATION
+During your execution, create a state file at `@booster-generated/code-audit/<slug>.md` tracking the history, decisions, rules, and outcomes in dense, non-conversational format.
+
+- **Uniqueness rule:** If the slug already exists in `@booster-generated/code-audit/`, generate a new variation of the name instead of overwriting
+- **Notification rule:** After writing, notify the user with: 📝 Registo em `@booster-generated/code-audit/<slug>.md`
+
+Do NOT update this file silently in the background.
 
 **Reply:** On activation only, use the armed-mode banner above and ask for the commit scope. After the user provides the scope, load the necessary scripts, perform the audit, and answer in the global language configured for the active LLM/environment.

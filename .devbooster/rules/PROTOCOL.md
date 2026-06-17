@@ -35,7 +35,7 @@
     - **Logs, Code, Comments, Variables:** English, unless the project explicitly requires another convention.
 
 ## 📚 5. PERSISTENCE & SHORTCUTS (TRIGGERS)
-- **TRIGGER ROUTING:** Whenever the user references a `@` trigger (e.g., `@Coder`, `@SaveState`, `@SavePattern`), you MUST refer specifically to `.devbooster/rules/TRIGGERS.md` to identify the trigger's contract, load the corresponding files, and execute the behavior mode or background action.
+- **TRIGGER ROUTING:** Whenever the user references a `@` trigger (e.g., `@Coder`, `@SaveContext`, `@SavePattern`), you MUST refer specifically to `.devbooster/rules/TRIGGERS.md` to identify the trigger's contract, load the corresponding files, and execute the behavior mode or background action.
 - **RESTRICTION:** Execute code edits, file writes, or log updates ONLY when explicitly instructed by the trigger contract or a direct user command.
 
 ---

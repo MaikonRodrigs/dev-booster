@@ -66,9 +66,12 @@ Analyze the user's request or the current task and recommend only the best boost
 - Do NOT expose skills, personas, or agents in the user-facing answer.
 - Do NOT execute any plan, only advise.
 
-## ARTIFACT GENERATION & STATE BACKUP
-During your execution, you MUST create or update a machine-readable state file at `@booster-generated/advisory/<slug-name>.md`. 
-This file must continuously track the history, decisions, rules, and outcomes related to this booster's execution in a dense, non-conversational format.
-You must update this file silently in the background as the context evolves or when explicitly commanded by the user.
+## ARTIFACT GENERATION
+During your execution, create a state file at `@booster-generated/advisor/<slug>.md` tracking the history, decisions, rules, and outcomes in dense, non-conversational format.
+
+- **Uniqueness rule:** If the slug already exists in `@booster-generated/advisor/`, generate a new variation of the name instead of overwriting
+- **Notification rule:** After writing, notify the user with: 📝 Registo em `@booster-generated/advisor/<slug>.md`
+
+Do NOT update this file silently in the background.
 
 **Reply:** On activation only, use the armed-mode banner above, always following the global language configured for the active LLM/environment. When the user shares an idea or task, read the manifest, classify the need, and recommend the best booster path without executing it.

@@ -59,17 +59,17 @@ Evaluate the task complexity and select the corresponding template file:
 ### A. HEAVY ACTION PLAN (Complex Feature)
 - **Use Case:** Large changes requiring 3+ independent stages.
 - **Template:** `.devbooster/boosters/templates/implementation_heavy.md`
-- **Output:** `/implementation/<task>-implementation.md`
+- **Output:** `@booster-generated/implementation/<task>-implementation.md`
 
 ### B. STANDARD ACTION PLAN (Medium/Bridge)
 - **Use Case:** Changes involving both FE/BE or 2 distinct logic blocks (Max 2 stages).
 - **Template:** `.devbooster/boosters/templates/implementation_standard.md`
-- **Output:** `/implementation/<task>-implementation.md`
+- **Output:** `@booster-generated/implementation/<task>-implementation.md`
 
 ### C. SIMPLE ACTION PLAN (Single Step)
 - **Use Case:** Small, isolated file modifications in a single stage that require persistent documentation.
 - **Template:** `.devbooster/boosters/templates/implementation_simple.md`
-- **Output:** `/implementation/<task>-implementation.md`
+- **Output:** `@booster-generated/implementation/<task>-implementation.md`
 
 ---
 
@@ -78,5 +78,11 @@ Evaluate the task complexity and select the corresponding template file:
 2. **Confirmation Gate:** Ask for confirmation before generating the final plan.
 3. **Load Template:** After confirmation, read the full content of the selected template file.
 4. **Generate:** Apply the loaded template rules to the current context and produce the final plan.
+
+## ARTIFACT GENERATION
+After generating the implementation plan, a state file is created at `@booster-generated/implementation/<task>-implementation.md`.
+
+- **Uniqueness rule:** If a file with the same slug already exists in `@booster-generated/implementation/`, generate a new variation of the name instead of overwriting
+- **Notification rule:** After writing, notify the user with: 📝 Plano criado em `@booster-generated/implementation/<task>-implementation.md`
 
 **Reply:** On activation only, review the current conversation context, summarize it, select `simple`, `standard`, or `heavy`, explain why, and ask if you may proceed. After explicit confirmation, load the selected template and generate the implementation plan in the global language configured for the active LLM/environment.

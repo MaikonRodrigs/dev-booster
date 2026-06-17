@@ -88,7 +88,7 @@ Create internal project documentation that explains:
 ========================
 2. OUTPUT FILE
 ========================
-- Create file at: `docs/internal-project-documentation.md` (ROOT)
+- Create file at: `@booster-generated/internal-documentation/internal-project-documentation.md`
 - If the repository already has a stronger naming convention for internal docs, follow it only when it is obvious and already established.
 - Do not overwrite unrelated documentation unless the user explicitly asks.
 
@@ -139,6 +139,12 @@ Use these 17 sections in this exact order:
 ## 4. FINAL OUTCOME
 The result of this booster should be:
 - A repository-specific internal documentation file.
-- A concise completion report in chat with the output path and any unresolved gaps.
+- A concise completion report in chat with the artifact path and any unresolved gaps.
+
+## ARTIFACT GENERATION
+After generating the documentation, a state file is created at `@booster-generated/internal-documentation/internal-project-documentation.md`.
+
+- **Uniqueness rule:** If a file with the same slug already exists in `@booster-generated/internal-documentation/`, generate a new variation of the name instead of overwriting
+- **Notification rule:** After writing, notify the user with: 📝 Documento criado em `@booster-generated/internal-documentation/internal-project-documentation.md`
 
 **Reply:** On activation only, review the current conversation context, summarize it, identify scope and gaps, and ask if you may proceed with internal documentation. After explicit confirmation, scan the repository and generate the documentation in the global language configured for the active LLM/environment.

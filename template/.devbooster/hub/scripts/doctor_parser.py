@@ -26,7 +26,7 @@ def parse_diagnostics(file_path):
 
     # Categorias consideradas essenciais para o funcionamento/performance
     CRITICAL_CATEGORIES = {"Correctness", "Performance", "Security", "Next.js", "Bundle Size"}
-    
+
     # Regras que são puramente estéticas/opcionais (mesmo que caiam em Architecture)
     COSMETIC_RULES_PREFIXES = ("design-", "no-pure-black-")
 
@@ -37,7 +37,7 @@ def parse_diagnostics(file_path):
         rule = diag.get('rule', 'unknown')
         category = diag.get('category', 'Unknown')
         severity = diag.get('severity', 'warning')
-        
+
         is_cosmetic = any(rule.startswith(prefix) for prefix in COSMETIC_RULES_PREFIXES)
 
         # Se for error de verdade ou uma categoria crítica (e não for puramente cosmético)
@@ -49,7 +49,7 @@ def parse_diagnostics(file_path):
             cosmetic_counts[rule] += 1
 
     # === GERAÇÃO DO RELATÓRIO MOLDADO ===
-    
+
     print("### 🔴 AÇÃO IMEDIATA (Erros Críticos)")
     if not critical_items:
         print("Nenhum erro crítico de performance ou lógica encontrado nas alterações.\n")
@@ -69,9 +69,9 @@ def parse_diagnostics(file_path):
     else:
         for rule, count in sorted(cosmetic_counts.items(), key=lambda x: x[1], reverse=True):
             print(f"- `{rule}`: {count} ocorrência(s)")
-    
+
     print("\n*Rodapé: Conteúdo extraído do relatório gerado diagnostics.json*")
 
 if __name__ == "__main__":
-    target_file = sys.argv[1] if len(sys.argv) > 1 else "@booster-generated/diagnostics/review.json"
+    target_file = sys.argv[1] if len(sys.argv) > 1 else "@booster-generated/code-audit/diagnostics-review.json"
     parse_diagnostics(target_file)

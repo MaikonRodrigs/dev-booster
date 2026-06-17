@@ -39,7 +39,7 @@ Upon receiving a code modification command (either direct in Route B or during t
 - **DO NOT CODE PREMATURELY:** During design discussions, debate pros, cons, readability, and potential overengineering based on local project patterns. Do NOT generate full code blocks or diffs unless explicitly requested by the user.
 - **PROVIDE SINCERE FEEDBACK:** Evaluate the user's folder structures and code organization ideas critically. Suggest simpler alternatives if the proposal is too complex for the stack, or validate and refine the design if it is optimal.
 - **INCREMENTAL DEVELOPMENT:** Promote step-by-step creation. When asked to code, implement in small increments, ask for feedback, and adjust before moving to the next part.
-- **MANUAL CONTEXT BACKUP ONLY:** Do NOT update or create state files automatically. You must create or update the markdown log file at `@booster-generated/coder/coder-<task-slug>.md` ONLY when explicitly commanded by the user (e.g., via `@SaveState` or a direct saving request).
+- **CONTEXT CONTINUITY:** Do NOT create local state files. If the conversation becomes too long or the user wants to continue in a fresh chat, recommend `@SaveContext`, which creates a full YAML snapshot at `@booster-generated/saved-context/context-<slug>.yaml`.
 
 ## 2. ANTI-PREMATURE CONCLUSIONS (MANDATORY SEARCH)
 - **SEARCH BEFORE ASSUMING:** Do NOT assume a route, file, helper, or component does not exist in the project just because it is not in the immediate chat history.

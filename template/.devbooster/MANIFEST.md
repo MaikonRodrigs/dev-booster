@@ -127,6 +127,8 @@
 | `mobile.md` | Mobile UX activation (React Native / Expo patterns). |
 | `builder.md` | Builder Specialist — executes implementation plans and writes actual code. |
 | `coder.md` | Co-Creative Coder — debates folder patterns and code design, writes code only under command. |
+| `save-context.md` | Save Context — compacta a conversa em YAML para continuar em um novo chat sem perda de contexto. |
+| `diff-review.md` | Diff Review — analisa o diff como um dev sênior revisando PR, verificando naming, padrões, complexidade e boas práticas. |
 
 ---
 
@@ -169,7 +171,7 @@
 |---|---|
 | **Total Agents** | 20 |
 | **Total Skills** | 40+ |
-| **Master Boosters** | 26 |
+| **Master Boosters** | 28 |
 | **Operational Scripts** | 2 (Master) + 21 (Skill-level) |
 | **Coverage** | ~95% Full-stack Web/Mobile |
 
@@ -184,21 +186,27 @@ When the user asks "How can the kit help?", the Advisor MUST:
 ---
 
 ## 📂 7. ARTIFACT ENGINE (SHADOW MEMORY)
-Dev Booster acts as a continuous document generator. As boosters execute, they MUST write their history, findings, audits, and implementation plans into a structured, machine-readable format. This avoids context loss in long AI conversations and builds a tangible paper trail for the developer.
+Dev Booster acts as a continuous document generator. As boosters execute, they write their history, findings, audits, and implementation plans into structured, machine-readable files. This avoids context loss in long AI conversations and builds a tangible paper trail for the developer.
 
 **Target Root Path:** `@booster-generated/`
 
 ### Artifact Mapping by Domain:
-- `@booster-generated/contexts/` → Managed by `context.md` (Save State for conversation continuity).
-- `@booster-generated/plans/` → Managed by `planning.md` (Implementation roadmap and risk mapping).
-- `@booster-generated/implementations/` → Managed by `frontend.md`, `backend.md`, `mobile.md`, `atomic.md`, `builder.md`.
-- `@booster-generated/coder/` → Managed by `coder.md` (Design discussions and incremental coding logs).
-- `@booster-generated/advisory/` → Managed by `advisor.md` (Architectural decisions and mentorship notes).
-- `@booster-generated/discoveries/` → Managed by `investigation.md`, `discovery.md` (Brainstorms, flow mapping).
-- `@booster-generated/troubleshooting/` → Managed by `debug.md` (Root Cause Analysis and bug fixes).
-- `@booster-generated/audits/` → Managed by `security.md`, `performance.md`, `accessibility.md`, `seo.md`.
-- `@booster-generated/reviews/` → Managed by `review.md` (Code review feedback, React Doctor JSON diagnostics).
-- `@booster-generated/changelogs/` → Managed by `changelog.md` (Release notes drafts).
-- `@booster-generated/rollouts/` → Managed by `deploy.md` (Pre-flight checks and deployment history).
+- `@booster-generated/advisor/` → Managed by `advisor.md`
+- `@booster-generated/code-audit/` → Managed by `code-audit.md`
+- `@booster-generated/context/` → Managed by `context.md`
+- `@booster-generated/debug/` → Managed by `debug.md`
+- `@booster-generated/deploy/` → Managed by `deploy.md`
+- `@booster-generated/discovery/` → Managed by `discovery.md`
+- `@booster-generated/global-documentation/` → Managed by `global-documentation.md`
+- `@booster-generated/implementation/` → Managed by `implementation.md`
+- `@booster-generated/internal-documentation/` → Managed by `internal-documentation.md`
+- `@booster-generated/investigation/` → Managed by `investigation.md`
+- `@booster-generated/planning/` → Managed by `planning.md`
+- `@booster-generated/saved-context/` → Managed by `save-context.md`
+- `@booster-generated/security/` → Managed by `security.md`
 
-When a booster mandates `ARTIFACT GENERATION & STATE BACKUP`, the AI MUST respect this mapping and maintain the `.md` file continuously in the background.
+### Behavior Rules:
+- Each booster writes to its own folder — no overlapping paths.
+- Files are never overwritten: if a slug already exists, a variation is generated.
+- The AI must notify the user after writing: 📝 Registo em `@booster-generated/<booster>/<slug>.md`
+- No silent background updates — the user is always informed.

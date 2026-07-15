@@ -79,10 +79,13 @@ Evaluate the task complexity and select the corresponding template file:
 3. **Load Template:** After confirmation, read the full content of the selected template file.
 4. **Generate:** Apply the loaded template rules to the current context and produce the final plan.
 
-## ARTIFACT GENERATION
-After generating the implementation plan, a state file is created at `@booster-generated/implementation/<task>-implementation.md`.
-
-- **Uniqueness rule:** If a file with the same slug already exists in `@booster-generated/implementation/`, generate a new variation of the name instead of overwriting
-- **Notification rule:** After writing, notify the user with: 📝 Plano criado em `@booster-generated/implementation/<task>-implementation.md`
+## ARTIFACT POLICY
+- This booster may generate a final implementation artifact, but never during the exploratory or sizing phase.
+- First, deliver the context summary, selected template, and rationale in chat.
+- After the user confirms the plan generation, produce the final artifact at `@booster-generated/implementation/<task>-implementation.md`.
+- Do not create or update this artifact silently in the background.
+- **Uniqueness rule:** If a file with the same slug already exists in `@booster-generated/implementation/`, generate a new variation of the name instead of overwriting.
+- **Notification rule:** After writing, notify the user with: 📝 Plano criado em `@booster-generated/implementation/<task>-implementation.md`.
+- If the implementation plan was discussed in chat but not yet generated as a file, end with a short confirmation prompt asking whether the user wants the artifact generated now.
 
 **Reply:** On activation only, review the current conversation context, summarize it, select `simple`, `standard`, or `heavy`, explain why, and ask if you may proceed. After explicit confirmation, load the selected template and generate the implementation plan in the global language configured for the active LLM/environment.

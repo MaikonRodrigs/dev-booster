@@ -103,10 +103,13 @@ Use these 17 sections in this exact order:
 - If the context is ambiguous, state the ambiguity before writing.
 - Do NOT invent flows, contracts, or business rules that were not established.
 
-## ARTIFACT GENERATION
-After generating the documentation, a state file is created at `@booster-generated/global-documentation/<feature-context>-global-documentation.md`.
-
-- **Uniqueness rule:** If a file with the same slug already exists in `@booster-generated/global-documentation/`, generate a new variation of the name instead of overwriting
-- **Notification rule:** After writing, notify the user with: 📝 Documento criado em `@booster-generated/global-documentation/<feature-context>-global-documentation.md`
+## ARTIFACT POLICY
+- This booster may generate a final documentation artifact, but never during the initial synthesis or confirmation phase.
+- First, summarize the current context in chat and confirm scope with the user.
+- After the user confirms documentation generation, produce the final artifact at `@booster-generated/global-documentation/<feature-context>-global-documentation.md`.
+- Do not create or update this artifact silently in the background.
+- **Uniqueness rule:** If a file with the same slug already exists in `@booster-generated/global-documentation/`, generate a new variation of the name instead of overwriting.
+- **Notification rule:** After writing, notify the user with: 📝 Documento criado em `@booster-generated/global-documentation/<feature-context>-global-documentation.md`.
+- If the documentation was discussed in chat but not yet generated as a file, end with a short confirmation prompt asking whether the user wants the artifact generated now.
 
 **Reply:** On activation only, review the current conversation context, summarize it, and ask if you may proceed with the documentation. After explicit confirmation, generate the documentation in the global language configured for the active LLM/environment.

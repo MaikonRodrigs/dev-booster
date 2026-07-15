@@ -27,7 +27,7 @@ Unlike generic agent folders, **Dev Booster** uses a manual, activation-first mo
 - most boosters use lazy loading instead of loading the full kit immediately
 - context is pulled only when the task, artifact, or pain point actually requires it
 - each booster has a distinct operational role, instead of behaving like a generic prompt blob
-- many boosters act as continuous document generators (Artifact Engine), maintaining structured state files in the background to prevent context loss during long conversations
+- artifact generation is now selective: exploratory boosters stay conversational, while documentation and persistence boosters generate files only at the end or after explicit confirmation
 
 This gives the kit a stronger product identity and helps avoid unnecessary context bloat.
 
@@ -36,7 +36,7 @@ After running the command, your project gets:
 ```
 .devbooster/
 ├── MANIFEST.md          ← inventory of all agents, skills, and boosters
-├── boosters/            ← 30 expert activators (debug, review, design, deploy...)
+├── boosters/            ← 31 expert activators (debug, review, design, deploy...)
 ├── hub/                 ← 40+ skills and operational scripts
 └── rules/
     ├── PROTOCOL.md      ← governance and conduct rules
@@ -114,7 +114,8 @@ Boosters are expert activators you invoke manually during development.
 | `discovery.md` | Product brainstorm |
 | `performance.md` | Core Web Vitals / bundle issues |
 | `code-audit.md` | Strict Code Auditor (Syntax, React Doctor) before PR |
-| + 18 more | See `.devbooster/MANIFEST.md` |
+| `audit.md` | Make terminal lint and typecheck operational, check bypasses, and separate safe fixes from deep review |
+| + 17 more | See `.devbooster/MANIFEST.md` |
 
 The practical activation flow is simple:
 - drag a booster file into the chat
@@ -126,29 +127,75 @@ Many boosters now use a two-step flow:
 1. Activate the mode
 2. Provide the real task, context, artifact, or pain point so the booster can load only what it needs
 
+### Booster artifact behavior at a glance
+
+| Booster | Artifact behavior |
+|---|---|
+| `advisor.md` | No artifact by default; save only if the user explicitly asks |
+| `code-audit.md` | Final report artifact only after confirmation; operational diagnostics files may still be created when needed |
+| `context.md` | No artifact by default; save only if the user explicitly asks |
+| `debug.md` | No artifact by default; save only if the user explicitly asks |
+| `deploy.md` | No artifact by default; save only if the user explicitly asks |
+| `discovery.md` | No artifact by default; save only if the user explicitly asks |
+| `global-documentation.md` | Final documentation artifact only after confirmation |
+| `implementation.md` | Final implementation artifact only after confirmation |
+| `internal-documentation.md` | Final documentation artifact only after confirmation |
+| `investigation.md` | No artifact by default; save only if the user explicitly asks |
+| `audit.md` | Always writes an execution-state artifact to `@booster-generated/audit/` during its run |
+| `planning.md` | No artifact by default; save only if the user explicitly asks |
+| `save-context.md` | Persistence-first; generates YAML snapshot after confirmation |
+| `security.md` | No artifact by default; save only if the user explicitly asks |
+| `coder.md` | Does not create local state files |
+| `diff-review.md` | Must not generate files, artifacts, logs, or review documents |
+
 ---
 
 ## The Artifact Engine
 
-Dev Booster operates an internal **Artifact Engine** (Shadow Memory). As boosters execute, they automatically generate and update machine-readable `.md` files in the background to track history, audits, and architectural decisions. 
+Dev Booster operates an internal **Artifact Engine** (Shadow Memory), but artifact generation is no longer a continuous background behavior for every booster.
 
-This creates a persistent "paper trail" that ensures the AI never loses context, even if you continue the work in a brand new chat session.
+### New default behavior
+- exploratory, advisory, and iterative boosters answer in chat first
+- they do **not** create artifacts during normal execution
+- if the result is stable, they may offer to save it at the end of the conversation
+- documentation and persistence boosters may generate a final file only after confirmation
+- no booster should silently keep updating artifact files in the background
 
-Files are systematically organized in the `@booster-generated/` root directory, each booster writing to its own folder:
-- `@booster-generated/context/` (Context assimilation state)
-- `@booster-generated/planning/` (Implementation roadmaps and risk mapping)
-- `@booster-generated/debug/` (Systematic RCA and bug fix logs)
-- `@booster-generated/security/` (Security audit reports)
-- `@booster-generated/code-audit/` (Code audit and diagnostics)
-- `@booster-generated/saved-context/` (Conversation snapshots for chat continuity)
-- `@booster-generated/discovery/`, `@booster-generated/investigation/`, `@booster-generated/advisor/`, `@booster-generated/deploy/`, and more.
+This keeps the conversation faster while still preserving the option to materialize important outputs in `@booster-generated/` when the user actually wants them.
+
+### Booster artifact policy
+
+#### 1. No artifact by default — only if the user explicitly asks
+- `advisor.md`
+- `context.md`
+- `debug.md`
+- `deploy.md`
+- `discovery.md`
+- `investigation.md`
+- `planning.md`
+- `security.md`
+
+#### 2. Final artifact only after confirmation
+- `code-audit.md`
+- `global-documentation.md`
+- `implementation.md`
+- `internal-documentation.md`
+
+#### 3. Persistence-first booster
+- `save-context.md`
+
+#### 4. Execution-state artifact booster
+- `audit.md`
+
+### Artifact locations
+When a user explicitly asks to save or confirms final generation, artifacts are organized under `@booster-generated/`, with each booster writing to its own folder.
 
 ### Manual & Shortcut Triggers
 
 You can take manual control of the kit's governance or instantly route behavior modes at any time using explicit Chat Triggers:
 
 #### 👥 Governance Triggers
-- **`@SaveContext`**: Compacta toda a conversa em YAML para continuar em um novo chat sem perda de contexto. Gera em `@booster-generated/saved-context/context-<slug>.yaml`.
+- **`@SaveContext`**: Compacta toda a conversa em YAML para continuar em um novo chat sem perda de contexto. Gera em `@booster-generated/saved-context/context-<slug>.yaml` após confirmação.
 - **`@SavePattern`**: Instructs the AI to extract a newly resolved technical rule or code pattern and persist it to `.devbooster/rules/USER_PREFERENCES.md`.
 - **`@LogTask`**: Tells the AI to capture a pending technical task and document it systematically in your backlog at `@booster-generated/tasks.md`.
 

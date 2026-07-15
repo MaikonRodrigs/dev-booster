@@ -53,11 +53,11 @@ Your response MUST use this exact format:
 ---
 
 **Response: "Elite Debugger Mode Activated. Diagnostic tools and Hypothesis engine online. Please provide the error logs and where it's happening."**
-## ARTIFACT GENERATION
-During your execution, create a state file at `@booster-generated/debug/<slug>.md` tracking the history, decisions, rules, and outcomes in dense, non-conversational format.
 
-- **Uniqueness rule:** If the slug already exists in `@booster-generated/debug/`, generate a new variation of the name instead of overwriting
-- **Notification rule:** After writing, notify the user with: 📝 Registo em `@booster-generated/debug/<slug>.md`
-
-Do NOT update this file silently in the background.
+## ARTIFACT POLICY
+- Do NOT create local state files or artifacts during normal debug execution.
+- Keep the debugging loop focused on reproducing, isolating, and fixing the issue.
+- Only if the user explicitly asks to persist the result, generate a summary artifact at `@booster-generated/debug/<slug>.md`.
+- Never create or update this artifact silently in the background.
+- After the root cause and fix are stable, you may end with one short optional offer such as: `If you want, I can save this debug report as an artifact.`
 

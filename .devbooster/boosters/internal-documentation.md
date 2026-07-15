@@ -141,10 +141,13 @@ The result of this booster should be:
 - A repository-specific internal documentation file.
 - A concise completion report in chat with the artifact path and any unresolved gaps.
 
-## ARTIFACT GENERATION
-After generating the documentation, a state file is created at `@booster-generated/internal-documentation/internal-project-documentation.md`.
-
-- **Uniqueness rule:** If a file with the same slug already exists in `@booster-generated/internal-documentation/`, generate a new variation of the name instead of overwriting
-- **Notification rule:** After writing, notify the user with: 📝 Documento criado em `@booster-generated/internal-documentation/internal-project-documentation.md`
+## ARTIFACT POLICY
+- This booster may generate a final internal documentation artifact, but never during the initial review or confirmation phase.
+- First, summarize the current context, scope, and gaps in chat.
+- After the user confirms documentation generation, produce the final artifact at `@booster-generated/internal-documentation/internal-project-documentation.md`.
+- Do not create or update this artifact silently in the background.
+- **Uniqueness rule:** If a file with the same slug already exists in `@booster-generated/internal-documentation/`, generate a new variation of the name instead of overwriting.
+- **Notification rule:** After writing, notify the user with: 📝 Documento criado em `@booster-generated/internal-documentation/internal-project-documentation.md`.
+- If the documentation was discussed in chat but not yet generated as a file, end with a short confirmation prompt asking whether the user wants the artifact generated now.
 
 **Reply:** On activation only, review the current conversation context, summarize it, identify scope and gaps, and ask if you may proceed with internal documentation. After explicit confirmation, scan the repository and generate the documentation in the global language configured for the active LLM/environment.

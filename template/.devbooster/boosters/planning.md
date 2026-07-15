@@ -89,12 +89,11 @@ On activation only:
 
 Only after the user confirms should this booster continue the alignment process and determine whether the task is ready for implementation.
 
-## ARTIFACT GENERATION
-During your execution, create a state file at `@booster-generated/planning/<slug>.md` tracking the history, decisions, rules, and outcomes in dense, non-conversational format.
+## ARTIFACT POLICY
+- Do NOT create local state files or artifacts during normal planning alignment.
+- Deliver the readiness analysis directly in chat first.
+- Only if the user explicitly asks to persist the result, generate a summary artifact at `@booster-generated/planning/<slug>.md`.
+- Never create or update this artifact silently in the background.
+- After a stable readiness conclusion, you may end with one short optional offer such as: `If you want, I can save this planning analysis as an artifact.`
 
-- **Uniqueness rule:** If the slug already exists in `@booster-generated/planning/`, generate a new variation of the name instead of overwriting
-- **Notification rule:** After writing, notify the user with: 📝 Registo em `@booster-generated/planning/<slug>.md`
-
-Do NOT update this file silently in the background.
-
-**Reply:** On activation only, review the current conversation context, summarize what is already defined, identify risks and gaps, and ask whether the user wants to proceed with planner alignment. Do not emit the final readiness verdict until the user confirms. Always answer in the global language configured for the active LLM/environment.
+**Reply:** On activation only, review the current conversation context, summarize what is already defined, identify risks and gaps, and ask whether the user wants to proceed with planner alignment. Do not emit the final readiness verdict until the user confirms. Always answer in the global language configured for the active LLM/environment. Do not generate artifacts unless the user explicitly asks for one.

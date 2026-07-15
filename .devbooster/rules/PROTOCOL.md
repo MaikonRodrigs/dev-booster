@@ -7,13 +7,15 @@
 
 ## 🏛️ 1. ARCHITECTURAL LINKS
 - **KIT ROOT:** Use repository-relative paths from `.devbooster/`.
-- **BOOSTER NAVIGATION:** Use `.devbooster/rules/GUIDE.md` and `.devbooster/MANIFEST.md` as the main references to understand booster usage and available guided paths.
-- **BOOSTER-FIRST PHILOSOPHY:** Dev Booster is manual-first. Boosters are the main guided entry point for complex work.
-- **NO AUTO-LOADING:** Do NOT automatically search for, load, or activate Personas, Skills, or Scripts from the kit just because they exist.
+- **ALWAYS-ON BASE CONTEXT:** Always load `.devbooster/rules/PROJECT.md` and `.devbooster/rules/USER_PREFERENCES.md` together with this protocol at chat start. They are the minimum local context required for stack awareness, product understanding, and user-specific behavioral preferences.
+- **BOOSTER-FIRST PHILOSOPHY:** Dev Booster is manual-first. Boosters are guided modes activated by the user, not by autonomous AI choice.
+- **NO AUTO-ACTIVATION:** Do NOT automatically activate Boosters, Personas, Skills, or Scripts from the kit just because they exist.
 - **BOOSTER SUGGESTION:** When the task clearly benefits from a checkpoint or guided mode, suggest the most relevant Booster instead of silently routing internal assets.
-- **ACTIVE BOOSTER RULE:** Once a Booster is manually activated, follow that Booster's contract.
-- **PROJECT CONTEXT:** Consult `.devbooster/rules/PROJECT.md` and other local rules when they materially affect the current task.
-- **USER PATTERNS:** Consult `.devbooster/rules/USER_PREFERENCES.md` when the task depends on established user conventions or explicit prior preferences.
+- **ACTIVE BOOSTER RULE:** Once a Booster is manually activated by the user, follow that Booster's contract.
+- **LAZY-LOAD DOMAIN MANUALS:** Do NOT load `.devbooster/rules/FRONTEND.md`, `.devbooster/rules/BACKEND.md`, or `.devbooster/rules/COMMERCIAL.md` at chat start. Load them only when the user's request clearly depends on those domains.
+- **TRIGGER DICTIONARY LAZY-LOAD:** Read `.devbooster/rules/TRIGGERS.md` only when the user explicitly references an `@` trigger.
+- **BOOSTER INVENTORY LAZY-LOAD:** Read `.devbooster/MANIFEST.md` only when the user explicitly asks to activate, choose, understand, or route a Booster workflow.
+- **GUIDE POLICY:** `.devbooster/rules/GUIDE.md` is optional human-facing reference material and must not be treated as required runtime context.
 
 ## 🚫 2. NON-NEGOTIABLE BEHAVIORS
 - **NO_CODE:** Discuss and validate plans BEFORE any implementation. Use the Socratic Gate.
@@ -34,8 +36,15 @@
     - **Chat:** Follow the global language configured for the active LLM/environment.
     - **Logs, Code, Comments, Variables:** English, unless the project explicitly requires another convention.
 
-## 📚 5. PERSISTENCE & SHORTCUTS (TRIGGERS)
-- **TRIGGER ROUTING:** Whenever the user references a `@` trigger (e.g., `@Coder`, `@SaveContext`, `@SavePattern`), you MUST refer specifically to `.devbooster/rules/TRIGGERS.md` to identify the trigger's contract, load the corresponding files, and execute the behavior mode or background action.
+## 🧭 5. DOMAIN ROUTING, DISAMBIGUATION & FALLBACK
+- **DOMAIN ROUTING:** Use `.devbooster/rules/PROJECT.md` as the always-on project map. Load `.devbooster/rules/FRONTEND.md` for UI, components, pages, forms, client behavior, accessibility, or visual flows. Load `.devbooster/rules/BACKEND.md` for API, database, auth, validation, persistence, server logic, or integrations. Load `.devbooster/rules/COMMERCIAL.md` for copy, positioning, ICP, messaging, pricing communication, landing pages, or conversion-oriented work.
+- **COMPOSED LOADING:** If the request spans multiple domains, load all relevant manuals before proceeding. Do NOT force a single-domain classification when the task is cross-functional.
+- **SHORT-PROMPT DISAMBIGUATION:** If the user request is too brief or ambiguous to safely identify the relevant domain manuals, ask one short clarifying question before continuing.
+- **QUESTION STYLE:** Keep the clarifying question objective and domain-oriented, such as whether the issue belongs primarily to frontend/UI, backend/API/data flow, product/business logic, or commercial/copy behavior.
+- **AMBIGUITY FALLBACK:** If the user remains unclear, says they do not know, or delegates discovery entirely (e.g. "research it", "you figure it out"), load the full relevant local context before proceeding. For technical ambiguity, default to loading `.devbooster/rules/FRONTEND.md` and `.devbooster/rules/BACKEND.md` in addition to the always-on base context. Add `.devbooster/rules/COMMERCIAL.md` when the task may involve positioning, copy, or conversion logic.
+
+## 📚 6. PERSISTENCE & SHORTCUTS (TRIGGERS)
+- **TRIGGER ROUTING:** Whenever the user references a `@` trigger (e.g., `@Coder`, `@SaveContext`, `@SavePattern`), you MUST then read `.devbooster/rules/TRIGGERS.md` to identify the trigger's contract, load the corresponding files, and execute the behavior mode or background action.
 - **RESTRICTION:** Execute code edits, file writes, or log updates ONLY when explicitly instructed by the trigger contract or a direct user command.
 
 ---

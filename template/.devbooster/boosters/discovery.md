@@ -72,12 +72,11 @@ After presenting the options, ask the user:
 1. Which direction aligns best with your current priority?
 2. Are there any specific constraints we should consider for the chosen path?
 
-## ARTIFACT GENERATION
-During your execution, create a state file at `@booster-generated/discovery/<slug>.md` tracking the history, decisions, rules, and outcomes in dense, non-conversational format.
+## ARTIFACT POLICY
+- Do NOT create local state files or artifacts during normal discovery execution.
+- Keep brainstorming fast and conversational.
+- Only if the user explicitly asks to persist the result, generate a summary artifact at `@booster-generated/discovery/<slug>.md`.
+- Never create or update this artifact silently in the background.
+- After presenting a stable discovery result, you may end with one short optional offer such as: `If you want, I can consolidate this discovery into an artifact.`
 
-- **Uniqueness rule:** If the slug already exists in `@booster-generated/discovery/`, generate a new variation of the name instead of overwriting
-- **Notification rule:** After writing, notify the user with: 📝 Registo em `@booster-generated/discovery/<slug>.md`
-
-Do NOT update this file silently in the background.
-
-**Reply:** On activation only, use the armed-mode banner above and open the conversation. After the first real idea arrives, load the minimum required discovery context and continue with the discovery flow in the global language configured for the active LLM/environment.
+**Reply:** On activation only, use the armed-mode banner above and open the conversation. After the first real idea arrives, load the minimum required discovery context and continue with the discovery flow in the global language configured for the active LLM/environment. Do not generate artifacts unless the user explicitly asks for one.

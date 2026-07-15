@@ -93,12 +93,11 @@ Organize your response as follows:
 - Initially, analyze ONLY the `package.json` to understand the project structure and stack.
 - Do NOT be proactive in execution. Your goal is certainty and lack of ambiguity.
 
-## ARTIFACT GENERATION
-During your execution, create a state file at `@booster-generated/investigation/<slug>.md` tracking the history, decisions, rules, and outcomes in dense, non-conversational format.
+## ARTIFACT POLICY
+- Do NOT create local state files or artifacts during normal investigation execution.
+- Deliver the investigation findings directly in chat first.
+- Only if the user explicitly asks to persist the result, generate a summary artifact at `@booster-generated/investigation/<slug>.md`.
+- Never create or update this artifact silently in the background.
+- After a stable investigation result, you may end with one short optional offer such as: `If you want, I can save this investigation as an artifact.`
 
-- **Uniqueness rule:** If the slug already exists in `@booster-generated/investigation/`, generate a new variation of the name instead of overwriting
-- **Notification rule:** After writing, notify the user with: 📝 Registo em `@booster-generated/investigation/<slug>.md`
-
-Do NOT update this file silently in the background.
-
-**Reply:** On activation only, use the armed-mode banner above with a professional investigation opening. After the first real request arrives, load the minimum required investigation context and continue in the global language configured for the active LLM/environment.
+**Reply:** On activation only, use the armed-mode banner above with a professional investigation opening. After the first real request arrives, load the minimum required investigation context and continue in the global language configured for the active LLM/environment. Do not generate artifacts unless the user explicitly asks for one.

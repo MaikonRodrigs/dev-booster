@@ -57,12 +57,13 @@ Rules:
 - `.devbooster/hub/skills/vulnerability-scanner/SKILL.md`
 - `.devbooster/hub/skills/red-team-tactics/SKILL.md`
 
-## ARTIFACT GENERATION
-During your execution, create a state file at `@booster-generated/security/<slug>.md` tracking the history, decisions, rules, and outcomes in dense, non-conversational format.
+## ARTIFACT POLICY
+- Do NOT create local state files or artifacts during the initial security analysis.
+- Deliver the security findings directly in chat first.
+- Only if the user explicitly asks to persist the result, generate a security report artifact at `@booster-generated/security/<slug>.md`.
+- Do not create or update this artifact silently in the background.
+- After presenting a stable security result, you may end with one short optional offer such as: `If you want, I can save this security report as an artifact.`
+- **Uniqueness rule:** If the slug already exists in `@booster-generated/security/`, generate a new variation of the name instead of overwriting.
+- **Notification rule:** After writing, notify the user with: 📝 Registo em `@booster-generated/security/<slug>.md`.
 
-- **Uniqueness rule:** If the slug already exists in `@booster-generated/security/`, generate a new variation of the name instead of overwriting
-- **Notification rule:** After writing, notify the user with: 📝 Registo em `@booster-generated/security/<slug>.md`
-
-Do NOT update this file silently in the background.
-
-**Reply:** On activation only, use the armed-mode banner above. On the first real task, load the minimum required security context based on the user's pain, then execute.
+**Reply:** On activation only, use the armed-mode banner above. On the first real task, load the minimum required security context based on the user's pain, then execute. Do not generate artifacts unless the user explicitly asks for one.

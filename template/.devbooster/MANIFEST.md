@@ -129,6 +129,7 @@
 | `coder.md` | Co-Creative Coder — debates folder patterns and code design, writes code only under command. |
 | `save-context.md` | Save Context — compacta a conversa em YAML para continuar em um novo chat sem perda de contexto. |
 | `diff-review.md` | Diff Review — analisa o diff como um dev sênior revisando PR, verificando naming, padrões, complexidade e boas práticas. |
+| `audit.md` | Audit — faz lint e typecheck funcionarem no terminal, detecta bypasses e separa achados em Setup Issues / Lot 1 / Lot 2. |
 
 ---
 
@@ -171,7 +172,7 @@
 |---|---|
 | **Total Agents** | 20 |
 | **Total Skills** | 40+ |
-| **Master Boosters** | 28 |
+| **Master Boosters** | 31 |
 | **Operational Scripts** | 2 (Master) + 21 (Skill-level) |
 | **Coverage** | ~95% Full-stack Web/Mobile |
 
@@ -186,27 +187,42 @@ When the user asks "How can the kit help?", the Advisor MUST:
 ---
 
 ## 📂 7. ARTIFACT ENGINE (SHADOW MEMORY)
-Dev Booster acts as a continuous document generator. As boosters execute, they write their history, findings, audits, and implementation plans into structured, machine-readable files. This avoids context loss in long AI conversations and builds a tangible paper trail for the developer.
+Dev Booster no longer treats every booster as a continuous document generator. Artifact creation is now selective and user-controlled: exploratory boosters should stay fast and conversational, while documentation and persistence boosters may generate files only at the end of the flow or after explicit confirmation.
 
 **Target Root Path:** `@booster-generated/`
 
-### Artifact Mapping by Domain:
-- `@booster-generated/advisor/` → Managed by `advisor.md`
-- `@booster-generated/code-audit/` → Managed by `code-audit.md`
-- `@booster-generated/context/` → Managed by `context.md`
-- `@booster-generated/debug/` → Managed by `debug.md`
-- `@booster-generated/deploy/` → Managed by `deploy.md`
-- `@booster-generated/discovery/` → Managed by `discovery.md`
-- `@booster-generated/global-documentation/` → Managed by `global-documentation.md`
-- `@booster-generated/implementation/` → Managed by `implementation.md`
-- `@booster-generated/internal-documentation/` → Managed by `internal-documentation.md`
-- `@booster-generated/investigation/` → Managed by `investigation.md`
-- `@booster-generated/planning/` → Managed by `planning.md`
-- `@booster-generated/saved-context/` → Managed by `save-context.md`
-- `@booster-generated/security/` → Managed by `security.md`
+### Artifact Policy by Booster Type
+
+#### A. Optional only on explicit user request
+These boosters must answer in chat first and must NOT create artifacts during normal execution:
+- `advisor.md` → `@booster-generated/advisor/`
+- `context.md` → `@booster-generated/context/`
+- `debug.md` → `@booster-generated/debug/`
+- `deploy.md` → `@booster-generated/deploy/`
+- `discovery.md` → `@booster-generated/discovery/`
+- `investigation.md` → `@booster-generated/investigation/`
+- `planning.md` → `@booster-generated/planning/`
+- `security.md` → `@booster-generated/security/`
+
+#### B. Final artifact only after confirmation or explicit save intent
+These boosters may generate a final deliverable artifact, but only after the user confirms the final generation step:
+- `code-audit.md` → `@booster-generated/code-audit/`
+- `global-documentation.md` → `@booster-generated/global-documentation/`
+- `implementation.md` → `@booster-generated/implementation/`
+- `internal-documentation.md` → `@booster-generated/internal-documentation/`
+
+#### C. Persistence-first booster
+This booster exists specifically to persist context and may generate its artifact as its primary outcome after confirmation:
+- `save-context.md` → `@booster-generated/saved-context/`
+
+#### D. Execution-state artifact booster
+This booster should maintain an execution state artifact during its run to track diagnosis, decisions, and outcomes:
+- `audit.md` → `@booster-generated/audit/`
 
 ### Behavior Rules:
 - Each booster writes to its own folder — no overlapping paths.
+- Artifacts are never written silently in the background.
 - Files are never overwritten: if a slug already exists, a variation is generated.
-- The AI must notify the user after writing: 📝 Registo em `@booster-generated/<booster>/<slug>.md`
-- No silent background updates — the user is always informed.
+- When an artifact is written, the AI must notify the user after writing.
+- Exploratory and advisory boosters should prefer chat output over file generation.
+- Documentation and persistence boosters should treat artifact creation as a finalization step, not as a continuous side effect.

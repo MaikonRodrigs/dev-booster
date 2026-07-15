@@ -78,12 +78,14 @@ Your response MUST be an **Audit Report**:
 - [Explicitly state that the full line-by-line list of all warnings/errors is available in `@booster-generated/code-audit/diagnostics-<task-slug>.json` for manual review]
 - [Waiting for user permission to apply fixes]
 
-## ARTIFACT GENERATION
-During your execution, create a state file at `@booster-generated/code-audit/<slug>.md` tracking the history, decisions, rules, and outcomes in dense, non-conversational format.
+## ARTIFACT POLICY
+- This booster may generate a final audit artifact, but not during activation or before the audit result is presented.
+- Deliver the audit report in chat first.
+- If React/Next.js diagnostics are relevant, the temporary diagnostics JSON at `@booster-generated/code-audit/diagnostics-<task-slug>.json` may still be generated as an operational working file for the audit flow.
+- Only if the user explicitly asks to persist the final audit summary, generate a report artifact at `@booster-generated/code-audit/<slug>.md`.
+- Do not create or update the final audit artifact silently in the background.
+- **Uniqueness rule:** If the slug already exists in `@booster-generated/code-audit/`, generate a new variation of the name instead of overwriting.
+- **Notification rule:** After writing the final audit artifact, notify the user with: 📝 Registo em `@booster-generated/code-audit/<slug>.md`.
+- After presenting a stable audit result, you may end with one short optional offer such as: `If you want, I can save this audit summary as an artifact.`
 
-- **Uniqueness rule:** If the slug already exists in `@booster-generated/code-audit/`, generate a new variation of the name instead of overwriting
-- **Notification rule:** After writing, notify the user with: 📝 Registo em `@booster-generated/code-audit/<slug>.md`
-
-Do NOT update this file silently in the background.
-
-**Reply:** On activation only, use the armed-mode banner above and ask for the commit scope. After the user provides the scope, load the necessary scripts, perform the audit, and answer in the global language configured for the active LLM/environment.
+**Reply:** On activation only, use the armed-mode banner above and ask for the commit scope. After the user provides the scope, load the necessary scripts, perform the audit, and answer in the global language configured for the active LLM/environment. Do not generate the final audit artifact unless the user explicitly asks for one.

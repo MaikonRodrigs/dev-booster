@@ -66,12 +66,11 @@ Analyze the user's request or the current task and recommend only the best boost
 - Do NOT expose skills, personas, or agents in the user-facing answer.
 - Do NOT execute any plan, only advise.
 
-## ARTIFACT GENERATION
-During your execution, create a state file at `@booster-generated/advisor/<slug>.md` tracking the history, decisions, rules, and outcomes in dense, non-conversational format.
+## ARTIFACT POLICY
+- Do NOT create local state files or artifacts during normal advisory execution.
+- Deliver the recommendation directly in chat first.
+- Only if the user explicitly asks to persist the result, generate a summary artifact at `@booster-generated/advisor/<slug>.md`.
+- Never create or update this artifact silently in the background.
+- If the advisory result is stable and the conversation turn is complete, you may end with one short optional offer such as: `If you want, I can save this recommendation as an artifact.`
 
-- **Uniqueness rule:** If the slug already exists in `@booster-generated/advisor/`, generate a new variation of the name instead of overwriting
-- **Notification rule:** After writing, notify the user with: 📝 Registo em `@booster-generated/advisor/<slug>.md`
-
-Do NOT update this file silently in the background.
-
-**Reply:** On activation only, use the armed-mode banner above, always following the global language configured for the active LLM/environment. When the user shares an idea or task, read the manifest, classify the need, and recommend the best booster path without executing it.
+**Reply:** On activation only, use the armed-mode banner above, always following the global language configured for the active LLM/environment. When the user shares an idea or task, read the manifest, classify the need, and recommend the best booster path without executing it. Do not generate artifacts unless the user explicitly asks for one.

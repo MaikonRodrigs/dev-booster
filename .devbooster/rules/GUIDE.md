@@ -62,6 +62,8 @@ It has been formatted as a code block to facilitate direct reading in the IDE.
                        and coordinates execution.
 • changelog.md      -> History Generator. Creates structured release notes and organizes 
                        the change history.
+• audit.md          -> Audit. Makes terminal lint and typecheck operational, checks bypasses,
+                       diagnoses coverage/setup issues, and separates safe fixes from deep review.
 
 ---
 

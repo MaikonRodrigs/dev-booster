@@ -285,6 +285,20 @@ Without extra confirmation, you may:
 Only normalize what is necessary to make lint and typecheck truthful in the real project scope.
 For abusive masking, do not be conservative: remove it.
 
+When removing or simplifying code, never apply partial structural removals that break the declaration shape.
+Especially in TS/TSX/JSX, do NOT:
+- remove only the identifier and leave the initializer/expression orphaned
+- remove only the typed signature and leave the body behind
+- strip type annotations from a valid declaration while leaving broken remnants
+- partially delete hooks, functions, constants, or exported declarations
+
+If a declaration must be removed, remove the whole declaration safely.
+If safe full removal is unclear, keep the code intact and move the case to a deeper stage instead of creating a new error.
+
+Do NOT create auxiliary scripts, codemods, regex batch cleaners, or temporary automation files to remove lint/typecheck issues.
+Do NOT use shallow pattern-matching cleanup strategies for code edits.
+All fixes in this booster must be applied directly to the affected project files, with local context and incremental validation.
+
 ### Ask before
 Ask before:
 - installing packages
@@ -388,6 +402,9 @@ Typical examples:
 - small suppression removals where behavior stays unchanged
 - conservative tsconfig cleanup when the issue is obviously stale/generated-path drift
 
+Lot 1 must not create new syntax or type errors while trying to remove dead code.
+If a candidate fix would require partial removal of a declaration or would leave TS/TSX code structurally broken, it is not a Lot 1 fix.
+
 ### Lot 2 — Needs Deeper Analysis
 Typical examples:
 - `react-hooks/exhaustive-deps`
@@ -448,6 +465,8 @@ All deeper detail must go into the artifact.
 - Do not auto-fix Lot 2 without strong local justification.
 - Do not turn this booster into a whole-project refactor.
 - Do not invent auxiliary work just because a scenario pattern exists; stay focused on lint and typecheck.
+- Do not create new syntax/type errors by partially deleting valid declarations while trying to satisfy Lot 1.
+- Do not create helper scripts, codemods, or batch-cleanup automation to mutate the codebase during this audit.
 
 ## 12. ARTIFACT GENERATION (CRITICAL — NEVER SKIP)
 During execution, create a state file at `@booster-generated/audit/<slug>.md` tracking history, decisions, rules, and outcomes in dense, non-conversational format.

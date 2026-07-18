@@ -36,7 +36,7 @@ After running the command, your project gets:
 ```
 .devbooster/
 ├── MANIFEST.md          ← inventory of all agents, skills, and boosters
-├── boosters/            ← 31 expert activators (debug, review, design, deploy...)
+├── boosters/            ← 32 expert activators (debug, review, design, deploy...)
 ├── hub/                 ← 40+ skills and operational scripts
 └── rules/
     ├── PROTOCOL.md      ← governance and conduct rules
@@ -107,6 +107,7 @@ Boosters are expert activators you invoke manually during development.
 | `design.md` | UI/UX component review |
 | `deploy.md` | Pre-flight deployment checks |
 | `security.md` | Security posture audit |
+| `stack-refresh.md` | Audit outdated runtimes/frameworks/dependencies and propose phased upgrades |
 | `refactor.md` | Cleaning technical debt |
 | `planning.md` | Validating readiness, risks, and gaps before implementation |
 | `global-documentation.md` | Transferable technical documentation for mature feature context |
@@ -115,7 +116,7 @@ Boosters are expert activators you invoke manually during development.
 | `performance.md` | Core Web Vitals / bundle issues |
 | `code-audit.md` | Strict Code Auditor (Syntax, React Doctor) before PR |
 | `audit.md` | Make terminal lint and typecheck operational, check bypasses, and separate safe fixes from deep review |
-| + 17 more | See `.devbooster/MANIFEST.md` |
+| + 18 more | See `.devbooster/MANIFEST.md` |
 
 The practical activation flow is simple:
 - drag a booster file into the chat
@@ -142,6 +143,7 @@ Many boosters now use a two-step flow:
 | `internal-documentation.md` | Final documentation artifact only after confirmation |
 | `investigation.md` | No artifact by default; save only if the user explicitly asks |
 | `audit.md` | Always writes an execution-state artifact to `@booster-generated/audit/` during its run |
+| `stack-refresh.md` | Always writes an execution-state artifact to `@booster-generated/stack-refresh/` during its run |
 | `planning.md` | No artifact by default; save only if the user explicitly asks |
 | `save-context.md` | Persistence-first; generates YAML snapshot after confirmation |
 | `security.md` | No artifact by default; save only if the user explicitly asks |
@@ -186,6 +188,8 @@ This keeps the conversation faster while still preserving the option to material
 
 #### 4. Execution-state artifact booster
 - `audit.md`
+- `stack-refresh.md`
+- `stack-refresh.md`
 
 ### Artifact locations
 When a user explicitly asks to save or confirms final generation, artifacts are organized under `@booster-generated/`, with each booster writing to its own folder.

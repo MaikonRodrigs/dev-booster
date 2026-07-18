@@ -43,6 +43,7 @@ These triggers instantly activate specific booster behavior contracts without re
 - **`@Changelog`** ➔ Activates `.devbooster/boosters/changelog.md` (Release notes generator).
 - **`@Debug`** ➔ Activates `.devbooster/boosters/debug.md` (Systematic RCA / hypothesis engine).
 - **`@Deploy`** ➔ Activates `.devbooster/boosters/deploy.md` (Pre-flight release validation).
+- **`@StackRefresh`** ➔ Activates `.devbooster/boosters/stack-refresh.md` (Runtime/framework/dependency modernization analysis and phased upgrades).
 - **`@Audit`** ➔ Activates `.devbooster/boosters/audit.md` (Active lint/typecheck audit, normalization, and classification).
 - **`@Discovery`** ➔ Activates `.devbooster/boosters/discovery.md` (Product/ideas brainstorm).
 - **`@Investigation`** ➔ Activates `.devbooster/boosters/investigation.md` (No-code repo structure mapping).

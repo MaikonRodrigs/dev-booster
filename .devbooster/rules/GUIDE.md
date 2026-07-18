@@ -75,6 +75,8 @@ It has been formatted as a code block to facilitate direct reading in the IDE.
                        premium standards and accessibility.
 • seo.md            -> SEO Guardian. Validates semantic HTML and metatags for indexing.
 • mobile.md         -> Mobile Master. Activates patterns for React Native, Expo, and touch UX.
+• stack-refresh.md  -> Stack Refresh. Audits runtime, framework, and dependency drift,
+                       separates security risk from modernization debt, and proposes phased upgrade waves.
 
 ---
 

@@ -118,6 +118,7 @@
 | `design.md` | UI/UX Design standards and component audit. |
 | `deploy.md` | Pre-flight checks and deployment execution protocol. |
 | `security.md` | Security posture audit and threat modeling. |
+| `stack-refresh.md` | Runtime, framework, and dependency modernization analysis with phased upgrade planning. |
 | `testing.md` | Test generation strategy and runner coordination. |
 | `changelog.md` | Structured release note and changelog generation. |
 | `planning.md` | Consolidates context, maps risks/gaps, and validates whether the task is ready for implementation. |
@@ -216,8 +217,9 @@ This booster exists specifically to persist context and may generate its artifac
 - `save-context.md` → `@booster-generated/saved-context/`
 
 #### D. Execution-state artifact booster
-This booster should maintain an execution state artifact during its run to track diagnosis, decisions, and outcomes:
+These boosters should maintain an execution state artifact during their run to track diagnosis, decisions, and outcomes:
 - `audit.md` → `@booster-generated/audit/`
+- `stack-refresh.md` → `@booster-generated/stack-refresh/`
 
 ### Behavior Rules:
 - Each booster writes to its own folder — no overlapping paths.

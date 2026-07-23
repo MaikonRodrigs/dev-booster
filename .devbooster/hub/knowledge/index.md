@@ -14,6 +14,19 @@
 5. Inspect the actual project: installed versions, local rules, existing abstractions, configuration, conventions, and relevant tests.
 6. Preserve a valid established project convention. Do not replace it only because another official approach is also valid; recommend a change only when the developer requests it or evidence shows the current approach is incompatible, unsafe, deprecated, broken, or responsible for a verified issue.
 
+### Example
+
+User reports: `TS2345: Type 'string' is not assignable to type 'number'`
+
+1. Identify the pattern → TypeScript strict error on a discriminated union or runtime type mismatch.
+2. Check the index → `typescript-patterns.md` table entry confirms it covers "null safety, discriminated UI states, runtime validation".
+3. Read the relevant section → `read_file` with `start_line`/`end_line` to get only the "null-safety" section of `typescript-patterns.md`.
+4. Read the official source → open the [TypeScript Handbook section on Narrowing](https://www.typescriptlang.org/docs/handbook/2/narrowing.html) to verify current API behavior.
+5. Inspect the project → check `tsconfig.json` strict flags, existing type guards in the codebase, and whether the error is in a new area or a pre-typed module.
+6. Decide → if the project already uses a consistent pattern (e.g. Zod schemas + inferred types), preserve it. Only suggest a different approach if the current one is incompatible, unsafe, or the user explicitly requests a change.
+
+---
+
 ### If Not Found in the Base
 
 Use the relevant **official source** below. Prefer primary documentation, official changelogs, and official migration guides over blog posts, search snippets, or unverified answers.

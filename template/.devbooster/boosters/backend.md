@@ -57,11 +57,15 @@ Rules:
 
 ## 1. ALLOWED INVENTORY
 Allowed backend inventory:
+- `.devbooster/hub/personas/agent_backend-specialist.md`
+- `.devbooster/hub/personas/agent_database-architect.md`
 - `.devbooster/hub/personas/skill_api-patterns.md`
 - `.devbooster/hub/personas/skill_database-design.md`
 - `.devbooster/hub/personas/skill_nodejs-best-practices.md`
 - `.devbooster/hub/personas/skill_architecture.md`
 - `.devbooster/hub/personas/skill_clean-code.md`
+- `.devbooster/hub/personas/skill_rust-pro.md` (load only when the task involves Rust, async, or systems programming)
+- `.devbooster/hub/personas/skill_python-patterns.md` (load only when the task involves Python, FastAPI, or AI pipelines)
 
 ## 2. GOLDEN RULES
 - Choose the API style that best fits the project context: REST, GraphQL, RPC, queues, or internal services.

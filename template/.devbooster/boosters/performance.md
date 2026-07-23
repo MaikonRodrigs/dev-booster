@@ -55,6 +55,10 @@ Rules:
 - `.devbooster/hub/skills/nextjs-react-expert`
 - `agent_performance-optimizer`
 
+### Diagnostic Scripts (load only when relevant)
+- **`lighthouse_audit.py`** — runs Lighthouse audit (Performance, Accessibility, Best Practices, SEO). Requires `lighthouse` CLI (`npm i -g lighthouse`).
+- **`react_performance_checker.py`** — audits React code for waterfalls, barrel imports, and memory issues. No external dependencies.
+
 ## 2. OPTIMIZATION PROTOCOL
 1.  **Metric Audit**: Analyze Web Vitals (LCP, FID, CLS) and expensive operations.
 2.  **Rendering & Delivery Audit**: Evaluate the project's actual rendering model, hydration strategy, asset delivery, and network waterfalls.

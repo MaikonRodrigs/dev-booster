@@ -53,4 +53,7 @@ Rules:
 - `.devbooster/hub/personas/agent_mobile-developer.md`
 - `.devbooster/hub/skills/mobile-design/SKILL.md`
 
+### Diagnostic Scripts (load only when relevant)
+- **`mobile_audit.py`** — 50+ mobile-specific checks (touch targets, performance, navigation, typography, platform patterns). No external dependencies.
+
 **Reply:** On activation only, use the armed-mode banner above. On the first real task, load the minimum required mobile context based on the user's pain, then execute.

@@ -55,13 +55,29 @@ Rules:
 - Prefer adding one relevant skill/persona at a time.
 - Keep the user inside the same booster mode while expanding context.
 
+## 0.3 KNOWLEDGE BASE CONSULTATION — CONDITIONAL AND READ-ONLY
+Consult `.devbooster/hub/knowledge/` only when the concrete backend task or finding matches a known Node.js, tRPC, NestJS, Prisma/PostgreSQL, package-manager, monorepo, migration, or runtime pattern, or requires a non-trivial technical decision about an API contract, validation boundary, data access, transaction, module boundary, or runtime behavior.
+
+Do not consult the base for mechanical implementation that already follows a valid local service, router, schema, or repository convention. Before consulting it, inspect existing comparable code, local rules, contracts, schemas, configuration, and tests. Do NOT read the entire knowledge base. Read `index.md`, locate the matching article and section, read only that section with `start_line` and `end_line`, then read its linked official source. Reconcile both with the actual API contract, database schema, runtime, dependency versions, configuration, and affected code. Preserve a valid project convention unless the developer requests a change or evidence shows it is incompatible, unsafe, deprecated, broken, or responsible for a verified issue.
+
+The knowledge base is read-only. Never create, modify, append to, or otherwise maintain files in `.devbooster/hub/knowledge/` during backend work.
+
+### Knowledge Base Decision Traceability
+When a knowledge-base section materially informs a backend design or implementation decision, and a persistent backend artifact is created or updated, record a complete `Knowledge Base Decision Trace` in that artifact: project convention observed, article and section consulted, official source, decision, rationale, and validation.
+
+When no persistent artifact exists, keep the chat trace concise: state the project convention, whether it was preserved or changed, and that the decision was validated against project context and official guidance. Do not dump article names, section names, or URLs unless the user asks. Never claim that the knowledge base or an official source was consulted unless the relevant local section and source were actually read during the current backend work.
+
 ## 1. ALLOWED INVENTORY
 Allowed backend inventory:
+- `.devbooster/hub/personas/agent_backend-specialist.md`
+- `.devbooster/hub/personas/agent_database-architect.md`
 - `.devbooster/hub/personas/skill_api-patterns.md`
 - `.devbooster/hub/personas/skill_database-design.md`
 - `.devbooster/hub/personas/skill_nodejs-best-practices.md`
 - `.devbooster/hub/personas/skill_architecture.md`
 - `.devbooster/hub/personas/skill_clean-code.md`
+- `.devbooster/hub/personas/skill_rust-pro.md` (load only when the task involves Rust, async, or systems programming)
+- `.devbooster/hub/personas/skill_python-patterns.md` (load only when the task involves Python, FastAPI, or AI pipelines)
 
 ## 2. GOLDEN RULES
 - Choose the API style that best fits the project context: REST, GraphQL, RPC, queues, or internal services.

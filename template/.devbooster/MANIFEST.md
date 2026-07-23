@@ -108,6 +108,7 @@
 | `global-documentation.md` | Generates the 17-section universal technical documentation spec. |
 | `internal-documentation.md` | Generates repository-specific internal documentation with absolute paths and file/asset maps. |
 | `atomic.md` | Surgical, single-step implementation spec (final execution stage). |
+| `auto-triage.md` | Auto Triage Orchestrator — manually activated, artifact-centered engineering triage with separate approvals for Plan + Review and reviewed-plan execution. |
 | `advisor.md` | Hub Consultant — recommends the best booster path for the user's task. |
 | `review.md` | Elite Auditor — multi-agent orchestration for plan and architecture validation. |
 | `code-audit.md` | Strict Code Auditor — syntax, linting, and React Doctor diagnostics for the codebase. |
@@ -130,7 +131,10 @@
 | `coder.md` | Co-Creative Coder — debates folder patterns and code design, writes code only under command. |
 | `save-context.md` | Save Context — compacta a conversa em YAML para continuar em um novo chat sem perda de contexto. |
 | `diff-review.md` | Diff Review — analisa o diff como um dev sênior revisando PR, verificando naming, padrões, complexidade e boas práticas. |
+| `enhance.md` | Evolution Specialist — adds new features and expands existing flows in running projects. |
+| `ui-ux-pro-max.md` | Premium Design Intelligence — 50+ styles, 97 color palettes, 57 font pairings, 99 UX guidelines. |
 | `audit.md` | Audit — faz lint e typecheck funcionarem no terminal, detecta bypasses e separa achados em Setup Issues / Lot 1 / Lot 2. |
+| `smart-task.md` | Smart Task — lightweight triage with full investigation calibre, single "pode seguir" approval, atomic plan + Builder execution. Persisted artifact for debug and rollback. |
 
 ---
 
@@ -173,8 +177,8 @@
 |---|---|
 | **Total Agents** | 20 |
 | **Total Skills** | 40+ |
-| **Master Boosters** | 31 |
-| **Operational Scripts** | 2 (Master) + 21 (Skill-level) |
+| **Master Boosters** | 35 |
+| **Operational Scripts** | 2 (Master) + 20 (Skill-level) |
 | **Coverage** | ~95% Full-stack Web/Mobile |
 
 ---
@@ -220,6 +224,8 @@ This booster exists specifically to persist context and may generate its artifac
 These boosters should maintain an execution state artifact during their run to track diagnosis, decisions, and outcomes:
 - `audit.md` → `@booster-generated/audit/`
 - `stack-refresh.md` → `@booster-generated/stack-refresh/`
+- `auto-triage.md` → `@booster-generated/auto-triage/`
+- `smart-task.md` → `@booster-generated/smart-task/`
 
 ### Behavior Rules:
 - Each booster writes to its own folder — no overlapping paths.

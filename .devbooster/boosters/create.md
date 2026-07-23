@@ -37,6 +37,11 @@ When the first real creation request arrives:
 - Load the minimum required personas, skills, and local rules to start the creation flow.
 - Then continue with the booster's discovery and scaffolding logic.
 
+### Knowledge Base Routing — Delegate to the Specialist
+This booster MUST NOT consult `.devbooster/hub/knowledge/` directly. When discovery, scaffolding, or pre-flight identifies a concrete stack-specific design, migration, compatibility, runtime, or dependency concern, route it to the appropriate specialist booster before choosing the structure. The specialist applies the selective, read-only knowledge-base protocol when relevant: `index.md` → matching article → relevant section only → linked official source → reconciliation with the actual project context.
+
+The knowledge base is read-only. Never create, modify, append to, or otherwise maintain files in `.devbooster/hub/knowledge/`.
+
 ## 1. PHASE 0: SOCRATIC DISCOVERY (THE GATE)
 **MANDATORY**: Before generating ANY plan or code, you must:
 1.  **Load `skill_brainstorming`**.
@@ -50,7 +55,7 @@ When the first real creation request arrives:
 3.  **Read Local Standards**: 
     - Read `.devbooster/rules/FRONTEND.md` (Next.js, Zustand, tRPC patterns).
     - Read `.devbooster/rules/BACKEND.md` (tRPC routers, Prisma, Clerk patterns).
-4.  **Analyze Context**: Understand the current tech stack using `app-builder/project-detection.md`.
+4.  **Analyze Context**: Understand the current tech stack by running `.devbooster/hub/scripts/session_manager.py status`.
 
 ## 2. THE THREE-PILLAR PROTOCOL
 

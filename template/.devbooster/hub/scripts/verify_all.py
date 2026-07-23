@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Full Verification Suite - Kit 2.0
+Full Verification Suite - Dev Booster
 ==========================================
 
 Runs COMPLETE validation including all checks + performance + E2E.
@@ -10,7 +10,7 @@ Usage:
     python scripts/verify_all.py . --url <URL>
 
 Includes ALL checks:
-    ✅ Security Scan (OWASP, secrets, dependencies)
+    ✅ Security Scan (OWASP, secrets)
     ✅ Lint & Type Coverage
     ✅ Schema Validation
     ✅ Test Suite (unit + integration)
@@ -18,8 +18,8 @@ Includes ALL checks:
     ✅ SEO Check
     ✅ Lighthouse (Core Web Vitals)
     ✅ Playwright E2E
-    ✅ Bundle Analysis (if applicable)
     ✅ Mobile Audit (if applicable)
+    ✅ i18n Check
 """
 
 import sys
@@ -63,8 +63,7 @@ VERIFICATION_SUITE = [
     {
         "category": "Security",
         "checks": [
-            ("Security Scan", ".devbooster/hub/skills/vulnerability-scanner/scripts/security_scan.py", True),
-            ("Dependency Analysis", ".devbooster/hub/skills/vulnerability-scanner/scripts/dependency_analyzer.py", False),
+            ("Security Scan", ".devbooster/hub/scripts/security_scan.py", True),
         ]
     },
     
@@ -72,8 +71,8 @@ VERIFICATION_SUITE = [
     {
         "category": "Code Quality",
         "checks": [
-            ("Lint Check", ".devbooster/hub/skills/lint-and-validate/scripts/lint_runner.py", True),
-            ("Type Coverage", ".devbooster/hub/skills/lint-and-validate/scripts/type_coverage.py", False),
+            ("Lint Check", ".devbooster/hub/scripts/lint_runner.py", True),
+            ("Type Coverage", ".devbooster/hub/scripts/type_coverage.py", False),
         ]
     },
     
@@ -81,7 +80,7 @@ VERIFICATION_SUITE = [
     {
         "category": "Data Layer",
         "checks": [
-            ("Schema Validation", ".devbooster/hub/skills/database-design/scripts/schema_validator.py", False),
+            ("Schema Validation", ".devbooster/hub/scripts/schema_validator.py", False),
         ]
     },
     
@@ -89,7 +88,7 @@ VERIFICATION_SUITE = [
     {
         "category": "Testing",
         "checks": [
-            ("Test Suite", ".devbooster/hub/skills/testing-patterns/scripts/test_runner.py", False),
+            ("Test Suite", ".devbooster/hub/scripts/test_runner.py", False),
         ]
     },
     
@@ -97,8 +96,8 @@ VERIFICATION_SUITE = [
     {
         "category": "UX & Accessibility",
         "checks": [
-            ("UX Audit", ".devbooster/hub/skills/frontend-design/scripts/ux_audit.py", False),
-            ("Accessibility Check", ".devbooster/hub/skills/frontend-design/scripts/accessibility_checker.py", False),
+            ("UX Audit", ".devbooster/hub/scripts/ux_audit.py", False),
+            ("Accessibility Check", ".devbooster/hub/scripts/accessibility_checker.py", False),
         ]
     },
     
@@ -106,8 +105,8 @@ VERIFICATION_SUITE = [
     {
         "category": "SEO & Content",
         "checks": [
-            ("SEO Check", ".devbooster/hub/skills/seo-fundamentals/scripts/seo_checker.py", False),
-            ("GEO Check", ".devbooster/hub/skills/geo-fundamentals/scripts/geo_checker.py", False),
+            ("SEO Check", ".devbooster/hub/scripts/seo_checker.py", False),
+            ("GEO Check", ".devbooster/hub/scripts/geo_checker.py", False),
         ]
     },
     
@@ -116,8 +115,7 @@ VERIFICATION_SUITE = [
         "category": "Performance",
         "requires_url": True,
         "checks": [
-            ("Lighthouse Audit", ".devbooster/hub/skills/performance-profiling/scripts/lighthouse_audit.py", True),
-            ("Bundle Analysis", ".devbooster/hub/skills/performance-profiling/scripts/bundle_analyzer.py", False),
+            ("Lighthouse Audit", ".devbooster/hub/scripts/lighthouse_audit.py", True),
         ]
     },
     
@@ -126,7 +124,7 @@ VERIFICATION_SUITE = [
         "category": "E2E Testing",
         "requires_url": True,
         "checks": [
-            ("Playwright E2E", ".devbooster/hub/skills/webapp-testing/scripts/playwright_runner.py", False),
+            ("Playwright E2E", ".devbooster/hub/scripts/playwright_runner.py", False),
         ]
     },
     
@@ -134,7 +132,7 @@ VERIFICATION_SUITE = [
     {
         "category": "Mobile",
         "checks": [
-            ("Mobile Audit", ".devbooster/hub/skills/mobile-design/scripts/mobile_audit.py", False),
+            ("Mobile Audit", ".devbooster/hub/scripts/mobile_audit.py", False),
         ]
     },
     
@@ -142,7 +140,7 @@ VERIFICATION_SUITE = [
     {
         "category": "Internationalization",
         "checks": [
-            ("i18n Check", ".devbooster/hub/skills/i18n-localization/scripts/i18n_checker.py", False),
+            ("i18n Check", ".devbooster/hub/scripts/i18n_checker.py", False),
         ]
     },
 ]
@@ -262,7 +260,7 @@ def print_final_report(results: List[dict], start_time: datetime):
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Run complete Kit 2.0 verification suite",
+        description="Run complete Dev Booster verification suite",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
@@ -283,7 +281,7 @@ Examples:
         print_error(f"Project path does not exist: {project_path}")
         sys.exit(1)
     
-    print_header("🚀 KIT 2.0 - FULL VERIFICATION SUITE")
+    print_header("🚀 DEV BOOSTER - FULL VERIFICATION SUITE")
     print(f"Project: {project_path}")
     print(f"URL: {args.url}")
     print(f"Started: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")

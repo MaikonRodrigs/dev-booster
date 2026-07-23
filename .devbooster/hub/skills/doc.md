@@ -1,14 +1,14 @@
-# Kit 2.0 Skills
+# Dev Booster Skills
 
-> **Guide to creating and using Skills in the Kit 2.0**
+> **Guide to creating and using Skills in the Dev Booster**
 
 ---
 
 ## 📋 Overview
 
-While Kit 2.0's base models (like Gemini) are powerful generalists, they don't know your specific project context or your team's standards. Loading every rule or tool into the agent's context window leads to "tool bloat," higher costs, latency, and confusion.
+While Dev Booster's base models (like Gemini) are powerful generalists, they don't know your specific project context or your team's standards. Loading every rule or tool into the agent's context window leads to "tool bloat," higher costs, latency, and confusion.
 
-**Kit 2.0 Skills** solve this through **Progressive Disclosure**. A Skill is a package of specialized knowledge that remains dormant until needed. This information is only loaded into the agent's context when your specific request matches the skill's description.
+**Dev Booster Skills** solve this through **Progressive Disclosure**. A Skill is a package of specialized knowledge that remains dormant until needed. This information is only loaded into the agent's context when your specific request matches the skill's description.
 
 ---
 

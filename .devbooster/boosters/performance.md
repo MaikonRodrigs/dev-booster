@@ -50,10 +50,26 @@ Rules:
 - Prefer adding one relevant skill/persona at a time.
 - Keep the user inside the same booster mode while expanding context.
 
+## 0.3 KNOWLEDGE BASE CONSULTATION — CONDITIONAL AND READ-ONLY
+Consult `.devbooster/hub/knowledge/` only after profiling or investigation identifies a concrete stack-specific performance pattern, or when measured evidence requires a non-trivial choice between established implementation approaches, such as React rendering, Effect/data-fetching behavior, Next.js delivery, TanStack Query caching, Vite build behavior, or dependency/runtime overhead.
+
+Do not consult the base for generic optimization folklore or a mechanical change already covered by a valid local performance convention. Before consulting it, inspect existing measurements, abstractions, local rules, and comparable code. Do NOT read the entire knowledge base. Read `index.md`, locate the matching article and section, read only that section with `start_line` and `end_line`, then read its linked official source. Reconcile both with measured evidence, the actual bottleneck, active versions, configuration, and affected code before optimizing. Preserve a valid project convention unless the developer requests a change or evidence shows it is incompatible, unsafe, deprecated, broken, or responsible for the measured bottleneck.
+
+The knowledge base is read-only. Never create, modify, append to, or otherwise maintain files in `.devbooster/hub/knowledge/` during performance work.
+
+### Knowledge Base Decision Traceability
+When a knowledge-base section materially informs an optimization decision, and a persistent performance artifact is created or updated, record a complete `Knowledge Base Decision Trace` in that artifact: project convention observed, article and section consulted, official source, measured evidence, decision, rationale, and validation.
+
+When no persistent artifact exists, keep the chat trace concise: state the project convention, whether it was preserved or changed, and that the decision was validated against measured project evidence and official guidance. Do not dump article names, section names, or URLs unless the user asks. Never claim that the knowledge base or an official source was consulted unless the relevant local section and source were actually read during the current performance work.
+
 ## 1. ALLOWED INVENTORY
 - `.devbooster/hub/skills/performance-profiling`
 - `.devbooster/hub/skills/nextjs-react-expert`
 - `agent_performance-optimizer`
+
+### Diagnostic Scripts (load only when relevant)
+- **`lighthouse_audit.py`** — runs Lighthouse audit (Performance, Accessibility, Best Practices, SEO). Requires `lighthouse` CLI (`npm i -g lighthouse`).
+- **`react_performance_checker.py`** — audits React code for waterfalls, barrel imports, and memory issues. No external dependencies.
 
 ## 2. OPTIMIZATION PROTOCOL
 1.  **Metric Audit**: Analyze Web Vitals (LCP, FID, CLS) and expensive operations.

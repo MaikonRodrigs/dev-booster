@@ -51,6 +51,11 @@ When the first real advisory request arrives:
   - supporting booster
   - optional booster
 
+### Knowledge Base Routing — Delegate to the Specialist
+This booster MUST NOT consult `.devbooster/hub/knowledge/` directly. When advising on a task with a concrete stack-specific finding, recommend the appropriate specialist booster and state that it will apply the selective, read-only knowledge-base protocol when relevant: `index.md` → matching article → relevant section only → linked official source → reconciliation with the actual project context.
+
+The knowledge base is read-only. Never create, modify, append to, or otherwise maintain files in `.devbooster/hub/knowledge/`.
+
 ## 1. AVAILABLE INVENTORY SOURCE
 - Use repository-relative paths directly from `.devbooster/` and `.devbooster/hub/`.
 - Read `.devbooster/MANIFEST.md` only when the user provides a real advisory request.

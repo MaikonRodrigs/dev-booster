@@ -36,7 +36,7 @@ After running the command, your project gets:
 ```
 .devbooster/
 ├── MANIFEST.md          ← inventory of all agents, skills, and boosters
-├── boosters/            ← 32 expert activators (debug, review, design, deploy...)
+├── boosters/            ← 36 expert activators (auto triage, debug, review, design, deploy, enhance, ui-ux-pro-max, smart-task...)
 ├── hub/                 ← 40+ skills and operational scripts
 └── rules/
     ├── PROTOCOL.md      ← governance and conduct rules
@@ -101,6 +101,7 @@ Boosters are expert activators you invoke manually during development.
 
 | Booster | When to use |
 |---|---|
+| `auto-triage.md` | Manual activation with automatic, artifact-centered engineering triage; requires separate Plan + Review and reviewed-plan execution approvals |
 | `implementation.md` | Selecting the right implementation plan after context is mature |
 | `debug.md` | Systematic root cause analysis |
 | `review.md` | Pre-PR code audit |
@@ -116,7 +117,7 @@ Boosters are expert activators you invoke manually during development.
 | `performance.md` | Core Web Vitals / bundle issues |
 | `code-audit.md` | Strict Code Auditor (Syntax, React Doctor) before PR |
 | `audit.md` | Make terminal lint and typecheck operational, check bypasses, and separate safe fixes from deep review |
-| + 18 more | See `.devbooster/MANIFEST.md` |
+| + 20 more | See `.devbooster/MANIFEST.md` |
 
 The practical activation flow is simple:
 - drag a booster file into the chat
@@ -142,6 +143,7 @@ Many boosters now use a two-step flow:
 | `implementation.md` | Final implementation artifact only after confirmation |
 | `internal-documentation.md` | Final documentation artifact only after confirmation |
 | `investigation.md` | No artifact by default; save only if the user explicitly asks |
+| `auto-triage.md` | Creates a visible evidence-board state artifact at `@booster-generated/auto-triage/` after a real demand; never on activation alone |
 | `audit.md` | Always writes an execution-state artifact to `@booster-generated/audit/` during its run |
 | `stack-refresh.md` | Always writes an execution-state artifact to `@booster-generated/stack-refresh/` during its run |
 | `planning.md` | No artifact by default; save only if the user explicitly asks |
@@ -189,10 +191,10 @@ This keeps the conversation faster while still preserving the option to material
 #### 4. Execution-state artifact booster
 - `audit.md`
 - `stack-refresh.md`
-- `stack-refresh.md`
+- `auto-triage.md`
 
 ### Artifact locations
-When a user explicitly asks to save or confirms final generation, artifacts are organized under `@booster-generated/`, with each booster writing to its own folder.
+When a user explicitly asks to save or confirms final generation, artifacts are organized under `@booster-generated/`, with each booster writing to its own folder. Execution-state boosters — including `auto-triage.md` after it receives a real demand — are the explicit exception and create their visible state artifact during the flow.
 
 ### Manual & Shortcut Triggers
 
@@ -205,6 +207,7 @@ You can take manual control of the kit's governance or instantly route behavior 
 
 #### ⚡ Booster Shortcut Triggers
 Instead of dragging booster files into the chat, you can instantly activate any booster behavior contract by typing its shortcut trigger:
+- **`@AutoTriage`** ➔ Activates `auto-triage.md` (automatic, artifact-centered engineering triage with separate Plan + Review and execution approvals).
 - **`@Context`** ➔ Activates `context.md` (Silent Sponge context mapping).
 - **`@Coder`** ➔ Activates `coder.md` (Co-Creative design/writing).
 - **`@Builder`** ➔ Activates `builder.md` (Senior plan audit & execution).
@@ -213,6 +216,8 @@ Instead of dragging booster files into the chat, you can instantly activate any 
 - **`@Atomic`** ➔ Activates `atomic.md` (Surgical step-by-step writing).
 - **`@Review`** ➔ Activates `review.md` (Elite code audit).
 - **`@Advisor`** ➔ Activates `advisor.md` (Kit GPS consultant).
+- **`@Enhance`** ➔ Activates `enhance.md` (Evolution mode for adding features to existing projects).
+- **`@UIUX`** ➔ Activates `ui-ux-pro-max.md` (Premium Design Intelligence).
 - *See `.devbooster/rules/TRIGGERS.md` for the complete trigger list.*
 
 ---
@@ -220,6 +225,20 @@ Instead of dragging booster files into the chat, you can instantly activate any 
 ## Smart Usage Patterns
 
 One of the main strengths of Dev Booster is that boosters can be used in sequence, not just in isolation.
+
+### Auto Triage as the primary deep-analysis entry point
+
+Use `auto-triage.md` when you want the kit to emulate a senior developer's pre-execution triage without giving up manual control.
+
+1. Activate `auto-triage.md` (or `@AutoTriage`); it stays armed and lazy-loaded.
+2. Send the actual issue, feature, or target.
+3. It evaluates the full booster catalog, coordinates every applicable specialist, and records evidence in one shared artifact.
+4. It returns a concise triage conclusion and requests approval for **Plan + Review**.
+5. After that approval, it selects `atomic.md` or the appropriate `implementation.md` path and validates the resulting plan through `review.md`.
+6. It then requests separate approval to execute that specific reviewed plan.
+7. Only after execution approval does it hand the complete artifact to the selected execution booster.
+
+Manual boosters remain available and are still the best option when you know exactly which focused capability you need.
 
 ### 1. Use Advisor when you are unsure
 

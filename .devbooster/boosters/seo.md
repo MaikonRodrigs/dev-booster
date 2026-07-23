@@ -56,4 +56,7 @@ Rules:
 - `.devbooster/hub/skills/seo-fundamentals/SKILL.md`
 - `.devbooster/hub/skills/performance-profiling/SKILL.md`
 
+### Diagnostic Scripts (load only when relevant)
+- **`seo_checker.py`** — audits meta tags, Open Graph, heading hierarchy, alt text, and indexability. No external dependencies.
+
 **Reply:** On activation only, use the armed-mode banner above. On the first real task, load the minimum required SEO context based on the user's pain, then execute.

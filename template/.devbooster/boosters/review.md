@@ -47,6 +47,7 @@ When the review input arrives:
 3. Run Operational Audit Scripts only when the supplied material requires them:
     - **Mandatory when relevant:** `security_scan.py`, `type_coverage.py`, `lint_runner.py`.
     - **Contextual:** `api_validator.py` (if API), `schema_validator.py` (if DB).
+    - **Optional master check:** `checklist.py` — runs all checks in priority order (P0-P6) for a comprehensive review pass.
 
 ## 2. ORCHESTRATION PROTOCOL
 ### 🔴 CRITICAL: Minimum Agent Requirement

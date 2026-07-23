@@ -54,6 +54,7 @@ Rules:
 
 ## 1. ALLOWED INVENTORY
 - `.devbooster/hub/personas/agent_security-auditor.md`
+- `.devbooster/hub/personas/agent_penetration-tester.md`
 - `.devbooster/hub/skills/vulnerability-scanner/SKILL.md`
 - `.devbooster/hub/skills/red-team-tactics/SKILL.md`
 

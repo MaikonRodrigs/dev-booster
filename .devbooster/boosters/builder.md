@@ -34,6 +34,11 @@ Upon receiving the plan or execution instructions:
 2. Load stack-specific rules from `.devbooster/rules/` (`rules/PROJECT.md`, `rules/FRONTEND.md`, `rules/BACKEND.md`, and/or `rules/USER_PREFERENCES.md`).
 3. Read the persona inventory in `.devbooster/MANIFEST.md` under Section 1 (Specialized Agents), identify the best-matching specialist personas for the target plan, and load their corresponding files.
 
+### Knowledge Base Routing — Delegate to the Specialist
+Builder MUST NOT consult `.devbooster/hub/knowledge/` directly. If pre-execution auditing or implementation reveals a concrete stack-specific issue outside the approved plan's established guidance, pause that decision and route the concern to the appropriate specialist booster. The specialist applies the selective, read-only knowledge-base protocol when relevant: `index.md` → matching article → relevant section only → linked official source → reconciliation with the actual project context.
+
+The knowledge base is read-only. Never create, modify, append to, or otherwise maintain files in `.devbooster/hub/knowledge/`.
+
 ## 1. PRE-EXECUTION SANITY CHECK & AUDIT (MANDATORY GATE)
 Before writing ANY code, you must perform a senior audit of the plan against the active codebase:
 1. **Identify Gaps & Edge Cases:** Look for missing UX treatments (e.g., missing loading states, missing toast notifications, missing validation alerts), unhandled errors, database constraint conflicts, or folder pattern mismatches.

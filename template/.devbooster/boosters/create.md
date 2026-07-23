@@ -50,7 +50,7 @@ When the first real creation request arrives:
 3.  **Read Local Standards**: 
     - Read `.devbooster/rules/FRONTEND.md` (Next.js, Zustand, tRPC patterns).
     - Read `.devbooster/rules/BACKEND.md` (tRPC routers, Prisma, Clerk patterns).
-4.  **Analyze Context**: Understand the current tech stack using `app-builder/project-detection.md`.
+4.  **Analyze Context**: Understand the current tech stack by running `.devbooster/hub/scripts/session_manager.py status`.
 
 ## 2. THE THREE-PILLAR PROTOCOL
 

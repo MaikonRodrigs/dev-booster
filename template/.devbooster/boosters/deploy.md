@@ -23,10 +23,10 @@ It MAY:
 
 ## 1. MANDATORY CONTEXT LOADING
 - `.devbooster/hub/personas/agent_devops-engineer.md`
-- `.devbooster/hub/personas/deploy.md`
 - `.devbooster/hub/personas/skill_deployment-procedures.md`
 - `.devbooster/hub/personas/skill_bash-linux.md`
 - `.devbooster/hub/personas/skill_server-management.md`
+- `.devbooster/hub/personas/skill_powershell-windows.md` (load only when the target environment involves Windows or PowerShell automation)
 
 ## 2. OPERATING MODE
 When activated:
@@ -34,6 +34,29 @@ When activated:
 - act as a pre-flight auditor only
 - return risks, missing checks, and recommended manual next steps
 - never execute the deploy path itself
+
+## 2.1 PLATFORM REFERENCE (FOR MANUAL EXECUTION)
+When a deploy target is identified, reference the appropriate platform command for the user to run manually:
+
+| Platform | Command (user runs) | Notes |
+|----------|--------------------|-------|
+| Vercel | `vercel --prod` | Auto-detected for Next.js |
+| Railway | `railway up` | Needs Railway CLI |
+| Fly.io | `fly deploy` | Needs flyctl |
+| Docker | `docker compose up -d` | For self-hosted |
+| AWS | `aws s3 sync ./out s3://<bucket>` or `cdk deploy` | Static or CDK |
+| GCP | `gcloud app deploy` or `gcloud run deploy` | App Engine or Cloud Run |
+
+**Important:** You MUST NOT run these commands. Present them as reference for the user to execute manually.
+
+## 2.2 PRE-FLIGHT VALIDATION SCRIPTS (REFERENCE FOR MANUAL EXECUTION)
+When auditing deploy readiness, reference these validation suites for the user to run manually:
+- **`checklist.py`** — runs all core checks in priority order (Security → Lint → Schema → Tests → UX → SEO). Quick incremental validation.
+- **`verify_all.py`** — complete pre-release suite including Lighthouse, E2E, bundle analysis, and mobile audit. Use before major releases.
+
+Both scripts are at `.devbooster/hub/scripts/`.
+
+**Important:** You MUST NOT run these scripts. Present them as recommendations for the user to execute manually in their terminal.
 
 ## 3. ARTIFACT POLICY
 - Do NOT create local state files or artifacts during normal deploy auditing.

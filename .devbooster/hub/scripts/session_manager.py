@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Session Manager - Kit 2.0
+Session Manager - Dev Booster
 =================================
 Analyzes project state, detects tech stack, tracks file statistics, and provides
 a summary of the current session.

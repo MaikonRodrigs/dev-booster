@@ -13,7 +13,8 @@ Execute each step in order. Do not skip steps. Do not ask for confirmation betwe
 
 ### STEP 1 — Read the Governance Protocol
 Read `.devbooster/rules/PROTOCOL.md` in full.
-This defines your conduct rules, communication style, and architectural constraints. It also delegates instant command shortcuts (like `@Coder`, `@Builder`) to `.devbooster/rules/TRIGGERS.md`.
+This defines your conduct rules, communication style, and architectural constraints.
+For instant `@` shortcut triggers (`@Frontend`, `@Debug`, `@Audit`, etc.), see `AGENTS.md` at the project root (created in Step 6).
 
 ### STEP 2 — Bootstrap PROJECT.md
 Read `.devbooster/rules/PROJECT.md`.
@@ -41,6 +42,26 @@ In that case, create `AGENTS.md` at the project root and insert the following bl
 # 🤖 DEV BOOSTER — AGENTIC KIT BOOTSTRAP
 
 Before any action, read `.devbooster/rules/PROTOCOL.md` for full governance rules.
+
+## Instant Triggers
+
+You can instantly activate any Dev Booster behavior by typing the corresponding `@` trigger in chat.
+
+**Important:** A trigger activates the booster's contract mode only (Armed/Stage 0).
+It does NOT authorize the booster to analyze, investigate, or modify the project.
+After activation, provide the concrete task or symptom before the booster proceeds.
+
+Read `.devbooster/rules/TRIGGERS.md` for the complete trigger dictionary.
+
+Common examples:
+- `@Frontend` — activate frontend specialist
+- `@Backend` — activate backend architect
+- `@Debug` — systematic root cause analysis
+- `@Audit` — lint and typecheck audit
+- `@Refactor` — clean code and SOLID refactoring
+- `@Performance` — Web Vitals and optimization
+- `@Testing` — test strategy and coordination
+- `@Advisor` — kit GPS to choose the right booster
 ```
 
 Do not duplicate the block if the file already references `.devbooster/rules/PROTOCOL.md`.

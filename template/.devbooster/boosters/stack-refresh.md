@@ -181,7 +181,7 @@ Start working immediately on activation.
 
 ### Step A — Map the local stack first
 Before any heavy command:
-- identify the likely frontend and backend stack from the rules and `package.json`
+- run `.devbooster/hub/scripts/session_manager.py status` to detect the technology stack and project features
 - detect whether the repository is single-package or workspace/monorepo
 - detect package manager from lockfiles and workspace config
 - detect runtime sources such as `.nvmrc`, `package.json#engines`, Docker images, CI config, or Volta/corepack hints

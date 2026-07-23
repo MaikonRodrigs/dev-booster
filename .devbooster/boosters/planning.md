@@ -50,10 +50,15 @@ Only conclude readiness after the user confirms the planner alignment and the ma
 ## 1. ALLOWED INVENTORY
 - `.devbooster/hub/personas/agent_project-planner.md`
 - `.devbooster/hub/personas/agent_orchestrator.md`
-- `.devbooster/hub/personas/plan.md`
-- `.devbooster/hub/personas/orchestrate.md`
-- `.devbooster/hub/personas/enhance.md`
 - `.devbooster/hub/personas/skill_plan-writing.md`
+
+### Complementary Skills (load only when relevant)
+- **`documentation-templates`** — use the ADR template to record planning decisions: context that led to the approach, risks accepted, and tradeoffs dismissed. Only when a material decision is finalized.
+
+### Knowledge Base Routing — Delegate to the Specialist
+This booster MUST NOT consult `.devbooster/hub/knowledge/` directly. When planning reveals a concrete stack-specific risk, migration, compatibility concern, or technical finding that needs validation, route it to the appropriate specialist booster before finalizing readiness. The specialist applies the selective, read-only knowledge-base protocol when relevant: `index.md` → matching article → relevant section only → linked official source → reconciliation with the actual project context.
+
+The knowledge base is read-only. Never create, modify, append to, or otherwise maintain files in `.devbooster/hub/knowledge/`.
 
 ## 2. PLANNING ROLE
 This booster must:

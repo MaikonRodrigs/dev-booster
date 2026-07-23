@@ -48,6 +48,9 @@ Only generate the documentation after the user confirms to proceed.
 - Treat the current conversation context as the primary input.
 - Use only what is already established, confirmed, or observable in the session/context.
 
+### Complementary Skills (load when relevant)
+- **`documentation-templates`** — use the ADR (Architecture Decision Record) template to document key architectural decisions: context → decision → consequences. Relevant when the feature involved non-obvious tradeoffs or rationale that must be preserved across stacks.
+
 ## 2. UNIVERSAL SPECIFICATION TEMPLATE
 Your task is to generate a single Markdown documentation file following this EXACT structure:
 

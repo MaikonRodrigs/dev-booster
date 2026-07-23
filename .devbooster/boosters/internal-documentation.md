@@ -56,12 +56,11 @@ After the user confirms, load only what is necessary from this inventory:
 - `.devbooster/hub/personas/agent_code-archaeologist.md`
 - `.devbooster/hub/personas/agent_project-planner.md`
 - `.devbooster/hub/personas/agent_explorer-agent.md`
-- `.devbooster/hub/personas/documentation-writer.md`
-- `.devbooster/hub/personas/code-archaeologist.md`
-- `.devbooster/hub/personas/project-planner.md`
-- `.devbooster/hub/personas/explorer-agent.md`
 - `.devbooster/hub/personas/skill_doc.md`
 - `.devbooster/hub/personas/skill_architecture.md`
+
+### Complementary Skills (load when relevant)
+- **`documentation-templates`** — use the ADR template to document key architectural decisions with context → decision → consequences. Use the API docs template to standardize contract documentation per endpoint.
 
 ## 2. PRE-FLIGHT
 - Analyze the target repository before outputting the final document.
@@ -114,6 +113,23 @@ Use these 17 sections in this exact order:
 # 15. Known Gaps and Undetected Areas
 # 16. Validation Checklist
 # 17. Mini Context Summary
+# 18. AI Reader Directive
+
+### Template for Section 18:
+```markdown
+## 🧠 Diretiva para Leitura por IA
+
+Este documento contém a especificação interna para replicação do projeto.
+
+- **Leia e memorize** todo o conteúdo: entidades, contratos, fluxos, regras de negócio, e decisões arquiteturais.
+- **Analise internamente** o que precisa ser criado, modificado ou adaptado para o projeto alvo.
+- **Não implemente nada automaticamente.**
+- **Não sugira próximos passos.**
+- **Não pergunte o que fazer em seguida.**
+- Após a leitura, ofereça um resumo do que entendeu e aguarde o comando do usuário.
+
+O usuário vai decidir o direcionamento: resumo detalhado, plano de implementação, validação, ou execução.
+```
 
 ========================
 4. WRITING RULES
@@ -126,6 +142,8 @@ Use these 17 sections in this exact order:
 - If a path depends on the user's machine, resolve it from the current project root.
 - Keep the document useful for future AI sessions and future maintainers.
 - Prefer tables for path inventories when they improve scanability.
+- **Section 17 (Mini Context Summary)** MUST include a dense, factual block with: entities, key contracts, critical business rules, main flows, and architectural decisions (ADR when applicable). This is the snapshot an AI needs to understand the project without executing.
+- **After section 17**, append an explicit **Directive for AI Readers** (see template below) that instructs any AI reading this document to memorize, analyze internally, and wait for the user — never implement or suggest next steps automatically.
 
 ========================
 5. EXECUTION RULES

@@ -20,6 +20,30 @@ const IDE_BRIDGE_BLOCK = [
   "Before any action, read `.devbooster/rules/PROTOCOL.md` for full governance rules.",
 ];
 const IDE_BRIDGE_MARKER = ".devbooster/rules/PROTOCOL.md";
+
+const AGENTS_TRIGGER_BLOCK = [
+  "",
+  "## Instant Triggers",
+  "",
+  "You can instantly activate any Dev Booster behavior by typing the corresponding `@` trigger in chat.",
+  "",
+  "**Important:** A trigger activates the booster's contract mode only (Armed/Stage 0).",
+  "It does NOT authorize the booster to analyze, investigate, or modify the project.",
+  "After activation, provide the concrete task or symptom before the booster proceeds.",
+  "",
+  "Read `.devbooster/rules/TRIGGERS.md` for the complete trigger dictionary.",
+  "",
+  "Common examples:",
+  "- `@Frontend` — activate frontend specialist",
+  "- `@Backend` — activate backend architect",
+  "- `@Debug` — systematic root cause analysis",
+  "- `@Audit` — lint and typecheck audit",
+  "- `@Refactor` — clean code and SOLID refactoring",
+  "- `@Performance` — Web Vitals and optimization",
+  "- `@Testing` — test strategy and coordination",
+  "- `@Advisor` — kit GPS to choose the right booster",
+];
+const AGENTS_TRIGGER_MARKER = "TRIGGERS.md";
 const IDE_BRIDGE_FALLBACK_FLAG = path.join("hub", "flags", "needs-ide-bridge");
 const IDE_BRIDGE_TARGETS = [
   ".rules",
@@ -242,6 +266,41 @@ function setupIdeBridgeFiles(dryRun) {
   );
 }
 
+function ensureAgentsTriggers(dryRun) {
+  const agentsPath = path.join(TARGET_DIR, "AGENTS.md");
+
+  if (!fs.existsSync(agentsPath)) {
+    if (!dryRun) {
+      const fullBlock = [
+        "# 🤖 DEV BOOSTER — AGENTIC KIT BOOTSTRAP",
+        "",
+        "Before any action, read `.devbooster/rules/PROTOCOL.md` for full governance rules.",
+        ...AGENTS_TRIGGER_BLOCK,
+        "",
+      ];
+      fs.writeFileSync(agentsPath, fullBlock.join("\n"));
+    }
+    console.log(
+      `  status: ${dryRun ? "would be created" : "created"} with protocol + triggers`,
+    );
+    return;
+  }
+
+  const existing = fs.readFileSync(agentsPath, "utf8");
+  if (existing.includes(AGENTS_TRIGGER_MARKER)) {
+    console.log("  status: triggers already present (preserved)");
+    return;
+  }
+
+  if (!dryRun) {
+    const updated = existing.trimEnd() + "\n\n" + AGENTS_TRIGGER_BLOCK.join("\n") + "\n";
+    fs.writeFileSync(agentsPath, updated);
+  }
+  console.log(
+    `  status: triggers section ${dryRun ? "would be appended" : "appended"}`,
+  );
+}
+
 function checkLocalInstall() {
   try {
     const localPkg = path.join(
@@ -348,6 +407,7 @@ async function runInstall() {
 
   await maybeAddDevBoosterToGitignore(dryRun);
   setupIdeBridgeFiles(dryRun);
+  ensureAgentsTriggers(dryRun);
 
   console.log(`
 ╭──────────────────────────────────────────────╮
@@ -434,6 +494,8 @@ function runUpdate() {
   console.log("                    ✔ GUIDE.md     (updated)");
   console.log("                    ✔ TRIGGERS.md  (updated)");
   console.log("                    ℹ Whitelabel stack rules (preserved)\n");
+
+  ensureAgentsTriggers(dryRun);
 
   console.log("▸ DEVBOOSTER_INIT.md");
   console.log("  status: preserved (no changes made)\n");

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Auto Preview - Kit 2.0
-==============================
+Auto Preview - Dev Booster
+==========================
 Manages (start/stop/status) the local development server for previewing the application.
 
 Usage:

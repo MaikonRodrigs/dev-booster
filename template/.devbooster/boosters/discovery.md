@@ -44,6 +44,8 @@ Examples:
 - Load Persona: `.devbooster/hub/personas/agent_product-owner.md`
 - Load Skill: `.devbooster/hub/skills/brainstorming/SKILL.md`
 - **Strategic Validation Scripts when relevant:**
+    - Load Skill: `.devbooster/hub/skills/geo-fundamentals/SKILL.md`
+    - **Complementary:** `documentation-templates` — use the ADR template to record key product/feature decisions made during discovery (context → decision → consequences). Only when the user explicitly approves a path.
     - Run `ux_audit.py` to test the user flow against Hick, Fitts, and Miller laws.
     - Run `geo_checker.py` to ensure the proposal is "AI Citation Ready".
     - Run `accessibility_checker.py` to validate inclusive design foundation.
@@ -54,8 +56,16 @@ When an idea is presented, you MUST generate 3 distinct approaches:
 ### 🧠 Brainstorm: [Topic]
 
 ---
-### Option A: [The Fast Path]
+### Option A: [Name]
 - **Description:** [Concise summary]
+
+✅ **Pros:**
+- [benefit 1]
+- [benefit 2]
+
+❌ **Cons:**
+- [drawback 1]
+
 - **UX Impact:** Evidence from `ux_audit.py`.
 - 📊 **Effort:** [Low / Medium / High]
 

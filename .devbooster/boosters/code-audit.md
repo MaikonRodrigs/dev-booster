@@ -50,7 +50,7 @@ Only switch to execution mode after the user provides the commit scope.
 
 ## 3. PRE-FLIGHT (MANDATORY)
 1. Use repository-relative paths directly from `.devbooster/` and `.devbooster/hub/`.
-2. **STACK DISCOVERY:** Quickly read `package.json` or `PROJECT.md` to determine the project's technology stack (e.g., React, Angular, Vue, Node.js).
+2. **STACK DISCOVERY:** Run `.devbooster/hub/scripts/session_manager.py status` to detect the project's technology stack (e.g., React, Angular, Vue, Node.js), features, and structure.
 3. **Run Operational Audit Scripts:**
     - **Mandatory when relevant:** `security_scan.py`, `type_coverage.py`, `lint_runner.py` (if they exist).
 4. **React/Next.js Frontend Triage (3-Phase Flow):** ONLY IF the project uses React/Next.js:
@@ -59,6 +59,25 @@ Only switch to execution mode after the user provides the commit scope.
     - **Filter (Python)**: Run `.devbooster/hub/scripts/doctor_parser.py @booster-generated/code-audit/diagnostics-<task-slug>.json` to process the JSON.
     - **Report & Decide**: Present "Immediate Actions" (Critical errors) in detail by line. For "Cosmetic Debt" (Warnings), create a dedicated section that groups the warnings by Rule/Category (e.g., "Tailwind Sorting: 70 issues", "Unused Variables: 20 issues"). Provide a 1-line explanation for the most frequent categories so the user understands the nature of the debt without being overwhelmed.
     - **ZERO Auto-Fix**: Do NOT modify code automatically. Ask the user: "Do you want to fix only the critical recommendations, everything, or specific items?" and wait for authorization.
+
+### 3.1 KNOWLEDGE BASE CONSULTATION — FINDING-DRIVEN AND READ-ONLY
+Consult `.devbooster/hub/knowledge/` only after lint, type coverage, React Doctor, framework diagnostics, or the diff review produces a concrete finding.
+
+Do NOT read the entire knowledge base.
+
+For each relevant finding:
+1. Read `.devbooster/hub/knowledge/index.md`.
+2. Locate the matching article and section from the index.
+3. Read only that section using `read_file` with `start_line` and `end_line`.
+4. Read the official source linked by the article or section before recommending a correction.
+5. Reconcile the local pattern and official guidance with the actual framework version, project configuration, dependency graph, diff scope, and affected code.
+
+The knowledge base is read-only. Never create, modify, append to, or otherwise maintain files in `.devbooster/hub/knowledge/` during Code Audit.
+
+### Knowledge Base Decision Traceability
+When a knowledge-base section materially informs an audit conclusion or recommended correction, and a persistent Code Audit artifact is created or updated, record a complete `Knowledge Base Decision Trace` in that artifact: project convention observed, article and section consulted, official source, decision, rationale, and validation or follow-up.
+
+When no persistent artifact exists, keep the chat trace concise: state the project convention, whether it was preserved or changed, and that the conclusion was validated against project context and official guidance. Do not dump article names, section names, or URLs unless the user asks. Never claim that the knowledge base or an official source was consulted unless the relevant local section and source were actually read during the current Code Audit.
 
 ## 4. OUTPUT STRUCTURE (MANDATORY)
 Your response MUST be an **Audit Report**:

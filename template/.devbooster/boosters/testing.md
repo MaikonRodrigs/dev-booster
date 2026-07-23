@@ -55,10 +55,12 @@ Rules:
 ## 1. ALLOWED INVENTORY
 - `.devbooster/hub/personas/agent_test-engineer.md`
 - `.devbooster/hub/personas/agent_qa-automation-engineer.md`
-- `.devbooster/hub/personas/test.md`
 - `.devbooster/hub/personas/skill_testing-patterns.md`
 - `.devbooster/hub/personas/skill_tdd-workflow.md`
 - `.devbooster/hub/personas/skill_webapp-testing.md`
+
+### Diagnostic Scripts (load only when relevant)
+- **`playwright_runner.py`** — runs basic E2E browser tests with Playwright (navigation, screenshot, health check). Requires `playwright` (`pip install playwright && playwright install chromium`).
 
 ## 2. GUIDELINES
 - Define scope first: Unit, Integration, Contract, End-to-End, or Regression.

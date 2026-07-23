@@ -44,8 +44,9 @@
 - **AMBIGUITY FALLBACK:** If the user remains unclear, says they do not know, or delegates discovery entirely (e.g. "research it", "you figure it out"), load the full relevant local context before proceeding. For technical ambiguity, default to loading `.devbooster/rules/FRONTEND.md` and `.devbooster/rules/BACKEND.md` in addition to the always-on base context. Add `.devbooster/rules/COMMERCIAL.md` when the task may involve positioning, copy, or conversion logic.
 
 ## 📚 6. PERSISTENCE & SHORTCUTS (TRIGGERS)
-- **TRIGGER ROUTING:** Whenever the user references a `@` trigger (e.g., `@Coder`, `@SaveContext`, `@SavePattern`), you MUST then read `.devbooster/rules/TRIGGERS.md` to identify the trigger's contract, load the corresponding files, and execute the behavior mode or background action.
-- **RESTRICTION:** Execute code edits, file writes, or log updates ONLY when explicitly instructed by the trigger contract or a direct user command.
+- **TRIGGER ROUTING:** Whenever the user references a `@` trigger (e.g., `@Frontend`, `@Coder`, `@SaveContext`), you MUST read `.devbooster/rules/TRIGGERS.md` to identify the trigger's contract, load the corresponding booster, and enter its contract mode.
+- **ACTIVATION-FIRST:** A trigger activates the booster's contract (Stage 0 / Armed mode) only. It does NOT authorize the booster's full execution flow, analysis, investigation, or implementation. After activation, present the armed-mode banner and wait for the user to provide the concrete task, symptom, or objective before loading deeper context or taking action.
+- **RESTRICTION:** Execute code edits, file writes, or log updates ONLY when explicitly instructed by the trigger contract or a direct user command after activation.
 
 ---
 *Elite Sovereignty Framework - Conduct Governance 2026*

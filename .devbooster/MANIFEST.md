@@ -43,6 +43,37 @@
 
 ---
 
+## 📚 1.5 KNOWLEDGE BASE (CURATED PATTERNS AND DECISIONS)
+
+The knowledge base at `.devbooster/hub/knowledge/` contains curated, field-validated patterns, migration guidance, and technical decisions organized by stack. Each article documents a problem, symptom, or decision, and links to the relevant official source. Boosters consult this base selectively:
+`index.md` → matching article → relevant section (`start_line`/`end_line`) → linked official source → reconcile with actual project context.
+
+The base is read-only. Only project maintainers update it.
+
+| Article | Content |
+|---|---|
+| [`index.md`](.devbooster/hub/knowledge/index.md) | Global catalog, usage protocol, trusted official source matrix, and maintenance rules |
+| [`react-patterns.md`](.devbooster/hub/knowledge/react-patterns.md) | Effects, derived state, async UI strategy, Suspense boundaries, hooks, state mutation |
+| [`nextjs-pitfalls.md`](.devbooster/hub/knowledge/nextjs-pitfalls.md) | Build/lint changes, config drift, Server/Client boundaries, route loading, hydration |
+| [`eslint-migration.md`](.devbooster/hub/knowledge/eslint-migration.md) | ESLint 9 flat config migration, masking, inline suppressions |
+| [`typescript-patterns.md`](.devbooster/hub/knowledge/typescript-patterns.md) | Import paths, suppressions, discriminated UI states, runtime validation, null safety |
+| [`dependency-guide.md`](.devbooster/hub/knowledge/dependency-guide.md) | Safe update model, dependency analysis, audit interpretation |
+| [`upgrade-fallout.md`](.devbooster/hub/knowledge/upgrade-fallout.md) | Upgrade fallout: scripts, config, new lint rules, validation |
+| [`migration-guides.md`](.devbooster/hub/knowledge/migration-guides.md) | Library-specific migrations (react-to-print, Formik, Radix, shadcn) |
+| [`nodejs-patterns.md`](.devbooster/hub/knowledge/nodejs-patterns.md) | Runtime alignment, ESM/CJS, environment, async failures, scripts |
+| [`package-manager-patterns.md`](.devbooster/hub/knowledge/package-manager-patterns.md) | Lockfiles, peers, overrides, audit, workspace, immutable installs |
+| [`monorepo-patterns.md`](.devbooster/hub/knowledge/monorepo-patterns.md) | Package boundaries, dependency resolution, shared config, cache |
+| [`trpc-patterns.md`](.devbooster/hub/knowledge/trpc-patterns.md) | Context/auth, input validation, errors, type integrity, router design |
+| [`tanstack-patterns.md`](.devbooster/hub/knowledge/tanstack-patterns.md) | Query ownership, keys, invalidation, async UI states, caching, SSR hydration |
+| [`prisma-postgresql-patterns.md`](.devbooster/hub/knowledge/prisma-postgresql-patterns.md) | Generation drift, migrations, query loading, transactions, indexes |
+| [`nestjs-patterns.md`](.devbooster/hub/knowledge/nestjs-patterns.md) | Modules, DI, validation, guards, exceptions, configuration |
+| [`vite-patterns.md`](.devbooster/hub/knowledge/vite-patterns.md) | Env exposure, base paths, aliases, ESM/CJS, optimizer, plugins, React integration |
+| [`tailwind-shadcn-patterns.md`](.devbooster/hub/knowledge/tailwind-shadcn-patterns.md) | v3/v4 migration, source scanning, tokens, themes, design-system reuse |
+| [`testing-patterns.md`](.devbooster/hub/knowledge/testing-patterns.md) | Environments, determinism, mocks, async UI behavior, CI parity, validation |
+| [`angular-patterns.md`](.devbooster/hub/knowledge/angular-patterns.md) | Standalone APIs, DI, signals/RxJS, forms, HTTP, routing |
+
+---
+
 ## 🛠️ 2. TECHNICAL SKILL MATRIX (DENSE KNOWLEDGE)
 
 ### Frontend & UI/UX
@@ -108,6 +139,7 @@
 | `global-documentation.md` | Generates the 17-section universal technical documentation spec. |
 | `internal-documentation.md` | Generates repository-specific internal documentation with absolute paths and file/asset maps. |
 | `atomic.md` | Surgical, single-step implementation spec (final execution stage). |
+| `auto-triage.md` | Auto Triage Orchestrator — manually activated, artifact-centered engineering triage with separate approvals for Plan + Review and reviewed-plan execution. |
 | `advisor.md` | Hub Consultant — recommends the best booster path for the user's task. |
 | `review.md` | Elite Auditor — multi-agent orchestration for plan and architecture validation. |
 | `code-audit.md` | Strict Code Auditor — syntax, linting, and React Doctor diagnostics for the codebase. |
@@ -130,7 +162,10 @@
 | `coder.md` | Co-Creative Coder — debates folder patterns and code design, writes code only under command. |
 | `save-context.md` | Save Context — compacta a conversa em YAML para continuar em um novo chat sem perda de contexto. |
 | `diff-review.md` | Diff Review — analisa o diff como um dev sênior revisando PR, verificando naming, padrões, complexidade e boas práticas. |
+| `enhance.md` | Evolution Specialist — adds new features and expands existing flows in running projects. |
+| `ui-ux-pro-max.md` | Premium Design Intelligence — 50+ styles, 97 color palettes, 57 font pairings, 99 UX guidelines. |
 | `audit.md` | Audit — faz lint e typecheck funcionarem no terminal, detecta bypasses e separa achados em Setup Issues / Lot 1 / Lot 2. |
+| `smart-task.md` | Smart Task — lightweight triage with full investigation calibre, single "pode seguir" approval, atomic plan + Builder execution. Persisted artifact for debug and rollback. |
 
 ---
 
@@ -163,7 +198,8 @@
 - **`playwright_runner.py`**: E2E Health checks with headless screenshots.
 - **`session_manager.py`**: Rapid tech stack analysis and file-level statistics.
 - **`auto_preview.py`**: Automated dev server lifecycle management.
-- **`convert_rules.py`**: Agent rule transformation and standardization.
+- `convert_rules.py`: Agent rule transformation and standardization.
+
 
 ---
 
@@ -173,8 +209,9 @@
 |---|---|
 | **Total Agents** | 20 |
 | **Total Skills** | 40+ |
-| **Master Boosters** | 31 |
-| **Operational Scripts** | 2 (Master) + 21 (Skill-level) |
+| **Master Boosters** | 35 |
+| **Knowledge Base Articles** | 18 |
+| **Operational Scripts** | 2 (Master) + 20 (Skill-level) |
 | **Coverage** | ~95% Full-stack Web/Mobile |
 
 ---
@@ -220,6 +257,8 @@ This booster exists specifically to persist context and may generate its artifac
 These boosters should maintain an execution state artifact during their run to track diagnosis, decisions, and outcomes:
 - `audit.md` → `@booster-generated/audit/`
 - `stack-refresh.md` → `@booster-generated/stack-refresh/`
+- `auto-triage.md` → `@booster-generated/auto-triage/`
+- `smart-task.md` → `@booster-generated/smart-task/`
 
 ### Behavior Rules:
 - Each booster writes to its own folder — no overlapping paths.

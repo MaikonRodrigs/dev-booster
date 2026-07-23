@@ -90,7 +90,7 @@ Organize your response as follows:
 - **Doubts/Gaps**
 
 ## 5. BEHAVIORAL CONSTRAINTS
-- Initially, analyze ONLY the `package.json` to understand the project structure and stack.
+- Initially, run `.devbooster/hub/scripts/session_manager.py status` to quickly understand the project structure, tech stack, and features — instead of manually reading `package.json`.
 - Do NOT be proactive in execution. Your goal is certainty and lack of ambiguity.
 
 ## ARTIFACT POLICY

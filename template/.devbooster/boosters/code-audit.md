@@ -50,7 +50,7 @@ Only switch to execution mode after the user provides the commit scope.
 
 ## 3. PRE-FLIGHT (MANDATORY)
 1. Use repository-relative paths directly from `.devbooster/` and `.devbooster/hub/`.
-2. **STACK DISCOVERY:** Quickly read `package.json` or `PROJECT.md` to determine the project's technology stack (e.g., React, Angular, Vue, Node.js).
+2. **STACK DISCOVERY:** Run `.devbooster/hub/scripts/session_manager.py status` to detect the project's technology stack (e.g., React, Angular, Vue, Node.js), features, and structure.
 3. **Run Operational Audit Scripts:**
     - **Mandatory when relevant:** `security_scan.py`, `type_coverage.py`, `lint_runner.py` (if they exist).
 4. **React/Next.js Frontend Triage (3-Phase Flow):** ONLY IF the project uses React/Next.js:

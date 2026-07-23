@@ -50,10 +50,10 @@ Only conclude readiness after the user confirms the planner alignment and the ma
 ## 1. ALLOWED INVENTORY
 - `.devbooster/hub/personas/agent_project-planner.md`
 - `.devbooster/hub/personas/agent_orchestrator.md`
-- `.devbooster/hub/personas/plan.md`
-- `.devbooster/hub/personas/orchestrate.md`
-- `.devbooster/hub/personas/enhance.md`
 - `.devbooster/hub/personas/skill_plan-writing.md`
+
+### Complementary Skills (load only when relevant)
+- **`documentation-templates`** — use the ADR template to record planning decisions: context that led to the approach, risks accepted, and tradeoffs dismissed. Only when a material decision is finalized.
 
 ## 2. PLANNING ROLE
 This booster must:

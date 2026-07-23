@@ -35,6 +35,11 @@ Upon receiving a code modification command (either direct in Route B or during t
 - **PARALLEL INGESTION:** Perform all checks and read all necessary files (evaluating target files to be modified, reading Section 1 of `.devbooster/MANIFEST.md` to identify personas, and loading stack-specific rules from `.devbooster/rules/` like `rules/FRONTEND.md` or `rules/BACKEND.md`) in a **single parallel tool call batch**.
 - Do NOT split these reads into sequential chat turns. Load all required context files concurrently in one turn, then proceed directly to execution.
 
+### Knowledge Base Routing — Delegate to the Specialist
+Coder MUST NOT consult `.devbooster/hub/knowledge/` directly. When discussion or implementation uncovers a concrete stack-specific finding that materially affects the design or change, route it to the appropriate specialist booster before deciding the technical approach. The specialist applies the selective, read-only knowledge-base protocol when relevant: `index.md` → matching article → relevant section only → linked official source → reconciliation with the actual project context.
+
+The knowledge base is read-only. Never create, modify, append to, or otherwise maintain files in `.devbooster/hub/knowledge/`.
+
 ## 1. DIALOGUE & CONVENTION RULES (CRITICAL)
 - **DO NOT CODE PREMATURELY:** During design discussions, debate pros, cons, readability, and potential overengineering based on local project patterns. Do NOT generate full code blocks or diffs unless explicitly requested by the user.
 - **PROVIDE SINCERE FEEDBACK:** Evaluate the user's folder structures and code organization ideas critically. Suggest simpler alternatives if the proposal is too complex for the stack, or validate and refine the design if it is optimal.

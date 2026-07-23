@@ -123,6 +123,25 @@ If it is generic, empty, or not useful, ignore it.
 - `.devbooster/hub/personas/agent_code-archaeologist.md`
 - `.devbooster/hub/skills/systematic-debugging/SKILL.md`
 
+### Knowledge Base Consultation — Finding-Driven and Read-Only
+Use `.devbooster/hub/knowledge/` only after Stage 2 produces a concrete lint, typecheck, configuration, runtime, or dependency finding.
+
+Do NOT read the entire knowledge base.
+
+For each relevant finding:
+1. Read `.devbooster/hub/knowledge/index.md`.
+2. Locate the matching article and section from the index.
+3. Read only that section using `read_file` with `start_line` and `end_line`.
+4. Read the official source linked by the article or section before choosing a correction.
+5. Reconcile the local pattern and official guidance with the actual project version, configuration, dependency graph, and affected code.
+
+The knowledge base is read-only. Never create, modify, append to, or otherwise maintain files in `.devbooster/hub/knowledge/` during an audit.
+
+### Knowledge Base Decision Traceability
+When a knowledge-base section materially informs an audit conclusion, correction, or recommendation, record a complete `Knowledge Base Decision Trace` in the execution artifact: project convention observed, article and section consulted, official source, decision, rationale, and validation or follow-up.
+
+Keep chat concise: state the project convention, whether it was preserved or changed, and that the conclusion was validated against project context and official guidance. Do not dump article names, section names, or URLs unless the user asks. Never claim that the knowledge base or an official source was consulted unless the relevant local section and source were actually read during the current audit.
+
 ## 4. AUDIT DISCIPLINE
 The booster has only two missions:
 - run lint correctly
@@ -347,6 +366,7 @@ If the user approves:
   - **Typecheck Findings**
   - **Lot 1 — Safe Fixes**
   - **Lot 2 — Needs Deeper Analysis**
+- consult the knowledge base only for findings that match a concrete known pattern, following the finding-driven and read-only rules above
 - update the artifact
 - summarize briefly in chat
 - ask:

@@ -6,6 +6,16 @@ It has been formatted as a code block to facilitate direct reading in the IDE.
 
 ---
 
+[ 🧠 PRIMARY AUTO TRIAGE ENTRY POINT ]
+
+• auto-triage.md    -> Auto Triage Orchestrator. Manually activated and lazy-loaded.
+                       After the real demand arrives, it evaluates the full booster catalog,
+                       coordinates every applicable specialist through one evidence artifact,
+                       requires approval for Plan + Review, then a separate approval for
+                       reviewed-plan execution. It complements — never replaces — manual boosters.
+
+---
+
 [ 🛠️ ENGINEERING & EXECUTION ]
 
 • create.md         -> Master Architect. Focused on Scaffolding and creating new 
@@ -36,11 +46,20 @@ It has been formatted as a code block to facilitate direct reading in the IDE.
                        actual code surgically.
 • save-context.md   -> Save Context. Compacta toda a conversa em YAML para continuar 
                        em um novo chat sem perda de contexto.
+• enhance.md        -> Evolution Specialist. Adds new features and expands existing flows
+                       in running projects with staged planning, approval, and verification.
+• smart-task.md     -> Smart Task. Lightweight triage with full investigation depth.
+                       Same flow mapping and specialist activation as Auto Triage, but
+                       single "É isso?" approval → atomic plan → Builder executes.
+                       Persisted artifact for traceability.
 
 ---
 
 [ 🔍 DISCOVERY & PLANNING ]
 
+• auto-triage.md    -> Auto Triage. Universal engineering triage for ambiguous, high-risk,
+                       or cross-cutting work. Maps context, coordinates applicable boosters,
+                       records evidence, and requires staged human approval before execution.
 • discovery.md      -> Strategic Consultant. Uses a 3-path brainstorm to validate 
                        product ideas and business rules.
 • planning.md       -> Alignment & Readiness. Consolidates decisions, maps risks/gaps, and validates readiness 
@@ -73,6 +92,8 @@ It has been formatted as a code block to facilitate direct reading in the IDE.
 • backend.md        -> Backend Expert. Focused on APIs, tRPC, Databases, and Server.
 • design.md         -> UI/UX Audit. Verifies if components are following 
                        premium standards and accessibility.
+• ui-ux-pro-max.md  -> Premium Design Intelligence. 50+ styles, 97 color palettes, 57 font pairings,
+                       and 99 UX guidelines for complete design system generation.
 • seo.md            -> SEO Guardian. Validates semantic HTML and metatags for indexing.
 • mobile.md         -> Mobile Master. Activates patterns for React Native, Expo, and touch UX.
 • stack-refresh.md  -> Stack Refresh. Audits runtime, framework, and dependency drift,
@@ -102,9 +123,11 @@ Standard flow:
 Activation examples:
 - Drag `.devbooster/boosters/frontend.md` into the chat and send.
 - Drag `.devbooster/boosters/discovery.md` into the chat and send.
+- Drag `.devbooster/boosters/auto-triage.md` into the chat and send.
 - Drag `.devbooster/boosters/advisor.md` into the chat and send.
 
 Behavioral patterns:
+- `auto-triage.md` is the recommended deep-triage entry point for ambiguous, high-risk, or cross-cutting work. It stays armed until the real demand, builds a shared investigation artifact, requires Plan + Review approval, and requires separate approval before execution.
 - Domain boosters, such as frontend, backend, testing, and performance:
   activate quickly, enter armed mode, and load context only after the first real pain point.
 - Synthesis boosters, such as documentation and planning:
@@ -125,6 +148,30 @@ After activation, send the next step normally.
 Example:
 "[planning.md file sent in chat]"
 "Now I want to validate if we have established enough context to move to implementation."
+
+---
+
+## 📚 KNOWLEDGE BASE
+
+Dev Booster ships with a curated knowledge base at `.devbooster/hub/knowledge/`.
+It contains field-validated patterns, migration guides, and technical decisions
+organized by stack. Every article links to official documentation.
+
+When a booster encounters a concrete technical finding or non-trivial decision, it
+may consult this base selectively:
+`index.md` → matching article → relevant section only → linked official source
+→ reconcile with the actual project context.
+
+Articles available:
+- react-patterns, nextjs-pitfalls, typescript-patterns
+- tanstack-patterns, trpc-patterns, testing-patterns
+- tailwind-shadcn-patterns, vite-patterns, eslint-migration
+- dependency-guide, upgrade-fallout, migration-guides
+- nodejs-patterns, package-manager-patterns, monorepo-patterns
+- prisma-postgresql-patterns, nestjs-patterns, angular-patterns
+
+The base is read-only. Only project maintainers may update it.
+Boosters never create, modify, or maintain files in the knowledge base.
 
 ---
 

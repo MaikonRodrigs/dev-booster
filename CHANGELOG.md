@@ -9,6 +9,30 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 
 ## 24/07/2026
 
+### feature: retry commit on git identity errors
+
+Autor: MaikonRodrigss
+Branch de origem: `main`
+Arquivos modificados: 3
+Linhas adicionadas: +9
+Linhas removidas: -3
+
+Resumo técnico: Adicionada uma política limitada de até três tentativas para falhas de identidade do Git, sem alterar automaticamente `user.name`, `user.email`, a configuração do Git ou a mensagem do commit. A versão do pacote também foi atualizada para `1.18.3`.
+
+### Alterado
+
+- `.devbooster/boosters/commit.md`: retry controlado para erros de identidade e notificação após a terceira tentativa.
+- `template/.devbooster/boosters/commit.md`: mesma regra de retry na versão distribuída pelo template.
+- `package.json`: versão atualizada de `1.18.1` para `1.18.3`.
+
+### Arquivos modificados
+
+- `.devbooster/boosters/commit.md`
+- `package.json`
+- `template/.devbooster/boosters/commit.md`
+
+---
+
 Autor: MaikonRodrigss
 Branch de origem: `main`
 Arquivos modificados: 52

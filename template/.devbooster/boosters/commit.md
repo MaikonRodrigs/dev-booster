@@ -217,7 +217,10 @@ After Stage 1 has passed and the changelog entry is ready:
 
 1. Stage the complete current worktree with `git add .` from the repository root. Do not stage only files inferred by the summary.
 2. Create exactly one commit using the approved message.
-3. If the commit fails, stop. Do not retry blindly, create a second commit, reset, stash, or remove the prepared changelog. Leave the failure state for the user to resolve and report it briefly.
+3. If `git commit` fails with an identity error such as `Author identity unknown`, `Please tell me who you are`, or `unable to auto-detect email address`, retry the same approved commit command at most three total attempts. A retry is not a second commit: only the first successful command creates the commit.
+4. Do not silently change `user.name`, `user.email`, global Git configuration, local Git configuration, or the commit message. Do not use `git config` automatically to guess the user's identity.
+5. If the same identity error persists after the third attempt, stop and report briefly that the commit was not created because Git could not identify the author. Tell the user that they need to configure `user.name` and `user.email` in the desired Git scope, then run the booster again.
+6. For every other commit failure, stop immediately. Do not retry blindly, create a second commit, reset, stash, or remove the prepared changelog. Leave the failure state for the user to resolve and report it briefly.
 
 ## 5. POST-COMMIT RESPONSE
 

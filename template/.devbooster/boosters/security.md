@@ -52,6 +52,20 @@ Rules:
 - Prefer adding one relevant skill/persona at a time.
 - Keep the user inside the same booster mode while expanding context.
 
+## 0.3 KNOWLEDGE BASE CONSULTATION — CONDITIONAL AND READ-ONLY
+The current knowledge base supports dependency and supply-chain concerns only. Consult `.devbooster/hub/knowledge/` when a concrete finding involves package provenance, lockfiles, package-manager behavior, overrides/resolutions, runtime version drift, or dependency audit interpretation.
+
+Do NOT use the knowledge base as a substitute for security-specific investigation of authentication, authorization, secrets, injection, PII, attack surfaces, or threat modeling.
+
+For an eligible dependency finding, do NOT read the entire knowledge base. Read `index.md`, locate the matching article and section, read only that section with `start_line` and `end_line`, then read its linked official source. Reconcile both with the actual dependency path, reachability, runtime exposure, package manager, lockfile, and project configuration.
+
+The knowledge base is read-only. Never create, modify, append to, or otherwise maintain files in `.devbooster/hub/knowledge/` during security work.
+
+### Knowledge Base Decision Traceability
+For an eligible dependency or supply-chain consultation, when a knowledge-base section materially informs a security conclusion and a persistent security artifact is created or updated, record a complete `Knowledge Base Decision Trace` in that artifact: project convention observed, article and section consulted, official source, decision, rationale, and validation or follow-up.
+
+When no persistent artifact exists, keep the chat trace concise: state the project convention, whether it was preserved or changed, and that the conclusion was validated against project context and official guidance. Do not dump article names, section names, or URLs unless the user asks. Never claim that the knowledge base or an official source was consulted unless the relevant local section and source were actually read during the current security work. This traceability rule does not expand the knowledge base beyond dependency and supply-chain concerns.
+
 ## 1. ALLOWED INVENTORY
 - `.devbooster/hub/personas/agent_security-auditor.md`
 - `.devbooster/hub/personas/agent_penetration-tester.md`

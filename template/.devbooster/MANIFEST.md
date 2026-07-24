@@ -43,6 +43,37 @@
 
 ---
 
+## 📚 1.5 KNOWLEDGE BASE (CURATED PATTERNS AND DECISIONS)
+
+The knowledge base at `.devbooster/hub/knowledge/` contains curated, field-validated patterns, migration guidance, and technical decisions organized by stack. Each article documents a problem, symptom, or decision, and links to the relevant official source. Boosters consult this base selectively:
+`index.md` → matching article → relevant section (`start_line`/`end_line`) → linked official source → reconcile with actual project context.
+
+The base is read-only. Only project maintainers update it.
+
+| Article | Content |
+|---|---|
+| [`index.md`](.devbooster/hub/knowledge/index.md) | Global catalog, usage protocol, trusted official source matrix, and maintenance rules |
+| [`react-patterns.md`](.devbooster/hub/knowledge/react-patterns.md) | Effects, derived state, async UI strategy, Suspense boundaries, hooks, state mutation |
+| [`nextjs-pitfalls.md`](.devbooster/hub/knowledge/nextjs-pitfalls.md) | Build/lint changes, config drift, Server/Client boundaries, route loading, hydration |
+| [`eslint-migration.md`](.devbooster/hub/knowledge/eslint-migration.md) | ESLint 9 flat config migration, masking, inline suppressions |
+| [`typescript-patterns.md`](.devbooster/hub/knowledge/typescript-patterns.md) | Import paths, suppressions, discriminated UI states, runtime validation, null safety |
+| [`dependency-guide.md`](.devbooster/hub/knowledge/dependency-guide.md) | Safe update model, dependency analysis, audit interpretation |
+| [`upgrade-fallout.md`](.devbooster/hub/knowledge/upgrade-fallout.md) | Upgrade fallout: scripts, config, new lint rules, validation |
+| [`migration-guides.md`](.devbooster/hub/knowledge/migration-guides.md) | Library-specific migrations (react-to-print, Formik, Radix, shadcn) |
+| [`nodejs-patterns.md`](.devbooster/hub/knowledge/nodejs-patterns.md) | Runtime alignment, ESM/CJS, environment, async failures, scripts |
+| [`package-manager-patterns.md`](.devbooster/hub/knowledge/package-manager-patterns.md) | Lockfiles, peers, overrides, audit, workspace, immutable installs |
+| [`monorepo-patterns.md`](.devbooster/hub/knowledge/monorepo-patterns.md) | Package boundaries, dependency resolution, shared config, cache |
+| [`trpc-patterns.md`](.devbooster/hub/knowledge/trpc-patterns.md) | Context/auth, input validation, errors, type integrity, router design |
+| [`tanstack-patterns.md`](.devbooster/hub/knowledge/tanstack-patterns.md) | Query ownership, keys, invalidation, async UI states, caching, SSR hydration |
+| [`prisma-postgresql-patterns.md`](.devbooster/hub/knowledge/prisma-postgresql-patterns.md) | Generation drift, migrations, query loading, transactions, indexes |
+| [`nestjs-patterns.md`](.devbooster/hub/knowledge/nestjs-patterns.md) | Modules, DI, validation, guards, exceptions, configuration |
+| [`vite-patterns.md`](.devbooster/hub/knowledge/vite-patterns.md) | Env exposure, base paths, aliases, ESM/CJS, optimizer, plugins, React integration |
+| [`tailwind-shadcn-patterns.md`](.devbooster/hub/knowledge/tailwind-shadcn-patterns.md) | v3/v4 migration, source scanning, tokens, themes, design-system reuse |
+| [`testing-patterns.md`](.devbooster/hub/knowledge/testing-patterns.md) | Environments, determinism, mocks, async UI behavior, CI parity, validation |
+| [`angular-patterns.md`](.devbooster/hub/knowledge/angular-patterns.md) | Standalone APIs, DI, signals/RxJS, forms, HTTP, routing |
+
+---
+
 ## 🛠️ 2. TECHNICAL SKILL MATRIX (DENSE KNOWLEDGE)
 
 ### Frontend & UI/UX
@@ -122,6 +153,7 @@
 | `stack-refresh.md` | Runtime, framework, and dependency modernization analysis with phased upgrade planning. |
 | `testing.md` | Test generation strategy and runner coordination. |
 | `changelog.md` | Structured release note and changelog generation. |
+| `commit.md` | Worktree checkpoint commit with conversational preflight, security gate, and root `CHANGELOG.md` update. |
 | `planning.md` | Consolidates context, maps risks/gaps, and validates whether the task is ready for implementation. |
 | `frontend.md` | Frontend specialist activation with stack-specific rules. |
 | `backend.md` | Backend specialist activation with API/DB constraints. |
@@ -167,7 +199,8 @@
 - **`playwright_runner.py`**: E2E Health checks with headless screenshots.
 - **`session_manager.py`**: Rapid tech stack analysis and file-level statistics.
 - **`auto_preview.py`**: Automated dev server lifecycle management.
-- **`convert_rules.py`**: Agent rule transformation and standardization.
+- `convert_rules.py`: Agent rule transformation and standardization.
+
 
 ---
 
@@ -177,7 +210,8 @@
 |---|---|
 | **Total Agents** | 20 |
 | **Total Skills** | 40+ |
-| **Master Boosters** | 35 |
+| **Master Boosters** | 37 |
+| **Knowledge Base Articles** | 18 |
 | **Operational Scripts** | 2 (Master) + 20 (Skill-level) |
 | **Coverage** | ~95% Full-stack Web/Mobile |
 

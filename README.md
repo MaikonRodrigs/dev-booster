@@ -36,7 +36,7 @@ After running the command, your project gets:
 ```
 .devbooster/
 ├── MANIFEST.md          ← inventory of all agents, skills, and boosters
-├── boosters/            ← 36 expert activators (auto triage, debug, review, design, deploy, enhance, ui-ux-pro-max, smart-task...)
+├── boosters/            ← 37 expert activators (auto triage, commit, debug, review, design, deploy, enhance, ui-ux-pro-max, smart-task...)
 ├── hub/                 ← 40+ skills and operational scripts
 └── rules/
     ├── PROTOCOL.md      ← governance and conduct rules
@@ -117,7 +117,8 @@ Boosters are expert activators you invoke manually during development.
 | `performance.md` | Core Web Vitals / bundle issues |
 | `code-audit.md` | Strict Code Auditor (Syntax, React Doctor) before PR |
 | `audit.md` | Make terminal lint and typecheck operational, check bypasses, and separate safe fixes from deep review |
-| + 20 more | See `.devbooster/MANIFEST.md` |
+| `commit.md` | Worktree checkpoint commit with conversational preflight, security gate, and root `CHANGELOG.md` update |
+| + 21 more | See `.devbooster/MANIFEST.md` |
 
 The practical activation flow is simple:
 - drag a booster file into the chat
@@ -151,6 +152,7 @@ Many boosters now use a two-step flow:
 | `security.md` | No artifact by default; save only if the user explicitly asks |
 | `coder.md` | Does not create local state files |
 | `diff-review.md` | Must not generate files, artifacts, logs, or review documents |
+| `commit.md` | No `@booster-generated` artifact; updates only the root `CHANGELOG.md` after approval |
 
 ---
 
@@ -216,6 +218,7 @@ Instead of dragging booster files into the chat, you can instantly activate any 
 - **`@Atomic`** ➔ Activates `atomic.md` (Surgical step-by-step writing).
 - **`@Review`** ➔ Activates `review.md` (Elite code audit).
 - **`@Advisor`** ➔ Activates `advisor.md` (Kit GPS consultant).
+- **`@Commit`** ➔ Activates `commit.md` (Worktree checkpoint, security gate, and root `CHANGELOG.md` update).
 - **`@Enhance`** ➔ Activates `enhance.md` (Evolution mode for adding features to existing projects).
 - **`@UIUX`** ➔ Activates `ui-ux-pro-max.md` (Premium Design Intelligence).
 - *See `.devbooster/rules/TRIGGERS.md` for the complete trigger list.*

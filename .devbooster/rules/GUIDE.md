@@ -44,6 +44,8 @@ It has been formatted as a code block to facilitate direct reading in the IDE.
                        ideas, writing code only under command.
 • builder.md        -> Builder Specialist. Executes implementation plans and writes 
                        actual code surgically.
+• commit.md         -> Commit Checkpoint. Inspects the worktree, proposes one natural commit,
+                       performs a security gate, updates the root CHANGELOG.md, and commits the full worktree.
 • save-context.md   -> Save Context. Compacta toda a conversa em YAML para continuar 
                        em um novo chat sem perda de contexto.
 • enhance.md        -> Evolution Specialist. Adds new features and expands existing flows

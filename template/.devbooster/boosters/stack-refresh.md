@@ -60,6 +60,7 @@ Purpose:
 - run the correct `outdated` commands for the detected package manager and scope
 - run the correct audit/security commands when relevant
 - classify findings into safe, risky, and human-review categories
+- consult the knowledge base only for findings that match a concrete known pattern, following the finding-driven and read-only rules below
 - update the artifact with the detailed findings
 
 Stage 1 requires explicit user approval after Stage 0.
@@ -175,6 +176,25 @@ Load only after the user has approved update execution and validation is actuall
 - Do NOT load DevOps/infra assets unless Docker, CI, deployment, engines, or runtime infrastructure actually appear in the repository.
 - Do NOT load validation/test assets during Stage 0 mapping.
 - If evidence is missing, stay with the Stage 0 fixed base load only.
+
+### Knowledge Base Consultation — Finding-Driven and Read-Only
+Do not consult `.devbooster/hub/knowledge/` during Stage 0 mapping. Consult it only after Stage 1 identifies a concrete outdated package, security finding, runtime mismatch, configuration warning, compatibility issue, or migration surface.
+
+Do NOT read the entire knowledge base.
+
+For each relevant finding:
+1. Read `.devbooster/hub/knowledge/index.md`.
+2. Locate the matching article and section from the index.
+3. Read only that section using `read_file` with `start_line` and `end_line`.
+4. Read the official source linked by the article or section before recommending an update, migration path, or deferral.
+5. Reconcile the local pattern and official guidance with the actual package versions, package manager, lockfile, workspace topology, runtime, configuration, and dependency graph.
+
+The knowledge base is read-only. Never create, modify, append to, or otherwise maintain files in `.devbooster/hub/knowledge/` during Stack Refresh.
+
+### Knowledge Base Decision Traceability
+When a knowledge-base section materially informs an upgrade classification, migration path, deferral, or recommendation, record a complete `Knowledge Base Decision Trace` in the execution artifact: project convention observed, article and section consulted, official source, decision, rationale, and validation or follow-up.
+
+Keep chat concise: state the project convention, whether it was preserved or changed, and that the conclusion was validated against project context and official guidance. Do not dump article names, section names, or URLs unless the user asks. Never claim that the knowledge base or an official source was consulted unless the relevant local section and source were actually read during the current Stack Refresh.
 
 ## 4. PRE-FLIGHT DISCIPLINE
 Start working immediately on activation.

@@ -41,6 +41,18 @@ When the review input arrives:
 - Load only the personas, skills, and scripts necessary for that specific review.
 - Run audit scripts only when they are actually relevant to the supplied material.
 
+## 0.2 KNOWLEDGE BASE CONSULTATION — CONDITIONAL AND READ-ONLY
+Consult `.devbooster/hub/knowledge/` only when the supplied plan, implementation, or review target contains a concrete known pattern, migration, dependency concern, framework compatibility issue, technical finding, or non-trivial implementation decision that needs validation.
+
+Do not consult the base for a mechanical plan detail already governed by a valid local convention. Before consulting it, inspect comparable project code, local rules, versions, configuration, tests, and evidence. Do NOT read the entire knowledge base. Read `index.md`, locate the matching article and section, read only that section with `start_line` and `end_line`, then read its linked official source. Reconcile both with the actual project versions, configuration, dependency graph, plan scope, and evidence before issuing a review verdict. Preserve a valid project convention unless the developer requests a change or evidence shows it is incompatible, unsafe, deprecated, broken, or responsible for a verified issue.
+
+The knowledge base is read-only. Never create, modify, append to, or otherwise maintain files in `.devbooster/hub/knowledge/` during review.
+
+### Knowledge Base Decision Traceability
+When a knowledge-base section materially informs a review verdict, and a persistent review artifact is created or updated, record a complete `Knowledge Base Decision Trace` in that artifact: project convention observed, article and section consulted, official source, decision, rationale, and validation or follow-up.
+
+When no persistent artifact exists, keep the chat trace concise: state the project convention, whether it was preserved or changed, and that the verdict was validated against project context and official guidance. Do not dump article names, section names, or URLs unless the user asks. Never claim that the knowledge base or an official source was consulted unless the relevant local section and source were actually read during the current review.
+
 ## 1. PRE-FLIGHT (MANDATORY)
 1. Use repository-relative paths directly from `.devbooster/` and `.devbooster/hub/`.
 2. Read `.devbooster/MANIFEST.md` only after the review target is available.

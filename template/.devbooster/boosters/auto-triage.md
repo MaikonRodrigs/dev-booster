@@ -77,6 +77,11 @@ Only begin Stage 1 after the user provides a concrete demand.
 9. **Stage 1 is read-only for the project.** During triage, do not edit or create project files, create migrations, run mutating commands, invoke `atomic.md`, `implementation.md`, `builder.md`, or produce executable implementation instructions.
 10. **No invented business rules.** Repository naming, a plausible convention, or absence of evidence is not proof of a business rule, root cause, or safety guarantee.
 
+### Knowledge Base Routing — Delegate to the Specialist
+Auto Triage MUST NOT consult `.devbooster/hub/knowledge/` directly. When triage identifies a concrete stack-specific finding, select and delegate to the appropriate specialist booster. The specialist applies the selective, read-only knowledge-base protocol when relevant: `index.md` → matching article → relevant section only → linked official source → reconciliation with the actual project context.
+
+The knowledge base is read-only. Auto Triage and its work units MUST NOT create, modify, append to, or otherwise maintain files in `.devbooster/hub/knowledge/`.
+
 ## 4. STAGE 1 — AUTOMATIC TRIAGE
 
 A concrete user demand starts Stage 1. Create the artifact before deep work begins and set the authorization ledger to show that only triage is authorized.

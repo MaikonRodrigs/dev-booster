@@ -153,6 +153,7 @@ The base is read-only. Only project maintainers update it.
 | `stack-refresh.md` | Runtime, framework, and dependency modernization analysis with phased upgrade planning. |
 | `testing.md` | Test generation strategy and runner coordination. |
 | `changelog.md` | Structured release note and changelog generation. |
+| `commit.md` | Worktree checkpoint commit with conversational preflight, security gate, and root `CHANGELOG.md` update. |
 | `planning.md` | Consolidates context, maps risks/gaps, and validates whether the task is ready for implementation. |
 | `frontend.md` | Frontend specialist activation with stack-specific rules. |
 | `backend.md` | Backend specialist activation with API/DB constraints. |
@@ -209,7 +210,7 @@ The base is read-only. Only project maintainers update it.
 |---|---|
 | **Total Agents** | 20 |
 | **Total Skills** | 40+ |
-| **Master Boosters** | 35 |
+| **Master Boosters** | 37 |
 | **Knowledge Base Articles** | 18 |
 | **Operational Scripts** | 2 (Master) + 20 (Skill-level) |
 | **Coverage** | ~95% Full-stack Web/Mobile |

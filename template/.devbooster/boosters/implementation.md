@@ -53,6 +53,11 @@ Only generate the implementation plan after the user confirms to proceed.
 2. Analyze the current conversation context before selecting the implementation type.
 3. Ask for missing business rules ONLY if they are not documented or discussed.
 
+### Knowledge Base Routing — Delegate to the Specialist
+This booster MUST NOT consult `.devbooster/hub/knowledge/` directly. When implementation sizing identifies a concrete stack-specific risk, migration, compatibility concern, or technical finding that changes the plan, route it to the appropriate specialist booster before generating the final plan. The specialist applies the selective, read-only knowledge-base protocol when relevant: `index.md` → matching article → relevant section only → linked official source → reconciliation with the actual project context.
+
+The knowledge base is read-only. Never create, modify, append to, or otherwise maintain files in `.devbooster/hub/knowledge/`.
+
 ## 2. DECISION MATRIX (REPOSITY IMPLEMENTATION)
 Evaluate the task complexity and select the corresponding template file:
 

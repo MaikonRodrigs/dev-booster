@@ -44,6 +44,8 @@ It has been formatted as a code block to facilitate direct reading in the IDE.
                        ideas, writing code only under command.
 • builder.md        -> Builder Specialist. Executes implementation plans and writes 
                        actual code surgically.
+• commit.md         -> Commit Checkpoint. Inspects the worktree, proposes one natural commit,
+                       performs a security gate, updates the root CHANGELOG.md, and commits the full worktree.
 • save-context.md   -> Save Context. Compacta toda a conversa em YAML para continuar 
                        em um novo chat sem perda de contexto.
 • enhance.md        -> Evolution Specialist. Adds new features and expands existing flows
@@ -148,6 +150,30 @@ After activation, send the next step normally.
 Example:
 "[planning.md file sent in chat]"
 "Now I want to validate if we have established enough context to move to implementation."
+
+---
+
+## 📚 KNOWLEDGE BASE
+
+Dev Booster ships with a curated knowledge base at `.devbooster/hub/knowledge/`.
+It contains field-validated patterns, migration guides, and technical decisions
+organized by stack. Every article links to official documentation.
+
+When a booster encounters a concrete technical finding or non-trivial decision, it
+may consult this base selectively:
+`index.md` → matching article → relevant section only → linked official source
+→ reconcile with the actual project context.
+
+Articles available:
+- react-patterns, nextjs-pitfalls, typescript-patterns
+- tanstack-patterns, trpc-patterns, testing-patterns
+- tailwind-shadcn-patterns, vite-patterns, eslint-migration
+- dependency-guide, upgrade-fallout, migration-guides
+- nodejs-patterns, package-manager-patterns, monorepo-patterns
+- prisma-postgresql-patterns, nestjs-patterns, angular-patterns
+
+The base is read-only. Only project maintainers may update it.
+Boosters never create, modify, or maintain files in the knowledge base.
 
 ---
 

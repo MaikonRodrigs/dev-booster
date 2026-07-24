@@ -43,6 +43,7 @@ These triggers instantly activate specific booster behavior contracts without re
 - **`@ReviewDiff`** ➔ Activates `.devbooster/boosters/diff-review.md` (Pre-PR code review with project standards).
 - **`@Advisor`** ➔ Activates `.devbooster/boosters/advisor.md` (Kit GPS / routing consultant).
 - **`@Changelog`** ➔ Activates `.devbooster/boosters/changelog.md` (Release notes generator).
+- **`@Commit`** ➔ Activates `.devbooster/boosters/commit.md` (Worktree checkpoint commit with preflight, security gate, and root `CHANGELOG.md` update).
 - **`@Debug`** ➔ Activates `.devbooster/boosters/debug.md` (Systematic RCA / hypothesis engine).
 - **`@Deploy`** ➔ Activates `.devbooster/boosters/deploy.md` (Pre-flight release validation).
 - **`@StackRefresh`** ➔ Activates `.devbooster/boosters/stack-refresh.md` (Runtime/framework/dependency modernization analysis and phased upgrades).
@@ -52,3 +53,17 @@ These triggers instantly activate specific booster behavior contracts without re
 - **`@Doc`** ➔ Activates `.devbooster/boosters/global-documentation.md` (Universal spec generation).
 - **`@Enhance`** ➔ Activates `.devbooster/boosters/enhance.md` (Evolution mode for adding features to existing projects).
 - **`@UIUX`** ➔ Activates `.devbooster/boosters/ui-ux-pro-max.md` (Premium Design Intelligence — 50+ styles, 97 palettes, 57 fonts, 99 UX guidelines).
+- **`@Frontend`** ➔ Activates `.devbooster/boosters/frontend.md` (Frontend specialist with stack-specific React/Next/Vite/Angular/Tailwind rules).
+- **`@Backend`** ➔ Activates `.devbooster/boosters/backend.md` (Backend architect with API, database, runtime, and validation rules).
+- **`@Refactor`** ➔ Activates `.devbooster/boosters/refactor.md` (Clean Code and SOLID refactoring specialist).
+- **`@Performance`** ➔ Activates `.devbooster/boosters/performance.md` (Web Vitals, bundle optimization, rendering and caching analysis).
+- **`@Testing`** ➔ Activates `.devbooster/boosters/testing.md` (QA and test strategy coordinator for unit, integration, and E2E).
+- **`@Security`** ➔ Activates `.devbooster/boosters/security.md` (Security posture auditor for dependency, supply-chain, and threat analysis).
+- **`@CodeAudit`** ➔ Activates `.devbooster/boosters/code-audit.md` (Strict syntax, lint, React Doctor, and framework diagnostics audit).
+- **`@Design`** ➔ Activates `.devbooster/boosters/design.md` (UI/UX component audit and visual standards validation).
+- **`@Create`** ➔ Activates `.devbooster/boosters/create.md` (Master Architect for scaffolding new features and apps).
+- **`@Accessibility`** ➔ Activates `.devbooster/boosters/accessibility.md` (WCAG compliance and semantic HTML auditor).
+- **`@I18n`** ➔ Activates `.devbooster/boosters/i18n.md` (Internationalization specialist for text extraction and localization).
+- **`@Seo`** ➔ Activates `.devbooster/boosters/seo.md` (SEO audit and semantic HTML compliance check).
+- **`@Mobile`** ➔ Activates `.devbooster/boosters/mobile.md` (Mobile UX patterns for React Native and Expo).
+- **`@InternalDoc`** ➔ Activates `.devbooster/boosters/internal-documentation.md` (Internal project documentation with absolute paths and asset maps).

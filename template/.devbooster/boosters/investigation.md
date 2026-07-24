@@ -52,6 +52,11 @@ Examples:
 - You MUST NOT describe how to implement.
 - This process is a prerequisite for another AI model to handle execution.
 
+### Knowledge Base Routing — Delegate to the Specialist
+This booster MUST NOT consult `.devbooster/hub/knowledge/` directly. When investigation establishes a concrete stack-specific finding, record the evidence and route it to the appropriate specialist booster. The specialist applies the selective, read-only knowledge-base protocol when relevant: `index.md` → matching article → relevant section only → linked official source → reconciliation with the actual project context.
+
+The knowledge base is read-only. Never create, modify, append to, or otherwise maintain files in `.devbooster/hub/knowledge/`.
+
 ## 3. INVESTIGATION PROTOCOL
 
 ### 3.1 REQUEST ANALYSIS

@@ -52,6 +52,18 @@ Rules:
 - Prefer adding one relevant skill/persona at a time.
 - Keep the user inside the same booster mode while expanding context.
 
+## 0.3 KNOWLEDGE BASE CONSULTATION — CONDITIONAL AND READ-ONLY
+Consult `.devbooster/hub/knowledge/` only when a concrete testing, validation, framework, migration, runtime, or dependency finding requires stack-specific guidance, or when a non-trivial testing decision is needed: test scope, async UI behavior, browser boundary, request mocking, or query/client-state setup.
+
+Do not consult the base for a mechanical test that already follows a valid local fixture, helper, mock, and assertion convention. Before consulting it, inspect the existing test setup, comparable tests, active runner, and CI behavior. Do NOT read the entire knowledge base. Read `index.md`, locate the matching article and section, read only that section with `start_line` and `end_line`, then read its linked official source. Reconcile both with the active test runner, environment, CI behavior, project versions, and the behavior being validated. Preserve a valid project convention unless the developer requests a change or evidence shows it is incompatible, unsafe, deprecated, broken, or responsible for a verified issue.
+
+The knowledge base is read-only. Never create, modify, append to, or otherwise maintain files in `.devbooster/hub/knowledge/` during testing work.
+
+### Knowledge Base Decision Traceability
+When a knowledge-base section materially informs a testing decision, and a persistent testing artifact is created or updated, record a complete `Knowledge Base Decision Trace` in that artifact: project convention observed, article and section consulted, official source, decision, rationale, and validation.
+
+When no persistent artifact exists, keep the chat trace concise: state the project convention, whether it was preserved or changed, and that the decision was validated against project context and official guidance. Do not dump article names, section names, or URLs unless the user asks. Never claim that the knowledge base or an official source was consulted unless the relevant local section and source were actually read during the current testing work.
+
 ## 1. ALLOWED INVENTORY
 - `.devbooster/hub/personas/agent_test-engineer.md`
 - `.devbooster/hub/personas/agent_qa-automation-engineer.md`

@@ -43,6 +43,7 @@ These triggers instantly activate specific booster behavior contracts without re
 - **`@ReviewDiff`** ➔ Activates `.devbooster/boosters/diff-review.md` (Pre-PR code review with project standards).
 - **`@Advisor`** ➔ Activates `.devbooster/boosters/advisor.md` (Kit GPS / routing consultant).
 - **`@Changelog`** ➔ Activates `.devbooster/boosters/changelog.md` (Release notes generator).
+- **`@Commit`** ➔ Activates `.devbooster/boosters/commit.md` (Worktree checkpoint commit with preflight, security gate, and root `CHANGELOG.md` update).
 - **`@Debug`** ➔ Activates `.devbooster/boosters/debug.md` (Systematic RCA / hypothesis engine).
 - **`@Deploy`** ➔ Activates `.devbooster/boosters/deploy.md` (Pre-flight release validation).
 - **`@StackRefresh`** ➔ Activates `.devbooster/boosters/stack-refresh.md` (Runtime/framework/dependency modernization analysis and phased upgrades).

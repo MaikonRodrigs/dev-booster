@@ -39,6 +39,11 @@ Examples:
 - Load product and brainstorming context first.
 - Use validation scripts only when they are relevant to the exploration.
 
+### Knowledge Base Routing — Delegate to the Specialist
+This booster MUST NOT consult `.devbooster/hub/knowledge/` directly. When discovery produces a concrete stack-specific constraint, migration, compatibility concern, or technical finding, route it to the appropriate specialist booster before presenting a technical recommendation. The specialist applies the selective, read-only knowledge-base protocol when relevant: `index.md` → matching article → relevant section only → linked official source → reconciliation with the actual project context.
+
+The knowledge base is read-only. Never create, modify, append to, or otherwise maintain files in `.devbooster/hub/knowledge/`.
+
 ## 1. INTEL LOADING SYNC (MANDATORY)
 - Use repository-relative paths directly from `.devbooster/` and `.devbooster/hub/`.
 - Load Persona: `.devbooster/hub/personas/agent_product-owner.md`

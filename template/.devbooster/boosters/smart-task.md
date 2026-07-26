@@ -232,13 +232,13 @@ You MUST NOT generate the atomic plan yourself. You MUST invoke the **`atomic.md
 
 **Why this is mandatory:** `atomic.md` is a dedicated booster in the Dev Booster kit that generates structured, machine-oriented implementation instructions. The Smart Task cannot replace this role.
 
-### 5.2 Invoke Builder with the Atomic Plan
+### 5.2 Invoke the Builder Booster with the Atomic Plan
 
-Once `atomic.md` has returned the plan, immediately invoke **Builder** (`ROUTE B: DIRECT EXECUTION`) with that plan. Do NOT ask for a second approval.
+Once `atomic.md` has returned the plan, immediately load `.devbooster/boosters/builder.md` and invoke the **Builder booster** via ROUTE B: DIRECT EXECUTION with the atomic plan as input. Do NOT ask for a second approval. The Builder booster will run its own contract (sanity check, checklist, senior coding standards). Do NOT invoke any other booster or execute code directly.
 
 ### 5.3 Update the Artifact After Execution (Mandatory)
 
-Once Builder finishes, you MUST update the artifact's **Execution Plan and Outcome** section. This update is non-negotiable — never skip it, even for trivial changes.
+Once the Builder booster finishes execution, you MUST update the artifact's **Execution Plan and Outcome** section. This update is non-negotiable — never skip it, even for trivial changes.
 
 Update these fields:
 

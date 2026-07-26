@@ -7,6 +7,71 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 
 ---
 
+## 26/07/2026
+
+### feat(protocol): add NVM runtime activation rule
+
+Autor: MaikonRodrigss
+Branch de origem: `main`
+Arquivos modificados: 9
+Linhas adicionadas: +69
+Linhas removidas: -33
+Versão do pacote: `1.18.4`
+
+Resumo técnico: Adicionada regra fixa de ativação do NVM no PROTOCOL.md (§7) para resolver falhas de comandos Node em shells não-interativos. O NVM é uma shell function — quando o terminal da IA spawna um shell não-interativo, `nvm` não está disponível. A nova seção ensina o snippet correto (`export NVM_DIR="$HOME/.nvm"; [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"; nvm install; nvm use`) e estabelece a REPEAT RULE: todo comando Node precisa re-ativar o NVM. O PROJECT.md foi atualizado para detectar `.nvmrc` e lockfile durante o bootstrap. Boosters `stack-refresh.md` e `audit.md` corrigidos: substituído `run nvm use` (falha em shell não-interativo) por referência ao PROTOCOL.md §7.
+
+### Adicionado
+
+- `.devbooster/rules/PROTOCOL.md`: nova seção **§7 — NVM/NODE RUNTIME ACTIVATION** com detecção de `.nvmrc`, ativação correta via source, REPEAT RULE, exemplo de comando, e proibição de falso negativo.
+
+### Alterado
+
+- `.devbooster/rules/PROJECT.md`: STEP 1 agora detecta `.nvmrc`/`.node-version` + lockfile para identificar package manager; nova seção **Runtime Configuration** na Expected Structure.
+- `.devbooster/boosters/stack-refresh.md`: Step B substitui `run nvm use` por referência ao PROTOCOL.md §7 com alerta explícito de que `nvm use` puro falha em shell não-interativo.
+- `.devbooster/boosters/audit.md`: Step A mesma correção do stack-refresh.
+- `template/.devbooster/rules/PROTOCOL.md`, `PROJECT.md`, `boosters/stack-refresh.md`, `boosters/audit.md`: sincronizados via `scripts/sync-template.js`.
+
+### Arquivos modificados
+
+- `.devbooster/rules/PROTOCOL.md`
+- `.devbooster/rules/PROJECT.md`
+- `.devbooster/boosters/stack-refresh.md`
+- `.devbooster/boosters/audit.md`
+- `package.json`
+- `template/.devbooster/rules/PROTOCOL.md`
+- `template/.devbooster/rules/PROJECT.md`
+- `template/.devbooster/boosters/stack-refresh.md`
+- `template/.devbooster/boosters/audit.md`
+
+---
+
+### fix(boosters): replace generic execution booster references with explicit Builder booster
+
+Autor: MaikonRodrigss
+Branch de origem: `main`
+Arquivos modificados: 4
+Linhas adicionadas: +16
+Linhas removidas: -16
+Versão do pacote: `1.18.6`
+
+Resumo técnico: Substituídas referências genéricas a "selected execution booster" no auto-triage.md e "Builder" solto no smart-task.md por invocação explícita do booster `builder.md`. Agora ambos os boosters carregam `.devbooster/boosters/builder.md` via ROUTE B: DIRECT EXECUTION, com proibição explícita de invocar qualquer outro booster ou executar código diretamente.
+
+### Alterado
+
+- `.devbooster/boosters/auto-triage.md`: Stage 3 agora carrega `builder.md` explicitamente; Checkpoint E mostra `builder.md` como executor fixo; artifact field alterado de "Selected executor" para "Executor: `builder.md`".
+- `.devbooster/boosters/smart-task.md`: Stage 2 agora carrega `builder.md` explicitamente com proibição: "Do NOT invoke any other booster or execute code directly".
+- `template/.devbooster/boosters/auto-triage.md`: sincronizado.
+- `template/.devbooster/boosters/smart-task.md`: sincronizado.
+
+### Arquivos modificados
+
+- `.devbooster/boosters/auto-triage.md`
+- `.devbooster/boosters/smart-task.md`
+- `template/.devbooster/boosters/auto-triage.md`
+- `template/.devbooster/boosters/smart-task.md`
+
+---
+
 ## 24/07/2026
 
 ### feature: retry commit on git identity errors

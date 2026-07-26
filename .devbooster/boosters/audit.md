@@ -168,13 +168,13 @@ Start working immediately.
 
 ### Step A — Align runtime
 Before any `npm`, `npx`, `node`, `tsc`, `next`, lint, or typecheck command:
-- if the required runtime and package manager already work in the current project terminal context, do NOT run `nvm use`
+- if the required runtime and package manager already work in the current project terminal context, do NOT activate NVM
 - do not assume the package manager is always `npm`; use `pnpm`, `yarn`, `bun`, or `npm` according to the real setup
 - if the required Node-based runtime is unavailable or clearly misaligned, check whether `.nvmrc` exists
-- only if `.nvmrc` exists and runtime is not healthy, run `nvm use` and try again
-- if `.nvmrc` does not exist, do NOT run `nvm use`
+- only if `.nvmrc` exists and runtime is not healthy, follow the activation rule in PROTOCOL.md §7 (source NVM, then `nvm install && nvm use` — a bare `nvm use` will fail in non-interactive shells)
+- if `.nvmrc` does not exist, do NOT run NVM activation
 
-If this project required `nvm use` once to become healthy, then every new terminal execution that depends on Node must run `nvm use` again before the actual command.
+If this project required NVM activation once to become healthy, then every new terminal execution that depends on Node must re-activate NVM before the actual command (see the REPEAT RULE in PROTOCOL.md §7).
 This repeat rule applies only to projects that actually needed NVM alignment.
 
 ### Step B — Find the correct audit path

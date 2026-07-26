@@ -215,13 +215,13 @@ The activation flow should already be able to say, in summarized form, things su
 
 ### Step B — Align runtime only if needed
 Before any `npm`, `pnpm`, `yarn`, `bun`, `node`, or `npx` command:
-- if the required runtime already works in the current project terminal context, do NOT run `nvm use`
+- if the required runtime already works in the current project terminal context, do NOT activate NVM
 - do not assume the package manager is always `npm`
 - if the required Node-based runtime is unavailable or clearly misaligned, check whether `.nvmrc` exists
-- only if `.nvmrc` exists and runtime is not healthy, run `nvm use` and try again
-- if `.nvmrc` does not exist, do NOT run `nvm use`
+- only if `.nvmrc` exists and runtime is not healthy, follow the activation rule in PROTOCOL.md §7 (source NVM, then `nvm install && nvm use` — a bare `nvm use` will fail in non-interactive shells)
+- if `.nvmrc` does not exist, do NOT run NVM activation
 
-If this project required `nvm use` once to become healthy, then every new terminal execution that depends on Node must run `nvm use` again before the actual command.
+If this project required NVM activation once to become healthy, then every new terminal execution that depends on Node must re-activate NVM before the actual command (see the REPEAT RULE in PROTOCOL.md §7).
 This repeat rule applies only to projects that actually needed NVM alignment.
 
 ### Step C — Find the correct modernization scope

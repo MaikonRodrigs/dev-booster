@@ -10,7 +10,9 @@
 **STEP 1: Context Analysis (Mandatory Read):**
 1. `README.md` (Product value proposition and target audience).
 2. `package.json` (Verify project naming and core stack).
-3. Source Scan: Explore main controllers, routers, and services to identify the 'Heart' of the system (e.g., Generation pipelines, Financial flows, State Machines).
+3. `package-lock.json`, `yarn.lock`, `pnpm-lock.yaml`, or `bun.lock` (Detect actual package manager — do NOT assume npm).
+4. `.nvmrc` or `.node-version` (Detect required Node.js version).
+5. Source Scan: Explore main controllers, routers, and services to identify the 'Heart' of the system (e.g., Generation pipelines, Financial flows, State Machines).
 
 **STEP 2: Identify Business Foundations:**
 - Map the core Product Scope and Entities (User, Wallet, Projects, etc).
@@ -25,13 +27,14 @@ Rewrite this file (PROJECT.md) creating a high-density architectural overview. Y
 
 ## 🏗️ EXPECTED STRUCTURE
 1. **Product Scope & Objective**: Specific problem solved and for whom.
-2. **Current Technological Stack**: Exact frameworks, ORMs, and 3rd party providers.
-3. **App Structure & Boundaries**: Directory conventions and routing groups.
-4. **Core Product Entities**: Detailed breakdown of User, Wallet, Flow models, etc.
-5. **Main User Flows**: State-machine/Step-by-step logic of the system.
-6. **AI/Logic Architecture**: Multi-step orchestration or core pipelines.
-7. **Economics & Guardrails**: Credit rules, security layers, and demo restrictions.
-8. **Admin & Operational Domains**: First-class admin/ops business logic.
+2. **Current Technological Stack**: Exact frameworks, ORMs, package manager, and 3rd party providers.
+3. **Runtime Configuration**: Node version from `.nvmrc` or `.node-version` (if present), plus the detected package manager (npm/yarn/pnpm/bun).
+4. **App Structure & Boundaries**: Directory conventions and routing groups.
+5. **Core Product Entities**: Detailed breakdown of User, Wallet, Flow models, etc.
+6. **Main User Flows**: State-machine/Step-by-step logic of the system.
+7. **AI/Logic Architecture**: Multi-step orchestration or core pipelines.
+8. **Economics & Guardrails**: Credit rules, security layers, and demo restrictions.
+9. **Admin & Operational Domains**: First-class admin/ops business logic.
 
 ---
 

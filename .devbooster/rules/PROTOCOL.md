@@ -43,6 +43,21 @@
 - **QUESTION STYLE:** Keep the clarifying question objective and domain-oriented, such as whether the issue belongs primarily to frontend/UI, backend/API/data flow, product/business logic, or commercial/copy behavior.
 - **AMBIGUITY FALLBACK:** If the user remains unclear, says they do not know, or delegates discovery entirely (e.g. "research it", "you figure it out"), load the full relevant local context before proceeding. For technical ambiguity, default to loading `.devbooster/rules/FRONTEND.md` and `.devbooster/rules/BACKEND.md` in addition to the always-on base context. Add `.devbooster/rules/COMMERCIAL.md` when the task may involve positioning, copy, or conversion logic.
 
+## 🟢 7. NVM/NODE RUNTIME ACTIVATION
+- **DETECT:** Check if `.nvmrc` exists at the project root. This file declares the required Node.js version.
+- **ACTIVATE CORRECTLY:** NVM (`nvm`) is a shell function loaded by `~/.zshrc` or `~/.bashrc`. When the terminal tool spawns a non-interactive shell, NVM is NOT available. To activate it, you MUST source the script directly:
+  ```bash
+  export NVM_DIR="$HOME/.nvm"; [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"; nvm install; nvm use
+  ```
+  This loads NVM as a shell function and installs/selects the version from `.nvmrc`. After this, `node`, `npm`, `yarn`, `pnpm`, `npx` etc. become available.
+- **REPEAT RULE:** Each terminal invocation from the AI creates a new shell process. If the project requires NVM activation (`.nvmrc` exists), you MUST prepend the activation snippet to EVERY subsequent Node-related command — `npm`, `yarn`, `pnpm`, `npx`, `node`, `tsc`, `vitest`, `next`, etc. The activation does not persist across shell sessions.
+- **EXAMPLE COMMAND:**
+  ```bash
+  export NVM_DIR="$HOME/.nvm"; [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"; nvm install; nvm use; npm install
+  ```
+- **NO FALSE NEGATIVES:** If `.nvmrc` exists, do NOT report "node/npm/yarn/pnpm not available" without first attempting the NVM activation above. Try sourcing NVM before concluding the runtime is missing.
+- **NO EXCESSIVE NVM:** If `.nvmrc` does NOT exist, do NOT run any of the activation commands. Use the system's default Node.js runtime.
+
 ## 📚 6. PERSISTENCE & SHORTCUTS (TRIGGERS)
 - **TRIGGER ROUTING:** Whenever the user references a `@` trigger (e.g., `@Frontend`, `@Coder`, `@SaveContext`), you MUST read `.devbooster/rules/TRIGGERS.md` to identify the trigger's contract, load the corresponding booster, and enter its contract mode.
 - **ACTIVATION-FIRST:** A trigger activates the booster's contract (Stage 0 / Armed mode) only. It does NOT authorize the booster's full execution flow, analysis, investigation, or implementation. After activation, present the armed-mode banner and wait for the user to provide the concrete task, symptom, or objective before loading deeper context or taking action.

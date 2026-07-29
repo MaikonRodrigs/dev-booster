@@ -232,13 +232,13 @@ You MUST NOT generate the atomic plan yourself. You MUST invoke the **`atomic.md
 
 **Why this is mandatory:** `atomic.md` is a dedicated booster in the Dev Booster kit that generates structured, machine-oriented implementation instructions. The Smart Task cannot replace this role.
 
-### 5.2 Invoke the Builder Booster with the Atomic Plan
+### 5.2 Invoke the Forger Booster with the Atomic Plan
 
-Once `atomic.md` has returned the plan, immediately load `.devbooster/boosters/builder.md` and invoke the **Builder booster** via ROUTE B: DIRECT EXECUTION with the atomic plan as input. Do NOT ask for a second approval. The Builder booster will run its own contract (sanity check, checklist, senior coding standards). Do NOT invoke any other booster or execute code directly.
+Once `atomic.md` has returned the plan, immediately load `.devbooster/boosters/forger.md` and invoke the **Forger booster** via ROUTE B: DIRECT EXECUTION with the atomic plan as input. Do NOT ask for a second approval. The Forger executes without auditing, self-validates with lint/typecheck + knowledge base, and reports. Do NOT invoke any other booster or execute code directly.
 
 ### 5.3 Update the Artifact After Execution (Mandatory)
 
-Once the Builder booster finishes execution, you MUST update the artifact's **Execution Plan and Outcome** section. This update is non-negotiable — never skip it, even for trivial changes.
+Once the Forger finishes execution, you MUST update the artifact's **Execution Plan and Outcome** section. This update is non-negotiable — never skip it, even for trivial changes.
 
 Update these fields:
 
@@ -281,10 +281,10 @@ flowchart LR
     D -->|"Correção"| E["Ajusta entendimento<br/>+ artefato"]
     E --> D
     D -->|"Pode seguir"| F["Stage 2<br/>Invoca atomic.md"]
-    F --> G["atomic.md gera o plano<br/>estruturado (Objective,\<br/>Scope, Files, Constraints)"]
-    G --> H["Invoca Builder<br/>com o plano do atomic.md"]
+    F --> G["atomic.md gera o plano<br/>estruturado (Objective,<br/>Scope, Files, Constraints)"]
+    G --> H["Invoca **Forger**<br/>sem auditoria"]
     H --> I["Atualiza artefato"]
     I --> J["✅ Checkpoint: Concluído<br/>(resumo no chat)"]
 ```
 
-**Reply:** On activation, enter Stage 0 Armed mode and wait — do NOT investigate or create anything. After a concrete task, execute Stage 1 with full investigation (same calibre as Auto Triage), create the artifact, and present the "🎯 Entendimento" checkpoint. You MUST NOT advance to Stage 2 without explicit user confirmation. On user approval ("pode seguir"), invoke `atomic.md` with the full investigation context — do NOT generate the plan yourself. Then invoke Builder with the plan returned by `atomic.md`. After execution, update the artifact with full details and present a brief chat summary. Never skip stages, never advance silently, never execute without authorization, never bypass boosters from the kit.
+**Reply:** On activation, enter Stage 0 Armed mode and wait — do NOT investigate or create anything. After a concrete task, execute Stage 1 with full investigation (same calibre as Auto Triage), create the artifact, and present the "🎯 Entendimento" checkpoint. You MUST NOT advance to Stage 2 without explicit user confirmation. On user approval ("pode seguir"), invoke `atomic.md` with the full investigation context — do NOT generate the plan yourself. Then invoke Forger with the plan returned by `atomic.md`. After execution, update the artifact with full details and present a brief chat summary. Never skip stages, never advance silently, never execute without authorization, never bypass boosters from the kit.

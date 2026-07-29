@@ -52,8 +52,11 @@ It has been formatted as a code block to facilitate direct reading in the IDE.
                        in running projects with staged planning, approval, and verification.
 • smart-task.md     -> Smart Task. Lightweight triage with full investigation depth.
                        Same flow mapping and specialist activation as Auto Triage, but
-                       single "É isso?" approval → atomic plan → Builder executes.
+                       single "É isso?" approval → atomic plan → Forger executes.
                        Persisted artifact for traceability.
+• forger.md         -> Forger. Forja atomic plans into code without auditing or questioning.
+                       Single confirmation, self-validation with lint/typecheck + KB,
+                       and final report. Ideal after Smart Task or direct atomic plans.
 
 ---
 
@@ -85,6 +88,8 @@ It has been formatted as a code block to facilitate direct reading in the IDE.
                        the change history.
 • audit.md          -> Audit. Makes terminal lint and typecheck operational, checks bypasses,
                        diagnoses coverage/setup issues, and separates safe fixes from deep review.
+• check-build.md    -> Check Build. Clean cache + node_modules, fresh install, lint, typecheck,
+                       build, and optional tests. Simple pre-merge sanity gate. If complex errors, recommends audit.md.
 
 ---
 
@@ -98,6 +103,8 @@ It has been formatted as a code block to facilitate direct reading in the IDE.
                        and 99 UX guidelines for complete design system generation.
 • seo.md            -> SEO Guardian. Validates semantic HTML and metatags for indexing.
 • mobile.md         -> Mobile Master. Activates patterns for React Native, Expo, and touch UX.
+• save-reference.md -> Visual Cataloger. Receives a screenshot, categorizes it into the UX reference library,
+                       saves the image to the correct folder, and updates the category index.
 • stack-refresh.md  -> Stack Refresh. Audits runtime, framework, and dependency drift,
                        separates security risk from modernization debt, and proposes phased upgrade waves.
 

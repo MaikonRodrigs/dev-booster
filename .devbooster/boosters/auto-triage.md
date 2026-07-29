@@ -209,10 +209,13 @@ Stage 2 MUST NOT invoke an execution booster or edit repository files.
 Stage 3 starts only when the artifact contains a valid `execute` authorization explicitly tied to the current reviewed plan identifier.
 
 1. Record the execution authorization, exact scope, constraints, required validations, and reviewed plan identifier.
-2. Emit **Checkpoint E — Execution Authorized** with the executor (`builder.md`), authorized scope, artifact path, and next visible boundary.
-3. Load `.devbooster/boosters/builder.md` and invoke the **Builder booster** via ROUTE B: DIRECT EXECUTION — provide the complete artifact (with the reviewed plan) as the handoff context. Do NOT invoke any other booster for execution.
-4. The Builder booster owns code changes and follows its own contract (sanity check, checklist, senior coding standards). Auto Triage remains the orchestration and authorization trail.
-5. If execution reveals a material scope change, missing rule, new risk, or plan contradiction, stop mutation, update the artifact, mark the affected authorization as `superseded`, and return to the appropriate earlier stage.
+2. Select the executor based on the planning path used in Stage 2:
+   - **Forger** (`forger.md`) — if the plan was generated via `atomic.md` (simple, isolated, deterministic, already reviewed). The Forger executes without auditing, self-validates with lint/typecheck + knowledge base, and reports.
+   - **Builder** (`builder.md`) — if the plan was generated via `implementation.md` (Standard/Heavy) or `enhance.md` (complex changes in existing flows). The Builder runs its sanity check before coding.
+3. Emit **Checkpoint E — Execution Authorized** with the selected executor (`forger.md` or `builder.md`), authorized scope, artifact path, and next visible boundary.
+4. Load the selected execution booster and invoke via ROUTE B: DIRECT EXECUTION — provide the complete artifact (with the reviewed plan) as the handoff context. Do NOT invoke any other booster for execution.
+5. The execution booster owns code changes and follows its own contract. Auto Triage remains the orchestration and authorization trail.
+6. If execution reveals a material scope change, missing rule, new risk, or plan contradiction, stop mutation, update the artifact, mark the affected authorization as `superseded`, and return to the appropriate earlier stage.
 
 ## 8. CHAT CHECKPOINTS (MANDATORY)
 
@@ -321,7 +324,7 @@ The artifact is detailed technical memory for LLM continuity, developer inspecti
 ## ▶️ Execution Authorized
 
 **Executor**
-- `builder.md` — loaded via ROUTE B: DIRECT EXECUTION
+- `[forger.md | builder.md]` — selected based on planning path
 
 **Authorized scope**
 - [Exact reviewed plan scope]
@@ -417,7 +420,7 @@ Create one dense, factual, non-conversational artifact with this structure:
 ## Stage 3 Execution Handoff and Outcome
 - Reviewed plan identifier:
 - Approved `execute` authorization:
-- Executor: `builder.md`
+- Executor: `[forger.md | builder.md]`
 - Authorized scope:
 - Required validation:
 - Execution status / outcome:

@@ -12,3 +12,10 @@ node_modules/
 # Internal Maintenance Rules
 RULES.md
 RELEASE_GUIDE.md
+
+# Personal UX Reference Library (not distributed)
+# .devbooster/hub/ux-references/
+
+# DEV-BOOSTER
+# .devbooster/
+# DEVBOOSTER_INIT.md

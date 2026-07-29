@@ -36,7 +36,7 @@ After running the command, your project gets:
 ```
 .devbooster/
 ├── MANIFEST.md          ← inventory of all agents, skills, and boosters
-├── boosters/            ← 37 expert activators (auto triage, commit, debug, review, design, deploy, enhance, ui-ux-pro-max, smart-task...)
+├── boosters/            ← 40 expert activators (auto triage, commit, debug, review, design, deploy, enhance, ui-ux-pro-max, smart-task, save-reference, check-build, forger...)
 ├── hub/                 ← 40+ skills and operational scripts
 └── rules/
     ├── PROTOCOL.md      ← governance and conduct rules
@@ -118,7 +118,7 @@ Boosters are expert activators you invoke manually during development.
 | `code-audit.md` | Strict Code Auditor (Syntax, React Doctor) before PR |
 | `audit.md` | Make terminal lint and typecheck operational, check bypasses, and separate safe fixes from deep review |
 | `commit.md` | Worktree checkpoint commit with conversational preflight, security gate, and root `CHANGELOG.md` update |
-| + 21 more | See `.devbooster/MANIFEST.md` |
+| + 23 more | See `.devbooster/MANIFEST.md` |
 
 The practical activation flow is simple:
 - drag a booster file into the chat

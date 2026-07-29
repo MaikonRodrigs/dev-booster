@@ -42,6 +42,9 @@ This booster MUST NOT consult `.devbooster/hub/knowledge/` directly. When discov
 
 The knowledge base is read-only. Never create, modify, append to, or otherwise maintain files in `.devbooster/hub/knowledge/`.
 
+### UX Reference Library — Conditional, Delegate to Design/Frontend
+This booster does NOT load `.devbooster/hub/ux-references/` directly. If the directory `.devbooster/hub/ux-references/` exists and the creation request involves a page type that could benefit from visual references, the visual direction should come from the design or frontend stage before creation begins. Only route to the appropriate design or frontend booster if the directory exists.
+
 ## 1. PHASE 0: SOCRATIC DISCOVERY (THE GATE)
 **MANDATORY**: Before generating ANY plan or code, you must:
 1.  **Load `skill_brainstorming`**.

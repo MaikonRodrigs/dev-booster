@@ -76,6 +76,7 @@ Allowed frontend inventory:
 - `.devbooster/hub/skills/nextjs-react-expert`
 - `.devbooster/hub/skills/tailwind-patterns`
 - `.devbooster/hub/skills/web-design-guidelines`
+- `.devbooster/hub/ux-references/GUIDE.md` (conditional — only if the directory `.devbooster/hub/ux-references/` exists and the task involves creating or redesigning a page type represented in the reference library; load only the matching category. If the directory does not exist, skip silently.)
 
 ## 2. ANTI-GENERIC PHILOSOPHY
 - Strictly follow the Anti-Generic Guide.

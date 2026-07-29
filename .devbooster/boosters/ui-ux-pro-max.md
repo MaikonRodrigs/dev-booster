@@ -42,6 +42,7 @@ When the first real design request arrives:
 - Load Persona: `.devbooster/hub/personas/agent_frontend-specialist.md`
 - Load Skill: `.devbooster/hub/skills/frontend-design/SKILL.md`
 - Load Skill: `.devbooster/hub/skills/web-design-guidelines/SKILL.md` (when applicable)
+- **UX Reference Library (conditional, when relevant):** If the directory `.devbooster/hub/ux-references/` exists and the user's request involves a specific page type (dashboard, landing, settings, authentication, informational, etc.), load `.devbooster/hub/ux-references/GUIDE.md` and then the relevant category images as visual inspiration for the design exploration. If the directory does not exist, skip this step silently.
 - **Search Script (when relevant):** If the user needs a specific palette, style, typography, or UX recommendation, run:
   ```bash
   python3 .devbooster/hub/scripts/ux_audit.py <project_path> [--domain <domain>]
@@ -56,6 +57,7 @@ Extract key information from the user's request:
 - **Style keywords:** minimal, playful, professional, elegant, dark mode, glassmorphism, brutalism, etc.
 - **Industry:** healthcare, fintech, gaming, education, beauty, service, etc.
 - **Stack:** React, Next.js, Vue, Tailwind, or default to html-tailwind
+- **Visual references (conditional):** If the directory `.devbooster/hub/ux-references/` exists and the user mentions a category present in it, load the corresponding images as inspiration. If the directory does not exist, skip this step silently.
 
 ### Step 2: Generate Design System (Required)
 Synthesize a complete design system from your knowledge base:

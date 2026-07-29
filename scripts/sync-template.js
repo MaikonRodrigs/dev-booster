@@ -9,7 +9,12 @@ const TEMPLATE_DIR = path.join(ROOT_DIR, 'template')
 const TEMPLATE_KIT_DIR = path.join(TEMPLATE_DIR, '.devbooster')
 const INIT_FILE = 'DEVBOOSTER_INIT.md'
 
-function copyDir(src, dest) {
+function isImageFile(name) {
+  const ext = path.extname(name).toLowerCase()
+  return ['.png', '.jpg', '.jpeg', '.gif', '.webp', '.bmp', '.svg', '.ico'].includes(ext)
+}
+
+function copyDir(src, dest, skipImages = false) {
   fs.mkdirSync(dest, { recursive: true })
 
   for (const entry of fs.readdirSync(src, { withFileTypes: true })) {
@@ -19,8 +24,10 @@ function copyDir(src, dest) {
     const destPath = path.join(dest, entry.name)
 
     if (entry.isDirectory()) {
-      copyDir(srcPath, destPath)
+      const shouldSkipImages = skipImages || entry.name === 'ux-references'
+      copyDir(srcPath, destPath, shouldSkipImages)
     } else {
+      if (skipImages && isImageFile(entry.name)) continue
       fs.copyFileSync(srcPath, destPath)
     }
   }

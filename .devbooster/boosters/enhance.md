@@ -42,6 +42,7 @@ When the first real evolution request arrives:
 - **Diagnostic Scripts when relevant:**
     - Run `session_manager.py` to understand the current tech stack, project structure, and existing features.
     - Run `lint_runner.py` to establish a quality baseline before changes.
+- **UX Reference Library (conditional, when relevant):** If the directory `.devbooster/hub/ux-references/` exists and the evolution involves creating or redesigning a page type represented in it, load `.devbooster/hub/ux-references/GUIDE.md` and then only the relevant category images as visual inspiration. Do not load the entire library by default. If the directory does not exist, skip this step silently.
 - **Complementary Skills (load only when relevant):**
     - **`documentation-templates`** — use the ADR template to record evolution decisions: why a particular approach was chosen, what alternatives were considered, and tradeoffs accepted. Only when a decision is finalized.
 

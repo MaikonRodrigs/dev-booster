@@ -7,6 +7,115 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 
 ---
 
+## 29/07/2026
+
+Autor: MaikonRodrigss
+Branch de origem: `main`
+Arquivos modificados: 70
+Linhas adicionadas: +2.537
+Linhas removidas: -35
+Versão do pacote: `1.18.8`
+
+### feature: add check-build booster, forger, save-reference, ux-references and template sync
+
+Resumo técnico: Adicionado novo booster `check-build.md` para validação pré-merge com clean install, lint, typecheck e build. Adicionados boosters `forger.md` e `save-reference.md`. Adicionada biblioteca de referências UX (`hub/ux-references/`) com 18 categorias de interface. Ajustados boosters existentes (auto-triage, builder, create, design, enhance, frontend, implementation, smart-task, ui-ux-pro-max). Atualizado `.gitignore` para não ignorar `.devbooster/`. Sincronizado template via `scripts/sync-template.js`.
+
+### Adicionado
+
+- `.devbooster/boosters/check-build.md`: booster de validação pré-merge (@CheckBuild)
+- `.devbooster/boosters/forger.md`: forja planos atômicos em código
+- `.devbooster/boosters/save-reference.md`: catálogo visual de referências UX
+- `.devbooster/hub/ux-references/`: biblioteca com 18 categorias de referências de interface
+- `template/.devbooster/boosters/check-build.md`, `forger.md`, `save-reference.md`
+- `template/.devbooster/hub/ux-references/`: sincronizado do workspace
+
+### Alterado
+
+- `.devbooster/MANIFEST.md`: registro dos novos boosters
+- `.devbooster/rules/GUIDE.md`: documentação dos novos boosters
+- `.devbooster/rules/TRIGGERS.md`: novos triggers
+- `.devbooster/boosters/auto-triage.md`, `builder.md`, `create.md`, `design.md`, `enhance.md`, `frontend.md`, `implementation.md`, `smart-task.md`, `ui-ux-pro-max.md`: ajustes diversos
+- `template/.devbooster/`: sincronizado com workspace
+- `README.md`: contagem de boosters atualizada
+- `package.json`: versão atualizada
+- `.gitignore`: `.devbooster/` removido do ignore
+- `scripts/sync-template.js`: atualizado
+
+### Arquivos modificados
+
+- `.devbooster/MANIFEST.md`
+- `.devbooster/boosters/auto-triage.md`
+- `.devbooster/boosters/builder.md`
+- `.devbooster/boosters/check-build.md`
+- `.devbooster/boosters/create.md`
+- `.devbooster/boosters/design.md`
+- `.devbooster/boosters/enhance.md`
+- `.devbooster/boosters/forger.md`
+- `.devbooster/boosters/frontend.md`
+- `.devbooster/boosters/implementation.md`
+- `.devbooster/boosters/save-reference.md`
+- `.devbooster/boosters/smart-task.md`
+- `.devbooster/boosters/ui-ux-pro-max.md`
+- `.devbooster/hub/ux-references/404/index.md`
+- `.devbooster/hub/ux-references/GUIDE.md`
+- `.devbooster/hub/ux-references/contact/index.md`
+- `.devbooster/hub/ux-references/dashboards/index.md`
+- `.devbooster/hub/ux-references/email-templates/index.md`
+- `.devbooster/hub/ux-references/feature-sections/index.md`
+- `.devbooster/hub/ux-references/footer/index.md`
+- `.devbooster/hub/ux-references/forgot-password/index.md`
+- `.devbooster/hub/ux-references/header-sections/index.md`
+- `.devbooster/hub/ux-references/informational-pages/index.md`
+- `.devbooster/hub/ux-references/landing-pages/index.md`
+- `.devbooster/hub/ux-references/payments/index.md`
+- `.devbooster/hub/ux-references/pricing/index.md`
+- `.devbooster/hub/ux-references/profile/index.md`
+- `.devbooster/hub/ux-references/settings/index.md`
+- `.devbooster/hub/ux-references/sign-in/index.md`
+- `.devbooster/hub/ux-references/sign-up/index.md`
+- `.devbooster/hub/ux-references/verification/index.md`
+- `.devbooster/rules/GUIDE.md`
+- `.devbooster/rules/TRIGGERS.md`
+- `.gitignore`
+- `README.md`
+- `package.json`
+- `scripts/sync-template.js`
+- `template/.devbooster/MANIFEST.md`
+- `template/.devbooster/boosters/auto-triage.md`
+- `template/.devbooster/boosters/builder.md`
+- `template/.devbooster/boosters/check-build.md`
+- `template/.devbooster/boosters/create.md`
+- `template/.devbooster/boosters/design.md`
+- `template/.devbooster/boosters/enhance.md`
+- `template/.devbooster/boosters/forger.md`
+- `template/.devbooster/boosters/frontend.md`
+- `template/.devbooster/boosters/implementation.md`
+- `template/.devbooster/boosters/save-reference.md`
+- `template/.devbooster/boosters/smart-task.md`
+- `template/.devbooster/boosters/ui-ux-pro-max.md`
+- `template/.devbooster/hub/ux-references/404/index.md`
+- `template/.devbooster/hub/ux-references/GUIDE.md`
+- `template/.devbooster/hub/ux-references/contact/index.md`
+- `template/.devbooster/hub/ux-references/dashboards/index.md`
+- `template/.devbooster/hub/ux-references/email-templates/index.md`
+- `template/.devbooster/hub/ux-references/feature-sections/index.md`
+- `template/.devbooster/hub/ux-references/footer/index.md`
+- `template/.devbooster/hub/ux-references/forgot-password/index.md`
+- `template/.devbooster/hub/ux-references/header-sections/index.md`
+- `template/.devbooster/hub/ux-references/informational-pages/index.md`
+- `template/.devbooster/hub/ux-references/landing-pages/index.md`
+- `template/.devbooster/hub/ux-references/payments/index.md`
+- `template/.devbooster/hub/ux-references/pricing/index.md`
+- `template/.devbooster/hub/ux-references/profile/index.md`
+- `template/.devbooster/hub/ux-references/settings/index.md`
+- `template/.devbooster/hub/ux-references/sign-in/index.md`
+- `template/.devbooster/hub/ux-references/sign-up/index.md`
+- `template/.devbooster/hub/ux-references/verification/index.md`
+- `template/.devbooster/rules/GUIDE.md`
+- `template/.devbooster/rules/TRIGGERS.md`
+
+---
+
 ## 26/07/2026
 
 ### feat(protocol): add NVM runtime activation rule

@@ -52,5 +52,6 @@ Rules:
 ## 1. ALLOWED INVENTORY
 - `.devbooster/hub/personas/skill_frontend-design.md`
 - `.devbooster/hub/skills/frontend-design/anti-generic-guide.md`
+- `.devbooster/hub/ux-references/GUIDE.md` (conditional — only if the directory `.devbooster/hub/ux-references/` exists and the task involves a page type represented in the reference library; load only the matching category. If the directory does not exist, skip silently.)
 
 **Reply:** On activation only, use the armed-mode banner above. On the first real task, load the minimum required design context based on the user's pain, then execute.

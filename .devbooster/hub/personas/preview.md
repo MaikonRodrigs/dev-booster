@@ -27,6 +27,7 @@ Manage preview server: start, stop, status check.
 ## Usage Examples
 
 ### Start Server
+
 ```
 /preview start
 
@@ -40,6 +41,7 @@ Response:
 ```
 
 ### Status Check
+
 ```
 /preview
 
@@ -53,6 +55,7 @@ Response:
 ```
 
 ### Port Conflict
+
 ```
 /preview start
 
@@ -74,8 +77,7 @@ Which one? (default: 1)
 Auto preview uses `auto_preview.py` script:
 
 ```bash
-python .zed/scripts/auto_preview.py start [port]
-python .zed/scripts/auto_preview.py stop
-python .zed/scripts/auto_preview.py status
+python .devbooster/hub/scripts/auto_preview.py start [port]
+python .devbooster/hub/scripts/auto_preview.py stop
+python .devbooster/hub/scripts/auto_preview.py status
 ```
-

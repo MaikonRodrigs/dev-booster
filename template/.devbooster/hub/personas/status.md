@@ -82,5 +82,6 @@ Show current project and agent status.
 ## Technical
 
 Status uses these scripts:
-- `python .zed/scripts/session_manager.py status`
-- `python .zed/scripts/auto_preview.py status`
+
+- `python .devbooster/hub/scripts/session_manager.py status`
+- `python .devbooster/hub/scripts/auto_preview.py status`

@@ -18,6 +18,7 @@ const IDE_BRIDGE_BLOCK = [
   "# 🤖 DEV BOOSTER — AGENTIC KIT BOOTSTRAP",
   "",
   "Before any action, read `.devbooster/rules/PROTOCOL.md` for full governance rules.",
+  "For `@Obsidian` search, retrieval, reading, summary, historical investigation, or explanation, use only Obsidian MCP search/read operations. Do not inspect the local project or run local tools unless the user explicitly requests a comparison with identified current code or a named project.",
 ];
 const IDE_BRIDGE_MARKER = ".devbooster/rules/PROTOCOL.md";
 
@@ -29,6 +30,7 @@ const AGENTS_TRIGGER_BLOCK = [
   "",
   "**Important:** A trigger activates the booster's contract mode only (Armed/Stage 0).",
   "It does NOT authorize the booster to analyze, investigate, or modify the project.",
+  "For `@Obsidian` search/read requests, use only Obsidian MCP operations; project inspection requires an explicit comparison request.",
   "After activation, provide the concrete task or symptom before the booster proceeds.",
   "",
   "Read `.devbooster/rules/TRIGGERS.md` for the complete trigger dictionary.",
@@ -64,6 +66,7 @@ const PROTECTED_FILES = [
   ".devbooster/rules/BACKEND.md",
   ".devbooster/rules/COMMERCIAL.md",
   ".devbooster/rules/USER_PREFERENCES.md",
+  ".devbooster/rules/CODEBASE.md",
 ];
 
 function safeCopyFile(src, dest, dryRun = false) {
@@ -125,10 +128,6 @@ function syncDir(src, dest) {
   fs.mkdirSync(dest, { recursive: true });
   removeDirContents(dest);
   copyDir(src, dest);
-}
-
-function isUpdateMode() {
-  return args.includes("--update") || args.includes("update");
 }
 
 function isDryRunMode() {
@@ -293,7 +292,8 @@ function ensureAgentsTriggers(dryRun) {
   }
 
   if (!dryRun) {
-    const updated = existing.trimEnd() + "\n\n" + AGENTS_TRIGGER_BLOCK.join("\n") + "\n";
+    const updated =
+      existing.trimEnd() + "\n\n" + AGENTS_TRIGGER_BLOCK.join("\n") + "\n";
     fs.writeFileSync(agentsPath, updated);
   }
   console.log(
@@ -505,15 +505,25 @@ function runUpdate() {
 │                   NEXT STEP                  │
 ╰──────────────────────────────────────────────╯
 
-Review the updated kit files in your project and, if you want,
-reopen your AI assistant to keep working with the refreshed boosters.
+The kit changed. Open your AI assistant in this project and send:
+
+  "Read DEVBOOSTER_INIT.md and re-execute all bootstrap steps."
+
+Re-running the bootstrap applies the new structure (CODEBASE snapshot, rules, triggers).
 `);
 }
 
 export async function run() {
   checkLocalInstall();
 
-  if (isUpdateMode()) {
+  // Detect an existing install by the files on disk, not by CLI flags.
+  // If the kit is already present, the user is updating: keep their files as-is
+  // and orient them to re-run the bootstrap (the kit changed — CODEBASE added).
+  const hasKit =
+    fs.existsSync(path.join(TARGET_DIR, ".devbooster")) ||
+    fs.existsSync(path.join(TARGET_DIR, "DEVBOOSTER_INIT.md"));
+
+  if (hasKit) {
     runUpdate();
     return;
   }

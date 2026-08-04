@@ -15,15 +15,15 @@ allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 
 **Read REQUIRED files always, OPTIONAL only when needed:**
 
-| File | Status | When to Read |
-|------|--------|--------------|
-| [ux-psychology.md](ux-psychology.md) | 🔴 **REQUIRED** | Always read first! |
-| [color-system.md](color-system.md) | ⚪ Optional | Color/palette decisions |
-| [typography-system.md](typography-system.md) | ⚪ Optional | Font selection/pairing |
-| [visual-effects.md](visual-effects.md) | ⚪ Optional | Glassmorphism, shadows, gradients |
-| [animation-guide.md](animation-guide.md) | ⚪ Optional | Animation needed |
-| [motion-graphics.md](motion-graphics.md) | ⚪ Optional | Lottie, GSAP, 3D |
-| [decision-trees.md](decision-trees.md) | ⚪ Optional | Context templates |
+| File                                         | Status          | When to Read                      |
+| -------------------------------------------- | --------------- | --------------------------------- |
+| [ux-psychology.md](ux-psychology.md)         | 🔴 **REQUIRED** | Always read first!                |
+| [color-system.md](color-system.md)           | ⚪ Optional     | Color/palette decisions           |
+| [typography-system.md](typography-system.md) | ⚪ Optional     | Font selection/pairing            |
+| [visual-effects.md](visual-effects.md)       | ⚪ Optional     | Glassmorphism, shadows, gradients |
+| [animation-guide.md](animation-guide.md)     | ⚪ Optional     | Animation needed                  |
+| [motion-graphics.md](motion-graphics.md)     | ⚪ Optional     | Lottie, GSAP, 3D                  |
+| [decision-trees.md](decision-trees.md)       | ⚪ Optional     | Context templates                 |
 
 > 🔴 **ux-psychology.md = ALWAYS READ. Others = only if relevant.**
 
@@ -33,9 +33,9 @@ allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 
 **Execute these for audits (don't read, just run):**
 
-| Script | Purpose | Usage |
-|--------|---------|-------|
-| `scripts/ux_audit.py` | UX Psychology & Accessibility Audit | `python scripts/ux_audit.py <project_path>` |
+| Script        | Purpose                             | Usage                                                       |
+| ------------- | ----------------------------------- | ----------------------------------------------------------- |
+| `ux_audit.py` | UX Psychology & Accessibility Audit | `python .devbooster/hub/scripts/ux_audit.py <project_path>` |
 
 ---
 
@@ -46,26 +46,29 @@ allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 ### When User Prompt is Vague, ASK:
 
 **Color not specified?** Ask:
+
 > "What color palette do you prefer? (blue/green/orange/neutral/other?)"
 
-**Style not specified?** Ask: 
+**Style not specified?** Ask:
+
 > "What style are you going for? (minimal/bold/retro/futuristic/organic?)"
 
 **Layout not specified?** Ask:
+
 > "Do you have a layout preference? (single column/grid/asymmetric/full-width?)"
 
 ### ⛔ DEFAULT TENDENCIES TO AVOID (ANTI-SAFE HARBOR):
 
-| AI Default Tendency | Why It's Bad | Think Instead |
-|---------------------|--------------|---------------|
-| **Bento Grids (Modern Cliché)** | Used in every AI design | Why does this content NEED a grid? |
-| **Hero Split (Left/Right)** | Predictable & Boring | How about Massive Typography or Vertical Narrative? |
-| **Mesh/Aurora Gradients** | The "new" lazy background | What's a radical color pairing? |
-| **Glassmorphism** | AI's idea of "premium" | How about solid, high-contrast flat? |
-| **Deep Cyan / Fintech Blue** | Safe harbor from purple ban | Why not Red, Black, or Neon Green? |
-| **"Orchestrate / Empower"** | AI-generated copywriting | How would a human say this? |
-| Dark background + neon glow | Overused, "AI look" | What does the BRAND actually need? |
-| **Rounded everything** | Generic/Safe | Where can I use sharp, brutalist edges? |
+| AI Default Tendency             | Why It's Bad                | Think Instead                                       |
+| ------------------------------- | --------------------------- | --------------------------------------------------- |
+| **Bento Grids (Modern Cliché)** | Used in every AI design     | Why does this content NEED a grid?                  |
+| **Hero Split (Left/Right)**     | Predictable & Boring        | How about Massive Typography or Vertical Narrative? |
+| **Mesh/Aurora Gradients**       | The "new" lazy background   | What's a radical color pairing?                     |
+| **Glassmorphism**               | AI's idea of "premium"      | How about solid, high-contrast flat?                |
+| **Deep Cyan / Fintech Blue**    | Safe harbor from purple ban | Why not Red, Black, or Neon Green?                  |
+| **"Orchestrate / Empower"**     | AI-generated copywriting    | How would a human say this?                         |
+| Dark background + neon glow     | Overused, "AI look"         | What does the BRAND actually need?                  |
+| **Rounded everything**          | Generic/Safe                | Where can I use sharp, brutalist edges?             |
 
 > 🔴 **"Every 'safe' structure you choose brings you one step closer to a generic template. TAKE RISKS."**
 
@@ -75,24 +78,24 @@ allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 
 Before any design work, ANSWER THESE or ASK USER:
 
-| Constraint | Question | Why It Matters |
-|------------|----------|----------------|
-| **Timeline** | How much time? | Determines complexity |
-| **Content** | Ready or placeholder? | Affects layout flexibility |
-| **Brand** | Existing guidelines? | May dictate colors/fonts |
-| **Tech** | What stack? | Affects capabilities |
-| **Audience** | Who exactly? | Drives all visual decisions |
+| Constraint   | Question              | Why It Matters              |
+| ------------ | --------------------- | --------------------------- |
+| **Timeline** | How much time?        | Determines complexity       |
+| **Content**  | Ready or placeholder? | Affects layout flexibility  |
+| **Brand**    | Existing guidelines?  | May dictate colors/fonts    |
+| **Tech**     | What stack?           | Affects capabilities        |
+| **Audience** | Who exactly?          | Drives all visual decisions |
 
 ### Audience → Design Approach
 
-| Audience | Think About |
-|----------|-------------|
-| **Gen Z** | Bold, fast, mobile-first, authentic |
-| **Millennials** | Clean, minimal, value-driven |
-| **Gen X** | Familiar, trustworthy, clear |
-| **Boomers** | Readable, high contrast, simple |
-| **B2B** | Professional, data-focused, trust |
-| **Luxury** | Restrained elegance, whitespace |
+| Audience        | Think About                         |
+| --------------- | ----------------------------------- |
+| **Gen Z**       | Bold, fast, mobile-first, authentic |
+| **Millennials** | Clean, minimal, value-driven        |
+| **Gen X**       | Familiar, trustworthy, clear        |
+| **Boomers**     | Readable, high contrast, simple     |
+| **B2B**         | Professional, data-focused, trust   |
+| **Luxury**      | Restrained elegance, whitespace     |
 
 ---
 
@@ -100,13 +103,13 @@ Before any design work, ANSWER THESE or ASK USER:
 
 ### Core Laws (Internalize These)
 
-| Law | Principle | Application |
-|-----|-----------|-------------|
-| **Hick's Law** | More choices = slower decisions | Limit options, use progressive disclosure |
-| **Fitts' Law** | Bigger + closer = easier to click | Size CTAs appropriately |
-| **Miller's Law** | ~7 items in working memory | Chunk content into groups |
-| **Von Restorff** | Different = memorable | Make CTAs visually distinct |
-| **Serial Position** | First/last remembered most | Key info at start/end |
+| Law                 | Principle                         | Application                               |
+| ------------------- | --------------------------------- | ----------------------------------------- |
+| **Hick's Law**      | More choices = slower decisions   | Limit options, use progressive disclosure |
+| **Fitts' Law**      | Bigger + closer = easier to click | Size CTAs appropriately                   |
+| **Miller's Law**    | ~7 items in working memory        | Chunk content into groups                 |
+| **Von Restorff**    | Different = memorable             | Make CTAs visually distinct               |
+| **Serial Position** | First/last remembered most        | Key info at start/end                     |
 
 ### Emotional Design Levels
 
@@ -151,13 +154,13 @@ All spacing and sizing in multiples of 8:
 
 ### Key Sizing Principles
 
-| Element | Consideration |
-|---------|---------------|
-| **Touch targets** | Minimum comfortable tap size |
-| **Buttons** | Height based on importance hierarchy |
-| **Inputs** | Match button height for alignment |
-| **Cards** | Consistent padding, breathable |
-| **Reading width** | 45-75 characters optimal |
+| Element           | Consideration                        |
+| ----------------- | ------------------------------------ |
+| **Touch targets** | Minimum comfortable tap size         |
+| **Buttons**       | Height based on importance hierarchy |
+| **Inputs**        | Match button height for alignment    |
+| **Cards**         | Consistent padding, breathable       |
+| **Reading width** | 45-75 characters optimal             |
 
 ---
 
@@ -173,13 +176,13 @@ All spacing and sizing in multiples of 8:
 
 ### Color Psychology (For Decision Making)
 
-| If You Need... | Consider Hues | Avoid |
-|----------------|---------------|-------|
-| Trust, calm | Blue family | Aggressive reds |
-| Growth, nature | Green family | Industrial grays |
-| Energy, urgency | Orange, red | Passive blues |
+| If You Need...     | Consider Hues            | Avoid                 |
+| ------------------ | ------------------------ | --------------------- |
+| Trust, calm        | Blue family              | Aggressive reds       |
+| Growth, nature     | Green family             | Industrial grays      |
+| Energy, urgency    | Orange, red              | Passive blues         |
 | Luxury, creativity | Deep Teal, Gold, Emerald | Cheap-feeling brights |
-| Clean, minimal | Neutrals | Overwhelming color |
+| Clean, minimal     | Neutrals                 | Overwhelming color    |
 
 ### Selection Process
 
@@ -196,12 +199,12 @@ For detailed color theory: [color-system.md](color-system.md)
 
 ### Scale Selection
 
-| Content Type | Scale Ratio | Feel |
-|--------------|-------------|------|
-| Dense UI | 1.125-1.2 | Compact, efficient |
-| General web | 1.25 | Balanced (most common) |
-| Editorial | 1.333 | Readable, spacious |
-| Hero/display | 1.5-1.618 | Dramatic impact |
+| Content Type | Scale Ratio | Feel                   |
+| ------------ | ----------- | ---------------------- |
+| Dense UI     | 1.125-1.2   | Compact, efficient     |
+| General web  | 1.25        | Balanced (most common) |
+| Editorial    | 1.333       | Readable, spacious     |
+| Hero/display | 1.5-1.618   | Dramatic impact        |
 
 ### Pairing Concept
 
@@ -274,12 +277,12 @@ Duration based on:
 
 ### Easing Selection
 
-| Action | Easing | Why |
-|--------|--------|-----|
-| Entering | Ease-out | Decelerate, settle in |
-| Leaving | Ease-in | Accelerate, exit |
-| Emphasis | Ease-in-out | Smooth, deliberate |
-| Playful | Bounce | Fun, energetic |
+| Action   | Easing      | Why                   |
+| -------- | ----------- | --------------------- |
+| Entering | Ease-out    | Decelerate, settle in |
+| Leaving  | Ease-in     | Accelerate, exit      |
+| Emphasis | Ease-in-out | Smooth, deliberate    |
+| Playful  | Bounce      | Fun, energetic        |
 
 ### Performance
 
@@ -395,10 +398,10 @@ For deeper guidance on specific areas:
 
 ## Related Skills
 
-| Skill | When to Use |
-|-------|-------------|
-| **frontend-design** (this) | Before coding - Learn design principles (color, typography, UX psychology) |
-| **[web-design-guidelines](../web-design-guidelines/SKILL.md)** | After coding - Audit for accessibility, performance, and best practices |
+| Skill                                                          | When to Use                                                                |
+| -------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| **frontend-design** (this)                                     | Before coding - Learn design principles (color, typography, UX psychology) |
+| **[web-design-guidelines](../web-design-guidelines/SKILL.md)** | After coding - Audit for accessibility, performance, and best practices    |
 
 ## Post-Design Workflow
 
@@ -417,9 +420,8 @@ After implementing your design, run the audit:
 
 > **Remember:** Design is THINKING, not copying. Every project deserves fresh consideration based on its unique context and users. **Avoid the Modern SaaS Safe Harbor!**
 
-
-
 ---
+
 # Content from animation-guide.md
 
 # Animation Guidelines Reference
@@ -444,18 +446,19 @@ Factors that determine animation speed:
 
 ### Duration Ranges by Purpose
 
-| Purpose | Range | Why |
-|---------|-------|-----|
-| Instant feedback | 50-100ms | Below perception threshold |
-| Micro-interactions | 100-200ms | Quick but noticeable |
-| Standard transitions | 200-300ms | Comfortable pace |
-| Complex animations | 300-500ms | Time to follow |
-| Page transitions | 400-600ms | Smooth handoff |
-| **Wow/Premium Effects** | 800ms+ | Dramatic, organic spring-based, layered |
+| Purpose                 | Range     | Why                                     |
+| ----------------------- | --------- | --------------------------------------- |
+| Instant feedback        | 50-100ms  | Below perception threshold              |
+| Micro-interactions      | 100-200ms | Quick but noticeable                    |
+| Standard transitions    | 200-300ms | Comfortable pace                        |
+| Complex animations      | 300-500ms | Time to follow                          |
+| Page transitions        | 400-600ms | Smooth handoff                          |
+| **Wow/Premium Effects** | 800ms+    | Dramatic, organic spring-based, layered |
 
 ### Choosing Duration
 
 Ask yourself:
+
 1. How far is the element moving?
 2. How important is it to notice this change?
 3. Is the user waiting, or is this background?
@@ -476,13 +479,13 @@ Easing = how speed changes over time
 
 ### When to Use Each
 
-| Easing | Best For | Feels Like |
-|--------|----------|------------|
-| **Ease-out** | Elements entering | Arriving, settling |
-| **Ease-in** | Elements leaving | Departing, exiting |
-| **Ease-in-out** | Emphasis, loops | Deliberate, smooth |
-| **Linear** | Continuous motion | Mechanical, constant |
-| **Bounce/Elastic** | Playful UI | Fun, energetic |
+| Easing             | Best For          | Feels Like           |
+| ------------------ | ----------------- | -------------------- |
+| **Ease-out**       | Elements entering | Arriving, settling   |
+| **Ease-in**        | Elements leaving  | Departing, exiting   |
+| **Ease-in-out**    | Emphasis, loops   | Deliberate, smooth   |
+| **Linear**         | Continuous motion | Mechanical, constant |
+| **Bounce/Elastic** | Playful UI        | Fun, energetic       |
 
 ### The Pattern
 
@@ -540,12 +543,12 @@ Success → confirmation (check, color)
 
 ### Types by Context
 
-| Situation | Approach |
-|-----------|----------|
-| Quick load (<1s) | No indicator needed |
-| Medium (1-3s) | Spinner or simple animation |
-| Long (3s+) | Progress bar or skeleton |
-| Unknown duration | Indeterminate indicator |
+| Situation        | Approach                    |
+| ---------------- | --------------------------- |
+| Quick load (<1s) | No indicator needed         |
+| Medium (1-3s)    | Spinner or simple animation |
+| Long (3s+)       | Progress bar or skeleton    |
+| Unknown duration | Indeterminate indicator     |
 
 ### Skeleton Screens
 
@@ -587,12 +590,12 @@ Simple rule: exit fast, enter slower
 
 ### Common Patterns
 
-| Pattern | When to Use |
-|---------|-------------|
-| **Fade** | Safe default, works everywhere |
-| **Slide** | Sequential navigation (prev/next) |
-| **Scale** | Opening/closing modals |
-| **Shared element** | Maintaining visual continuity |
+| Pattern            | When to Use                       |
+| ------------------ | --------------------------------- |
+| **Fade**           | Safe default, works everywhere    |
+| **Slide**          | Sequential navigation (prev/next) |
+| **Scale**          | Opening/closing modals            |
+| **Shared element** | Maintaining visual continuity     |
 
 ### Direction Matching
 
@@ -620,12 +623,12 @@ Content appears as user scrolls:
 
 ### Trigger Points
 
-| When to Trigger | Effect |
-|-----------------|--------|
+| When to Trigger        | Effect          |
+| ---------------------- | --------------- |
 | Just entering viewport | Standard reveal |
-| Centered in viewport | For emphasis |
-| Partially visible | Earlier reveal |
-| Fully visible | Late trigger |
+| Centered in viewport   | For emphasis    |
+| Partially visible      | Earlier reveal  |
+| Fully visible          | Late trigger    |
 
 ### Animation Properties
 
@@ -646,12 +649,12 @@ Content appears as user scrolls:
 
 ### Matching Effect to Action
 
-| Element | Effect | Intent |
-|---------|--------|--------|
-| **Clickable card** | Lift + shadow | "This is interactive" |
-| **Button** | Color/brightness change | "Press me" |
-| **Image** | Zoom/scale | "View closer" |
-| **Link** | Underline/color | "Navigate here" |
+| Element            | Effect                  | Intent                |
+| ------------------ | ----------------------- | --------------------- |
+| **Clickable card** | Lift + shadow           | "This is interactive" |
+| **Button**         | Color/brightness change | "Press me"            |
+| **Image**          | Zoom/scale              | "View closer"         |
+| **Link**           | Underline/color         | "Navigate here"       |
 
 ### Principles
 
@@ -754,9 +757,8 @@ Before adding animation:
 
 > **Remember**: Animation is communication. Every motion should have meaning and serve the user experience.
 
-
-
 ---
+
 # Content from color-system.md
 
 # Color System Reference
@@ -795,15 +797,16 @@ Before adding animation:
 
 ### Color Relationships
 
-| Scheme | How to Create | When to Use |
-|--------|---------------|-------------|
-| **Monochromatic** | Pick ONE hue, vary only lightness/saturation | Minimal, professional, cohesive |
-| **Analogous** | Pick 2-3 ADJACENT hues on wheel | Harmonious, calm, nature-inspired |
-| **Complementary** | Pick OPPOSITE hues on wheel | High contrast, vibrant, attention |
-| **Split-Complementary** | Base + 2 colors adjacent to complement | Dynamic but balanced |
-| **Triadic** | 3 hues EQUIDISTANT on wheel | Vibrant, playful, creative |
+| Scheme                  | How to Create                                | When to Use                       |
+| ----------------------- | -------------------------------------------- | --------------------------------- |
+| **Monochromatic**       | Pick ONE hue, vary only lightness/saturation | Minimal, professional, cohesive   |
+| **Analogous**           | Pick 2-3 ADJACENT hues on wheel              | Harmonious, calm, nature-inspired |
+| **Complementary**       | Pick OPPOSITE hues on wheel                  | High contrast, vibrant, attention |
+| **Split-Complementary** | Base + 2 colors adjacent to complement       | Dynamic but balanced              |
+| **Triadic**             | 3 hues EQUIDISTANT on wheel                  | Vibrant, playful, creative        |
 
 ### How to Choose a Scheme:
+
 1. **What's the project mood?** Calm → Analogous. Bold → Complementary.
 2. **How many colors needed?** Minimal → Monochromatic. Complex → Triadic.
 3. **Who's the audience?** Conservative → Monochromatic. Young → Triadic.
@@ -813,6 +816,7 @@ Before adding animation:
 ## 2. The 60-30-10 Rule
 
 ### Distribution Principle
+
 ```
 ┌─────────────────────────────────────────────────┐
 │                                                 │
@@ -831,17 +835,16 @@ Before adding animation:
 ```
 
 ### Implementation Pattern
+
 ```css
 :root {
   /* 60% - Pick based on light/dark mode and mood */
-  --color-bg: /* neutral: white, off-white, or dark gray */
-  --color-surface: /* slightly different from bg */
-  
-  /* 30% - Pick based on brand or context */
-  --color-secondary: /* muted version of primary or neutral */
-  
-  /* 10% - Pick based on desired action/emotion */
-  --color-accent: /* vibrant, attention-grabbing */
+  --color-bg: /* neutral: white, off-white, or dark gray */ --color-surface:
+    /* slightly different from bg */
+    /* 30% - Pick based on brand or context */
+    --color-secondary: /* muted version of primary or neutral */
+    /* 10% - Pick based on desired action/emotion */
+    --color-accent: /* vibrant, attention-grabbing */;
 }
 ```
 
@@ -851,28 +854,29 @@ Before adding animation:
 
 ### How to Choose Based on Context
 
-| If Project Is... | Consider These Hues | Why |
-|------------------|---------------------|-----|
-| **Finance, Tech, Healthcare** | Blues, Teals | Trust, stability, calm |
-| **Eco, Wellness, Nature** | Greens, Earth tones | Growth, health, organic |
-| **Food, Energy, Youth** | Orange, Yellow, Warm | Appetite, excitement, warmth |
-| **Luxury, Beauty, Creative** | Deep Teal, Gold, Black | Sophistication, premium |
-| **Urgency, Sales, Alerts** | Red, Orange | Action, attention, passion |
+| If Project Is...              | Consider These Hues    | Why                          |
+| ----------------------------- | ---------------------- | ---------------------------- |
+| **Finance, Tech, Healthcare** | Blues, Teals           | Trust, stability, calm       |
+| **Eco, Wellness, Nature**     | Greens, Earth tones    | Growth, health, organic      |
+| **Food, Energy, Youth**       | Orange, Yellow, Warm   | Appetite, excitement, warmth |
+| **Luxury, Beauty, Creative**  | Deep Teal, Gold, Black | Sophistication, premium      |
+| **Urgency, Sales, Alerts**    | Red, Orange            | Action, attention, passion   |
 
 ### Emotional Associations (For Decision Making)
 
-| Hue Family | Positive Associations | Cautions |
-|------------|----------------------|----------|
-| **Blue** | Trust, calm, professional | Can feel cold, corporate |
-| **Green** | Growth, nature, success | Can feel boring if overused |
-| **Red** | Passion, urgency, energy | High arousal, use sparingly |
-| **Orange** | Warmth, friendly, creative | Can feel cheap if saturated |
+| Hue Family | Positive Associations             | Cautions                             |
+| ---------- | --------------------------------- | ------------------------------------ |
+| **Blue**   | Trust, calm, professional         | Can feel cold, corporate             |
+| **Green**  | Growth, nature, success           | Can feel boring if overused          |
+| **Red**    | Passion, urgency, energy          | High arousal, use sparingly          |
+| **Orange** | Warmth, friendly, creative        | Can feel cheap if saturated          |
 | **Purple** | ⚠️ **BANNED** - AI overuses this! | Use Deep Teal/Maroon/Emerald instead |
-| **Yellow** | Optimism, attention, happy | Hard to read, use as accent |
-| **Black** | Elegance, power, modern | Can feel heavy |
-| **White** | Clean, minimal, open | Can feel sterile |
+| **Yellow** | Optimism, attention, happy        | Hard to read, use as accent          |
+| **Black**  | Elegance, power, modern           | Can feel heavy                       |
+| **White**  | Clean, minimal, open              | Can feel sterile                     |
 
 ### Selection Process:
+
 1. **What industry?** → Narrow to 2-3 hue families
 2. **What emotion?** → Pick primary hue
 3. **What contrast?** → Decide light vs dark mode
@@ -927,12 +931,12 @@ Lightness Scale:
 
 ### Saturation Adjustments
 
-| Context | Saturation Level |
-|---------|-----------------|
-| **Professional/Corporate** | Lower (40-60%) |
-| **Playful/Youth** | Higher (70-90%) |
-| **Dark Mode** | Reduce by 10-20% |
-| **Accessibility** | Ensure contrast, may need adjustment |
+| Context                    | Saturation Level                     |
+| -------------------------- | ------------------------------------ |
+| **Professional/Corporate** | Lower (40-60%)                       |
+| **Playful/Youth**          | Higher (70-90%)                      |
+| **Dark Mode**              | Reduce by 10-20%                     |
+| **Accessibility**          | Ensure contrast, may need adjustment |
 
 ---
 
@@ -941,6 +945,7 @@ Lightness Scale:
 ### Instead of Copying Palettes, Follow This Process:
 
 **Step 1: Identify the Context**
+
 ```
 What type of project?
 ├── E-commerce → Need trust + urgency balance
@@ -952,6 +957,7 @@ What type of project?
 ```
 
 **Step 2: Select Primary Hue Family**
+
 ```
 Based on context, pick ONE:
 - Blue family (trust)
@@ -962,6 +968,7 @@ Based on context, pick ONE:
 ```
 
 **Step 3: Decide Light/Dark Mode**
+
 ```
 Consider:
 - User preference?
@@ -971,6 +978,7 @@ Consider:
 ```
 
 **Step 4: Generate Palette Using Principles**
+
 - Use HSL manipulation
 - Follow 60-30-10 rule
 - Check contrast (WCAG)
@@ -999,12 +1007,12 @@ Layer 3 (popups)  → Lightest dark
 
 ### Adapting Colors for Dark Mode
 
-| Light Mode | Dark Mode Adjustment |
-|------------|---------------------|
-| High saturation accent | Reduce saturation 10-20% |
-| Pure white background | Dark gray with brand hue tint |
-| Black text | Light gray (not pure white) |
-| Colorful backgrounds | Desaturated, darker versions |
+| Light Mode             | Dark Mode Adjustment          |
+| ---------------------- | ----------------------------- |
+| High saturation accent | Reduce saturation 10-20%      |
+| Pure white background  | Dark gray with brand hue tint |
+| Black text             | Light gray (not pure white)   |
+| Colorful backgrounds   | Desaturated, darker versions  |
 
 ---
 
@@ -1012,10 +1020,10 @@ Layer 3 (popups)  → Lightest dark
 
 ### Contrast Requirements (WCAG)
 
-| Level | Normal Text | Large Text |
-|-------|-------------|------------|
-| AA (minimum) | 4.5:1 | 3:1 |
-| AAA (enhanced) | 7:1 | 4.5:1 |
+| Level          | Normal Text | Large Text |
+| -------------- | ----------- | ---------- |
+| AA (minimum)   | 4.5:1       | 3:1        |
+| AAA (enhanced) | 7:1         | 4.5:1      |
 
 ### How to Check Contrast
 
@@ -1025,12 +1033,12 @@ Layer 3 (popups)  → Lightest dark
 
 ### Safe Patterns
 
-| Use Case | Guideline |
-|----------|-----------|
-| **Text on light bg** | Use lightness 35% or less |
-| **Text on dark bg** | Use lightness 85% or more |
-| **Primary on white** | Ensure dark enough variant |
-| **Buttons** | High contrast between bg and text |
+| Use Case             | Guideline                         |
+| -------------------- | --------------------------------- |
+| **Text on light bg** | Use lightness 35% or less         |
+| **Text on dark bg**  | Use lightness 85% or more         |
+| **Primary on white** | Ensure dark enough variant        |
+| **Buttons**          | High contrast between bg and text |
 
 ---
 
@@ -1051,6 +1059,7 @@ Before finalizing any color choice, verify:
 ## 9. Anti-Patterns to Avoid
 
 ### ❌ DON'T:
+
 - Copy the same hex codes every project
 - Default to purple/violet (AI tendency)
 - Default to dark mode + neon (AI tendency)
@@ -1060,6 +1069,7 @@ Before finalizing any color choice, verify:
 - Skip asking user preference
 
 ### ✅ DO:
+
 - Generate fresh palette per project
 - Ask user about color preferences
 - Consider industry and audience
@@ -1071,9 +1081,8 @@ Before finalizing any color choice, verify:
 
 > **Remember**: Colors are decisions, not defaults. Every project deserves thoughtful selection based on its unique context.
 
-
-
 ---
+
 # Content from decision-trees.md
 
 # Decision Trees & Context Templates
@@ -1198,6 +1207,7 @@ WHAT EMOTION/ACTION DO YOU WANT?
 ```
 
 ### The Process:
+
 1. Identify the emotion needed
 2. Narrow to color FAMILY
 3. ASK user for preference within family
@@ -1237,6 +1247,7 @@ WHAT'S THE CONTENT TYPE?
 ```
 
 ### Selection Process:
+
 1. Identify content type
 2. Choose style DIRECTION
 3. ASK user if they have brand fonts
@@ -1247,11 +1258,13 @@ WHAT'S THE CONTENT TYPE?
 ## 5. E-commerce Guidelines {#e-commerce}
 
 ### Key Principles (Not Fixed Rules)
+
 - **Trust first:** How will you show security?
 - **Action-oriented:** Where are the CTAs?
 - **Scannable:** Can users compare quickly?
 
 ### Color Thinking:
+
 ```
 E-commerce typically needs:
 ├── Trust color (often blue family) → ASK preference
@@ -1262,6 +1275,7 @@ E-commerce typically needs:
 ```
 
 ### Layout Principles:
+
 ```
 ┌────────────────────────────────────────────────────┐
 │  HEADER: Brand + Search + Cart                      │
@@ -1288,6 +1302,7 @@ E-commerce typically needs:
 ```
 
 ### Psychology to Apply:
+
 - Hick's Law: Limit navigation choices
 - Fitts' Law: Size CTAs appropriately
 - Social proof: Show where relevant
@@ -1298,11 +1313,13 @@ E-commerce typically needs:
 ## 6. SaaS Dashboard Guidelines {#saas}
 
 ### Key Principles
+
 - **Functional first:** Data clarity over decoration
 - **Calm UI:** Reduce cognitive load
 - **Consistent:** Predictable patterns
 
 ### Color Thinking:
+
 ```
 Dashboard typically needs:
 ├── Background: Light OR dark (ASK preference)
@@ -1313,6 +1330,7 @@ Dashboard typically needs:
 ```
 
 ### Layout Principles:
+
 ```
 Consider these patterns (not mandated):
 
@@ -1332,6 +1350,7 @@ OPTION C: Collapsed + Expandable
 ```
 
 ### Psychology to Apply:
+
 - Hick's Law: Group navigation items
 - Miller's Law: Chunk information
 - Cognitive Load: Whitespace, consistency
@@ -1341,11 +1360,13 @@ OPTION C: Collapsed + Expandable
 ## 7. Landing Page Guidelines {#landing-page}
 
 ### Key Principles
+
 - **Hero-centric:** First impression matters most
 - **Single focus:** One primary CTA
 - **Emotional:** Connect before selling
 
 ### Color Thinking:
+
 ```
 Landing page typically needs:
 ├── Brand primary: Hero background or accent
@@ -1356,6 +1377,7 @@ Landing page typically needs:
 ```
 
 ### Structure Principles:
+
 ```
 ┌────────────────────────────────────────────────────┐
 │  Navigation: Minimal, CTA visible                   │
@@ -1381,6 +1403,7 @@ Landing page typically needs:
 ```
 
 ### Psychology to Apply:
+
 - Visceral: Beautiful hero impression
 - Serial Position: Key info top/bottom
 - Social Proof: Testimonials work
@@ -1390,11 +1413,13 @@ Landing page typically needs:
 ## 8. Portfolio Guidelines {#portfolio}
 
 ### Key Principles
+
 - **Personality:** Show who you are
 - **Work-focused:** Let projects speak
 - **Memorable:** Stand out from templates
 
 ### Color Thinking:
+
 ```
 Portfolio is personal - many options:
 ├── Minimal: Neutrals + one signature accent
@@ -1405,6 +1430,7 @@ Portfolio is personal - many options:
 ```
 
 ### Structure Principles:
+
 ```
 ┌────────────────────────────────────────────────────┐
 │  Navigation: Unique to your personality             │
@@ -1424,6 +1450,7 @@ Portfolio is personal - many options:
 ```
 
 ### Psychology to Apply:
+
 - Von Restorff: Be uniquely memorable
 - Reflective: Personal story creates connection
 - Emotional: Personality over professionalism
@@ -1465,39 +1492,44 @@ Portfolio is personal - many options:
 ## 10. Complexity Estimation
 
 ### Quick Projects (Hours)
+
 ```
 Simple landing page
 Small portfolio
 Basic form
 Single component
 ```
+
 → Approach: Minimal decisions, focused execution
 
 ### Medium Projects (Days)
+
 ```
 Multi-page site
 Dashboard with modules
 E-commerce category
 Complex forms
 ```
+
 → Approach: Establish tokens, custom components
 
 ### Large Projects (Weeks)
+
 ```
 Full SaaS application
 E-commerce platform
 Custom design system
 Complex workflows
 ```
+
 → Approach: Full design system, documentation, testing
 
 ---
 
 > **Remember**: These templates show STRUCTURE and THINKING process. Every project needs fresh color, typography, and styling decisions based on its unique context. ASK when unclear.
 
-
-
 ---
+
 # Content from motion-graphics.md
 
 # Motion Graphics Reference
@@ -1522,13 +1554,13 @@ JSON-based vector animations:
 
 ### When to Use Lottie
 
-| Use Case | Why Lottie? |
-|----------|-------------|
-| **Loading animations** | Branded, smooth, lightweight |
-| **Empty states** | Engaging illustrations |
-| **Onboarding flows** | Complex multi-step animations |
+| Use Case                   | Why Lottie?                   |
+| -------------------------- | ----------------------------- |
+| **Loading animations**     | Branded, smooth, lightweight  |
+| **Empty states**           | Engaging illustrations        |
+| **Onboarding flows**       | Complex multi-step animations |
 | **Success/Error feedback** | Delightful micro-interactions |
-| **Animated icons** | Consistent cross-platform |
+| **Animated icons**         | Consistent cross-platform     |
 
 ### Principles
 
@@ -1560,12 +1592,12 @@ Professional timeline-based animation:
 
 ### Core Concepts
 
-| Concept | Purpose |
-|---------|---------|
-| **Tween** | Single A→B animation |
-| **Timeline** | Sequenced/overlapping animations |
+| Concept           | Purpose                           |
+| ----------------- | --------------------------------- |
+| **Tween**         | Single A→B animation              |
+| **Timeline**      | Sequenced/overlapping animations  |
 | **ScrollTrigger** | Scroll position controls playback |
-| **Stagger** | Cascade effect across elements |
+| **Stagger**       | Cascade effect across elements    |
 
 ### When to Use GSAP
 
@@ -1589,12 +1621,12 @@ Professional timeline-based animation:
 
 ### Types of SVG Animation
 
-| Type | Technique | Use Case |
-|------|-----------|----------|
-| **Line Drawing** | stroke-dashoffset | Logo reveals, signatures |
-| **Morph** | Path interpolation | Icon transitions |
-| **Transform** | rotate, scale, translate | Interactive icons |
-| **Color** | fill/stroke transition | State changes |
+| Type             | Technique                | Use Case                 |
+| ---------------- | ------------------------ | ------------------------ |
+| **Line Drawing** | stroke-dashoffset        | Logo reveals, signatures |
+| **Morph**        | Path interpolation       | Icon transitions         |
+| **Transform**    | rotate, scale, translate | Interactive icons        |
+| **Color**        | fill/stroke transition   | State changes            |
 
 ### Line Drawing Principles
 
@@ -1639,12 +1671,12 @@ CSS 3D Space:
 
 ### Common 3D Patterns
 
-| Pattern | Use Case |
-|---------|----------|
-| **Card flip** | Reveals, flashcards, product views |
-| **Tilt on hover** | Interactive cards, 3D depth |
+| Pattern             | Use Case                           |
+| ------------------- | ---------------------------------- |
+| **Card flip**       | Reveals, flashcards, product views |
+| **Tilt on hover**   | Interactive cards, 3D depth        |
 | **Parallax layers** | Hero sections, immersive scrolling |
-| **3D carousel** | Image galleries, sliders |
+| **3D carousel**     | Image galleries, sliders           |
 
 ### Principles
 
@@ -1659,22 +1691,22 @@ CSS 3D Space:
 
 ### Types of Particle Systems
 
-| Type | Feel | Use Case |
-|------|------|----------|
-| **Geometric** | Tech, network | SaaS, tech sites |
-| **Confetti** | Celebration | Success moments |
-| **Snow/Rain** | Atmospheric | Seasonal, mood |
-| **Dust/Bokeh** | Dreamy | Photography, luxury |
-| **Fireflies** | Magical | Games, fantasy |
+| Type           | Feel          | Use Case            |
+| -------------- | ------------- | ------------------- |
+| **Geometric**  | Tech, network | SaaS, tech sites    |
+| **Confetti**   | Celebration   | Success moments     |
+| **Snow/Rain**  | Atmospheric   | Seasonal, mood      |
+| **Dust/Bokeh** | Dreamy        | Photography, luxury |
+| **Fireflies**  | Magical       | Games, fantasy      |
 
 ### Libraries
 
-| Library | Best For |
-|---------|----------|
-| **tsParticles** | Configurable, lightweight |
-| **particles.js** | Simple backgrounds |
-| **Canvas API** | Custom, maximum control |
-| **Three.js** | Complex 3D particles |
+| Library          | Best For                  |
+| ---------------- | ------------------------- |
+| **tsParticles**  | Configurable, lightweight |
+| **particles.js** | Simple backgrounds        |
+| **Canvas API**   | Custom, maximum control   |
+| **Three.js**     | Complex 3D particles      |
 
 ### Principles
 
@@ -1708,12 +1740,12 @@ CSS Scroll Timelines:
 
 ### Principles
 
-| Trigger Point | Use Case |
-|---------------|----------|
-| **Entry 0%** | When element starts entering |
-| **Entry 50%** | When half visible |
-| **Cover 50%** | When centered in viewport |
-| **Exit 100%** | When fully exited |
+| Trigger Point | Use Case                     |
+| ------------- | ---------------------------- |
+| **Entry 0%**  | When element starts entering |
+| **Entry 50%** | When half visible            |
+| **Cover 50%** | When centered in viewport    |
+| **Exit 100%** | When fully exited            |
 
 ### Best Practices
 
@@ -1780,36 +1812,35 @@ What animation do you need?
 
 ## 9. Anti-Patterns
 
-| ❌ Don't | ✅ Do |
-|----------|-------|
-| Animate everything at once | Stagger and sequence |
-| Use heavy libraries for simple effects | Start with CSS |
-| Ignore reduced-motion | Always provide fallback |
-| Block main thread | Optimize for 60fps |
-| Same particles every project | Match brand/context |
-| Complex effects on mobile | Feature detection |
+| ❌ Don't                               | ✅ Do                   |
+| -------------------------------------- | ----------------------- |
+| Animate everything at once             | Stagger and sequence    |
+| Use heavy libraries for simple effects | Start with CSS          |
+| Ignore reduced-motion                  | Always provide fallback |
+| Block main thread                      | Optimize for 60fps      |
+| Same particles every project           | Match brand/context     |
+| Complex effects on mobile              | Feature detection       |
 
 ---
 
 ## 10. Quick Reference
 
-| Effect | Tool | Performance |
-|--------|------|-------------|
-| Loading spinner | CSS/Lottie | Light |
-| Staggered reveal | GSAP/Framer | Medium |
-| SVG path draw | CSS stroke | Light |
-| 3D card flip | CSS transforms | Light |
-| Particle background | tsParticles | Heavy |
-| Scroll parallax | GSAP ScrollTrigger | Medium |
-| Shape morphing | GSAP MorphSVG | Medium |
+| Effect              | Tool               | Performance |
+| ------------------- | ------------------ | ----------- |
+| Loading spinner     | CSS/Lottie         | Light       |
+| Staggered reveal    | GSAP/Framer        | Medium      |
+| SVG path draw       | CSS stroke         | Light       |
+| 3D card flip        | CSS transforms     | Light       |
+| Particle background | tsParticles        | Heavy       |
+| Scroll parallax     | GSAP ScrollTrigger | Medium      |
+| Shape morphing      | GSAP MorphSVG      | Medium      |
 
 ---
 
 > **Remember**: Motion graphics should enhance, not distract. Every animation must serve a PURPOSE—feedback, guidance, delight, or storytelling.
 
-
-
 ---
+
 # Content from typography-system.md
 
 # Typography System Reference
@@ -1832,15 +1863,15 @@ A mathematical relationship between font sizes:
 
 ### Common Ratios and When to Use
 
-| Ratio | Value | Feeling | Best For |
-|-------|-------|---------|----------|
-| Minor Second | 1.067 | Very subtle | Dense UI, small screens |
-| Major Second | 1.125 | Subtle | Compact interfaces |
-| Minor Third | 1.2 | Comfortable | Mobile apps, cards |
-| Major Third | 1.25 | Balanced | General web (most common) |
-| Perfect Fourth | 1.333 | Noticeable | Editorial, blogs |
-| Perfect Fifth | 1.5 | Dramatic | Headlines, marketing |
-| Golden Ratio | 1.618 | Maximum impact | Hero sections, display |
+| Ratio          | Value | Feeling        | Best For                  |
+| -------------- | ----- | -------------- | ------------------------- |
+| Minor Second   | 1.067 | Very subtle    | Dense UI, small screens   |
+| Major Second   | 1.125 | Subtle         | Compact interfaces        |
+| Minor Third    | 1.2   | Comfortable    | Mobile apps, cards        |
+| Major Third    | 1.25  | Balanced       | General web (most common) |
+| Perfect Fourth | 1.333 | Noticeable     | Editorial, blogs          |
+| Perfect Fifth  | 1.5   | Dramatic       | Headlines, marketing      |
+| Golden Ratio   | 1.618 | Maximum impact | Hero sections, display    |
 
 ### Generate Your Scale
 
@@ -1860,12 +1891,12 @@ Scale:
 
 ### Choosing Base Size
 
-| Context | Base Size Range | Why |
-|---------|-----------------|-----|
-| Mobile-first | 16-18px | Readability on small screens |
-| Desktop app | 14-16px | Information density |
-| Editorial | 18-21px | Long-form reading comfort |
-| Accessibility focus | 18px+ | Easier to read |
+| Context             | Base Size Range | Why                          |
+| ------------------- | --------------- | ---------------------------- |
+| Mobile-first        | 16-18px         | Readability on small screens |
+| Desktop app         | 14-16px         | Information density          |
+| Editorial           | 18-21px         | Long-form reading comfort    |
+| Accessibility focus | 18px+           | Easier to read               |
 
 ---
 
@@ -1882,12 +1913,12 @@ Contrast + Harmony:
 
 ### Pairing Strategies
 
-| Strategy | How | Result |
-|----------|-----|--------|
-| **Contrast** | Serif heading + Sans body | Classic, editorial feel |
-| **Same Family** | One variable font, different weights | Cohesive, modern |
-| **Same Designer** | Fonts by same foundry | Often harmonious proportions |
-| **Era Match** | Fonts from same time period | Historical consistency |
+| Strategy          | How                                  | Result                       |
+| ----------------- | ------------------------------------ | ---------------------------- |
+| **Contrast**      | Serif heading + Sans body            | Classic, editorial feel      |
+| **Same Family**   | One variable font, different weights | Cohesive, modern             |
+| **Same Designer** | Fonts by same foundry                | Often harmonious proportions |
+| **Era Match**     | Fonts from same time period          | Historical consistency       |
 
 ### What to Look For
 
@@ -1901,12 +1932,12 @@ When pairing, compare:
 
 ### Safe Pairing Patterns
 
-| Heading Style | Body Style | Mood |
-|---------------|------------|------|
-| Geometric sans | Humanist sans | Modern, friendly |
-| Display serif | Clean sans | Editorial, sophisticated |
-| Neutral sans | Same sans | Minimal, tech |
-| Bold geometric | Light geometric | Contemporary |
+| Heading Style  | Body Style      | Mood                     |
+| -------------- | --------------- | ------------------------ |
+| Geometric sans | Humanist sans   | Modern, friendly         |
+| Display serif  | Clean sans      | Editorial, sophisticated |
+| Neutral sans   | Same sans       | Minimal, tech            |
+| Bold geometric | Light geometric | Contemporary             |
 
 ### Avoid
 
@@ -1931,12 +1962,12 @@ Line height depends on:
 
 ### Guidelines by Context
 
-| Content Type | Line Height Range | Why |
-|--------------|-------------------|-----|
-| **Headings** | 1.1 - 1.3 | Short lines, want compact |
-| **Body text** | 1.4 - 1.6 | Comfortable reading |
-| **Long-form** | 1.6 - 1.8 | Maximum readability |
-| **UI elements** | 1.2 - 1.4 | Space efficiency |
+| Content Type    | Line Height Range | Why                       |
+| --------------- | ----------------- | ------------------------- |
+| **Headings**    | 1.1 - 1.3         | Short lines, want compact |
+| **Body text**   | 1.4 - 1.6         | Comfortable reading       |
+| **Long-form**   | 1.6 - 1.8         | Maximum readability       |
+| **UI elements** | 1.2 - 1.4         | Space efficiency          |
 
 ### Adjustment Factors
 
@@ -1969,12 +2000,12 @@ max-width: 65ch; /* ch = width of "0" character */
 
 ### Context Adjustments
 
-| Context | Character Range |
-|---------|-----------------|
-| Desktop article | 60-75 characters |
-| Mobile | 35-50 characters |
-| Sidebar text | 30-45 characters |
-| Wide monitors | Still cap at ~75ch |
+| Context         | Character Range    |
+| --------------- | ------------------ |
+| Desktop article | 60-75 characters   |
+| Mobile          | 35-50 characters   |
+| Sidebar text    | 30-45 characters   |
+| Wide monitors   | Still cap at ~75ch |
 
 ---
 
@@ -1993,11 +2024,7 @@ Fixed sizes don't scale well:
 
 ```css
 /* Syntax: clamp(MIN, PREFERRED, MAX) */
-font-size: clamp(
-  MINIMUM_SIZE,
-  FLUID_CALCULATION,
-  MAXIMUM_SIZE
-);
+font-size: clamp(MINIMUM_SIZE, FLUID_CALCULATION, MAXIMUM_SIZE);
 
 /* FLUID_CALCULATION typically: 
    base + viewport-relative-unit */
@@ -2005,12 +2032,12 @@ font-size: clamp(
 
 ### Scaling Strategy
 
-| Element | Scaling Behavior |
-|---------|-----------------|
-| Body text | Slight scaling (1rem → 1.125rem) |
-| Subheadings | Moderate scaling |
-| Headings | More dramatic scaling |
-| Display text | Most dramatic scaling |
+| Element      | Scaling Behavior                 |
+| ------------ | -------------------------------- |
+| Body text    | Slight scaling (1rem → 1.125rem) |
+| Subheadings  | Moderate scaling                 |
+| Headings     | More dramatic scaling            |
+| Display text | Most dramatic scaling            |
 
 ---
 
@@ -2018,13 +2045,13 @@ font-size: clamp(
 
 ### Semantic Weight Usage
 
-| Weight Range | Name | Use For |
-|--------------|------|---------|
-| 300-400 | Light/Normal | Body text, paragraphs |
-| 500 | Medium | Subtle emphasis |
-| 600 | Semibold | Subheadings, labels |
-| 700 | Bold | Headings, strong emphasis |
-| 800-900 | Heavy/Black | Display, hero text |
+| Weight Range | Name         | Use For                   |
+| ------------ | ------------ | ------------------------- |
+| 300-400      | Light/Normal | Body text, paragraphs     |
+| 500          | Medium       | Subtle emphasis           |
+| 600          | Semibold     | Subheadings, labels       |
+| 700          | Bold         | Headings, strong emphasis |
+| 800-900      | Heavy/Black  | Display, hero text        |
 
 ### Creating Contrast
 
@@ -2063,13 +2090,13 @@ ALL CAPS: always wider tracking
 
 ### Adjustment Guidelines
 
-| Context | Tracking Adjustment |
-|---------|---------------------|
-| Display/Hero | -2% to -4% |
-| Headings | -1% to -2% |
-| Body text | 0% (normal) |
-| Small text | +1% to +2% |
-| ALL CAPS | +5% to +10% |
+| Context      | Tracking Adjustment |
+| ------------ | ------------------- |
+| Display/Hero | -2% to -4%          |
+| Headings     | -1% to -2%          |
+| Body text    | 0% (normal)         |
+| Small text   | +1% to +2%          |
+| ALL CAPS     | +5% to +10%         |
 
 ---
 
@@ -2088,13 +2115,13 @@ Ways to create hierarchy:
 
 ### Typical Hierarchy
 
-| Level | Characteristics |
-|-------|-----------------|
-| Primary (H1) | Largest, boldest, most distinct |
+| Level          | Characteristics                   |
+| -------------- | --------------------------------- |
+| Primary (H1)   | Largest, boldest, most distinct   |
 | Secondary (H2) | Noticeably smaller but still bold |
-| Tertiary (H3) | Medium size, may use weight only |
-| Body | Standard size and weight |
-| Caption/Meta | Smaller, often lighter color |
+| Tertiary (H3)  | Medium size, may use weight only  |
+| Body           | Standard size and weight          |
+| Caption/Meta   | Smaller, often lighter color      |
 
 ### Testing Hierarchy
 
@@ -2158,9 +2185,8 @@ Before finalizing typography:
 
 > **Remember**: Typography is about communication clarity. Choose based on content needs and audience, not personal preference.
 
-
-
 ---
+
 # Content from ux-psychology.md
 
 # UX Psychology Reference
@@ -2181,15 +2207,17 @@ Where n = number of choices
 ```
 
 **Application:**
+
 - Navigation: Max 5-7 top-level items
 - Forms: Break into steps (progressive disclosure)
 - Options: Default selections when possible
 - Filters: Prioritize most-used, hide advanced
 
 **Example:**
+
 ```
 ❌ Bad: 15 menu items in one nav
-✅ Good: 5 main categories + "More" 
+✅ Good: 5 main categories + "More"
 
 ❌ Bad: 20 form fields at once
 ✅ Good: 3-step wizard with 5-7 fields each
@@ -2207,21 +2235,35 @@ Where D = distance, W = width
 ```
 
 **Application:**
+
 - CTAs: Make primary buttons larger (min 44px height)
 - Touch targets: 44×44px minimum on mobile
 - Placement: Important actions near natural cursor position
 - Corners: "Magic corners" (infinite edge = easy to hit)
 
 **Button Sizing:**
+
 ```css
 /* Size by importance */
-.btn-primary { height: 48px; padding: 0 24px; }
-.btn-secondary { height: 40px; padding: 0 16px; }
-.btn-tertiary { height: 36px; padding: 0 12px; }
+.btn-primary {
+  height: 48px;
+  padding: 0 24px;
+}
+.btn-secondary {
+  height: 40px;
+  padding: 0 16px;
+}
+.btn-tertiary {
+  height: 36px;
+  padding: 0 12px;
+}
 
 /* Mobile touch targets */
 @media (hover: none) {
-  .btn { min-height: 44px; min-width: 44px; }
+  .btn {
+    min-height: 44px;
+    min-width: 44px;
+  }
 }
 ```
 
@@ -2232,12 +2274,14 @@ Where D = distance, W = width
 **Principle:** Average person can hold 7±2 chunks in working memory.
 
 **Application:**
+
 - Lists: Group into chunks of 5-7 items
 - Navigation: Max 7 menu items
 - Content: Break long content with headings
 - Phone numbers: 555-123-4567 (chunked)
 
 **Chunking Example:**
+
 ```
 ❌ 5551234567
 ✅ 555-123-4567
@@ -2255,21 +2299,29 @@ Where D = distance, W = width
 **Principle:** An item that stands out is more likely to be remembered.
 
 **Application:**
+
 - CTA buttons: Distinct color from other elements
 - Pricing: Highlight recommended plan
 - Important info: Visual differentiation
 - New features: Badge or callout
 
 **Example:**
+
 ```css
 /* All buttons gray, primary stands out */
-.btn { background: #E5E7EB; }
-.btn-primary { background: #3B82F6; }
+.btn {
+  background: #e5e7eb;
+}
+.btn-primary {
+  background: #3b82f6;
+}
 
 /* Recommended plan highlighted */
-.pricing-card { border: 1px solid #E5E7EB; }
-.pricing-card.popular { 
-  border: 2px solid #3B82F6;
+.pricing-card {
+  border: 1px solid #e5e7eb;
+}
+.pricing-card.popular {
+  border: 2px solid #3b82f6;
   box-shadow: var(--shadow-lg);
 }
 ```
@@ -2281,12 +2333,14 @@ Where D = distance, W = width
 **Principle:** Items at the beginning (primacy) and end (recency) of a list are remembered best.
 
 **Application:**
+
 - Navigation: Most important items first and last
 - Lists: Key info at top and bottom
 - Forms: Most critical fields at start
 - CTAs: Repeat at top and bottom of long pages
 
 **Example:**
+
 ```
 Navigation: Home | [key items] | Contact
 
@@ -2301,6 +2355,7 @@ Long landing page:
 **Principle:** Users spend most of their time on other sites. They prefer your site to work the same way as all the other sites they already know.
 
 **Application:**
+
 - **Patterns:** Use standard placement for search bars and carts.
 - **Mental Models:** Leverage familiar icons (e.g., a magnifying glass).
 - **Vocabulary:** Use "Log In" instead of "Enter the Portal."
@@ -2309,6 +2364,7 @@ Long landing page:
 - **Feedback:** Standard colors (Red = Error, Green = Success).
 
 **Example:**
+
 ```
 ❌ Bad: A website where clicking the logo takes you to an "About Us" page.
 ✅ Good: Clicking the logo always returns the user to the Homepage.
@@ -2324,6 +2380,7 @@ Long landing page:
 **Principle:** For any system, there is a certain amount of complexity which cannot be reduced, only shifted from user to software.
 
 **Application:**
+
 - **Backend:** Let the system handle formatting (e.g., currency).
 - **Detection:** Auto-detect card type or city via ZIP code.
 - **Automation:** Pre-fill returning user data.
@@ -2332,6 +2389,7 @@ Long landing page:
 - **Integration:** Use SSO (Social Logins) to offload registration friction.
 
 **Example:**
+
 ```
 ❌ Bad: Making users type "USD $" before every price field in a form.
 ✅ Good: The app automatically prefixing the "$" based on the user's location.
@@ -2347,6 +2405,7 @@ Long landing page:
 **Principle:** Any task will inflate until all available time is spent.
 
 **Application:**
+
 - **Efficiency:** Use "Auto-save" to reduce task completion time.
 - **Speed:** Limit the steps in a conversion funnel.
 - **Clarity:** Use clear labels to prevent "hover-poking" for meaning.
@@ -2355,6 +2414,7 @@ Long landing page:
 - **Constraints:** Set character limits on inputs to focus thoughts.
 
 **Example:**
+
 ```
 ❌ Bad: A 10-page registration form that allows users to browse away and lose data.
 ✅ Good: A "One-Tap Sign In" using Google or Apple ID.
@@ -2370,6 +2430,7 @@ Long landing page:
 **Principle:** Productivity skyrockets when a computer and its users interact at a pace (<400ms) that ensures neither has to wait on the other.
 
 **Application:**
+
 - **Feedback:** Use immediate visual cues for clicks.
 - **Loading:** Use skeleton screens for perceivable performance.
 - **Optimism:** Update UI before the server responds (Optimistic UI).
@@ -2378,6 +2439,7 @@ Long landing page:
 - **Prioritization:** Load text content before heavy high-res images.
 
 **Example:**
+
 ```
 ❌ Bad: A button that does nothing for 2 seconds after being clicked.
 ✅ Good: A button that immediately changes color and shows a "Loading" spinner.
@@ -2393,6 +2455,7 @@ Long landing page:
 **Principle:** Be conservative in what you do, be liberal in what you accept from others.
 
 **Application:**
+
 - **Error Handling:** Don't error out for a missing space or dash.
 - **Formatting:** Accept dates in DD/MM/YYYY or MM/DD/YYYY.
 - **Inputs:** Strip trailing/leading white space automatically.
@@ -2401,6 +2464,7 @@ Long landing page:
 - **Accessibility:** Ensure the site works across all browsers and devices.
 
 **Example:**
+
 ```
 ❌ Bad: Rejecting a phone number because the user put a space in it.
 ✅ Good: Accepting the input and stripping the spaces automatically.
@@ -2416,6 +2480,7 @@ Long landing page:
 **Principle:** Among competing hypotheses that predict equally well, the one with the fewest assumptions should be selected. The simplest solution is usually the best.
 
 **Application:**
+
 - **Logic:** Remove unnecessary clicks.
 - **Visuals:** Use only as many fonts/colors as strictly necessary.
 - **Function:** If one field can do the work of two, combine them.
@@ -2424,6 +2489,7 @@ Long landing page:
 - **Flow:** Avoid branching paths unless absolutely required.
 
 **Example:**
+
 ```
 ❌ Bad: A "Login" button that opens a new page, then email, then password.
 ✅ Good: A single login modal that asks for both on one screen.
@@ -2441,6 +2507,7 @@ Long landing page:
 **Principle:** Objects that are near, or proximate to each other, tend to be grouped together.
 
 **Application:**
+
 - **Grouping:** Keep labels physically close to input fields.
 - **Spacing:** Larger margins between unrelated content blocks.
 - **Cards:** Text inside a card should be closer to its image than the border.
@@ -2449,6 +2516,7 @@ Long landing page:
 - **Forms:** Group Address fields together, separate from Credit Card fields.
 
 **Example:**
+
 ```
 ❌ Bad: Large, equal gaps between every line of text in a form.
 ✅ Good: Tight spacing between a label and its input, with larger gaps between pairs.
@@ -2464,6 +2532,7 @@ Long landing page:
 **Principle:** The human eye tends to perceive similar elements in a design as a complete picture, shape, or group, even if those elements are separated.
 
 **Application:**
+
 - **Consistency:** Consistent colors for all clickable links.
 - **Iconography:** All icons in a set should have the same stroke weight.
 - **Buttons:** Same shape/size for buttons with the same importance.
@@ -2472,6 +2541,7 @@ Long landing page:
 - **States:** Hover and Active states must be consistent across the app.
 
 **Example:**
+
 ```
 ❌ Bad: Some links are blue, some are green, and some are just bold black.
 ✅ Good: Every clickable text element in the app is the same shade of Blue.
@@ -2487,6 +2557,7 @@ Long landing page:
 **Principle:** Elements tend to be perceived into groups if they are sharing an area with a clearly defined boundary.
 
 **Application:**
+
 - **Containerizing:** Use cards to group images and titles.
 - **Borders:** Use lines to separate the sidebar from the main feed.
 - **Backgrounds:** Use a different background color for the footer.
@@ -2495,6 +2566,7 @@ Long landing page:
 - **Header:** A solid bar across the top to group navigation items.
 
 **Example:**
+
 ```
 ❌ Bad: A list of news articles where the text and image of different stories overlap.
 ✅ Good: Each article is contained within its own white card on a light gray background.
@@ -2510,6 +2582,7 @@ Long landing page:
 **Principle:** Elements that are visually connected (e.g., via lines, arrows) are perceived as more related than elements with no connection.
 
 **Application:**
+
 - **Flow:** Use lines to connect steps in a progress wizard.
 - **Menus:** Dropdowns that "touch" or connect to their parent button.
 - **Graphs:** Lines connecting data points in a chart.
@@ -2518,6 +2591,7 @@ Long landing page:
 - **Forms:** Connecting a "Credit Card" radio button to the fieldset below it.
 
 **Example:**
+
 ```
 ❌ Bad: A 3-step setup where the numbers "1", "2", and "3" are scattered.
 ✅ Good: A horizontal line connecting "1", "2", and "3" to show a sequence.
@@ -2533,6 +2607,7 @@ Long landing page:
 **Principle:** People will perceive and interpret ambiguous or complex images as the simplest form possible, because it is the interpretation that requires the least cognitive effort.
 
 **Application:**
+
 - **Clarity:** Use clear, geometric icons for navigation.
 - **Reduction:** Remove unnecessary 3D textures or shadows.
 - **Shapes:** Prefer standard rectangles/circles over complex polygons.
@@ -2541,6 +2616,7 @@ Long landing page:
 - **UX:** One main goal per page to keep the "mental shape" simple.
 
 **Example:**
+
 ```
 ❌ Bad: A hyper-realistic 3D illustration of a file folder for the "Files" icon.
 ✅ Good: A simple 2D outline of a folder.
@@ -2556,6 +2632,7 @@ Long landing page:
 **Principle:** The eye differentiates an object from its surrounding area. a form, silhouette, or shape is perceived as figure (object), while the surrounding area is perceived as ground (background).
 
 **Application:**
+
 - **Focus:** Use overlays (scrims) for modals to pop the content.
 - **Depth:** Drop shadows to imply the "figure" is sitting above the "ground."
 - **Contrast:** Light text on dark ground (or vice versa).
@@ -2564,6 +2641,7 @@ Long landing page:
 - **Hover:** Elevate cards slightly on hover to define them as the figure.
 
 **Example:**
+
 ```
 ❌ Bad: A popup window that has no shadow or border, blending into the page.
 ✅ Good: A modal with a drop shadow and a dimmed background overlay.
@@ -2579,6 +2657,7 @@ Long landing page:
 **Principle:** Whatever stands out visually will capture and hold the viewer’s attention first.
 
 **Application:**
+
 - **Entry:** Place the primary value proposition at the focal point.
 - **Color:** Use one high-vibrancy "Action Color" against a neutral UI.
 - **Movement:** Use subtle animation on the CTA to draw the eye.
@@ -2587,6 +2666,7 @@ Long landing page:
 - **Direction:** Use arrows or gaze (images of people looking at a button).
 
 **Example:**
+
 ```
 ❌ Bad: A homepage with 5 buttons of the same size and color.
 ✅ Good: One large "Get Started" button in a bright color.
@@ -2604,6 +2684,7 @@ Long landing page:
 **Principle:** People remember uncompleted or interrupted tasks better than completed tasks.
 
 **Application:**
+
 - **Gamification:** Use "Profile 60% complete" bars.
 - **Engagement:** Tease the next module in a learning path.
 - **Retention:** Show a "To-Do" list of features yet to be explored.
@@ -2612,6 +2693,7 @@ Long landing page:
 - **Shopping:** "Finish your order" reminders in the cart.
 
 **Example:**
+
 ```
 ❌ Bad: A silent onboarding process that gives no indication of what's left.
 ✅ Good: A checklist that shows "3 of 5 steps finished."
@@ -2625,6 +2707,7 @@ Long landing page:
 **Principle:** The tendency to approach a goal increases with proximity to the goal.
 
 **Application:**
+
 - **Momentum:** Give users "Artificial Advancement" (e.g. 2 free stamps).
 - **Progress:** Break a 10-field form into two 5-field steps.
 - **Feedback:** Celebrate milestones halfway through a task.
@@ -2633,6 +2716,7 @@ Long landing page:
 - **Loading:** Speed up the loading animation as it nears 100%.
 
 **Example:**
+
 ```
 ❌ Bad: A progress bar that starts at 0% and feels like a long climb.
 ✅ Good: A bar that starts at 20% because the user "started" by opening the app.
@@ -2646,6 +2730,7 @@ Long landing page:
 **Principle:** People judge an experience largely based on how they felt at its peak (the most intense point) and at its end, rather than the total sum or average of every moment.
 
 **Application:**
+
 - **Success:** Make the "Order Confirmed" screen memorable.
 - **Delight:** Add confetti or a unique animation at the point of value.
 - **Support:** Ensure the final interaction with a chat bot is helpful.
@@ -2654,6 +2739,7 @@ Long landing page:
 - **Error Handling:** Turn a 404 page into a fun, helpful interaction.
 
 **Example:**
+
 ```
 ❌ Bad: After a 20-minute tax filing process, the app just says "Submitted."
 ✅ Good: A "Congratulations!" screen with a summary of the refund amount.
@@ -2667,6 +2753,7 @@ Long landing page:
 **Principle:** Users often perceive aesthetically pleasing design as design that’s more usable.
 
 **Application:**
+
 - **Trust:** High-fidelity visuals buy "trust credit" for minor bugs.
 - **Branding:** Consistent high-quality imagery build professionalism.
 - **Engagement:** Beautiful interfaces keep users exploring longer.
@@ -2675,6 +2762,7 @@ Long landing page:
 - **Loyalty:** People form emotional bonds with beautiful products.
 
 **Example:**
+
 ```
 ❌ Bad: A banking app with misaligned text and clashing 1990s colors.
 ✅ Good: A sleek, modern banking app with smooth animations.
@@ -2688,6 +2776,7 @@ Long landing page:
 **Principle:** Users rely heavily on the first piece of information offered (the "anchor") when making decisions.
 
 **Application:**
+
 - **Pricing:** Show the original price crossed out.
 - **Tiers:** Put the most expensive "Enterprise" plan on the far left.
 - **Sorting:** Highlight "Most Popular" as the first recommendation.
@@ -2696,6 +2785,7 @@ Long landing page:
 - **Defaults:** Start with a high "Suggested Donation" amount.
 
 **Example:**
+
 ```
 ❌ Bad: Only showing the price "$49."
 ✅ Good: Showing "~~$99~~ $49 (50% Off)."
@@ -2709,6 +2799,7 @@ Long landing page:
 **Principle:** People copy the actions of others in an attempt to undertake behavior in a given situation.
 
 **Application:**
+
 - **Validation:** Display "Join 50,000+ others."
 - **Reviews:** Star ratings and verified customer testimonials.
 - **Logos:** "Trusted by" section showing partner brands.
@@ -2717,6 +2808,7 @@ Long landing page:
 - **Certificates:** Industry awards and security badges.
 
 **Example:**
+
 ```
 ❌ Bad: A signup page with just a form.
 ✅ Good: A signup page that says "Join 2 million designers."
@@ -2730,6 +2822,7 @@ Long landing page:
 **Principle:** Humans place a higher value on an object that is scarce, and a lower value on those that are in abundance.
 
 **Application:**
+
 - **Urgency:** "Only 2 items left in stock."
 - **Time:** Ticking countdown timers for sales.
 - **Access:** "Invite-only" betas or exclusive tiers.
@@ -2738,6 +2831,7 @@ Long landing page:
 - **Demand:** "In high demand - 10 people have this in their cart."
 
 **Example:**
+
 ```
 ❌ Bad: A sale that never ends and has no countdown.
 ✅ Good: A "Deal of the Day" with a ticking timer.
@@ -2751,6 +2845,7 @@ Long landing page:
 **Principle:** The tendency to attribute greater accuracy to the opinion of an authority figure and be more influenced by that opinion.
 
 **Application:**
+
 - **Expertise:** Use "Expert-verified" or professional headshots.
 - **Certifications:** Trust seals (Norton, ISO, HIPAA).
 - **Media:** "As seen on TechCrunch/Forbes" logos.
@@ -2759,6 +2854,7 @@ Long landing page:
 - **History:** "Established in 1950" to imply longevity and trust.
 
 **Example:**
+
 ```
 ❌ Bad: A health blog written by "Admin."
 ✅ Good: A health article "Reviewed by Dr. Jane Smith, Cardiologist."
@@ -2772,6 +2868,7 @@ Long landing page:
 **Principle:** People generally prefer avoiding losses to acquiring equivalent gains. It is better to not lose $5 than to find $5.
 
 **Application:**
+
 - **Messaging:** "Don't lose your discount."
 - **Trials:** "Your free trial is ending - keep your data now."
 - **Scarcity:** "Once it's gone, it's gone for good."
@@ -2780,6 +2877,7 @@ Long landing page:
 - **Risk:** "30-day money-back guarantee" (reduces the "loss" of money).
 
 **Example:**
+
 ```
 ❌ Bad: "Click here to get a $10 coupon."
 ✅ Good: "You have a $10 credit waiting. Use it before it expires tonight!"
@@ -2793,6 +2891,7 @@ Long landing page:
 **Principle:** People tend to overestimate the extent to which their opinions, beliefs, preferences, values, and habits are normal and typical of those of others.
 
 **Application:**
+
 - **Testing:** You are not the user - test with real target audiences.
 - **Research:** Use qualitative data (interviews) and quantitative data (analytics).
 - **Bias:** Use "Blind Design Reviews" to avoid personal favoritism.
@@ -2801,6 +2900,7 @@ Long landing page:
 - **Objectivity:** Use heatmaps to see actual user behavior.
 
 **Example:**
+
 ```
 ❌ Bad: A designer deciding a feature is "intuitive" without testing it.
 ✅ Good: Running an A/B test to see which version users prefer.
@@ -2814,6 +2914,7 @@ Long landing page:
 **Principle:** A cognitive bias that occurs when an individual, communicating with other individuals, unknowingly assumes that the others have the background to understand.
 
 **Application:**
+
 - **Copy:** Avoid jargon and use plain language.
 - **Onboarding:** Tutorials that assume the user knows nothing.
 - **Tooltips:** Explain complex terms on hover.
@@ -2822,6 +2923,7 @@ Long landing page:
 - **Support:** Comprehensive FAQs for first-time users.
 
 **Example:**
+
 ```
 ❌ Bad: An error message saying "Exception: Null Pointer at 0x0045."
 ✅ Good: An error message saying "Something went wrong. Please try refreshing."
@@ -2835,6 +2937,7 @@ Long landing page:
 **Principle:** Users commit to large tasks if they start with small ones.
 
 **Application:**
+
 - **Funnel:** Ask for email before asking for credit card.
 - **Engagement:** Ask for one preference (e.g. "Dark Mode?") before registration.
 - **Onboarding:** Use a series of "Quick Yes/No" questions.
@@ -2843,6 +2946,7 @@ Long landing page:
 - **Sales:** Offer a low-cost "tripwire" product before the main service.
 
 **Example:**
+
 ```
 ❌ Bad: A "Start Free Trial" button that immediately requires credit card info.
 ✅ Good: Asking for an email and password first, then offering the trial.
@@ -2885,6 +2989,7 @@ Long landing page:
 ### Designing for Each Level
 
 **Visceral:**
+
 ```css
 /* Beautiful first impression */
 .hero {
@@ -2900,19 +3005,21 @@ Long landing page:
 ```
 
 **Behavioral:**
+
 ```javascript
 // Instant feedback
 button.onclick = () => {
   button.disabled = true;
-  button.textContent = 'Saving...';
-  
+  button.textContent = "Saving...";
+
   save().then(() => {
-    showSuccess('Saved!');  // Immediate confirmation
+    showSuccess("Saved!"); // Immediate confirmation
   });
 };
 ```
 
 **Reflective:**
+
 ```html
 <!-- Brand story and values -->
 <section class="about">
@@ -2932,13 +3039,13 @@ button.onclick = () => {
 
 ### Trust Signal Categories
 
-| Category | Elements | Implementation |
-|----------|----------|----------------|
-| **Security** | SSL, badges, encryption | Visible padlock, security logos on forms |
-| **Social Proof** | Reviews, testimonials, logos | Star ratings, customer photos, brand logos |
-| **Transparency** | Policies, pricing, contact | Clear links, no hidden fees, real address |
-| **Professional** | Design quality, consistency | No broken elements, consistent branding |
-| **Authority** | Certifications, awards, media | "As seen in...", industry certifications |
+| Category         | Elements                      | Implementation                             |
+| ---------------- | ----------------------------- | ------------------------------------------ |
+| **Security**     | SSL, badges, encryption       | Visible padlock, security logos on forms   |
+| **Social Proof** | Reviews, testimonials, logos  | Star ratings, customer photos, brand logos |
+| **Transparency** | Policies, pricing, contact    | Clear links, no hidden fees, real address  |
+| **Professional** | Design quality, consistency   | No broken elements, consistent branding    |
+| **Authority**    | Certifications, awards, media | "As seen in...", industry certifications   |
 
 ### Trust Signal Placement
 
@@ -2966,7 +3073,7 @@ button.onclick = () => {
   align-items: center;
   gap: 8px;
   padding: 12px 16px;
-  background: #F0FDF4;  /* Light green = security */
+  background: #f0fdf4; /* Light green = security */
   border-radius: 2px; /* Sharp for trust = precision feel */
   font-size: 14px;
   color: #166534;
@@ -2974,7 +3081,7 @@ button.onclick = () => {
 
 /* Secure form indicator */
 .secure-form::before {
-  content: '🔒 Secure form';
+  content: "🔒 Secure form";
   display: block;
   font-size: 12px;
   color: #166534;
@@ -2994,7 +3101,7 @@ button.onclick = () => {
 .testimonial-avatar {
   width: 48px;
   height: 48px;
-  border-radius: 50%;  /* Real photos > initials */
+  border-radius: 50%; /* Real photos > initials */
 }
 ```
 
@@ -3004,33 +3111,35 @@ button.onclick = () => {
 
 ### Three Types of Cognitive Load
 
-| Type | Definition | Designer's Role |
-|------|------------|-----------------|
-| **Intrinsic** | Inherent complexity of task | Break into smaller steps |
-| **Extraneous** | Load from poor design | Eliminate this! |
-| **Germane** | Effort for learning | Support and encourage |
+| Type           | Definition                  | Designer's Role          |
+| -------------- | --------------------------- | ------------------------ |
+| **Intrinsic**  | Inherent complexity of task | Break into smaller steps |
+| **Extraneous** | Load from poor design       | Eliminate this!          |
+| **Germane**    | Effort for learning         | Support and encourage    |
 
 ### Reduction Strategies
 
 **1. Simplify (Reduce Extraneous)**
+
 ```css
 /* Visual noise → Clean */
 .card-busy {
   border: 2px solid red;
   background: linear-gradient(...);
-  box-shadow: 0 0 20px ...;
+  box-shadow: 0 0 20px...;
   /* Too much! */
 }
 
 .card-clean {
   background: white;
   border-radius: 16px;
-  box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
   /* Calm, focused */
 }
 ```
 
 **2. Chunk Information**
+
 ```html
 <!-- Overwhelming -->
 <form>
@@ -3051,15 +3160,14 @@ button.onclick = () => {
 ```
 
 **3. Progressive Disclosure**
+
 ```html
 <!-- Hide complexity until needed -->
 <div class="filters">
   <div class="filters-basic">
     <!-- Common filters visible -->
   </div>
-  <button onclick="toggleAdvanced()">
-    Advanced Options ▼
-  </button>
+  <button onclick="toggleAdvanced()">Advanced Options ▼</button>
   <div class="filters-advanced" hidden>
     <!-- Complex filters hidden -->
   </div>
@@ -3067,6 +3175,7 @@ button.onclick = () => {
 ```
 
 **4. Use Familiar Patterns**
+
 ```
 ✅ Standard navigation placement
 ✅ Expected icon meanings (🔍 = search)
@@ -3075,13 +3184,17 @@ button.onclick = () => {
 ```
 
 **5. Offload Information**
+
 ```html
 <!-- Don't make users remember -->
 <label>
   Card Number
-  <input type="text" inputmode="numeric" 
-         autocomplete="cc-number" 
-         placeholder="1234 5678 9012 3456">
+  <input
+    type="text"
+    inputmode="numeric"
+    autocomplete="cc-number"
+    placeholder="1234 5678 9012 3456"
+  />
 </label>
 
 <!-- Show what they entered -->
@@ -3097,25 +3210,27 @@ button.onclick = () => {
 
 ### Ethical Persuasion Techniques
 
-| Technique | Ethical Use | Dark Pattern (Avoid) |
-|-----------|-------------|----------------------|
-| **Scarcity** | Real stock levels | Fake countdown timers |
-| **Social Proof** | Genuine reviews | Fake testimonials |
-| **Authority** | Real credentials | Misleading badges |
-| **Urgency** | Real deadlines | Manufactured FOMO |
-| **Commitment** | Progress saving | Guilt-tripping |
+| Technique        | Ethical Use       | Dark Pattern (Avoid)  |
+| ---------------- | ----------------- | --------------------- |
+| **Scarcity**     | Real stock levels | Fake countdown timers |
+| **Social Proof** | Genuine reviews   | Fake testimonials     |
+| **Authority**    | Real credentials  | Misleading badges     |
+| **Urgency**      | Real deadlines    | Manufactured FOMO     |
+| **Commitment**   | Progress saving   | Guilt-tripping        |
 
 ### Nudge Patterns
 
 **Smart Defaults:**
+
 ```html
 <!-- Pre-select the recommended option -->
-<input type="radio" name="plan" value="monthly">
-<input type="radio" name="plan" value="annual" checked>
-  Annual (Save 20%)
+<input type="radio" name="plan" value="monthly" />
+<input type="radio" name="plan" value="annual" checked />
+Annual (Save 20%)
 ```
 
 **Anchoring:**
+
 ```html
 <!-- Show original price to frame discount -->
 <div class="price">
@@ -3126,6 +3241,7 @@ button.onclick = () => {
 ```
 
 **Social Proof:**
+
 ```html
 <!-- Real-time activity -->
 <div class="activity">
@@ -3138,6 +3254,7 @@ button.onclick = () => {
 ```
 
 **Progress & Commitment:**
+
 ```html
 <!-- Show progress to encourage completion -->
 <div class="progress">
@@ -3280,9 +3397,8 @@ DESIGN APPROACH:
 - [ ] **Prägnanz:** Are icons and shapes simple enough to be recognized at a glance?
 - [ ] **Figure/Ground:** Is it clear which element is in focus (e.g., using shadows or scrims for modals)?
 
-
-
 ---
+
 # Content from visual-effects.md
 
 # Visual Effects Reference
@@ -3311,21 +3427,22 @@ Key Properties:
   /* Transparency: adjust opacity based on content readability */
   background: rgba(R, G, B, OPACITY);
   /* OPACITY: 0.1-0.3 for dark bg, 0.5-0.8 for light bg */
-  
+
   /* Blur: higher = more frosted */
   backdrop-filter: blur(AMOUNT);
   /* AMOUNT: 8-12px subtle, 16-24px strong */
-  
+
   /* Border: defines edges */
   border: 1px solid rgba(255, 255, 255, OPACITY);
   /* OPACITY: 0.1-0.3 typically */
-  
+
   /* Radius: match your design system */
   border-radius: YOUR_RADIUS;
 }
 ```
 
 ### When to Use Glassmorphism
+
 - ✅ Over colorful/image backgrounds
 - ✅ Modals, overlays, cards
 - ✅ Navigation bars with scrolling content behind
@@ -3333,6 +3450,7 @@ Key Properties:
 - ❌ Simple solid backgrounds (pointless)
 
 ### When NOT to Use
+
 - Low contrast situations
 - Accessibility-critical content
 - Performance-constrained devices
@@ -3356,28 +3474,30 @@ Key Concept: Soft, extruded elements using DUAL shadows
 .neo-raised {
   /* Background MUST match parent */
   background: SAME_AS_PARENT;
-  
+
   /* Two shadows: light direction + dark direction */
-  box-shadow: 
+  box-shadow:
     OFFSET OFFSET BLUR rgba(light-color),
     -OFFSET -OFFSET BLUR rgba(dark-color);
-  
+
   /* OFFSET: typically 6-12px */
   /* BLUR: typically 12-20px */
 }
 
 .neo-pressed {
   /* Inset creates "pushed in" effect */
-  box-shadow: 
+  box-shadow:
     inset OFFSET OFFSET BLUR rgba(dark-color),
     inset -OFFSET -OFFSET BLUR rgba(light-color);
 }
 ```
 
 ### Accessibility Warning
+
 ⚠️ **Low contrast** - use sparingly, ensure clear boundaries
 
 ### When to Use
+
 - Decorative elements
 - Subtle interactive states
 - Minimalist UI with flat colors
@@ -3416,6 +3536,7 @@ box-shadow: OFFSET-X OFFSET-Y BLUR SPREAD COLOR;
 4. **Blur scales with offset** (larger offset = larger blur)
 
 ### Dark Mode Shadows
+
 - Shadows less visible on dark backgrounds
 - May need to increase opacity
 - Or use glow/highlight instead
@@ -3426,11 +3547,11 @@ box-shadow: OFFSET-X OFFSET-Y BLUR SPREAD COLOR;
 
 ### Types and When to Use
 
-| Type | Pattern | Use Case |
-|------|---------|----------|
+| Type       | Pattern                      | Use Case                      |
+| ---------- | ---------------------------- | ----------------------------- |
 | **Linear** | Color A → Color B along line | Backgrounds, buttons, headers |
-| **Radial** | Center → outward | Spotlights, focal points |
-| **Conic** | Around center | Pie charts, creative effects |
+| **Radial** | Center → outward             | Spotlights, focal points      |
+| **Conic**  | Around center                | Pie charts, creative effects  |
 
 ### Creating Harmonious Gradients
 
@@ -3447,10 +3568,9 @@ Good Gradient Rules:
 ```css
 .gradient {
   background: linear-gradient(
-    DIRECTION,           /* angle or to-keyword */
-    COLOR-STOP-1,        /* color + optional position */
-    COLOR-STOP-2,
-    /* ... more stops */
+    DIRECTION,
+    /* angle or to-keyword */ COLOR-STOP-1,
+    /* color + optional position */ COLOR-STOP-2 /* ... more stops */
   );
 }
 
@@ -3509,7 +3629,7 @@ box-shadow:
 ### Text Glow
 
 ```css
-text-shadow: 
+text-shadow:
   0 0 BLUR-1 COLOR,
   0 0 BLUR-2 COLOR,
   0 0 BLUR-3 COLOR;
@@ -3533,8 +3653,13 @@ box-shadow:
 
 ```css
 @keyframes glow-pulse {
-  0%, 100% { box-shadow: 0 0 SMALL-BLUR COLOR; }
-  50% { box-shadow: 0 0 LARGE-BLUR COLOR; }
+  0%,
+  100% {
+    box-shadow: 0 0 SMALL-BLUR COLOR;
+  }
+  50% {
+    box-shadow: 0 0 LARGE-BLUR COLOR;
+  }
 }
 
 /* Easing and duration affect feel */
@@ -3554,13 +3679,13 @@ Position: Where text will appear
 
 ```css
 .overlay::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(
     DIRECTION,
     transparent PERCENTAGE,
-    rgba(0,0,0,OPACITY) 100%
+    rgba(0, 0, 0, OPACITY) 100%
   );
 }
 ```
@@ -3569,9 +3694,7 @@ Position: Where text will appear
 
 ```css
 /* Blend mode or layered gradient */
-background: 
-  linear-gradient(YOUR-COLOR-WITH-OPACITY),
-  url('image.jpg');
+background: linear-gradient(YOUR-COLOR-WITH-OPACITY), url("image.jpg");
 ```
 
 ---

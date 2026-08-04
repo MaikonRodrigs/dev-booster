@@ -1,4 +1,6 @@
 # ✨ BOOSTER: UI/UX DESIGN PRO-MAX
+**Tools — native only:** Use only the IDE's native tools (`read_file`, `write_file`, `edit_file`, `grep`, terminal). Never use MCP in this flow — including Obsidian (`vault_*`, `create-note`); Obsidian only when the user explicitly asks, via `@Obsidian`.
+
 The "Anti-AI" Booster.
 
 ## 0. DEV BOOSTER ACTIVATION CONTRACT

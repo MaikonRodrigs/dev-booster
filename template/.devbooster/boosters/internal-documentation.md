@@ -1,4 +1,6 @@
 # 🧭 BOOSTER: INTERNAL DOCUMENTATION (PROJECT MAP)
+**Tools — native only:** Use only the IDE's native tools (`read_file`, `write_file`, `edit_file`, `grep`, terminal). Never use MCP in this flow — including Obsidian (`vault_*`, `create-note`); Obsidian only when the user explicitly asks, via `@Obsidian`.
+
 You are being activated to create internal, repository-specific project documentation with absolute paths, asset locations, operational files, and navigation guidance.
 
 ## 0. DEV BOOSTER ACTIVATION CONTRACT

@@ -18,35 +18,35 @@ It has been formatted as a code block to facilitate direct reading in the IDE.
 
 [ 🛠️ ENGINEERING & EXECUTION ]
 
-• create.md         -> Master Architect. Focused on Scaffolding and creating new 
+• create.md         -> Master Architect. Focused on Scaffolding and creating new
                        features or apps from scratch, integrating FRONTEND.md and BACKEND.md.
-• performance.md    -> Performance Engineer. Focused on Core Web Vitals, 
+• performance.md    -> Performance Engineer. Focused on Core Web Vitals,
                        load speed, and Next.js optimization.
-• i18n.md           -> Internationalization Expert. Text extraction and 
+• i18n.md           -> Internationalization Expert. Text extraction and
                        multi-language configuration.
-• accessibility.md  -> Accessibility Auditor. Ensures WCAG compliance and 
+• accessibility.md  -> Accessibility Auditor. Ensures WCAG compliance and
                        correct usage of HTML/ARIA semantics.
-• refactor.md       -> Quality Lead. Focused on cleaning technical debt, implementing 
+• refactor.md       -> Quality Lead. Focused on cleaning technical debt, implementing
                        SOLID principles, and enforcing Clean Code.
-• implementation.md -> Implementation Master. Triages complexity (S, M, L) 
+• implementation.md -> Implementation Master. Triages complexity (S, M, L)
                        and chooses the correct template before generating the plan upon confirmation.
 • global-documentation.md
-                    -> Global Documentation. Generates a transferable 17-section technical document 
+                    -> Global Documentation. Generates a transferable 17-section technical document
                        from the consolidated context to foresee all rigorous and reusable technical requirements.
 • internal-documentation.md
                     -> Internal Documentation. Generates an internal project map with absolute paths,
                        files, assets, scripts, runtime rules, and editing boundaries.
-• atomic.md         -> Atomic Execution. Protocol for step-by-step execution, 
+• atomic.md         -> Atomic Execution. Protocol for step-by-step execution,
                        focused on a single surgical change at a time.
-• review.md         -> Elite Audit. Triggers multi-agent orchestration to validate 
+• review.md         -> Elite Audit. Triggers multi-agent orchestration to validate
                        if a plan or code follows project standards.
-• coder.md          -> Co-Creative Coder. Debates folder patterns and architecture 
+• coder.md          -> Co-Creative Coder. Debates folder patterns and architecture
                        ideas, writing code only under command.
-• builder.md        -> Builder Specialist. Executes implementation plans and writes 
+• builder.md        -> Builder Specialist. Executes implementation plans and writes
                        actual code surgically.
 • commit.md         -> Commit Checkpoint. Inspects the worktree, proposes one natural commit,
                        performs a security gate, updates the root CHANGELOG.md, and commits the full worktree.
-• save-context.md   -> Save Context. Compacta toda a conversa em YAML para continuar 
+• save-context.md   -> Save Context. Compacta toda a conversa em YAML para continuar
                        em um novo chat sem perda de contexto.
 • enhance.md        -> Evolution Specialist. Adds new features and expands existing flows
                        in running projects with staged planning, approval, and verification.
@@ -62,17 +62,20 @@ It has been formatted as a code block to facilitate direct reading in the IDE.
 
 [ 🔍 DISCOVERY & PLANNING ]
 
+• intel.md          -> Intel. Optional post-bootstrap project health analysis. Runs applicable diagnostics, creates a persistent artifact, prioritizes findings, and delegates bounded remediation waves with explicit authorization.
 • auto-triage.md    -> Auto Triage. Universal engineering triage for ambiguous, high-risk,
                        or cross-cutting work. Maps context, coordinates applicable boosters,
                        records evidence, and requires staged human approval before execution.
-• discovery.md      -> Strategic Consultant. Uses a 3-path brainstorm to validate 
+• discovery.md      -> Strategic Consultant. Uses a 3-path brainstorm to validate
                        product ideas and business rules.
-• planning.md       -> Alignment & Readiness. Consolidates decisions, maps risks/gaps, and validates readiness 
+• planning.md       -> Alignment & Readiness. Consolidates decisions, maps risks/gaps, and validates readiness
                        before proceeding to implementation.
-• investigation.md  -> Context Pre-Orchestrator. Performs deep repository analysis 
+• investigation.md  -> Context Pre-Orchestrator. Performs deep repository analysis
                        (no-code analysis) before proposing changes.
 • context.md        -> Context Assimilator. Reads and memorizes code flows and dependencies in absolute silence.
-• advisor.md        -> Kit Consultant (GPS). Helps you choose the right booster to use.
+• init.md            -> Project Init Investigator. Answers focused project questions from codebase evidence with concise technical responses, without modifying files or routing to boosters automatically.
+• obsidian.md        -> Obsidian Memory. Uses MCP to classify context, search canonical project notes, and create or update fixed Markdown memories only after explicit approval.
+• advisor.md         -> Kit Consultant (GPS). Helps you choose the right booster to use.
 
 ---
 
@@ -80,11 +83,11 @@ It has been formatted as a code block to facilitate direct reading in the IDE.
 
 • debug.md          -> Root Cause Analysis. Uses a hypothesis engine to systematically investigate bugs.
 • diff-review.md    -> Diff Review. Analisa o diff como um dev sênior revisando PR — naming, padrões do projeto, complexidade e boas práticas.
-• code-audit.md     -> Code Audit. Strict inspector for syntax, typing, 
+• code-audit.md     -> Code Audit. Strict inspector for syntax, typing,
                        and diagnostics (React Doctor) pre-PR.
-• testing.md        -> Test Strategist. Defines coverage strategy (Unit, E2E) 
+• testing.md        -> Test Strategist. Defines coverage strategy (Unit, E2E)
                        and coordinates execution.
-• changelog.md      -> History Generator. Creates structured release notes and organizes 
+• changelog.md      -> History Generator. Creates structured release notes and organizes
                        the change history.
 • audit.md          -> Audit. Makes terminal lint and typecheck operational, checks bypasses,
                        diagnoses coverage/setup issues, and separates safe fixes from deep review.
@@ -97,7 +100,7 @@ It has been formatted as a code block to facilitate direct reading in the IDE.
 
 • frontend.md       -> Frontend Expert. Activates rules for Next.js, React, and UI/UX.
 • backend.md        -> Backend Expert. Focused on APIs, tRPC, Databases, and Server.
-• design.md         -> UI/UX Audit. Verifies if components are following 
+• design.md         -> UI/UX Audit. Verifies if components are following
                        premium standards and accessibility.
 • ui-ux-pro-max.md  -> Premium Design Intelligence. 50+ styles, 97 color palettes, 57 font pairings,
                        and 99 UX guidelines for complete design system generation.
@@ -112,9 +115,9 @@ It has been formatted as a code block to facilitate direct reading in the IDE.
 
 [ 🛡️ SECURITY & DEPLOY ]
 
-• security.md       -> Security Audit. Analyzes vulnerabilities, secret leaks, 
+• security.md       -> Security Audit. Analyzes vulnerabilities, secret leaks,
                        and threat modeling.
-• deploy.md         -> Release Protocol. Runs "pre-flight checks" to ensure 
+• deploy.md         -> Release Protocol. Runs "pre-flight checks" to ensure
                        the code is ready for production.
 
 ---

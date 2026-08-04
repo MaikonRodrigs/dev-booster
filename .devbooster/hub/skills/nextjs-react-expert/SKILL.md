@@ -210,9 +210,9 @@ Before shipping to production:
 
 ## 🔍 Validation Script
 
-| Script                                 | Purpose                     | Command                                                      |
-| -------------------------------------- | --------------------------- | ------------------------------------------------------------ |
-| `scripts/react_performance_checker.py` | Automated performance audit | `python scripts/react_performance_checker.py <project_path>` |
+| Script                         | Purpose                     | Command                                                                      |
+| ------------------------------ | --------------------------- | ---------------------------------------------------------------------------- |
+| `react_performance_checker.py` | Automated performance audit | `python .devbooster/hub/scripts/react_performance_checker.py <project_path>` |
 
 ---
 

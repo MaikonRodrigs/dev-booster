@@ -17,28 +17,28 @@ allowed-tools: Read, Write, Edit, Glob, Grep
 
 ## 📑 Content Map
 
-| File | Description | When to Read |
-|------|-------------|--------------|
-| `api-style.md` | REST vs GraphQL vs tRPC decision tree | Choosing API type |
-| `rest.md` | Resource naming, HTTP methods, status codes | Designing REST API |
-| `response.md` | Envelope pattern, error format, pagination | Response structure |
-| `graphql.md` | Schema design, when to use, security | Considering GraphQL |
-| `trpc.md` | TypeScript monorepo, type safety | TS fullstack projects |
-| `versioning.md` | URI/Header/Query versioning | API evolution planning |
-| `auth.md` | JWT, OAuth, Passkey, API Keys | Auth pattern selection |
-| `rate-limiting.md` | Token bucket, sliding window | API protection |
-| `documentation.md` | OpenAPI/Swagger best practices | Documentation |
-| `security-testing.md` | OWASP API Top 10, auth/authz testing | Security audits |
+| File                  | Description                                 | When to Read           |
+| --------------------- | ------------------------------------------- | ---------------------- |
+| `api-style.md`        | REST vs GraphQL vs tRPC decision tree       | Choosing API type      |
+| `rest.md`             | Resource naming, HTTP methods, status codes | Designing REST API     |
+| `response.md`         | Envelope pattern, error format, pagination  | Response structure     |
+| `graphql.md`          | Schema design, when to use, security        | Considering GraphQL    |
+| `trpc.md`             | TypeScript monorepo, type safety            | TS fullstack projects  |
+| `versioning.md`       | URI/Header/Query versioning                 | API evolution planning |
+| `auth.md`             | JWT, OAuth, Passkey, API Keys               | Auth pattern selection |
+| `rate-limiting.md`    | Token bucket, sliding window                | API protection         |
+| `documentation.md`    | OpenAPI/Swagger best practices              | Documentation          |
+| `security-testing.md` | OWASP API Top 10, auth/authz testing        | Security audits        |
 
 ---
 
 ## 🔗 Related Skills
 
-| Need | Skill |
-|------|-------|
+| Need               | Skill                           |
+| ------------------ | ------------------------------- |
 | API implementation | `@[skills/backend-development]` |
-| Data structure | `@[skills/database-design]` |
-| Security details | `@[skills/security-hardening]` |
+| Data structure     | `@[skills/database-design]`     |
+| Security details   | `@[skills/security-hardening]`  |
 
 ---
 
@@ -59,6 +59,7 @@ Before designing an API:
 ## ❌ Anti-Patterns
 
 **DON'T:**
+
 - Default to REST for everything
 - Use verbs in REST endpoints (/getUsers)
 - Return inconsistent response formats
@@ -66,6 +67,7 @@ Before designing an API:
 - Skip rate limiting
 
 **DO:**
+
 - Choose API style based on context
 - Ask about client requirements
 - Document thoroughly
@@ -75,14 +77,12 @@ Before designing an API:
 
 ## Script
 
-| Script | Purpose | Command |
-|--------|---------|---------|
-| `scripts/api_validator.py` | API endpoint validation | `python scripts/api_validator.py <project_path>` |
-
-
-
+| Script             | Purpose                 | Command                                                          |
+| ------------------ | ----------------------- | ---------------------------------------------------------------- |
+| `api_validator.py` | API endpoint validation | `python .devbooster/hub/scripts/api_validator.py <project_path>` |
 
 ---
+
 # Content from api-style.md
 
 # API Style Selection (2025)
@@ -112,13 +112,13 @@ Who are the API consumers?
 
 ## Comparison
 
-| Factor | REST | GraphQL | tRPC |
-|--------|------|---------|------|
-| **Best for** | Public APIs | Complex apps | TS monorepos |
-| **Learning curve** | Low | Medium | Low (if TS) |
-| **Over/under fetching** | Common | Solved | Solved |
-| **Type safety** | Manual (OpenAPI) | Schema-based | Automatic |
-| **Caching** | HTTP native | Complex | Client-based |
+| Factor                  | REST             | GraphQL      | tRPC         |
+| ----------------------- | ---------------- | ------------ | ------------ |
+| **Best for**            | Public APIs      | Complex apps | TS monorepos |
+| **Learning curve**      | Low              | Medium       | Low (if TS)  |
+| **Over/under fetching** | Common           | Solved       | Solved       |
+| **Type safety**         | Manual (OpenAPI) | Schema-based | Automatic    |
+| **Caching**             | HTTP native      | Complex      | Client-based |
 
 ## Selection Questions
 
@@ -128,9 +128,8 @@ Who are the API consumers?
 4. Is caching critical?
 5. Public or internal API?
 
-
-
 ---
+
 # Content from auth.md
 
 # Authentication Patterns
@@ -139,13 +138,13 @@ Who are the API consumers?
 
 ## Selection Guide
 
-| Pattern | Best For |
-|---------|----------|
-| **JWT** | Stateless, microservices |
-| **Session** | Traditional web, simple |
-| **OAuth 2.0** | Third-party integration |
-| **API Keys** | Server-to-server, public APIs |
-| **Passkey** | Modern passwordless (2025+) |
+| Pattern       | Best For                      |
+| ------------- | ----------------------------- |
+| **JWT**       | Stateless, microservices      |
+| **Session**   | Traditional web, simple       |
+| **OAuth 2.0** | Third-party integration       |
+| **API Keys**  | Server-to-server, public APIs |
+| **Passkey**   | Modern passwordless (2025+)   |
 
 ## JWT Principles
 
@@ -158,9 +157,8 @@ Important:
 └── Never store sensitive data in JWT
 ```
 
-
-
 ---
+
 # Content from documentation.md
 
 # API Documentation Principles
@@ -190,9 +188,8 @@ Essentials:
 └── Changelog
 ```
 
-
-
 ---
+
 # Content from graphql.md
 
 # GraphQL Principles
@@ -237,9 +234,8 @@ Protect against:
 ├── Introspection → Disable in production
 ```
 
-
-
 ---
+
 # Content from rate-limiting.md
 
 # Rate Limiting Principles
@@ -258,11 +254,11 @@ Protect against:
 
 ## Strategy Selection
 
-| Type | How | When |
-|------|-----|------|
-| **Token bucket** | Burst allowed, refills over time | Most APIs |
-| **Sliding window** | Smooth distribution | Strict limits |
-| **Fixed window** | Simple counters per window | Basic needs |
+| Type               | How                              | When          |
+| ------------------ | -------------------------------- | ------------- |
+| **Token bucket**   | Burst allowed, refills over time | Most APIs     |
+| **Sliding window** | Smooth distribution              | Strict limits |
+| **Fixed window**   | Simple counters per window       | Basic needs   |
 
 ## Response Headers
 
@@ -274,9 +270,8 @@ Include in headers:
 └── Return 429 when exceeded
 ```
 
-
-
 ---
+
 # Content from response.md
 
 # Response Format Principles
@@ -305,11 +300,11 @@ Include:
 
 ## Pagination Types
 
-| Type | Best For | Trade-offs |
-|------|----------|------------|
-| **Offset** | Simple, jumpable | Performance on large datasets |
-| **Cursor** | Large datasets | Can't jump to page |
-| **Keyset** | Performance critical | Requires sortable key |
+| Type       | Best For             | Trade-offs                    |
+| ---------- | -------------------- | ----------------------------- |
+| **Offset** | Simple, jumpable     | Performance on large datasets |
+| **Cursor** | Large datasets       | Can't jump to page            |
+| **Keyset** | Performance critical | Requires sortable key         |
 
 ### Selection Questions
 
@@ -317,9 +312,8 @@ Include:
 2. Do users need to jump to specific pages?
 3. Is data frequently changing?
 
-
-
 ---
+
 # Content from rest.md
 
 # REST Principles
@@ -339,33 +333,32 @@ Principles:
 
 ## HTTP Method Selection
 
-| Method | Purpose | Idempotent? | Body? |
-|--------|---------|-------------|-------|
-| **GET** | Read resource(s) | Yes | No |
-| **POST** | Create new resource | No | Yes |
-| **PUT** | Replace entire resource | Yes | Yes |
-| **PATCH** | Partial update | No | Yes |
-| **DELETE** | Remove resource | Yes | No |
+| Method     | Purpose                 | Idempotent? | Body? |
+| ---------- | ----------------------- | ----------- | ----- |
+| **GET**    | Read resource(s)        | Yes         | No    |
+| **POST**   | Create new resource     | No          | Yes   |
+| **PUT**    | Replace entire resource | Yes         | Yes   |
+| **PATCH**  | Partial update          | No          | Yes   |
+| **DELETE** | Remove resource         | Yes         | No    |
 
 ## Status Code Selection
 
-| Situation | Code | Why |
-|-----------|------|-----|
-| Success (read) | 200 | Standard success |
-| Created | 201 | New resource created |
-| No content | 204 | Success, nothing to return |
-| Bad request | 400 | Malformed request |
-| Unauthorized | 401 | Missing/invalid auth |
-| Forbidden | 403 | Valid auth, no permission |
-| Not found | 404 | Resource doesn't exist |
-| Conflict | 409 | State conflict (duplicate) |
-| Validation error | 422 | Valid syntax, invalid data |
-| Rate limited | 429 | Too many requests |
-| Server error | 500 | Our fault |
-
-
+| Situation        | Code | Why                        |
+| ---------------- | ---- | -------------------------- |
+| Success (read)   | 200  | Standard success           |
+| Created          | 201  | New resource created       |
+| No content       | 204  | Success, nothing to return |
+| Bad request      | 400  | Malformed request          |
+| Unauthorized     | 401  | Missing/invalid auth       |
+| Forbidden        | 403  | Valid auth, no permission  |
+| Not found        | 404  | Resource doesn't exist     |
+| Conflict         | 409  | State conflict (duplicate) |
+| Validation error | 422  | Valid syntax, invalid data |
+| Rate limited     | 429  | Too many requests          |
+| Server error     | 500  | Our fault                  |
 
 ---
+
 # Content from security-testing.md
 
 # API Security Testing
@@ -376,18 +369,18 @@ Principles:
 
 ## OWASP API Security Top 10
 
-| Vulnerability | Test Focus |
-|---------------|------------|
-| **API1: BOLA** | Access other users' resources |
-| **API2: Broken Auth** | JWT, session, credentials |
-| **API3: Property Auth** | Mass assignment, data exposure |
-| **API4: Resource Consumption** | Rate limiting, DoS |
-| **API5: Function Auth** | Admin endpoints, role bypass |
-| **API6: Business Flow** | Logic abuse, automation |
-| **API7: SSRF** | Internal network access |
-| **API8: Misconfiguration** | Debug endpoints, CORS |
-| **API9: Inventory** | Shadow APIs, old versions |
-| **API10: Unsafe Consumption** | Third-party API trust |
+| Vulnerability                  | Test Focus                     |
+| ------------------------------ | ------------------------------ |
+| **API1: BOLA**                 | Access other users' resources  |
+| **API2: Broken Auth**          | JWT, session, credentials      |
+| **API3: Property Auth**        | Mass assignment, data exposure |
+| **API4: Resource Consumption** | Rate limiting, DoS             |
+| **API5: Function Auth**        | Admin endpoints, role bypass   |
+| **API6: Business Flow**        | Logic abuse, automation        |
+| **API7: SSRF**                 | Internal network access        |
+| **API8: Misconfiguration**     | Debug endpoints, CORS          |
+| **API9: Inventory**            | Shadow APIs, old versions      |
+| **API10: Unsafe Consumption**  | Third-party API trust          |
 
 ---
 
@@ -395,31 +388,31 @@ Principles:
 
 ### JWT Testing
 
-| Check | What to Test |
-|-------|--------------|
-| Algorithm | None, algorithm confusion |
-| Secret | Weak secrets, brute force |
-| Claims | Expiration, issuer, audience |
-| Signature | Manipulation, key injection |
+| Check     | What to Test                 |
+| --------- | ---------------------------- |
+| Algorithm | None, algorithm confusion    |
+| Secret    | Weak secrets, brute force    |
+| Claims    | Expiration, issuer, audience |
+| Signature | Manipulation, key injection  |
 
 ### Session Testing
 
-| Check | What to Test |
-|-------|--------------|
-| Generation | Predictability |
-| Storage | Client-side security |
-| Expiration | Timeout enforcement |
+| Check        | What to Test         |
+| ------------ | -------------------- |
+| Generation   | Predictability       |
+| Storage      | Client-side security |
+| Expiration   | Timeout enforcement  |
 | Invalidation | Logout effectiveness |
 
 ---
 
 ## Authorization Testing
 
-| Test Type | Approach |
-|-----------|----------|
-| **Horizontal** | Access peer users' data |
-| **Vertical** | Access higher privilege functions |
-| **Context** | Access outside allowed scope |
+| Test Type      | Approach                          |
+| -------------- | --------------------------------- |
+| **Horizontal** | Access peer users' data           |
+| **Vertical**   | Access higher privilege functions |
+| **Context**    | Access outside allowed scope      |
 
 ### BOLA/IDOR Testing
 
@@ -432,12 +425,12 @@ Principles:
 
 ## Input Validation Testing
 
-| Injection Type | Test Focus |
-|----------------|------------|
-| SQL | Query manipulation |
-| NoSQL | Document queries |
-| Command | System commands |
-| LDAP | Directory queries |
+| Injection Type | Test Focus         |
+| -------------- | ------------------ |
+| SQL            | Query manipulation |
+| NoSQL          | Document queries   |
+| Command        | System commands    |
+| LDAP           | Directory queries  |
 
 **Approach:** Test all parameters, try type coercion, test boundaries, check error messages.
 
@@ -445,11 +438,11 @@ Principles:
 
 ## Rate Limiting Testing
 
-| Aspect | Check |
-|--------|-------|
-| Existence | Is there any limit? |
-| Bypass | Headers, IP rotation |
-| Scope | Per-user, per-IP, global |
+| Aspect    | Check                    |
+| --------- | ------------------------ |
+| Existence | Is there any limit?      |
+| Bypass    | Headers, IP rotation     |
+| Scope     | Per-user, per-IP, global |
 
 **Bypass techniques:** X-Forwarded-For, different HTTP methods, case variations, API versioning.
 
@@ -457,11 +450,11 @@ Principles:
 
 ## GraphQL Security
 
-| Test | Focus |
-|------|-------|
-| Introspection | Schema disclosure |
-| Batching | Query DoS |
-| Nesting | Depth-based DoS |
+| Test          | Focus              |
+| ------------- | ------------------ |
+| Introspection | Schema disclosure  |
+| Batching      | Query DoS          |
+| Nesting       | Depth-based DoS    |
 | Authorization | Field-level access |
 
 ---
@@ -469,20 +462,24 @@ Principles:
 ## Security Testing Checklist
 
 **Authentication:**
+
 - [ ] Test for bypass
 - [ ] Check credential strength
 - [ ] Verify token security
 
 **Authorization:**
+
 - [ ] Test BOLA/IDOR
 - [ ] Check privilege escalation
 - [ ] Verify function access
 
 **Input:**
+
 - [ ] Test all parameters
 - [ ] Check for injection
 
 **Config:**
+
 - [ ] Check CORS
 - [ ] Verify headers
 - [ ] Test error handling
@@ -491,9 +488,8 @@ Principles:
 
 > **Remember:** APIs are the backbone of modern apps. Test them like attackers will.
 
-
-
 ---
+
 # Content from trpc.md
 
 # tRPC Principles
@@ -538,9 +534,8 @@ Common setups:
 └── Any TS frontend + backend
 ```
 
-
-
 ---
+
 # Content from versioning.md
 
 # Versioning Strategies
@@ -549,12 +544,12 @@ Common setups:
 
 ## Decision Factors
 
-| Strategy | Implementation | Trade-offs |
-|----------|---------------|------------|
-| **URI** | /v1/users | Clear, easy caching |
-| **Header** | Accept-Version: 1 | Cleaner URLs, harder discovery |
-| **Query** | ?version=1 | Easy to add, messy |
-| **None** | Evolve carefully | Best for internal, risky for public |
+| Strategy   | Implementation    | Trade-offs                          |
+| ---------- | ----------------- | ----------------------------------- |
+| **URI**    | /v1/users         | Clear, easy caching                 |
+| **Header** | Accept-Version: 1 | Cleaner URLs, harder discovery      |
+| **Query**  | ?version=1        | Easy to add, messy                  |
+| **None**   | Evolve carefully  | Best for internal, risky for public |
 
 ## Versioning Philosophy
 

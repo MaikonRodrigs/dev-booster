@@ -1,71 +1,62 @@
-# 🚀 DEV BOOSTER SHORTCUTS & TRIGGERS (DICTIONARY)
-**Version:** 1.0 | **Focus:** Instant behavior routing and background utility execution.
-
-Whenever the user references a `@` trigger, you MUST locate the trigger below, load the specified rules/contract, and instantly transition to that behavior mode or execute the defined action.
-
+---
+name: triggers
+priority: P0.3 (Dictionary)
+description: Maps @ triggers to the booster or action they activate.
 ---
 
-## 👥 1. GOVERNANCE TRIGGERS
-These triggers execute background utility tasks and update persistent rule or status files.
+Whenever the user references a `@` trigger, activate the mapped booster or action below.
 
-- **`@SavePattern`**
-  - **Action:** Extract newly resolved technical patterns or rules from the conversation.
-  - **Destination:** Append/Update in `.devbooster/rules/USER_PREFERENCES.md` (Technical English).
-  
-- **`@SaveContext`**
-  - **Action:** Compact the entire conversation into a YAML snapshot for chat continuity.
-  - **Destination:** `@booster-generated/saved-context/context-<slug>.yaml`
-  - **Trigger behavior:** Ativates `.devbooster/boosters/save-context.md` and follows its execution protocol.
-  
-- **`@LogTask`**
-  - **Action:** Capture pending tasks mentioned in the chat.
-  - **Destination:** Append to `@booster-generated/tasks.md` in the following strict format:
-    ```md
-    - [ ] Short title of the task.
-      Resumo: detailed explanation of the task.
-      Referências: file paths and concepts related to the task.
-    ```
+## GOVERNANCE TRIGGERS
 
----
+- **`@SaveContext`** ➔ `.devbooster/boosters/save-context.md` — compact the chat into a YAML snapshot at `@booster-generated/saved-context/context-<slug>.yaml`.
+- **`@LogTask`** ➔ append pending tasks to `@booster-generated/tasks.md` in this format:
+  ```md
+  - [ ] Short title of the task.
+        Resumo: detailed explanation of the task.
+        Referências: file paths and concepts related to the task.
+  ```
 
-## ⚡ 2. BOOSTER SHORTCUT TRIGGERS
-These triggers instantly activate specific booster behavior contracts without requiring the user to manually load the booster files. Upon invocation, immediately read the corresponding booster file in `.devbooster/boosters/` and follow its execution instructions.
+## BOOSTER TRIGGERS
 
-- **`@AutoTriage`** ➔ Activates `.devbooster/boosters/auto-triage.md` (Artifact-centered automatic engineering triage with separate Plan + Review and execution approvals).
-- **`@SmartTask`** ➔ Activates `.devbooster/boosters/smart-task.md` (Lightweight triage with full investigation depth, single "pode seguir" approval, atomic plan + Forger execution, persisted artifact).
-- **`@Forger`** ➔ Activates `.devbooster/boosters/forger.md` (Forja atomic plans into code without auditing. Single confirmation, self-validation with lint/typecheck + knowledge base, final report).
-- **`@Context`** ➔ Actives `.devbooster/boosters/context.md` (Silent Sponge context mapping).
-- **`@Coder`** ➔ Activates `.devbooster/boosters/coder.md` (Co-Creative design/writing).
-- **`@Builder`** ➔ Activates `.devbooster/boosters/builder.md` (Senior plan audit & execution).
-- **`@Planning`** ➔ Activates `.devbooster/boosters/planning.md` (Risk & readiness check).
-- **`@Implementation`** ➔ Activates `.devbooster/boosters/implementation.md` (Sizing and plan writing).
-- **`@Atomic`** ➔ Activates `.devbooster/boosters/atomic.md` (Surgical step-by-step code writing).
-- **`@Review`** ➔ Activates `.devbooster/boosters/review.md` (Elite code and architecture audit).
-- **`@ReviewDiff`** ➔ Activates `.devbooster/boosters/diff-review.md` (Pre-PR code review with project standards).
-- **`@Advisor`** ➔ Activates `.devbooster/boosters/advisor.md` (Kit GPS / routing consultant).
-- **`@Changelog`** ➔ Activates `.devbooster/boosters/changelog.md` (Release notes generator).
-- **`@Commit`** ➔ Activates `.devbooster/boosters/commit.md` (Worktree checkpoint commit with preflight, security gate, and root `CHANGELOG.md` update).
-- **`@Debug`** ➔ Activates `.devbooster/boosters/debug.md` (Systematic RCA / hypothesis engine).
-- **`@Deploy`** ➔ Activates `.devbooster/boosters/deploy.md` (Pre-flight release validation).
-- **`@StackRefresh`** ➔ Activates `.devbooster/boosters/stack-refresh.md` (Runtime/framework/dependency modernization analysis and phased upgrades).
-- **`@Audit`** ➔ Activates `.devbooster/boosters/audit.md` (Active lint/typecheck audit, normalization, and classification).
-- **`@Discovery`** ➔ Activates `.devbooster/boosters/discovery.md` (Product/ideas brainstorm).
-- **`@Investigation`** ➔ Activates `.devbooster/boosters/investigation.md` (No-code repo structure mapping).
-- **`@Doc`** ➔ Activates `.devbooster/boosters/global-documentation.md` (Universal spec generation).
-- **`@Enhance`** ➔ Activates `.devbooster/boosters/enhance.md` (Evolution mode for adding features to existing projects).
-- **`@UIUX`** ➔ Activates `.devbooster/boosters/ui-ux-pro-max.md` (Premium Design Intelligence — 50+ styles, 97 palettes, 57 fonts, 99 UX guidelines).
-- **`@Frontend`** ➔ Activates `.devbooster/boosters/frontend.md` (Frontend specialist with stack-specific React/Next/Vite/Angular/Tailwind rules).
-- **`@Backend`** ➔ Activates `.devbooster/boosters/backend.md` (Backend architect with API, database, runtime, and validation rules).
-- **`@Refactor`** ➔ Activates `.devbooster/boosters/refactor.md` (Clean Code and SOLID refactoring specialist).
-- **`@Performance`** ➔ Activates `.devbooster/boosters/performance.md` (Web Vitals, bundle optimization, rendering and caching analysis).
-- **`@Testing`** ➔ Activates `.devbooster/boosters/testing.md` (QA and test strategy coordinator for unit, integration, and E2E).
-- **`@SaveReference`** ➔ Activates `.devbooster/boosters/save-reference.md` (Visual Cataloger — receives an image, categorizes, saves to UX reference library, and updates the index).
-- **`@Security`** ➔ Activates `.devbooster/boosters/security.md` (Security posture auditor for dependency, supply-chain, and threat analysis).
-- **`@CodeAudit`** ➔ Activates `.devbooster/boosters/code-audit.md` (Strict syntax, lint, React Doctor, and framework diagnostics audit).
-- **`@Design`** ➔ Activates `.devbooster/boosters/design.md` (UI/UX component audit and visual standards validation).
-- **`@Create`** ➔ Activates `.devbooster/boosters/create.md` (Master Architect for scaffolding new features and apps).
-- **`@Accessibility`** ➔ Activates `.devbooster/boosters/accessibility.md` (WCAG compliance and semantic HTML auditor).
-- **`@I18n`** ➔ Activates `.devbooster/boosters/i18n.md` (Internationalization specialist for text extraction and localization).
-- **`@Seo`** ➔ Activates `.devbooster/boosters/seo.md` (SEO audit and semantic HTML compliance check).
-- **`@Mobile`** ➔ Activates `.devbooster/boosters/mobile.md` (Mobile UX patterns for React Native and Expo).
-- **`@InternalDoc`** ➔ Activates `.devbooster/boosters/internal-documentation.md` (Internal project documentation with absolute paths and asset maps).
+- **`@Accessibility`** ➔ `.devbooster/boosters/accessibility.md`
+- **`@Advisor`** ➔ `.devbooster/boosters/advisor.md`
+- **`@Atomic`** ➔ `.devbooster/boosters/atomic.md`
+- **`@Audit`** ➔ `.devbooster/boosters/audit.md`
+- **`@AutoTriage`** ➔ `.devbooster/boosters/auto-triage.md`
+- **`@Backend`** ➔ `.devbooster/boosters/backend.md`
+- **`@Builder`** ➔ `.devbooster/boosters/builder.md`
+- **`@Changelog`** ➔ `.devbooster/boosters/changelog.md`
+- **`@CheckBuild`** ➔ `.devbooster/boosters/check-build.md`
+- **`@CodeAudit`** ➔ `.devbooster/boosters/code-audit.md`
+- **`@Coder`** ➔ `.devbooster/boosters/coder.md`
+- **`@Commit`** ➔ `.devbooster/boosters/commit.md`
+- **`@Context`** ➔ `.devbooster/boosters/context.md`
+- **`@Create`** ➔ `.devbooster/boosters/create.md`
+- **`@Debug`** ➔ `.devbooster/boosters/debug.md`
+- **`@Deploy`** ➔ `.devbooster/boosters/deploy.md`
+- **`@Design`** ➔ `.devbooster/boosters/design.md`
+- **`@Discovery`** ➔ `.devbooster/boosters/discovery.md`
+- **`@Doc`** ➔ `.devbooster/boosters/global-documentation.md`
+- **`@Enhance`** ➔ `.devbooster/boosters/enhance.md`
+- **`@Forger`** ➔ `.devbooster/boosters/forger.md`
+- **`@Frontend`** ➔ `.devbooster/boosters/frontend.md`
+- **`@I18n`** ➔ `.devbooster/boosters/i18n.md`
+- **`@Init`** ➔ `.devbooster/boosters/init.md`
+- **`@Intel`** ➔ `.devbooster/boosters/intel.md`
+- **`@Implementation`** ➔ `.devbooster/boosters/implementation.md`
+- **`@InternalDoc`** ➔ `.devbooster/boosters/internal-documentation.md`
+- **`@Investigation`** ➔ `.devbooster/boosters/investigation.md`
+- **`@Mobile`** ➔ `.devbooster/boosters/mobile.md`
+- **`@Obsidian`** ➔ `.devbooster/boosters/obsidian.md` (sole MCP-authorized booster — see PROTOCOL)
+- **`@Performance`** ➔ `.devbooster/boosters/performance.md`
+- **`@Planning`** ➔ `.devbooster/boosters/planning.md`
+- **`@Refactor`** ➔ `.devbooster/boosters/refactor.md`
+- **`@Review`** ➔ `.devbooster/boosters/review.md`
+- **`@ReviewDiff`** ➔ `.devbooster/boosters/diff-review.md`
+- **`@SaveReference`** ➔ `.devbooster/boosters/save-reference.md`
+- **`@Security`** ➔ `.devbooster/boosters/security.md`
+- **`@Seo`** ➔ `.devbooster/boosters/seo.md`
+- **`@SmartTask`** ➔ `.devbooster/boosters/smart-task.md`
+- **`@StackRefresh`** ➔ `.devbooster/boosters/stack-refresh.md`
+- **`@Testing`** ➔ `.devbooster/boosters/testing.md`
+- **`@UIUX`** ➔ `.devbooster/boosters/ui-ux-pro-max.md`

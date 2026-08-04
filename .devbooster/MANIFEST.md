@@ -182,6 +182,7 @@ _All boosters live at: `.devbooster/boosters/`_
 | `enhance.md`                | Evolution Specialist — adds new features and expands existing flows in running projects.                                                                                   |
 | `ui-ux-pro-max.md`          | Premium Design Intelligence — 50+ styles, 97 color palettes, 57 font pairings, 99 UX guidelines.                                                                           |
 | `audit.md`                  | Audit — faz lint e typecheck funcionarem no terminal, detecta bypasses e separa achados em Setup Issues / Lot 1 / Lot 2.                                                   |
+| `architecture-audit.md`     | Architecture Audit — audita estrutura, duplicações, nomenclatura e dependências, respeitando os padrões existentes do projeto.                                             |
 | `smart-task.md`             | Smart Task — lightweight triage with full investigation calibre, single "pode seguir" approval, atomic plan + Forger execution. Persisted artifact for debug and rollback. |
 | `save-reference.md`         | Visual Cataloger — receives a screenshot, categorizes it, saves it to the correct UX reference folder, and updates the category index.                                     |
 | `check-build.md`            | Check Build (@CheckBuild) — clean cache, clean install, lint, typecheck, build, and optional tests. Sanity gate before merge/deploy.                                       |

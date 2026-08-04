@@ -21,6 +21,7 @@ Whenever the user references a `@` trigger, activate the mapped booster or actio
 - **`@Accessibility`** ➔ `.devbooster/boosters/accessibility.md`
 - **`@Advisor`** ➔ `.devbooster/boosters/advisor.md`
 - **`@Atomic`** ➔ `.devbooster/boosters/atomic.md`
+- **`@ArchAudit`** ➔ `.devbooster/boosters/architecture-audit.md`
 - **`@Audit`** ➔ `.devbooster/boosters/audit.md`
 - **`@AutoTriage`** ➔ `.devbooster/boosters/auto-triage.md`
 - **`@Backend`** ➔ `.devbooster/boosters/backend.md`

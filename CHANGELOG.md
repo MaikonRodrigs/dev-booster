@@ -11,6 +11,56 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 
 Autor: MaikonRodrigss
 Branch de origem: `main`
+Arquivos modificados: 24
+Linhas adicionadas: +1.045
+Linhas removidas: -93
+
+### feature: add architecture audit booster and knowledge base
+
+Resumo técnico: Adicionado o Architecture Audit com fluxo de preparação, varredura global, classificação por lotes, rastreabilidade de decisões e preservação das convenções do projeto. Incluídos seis artigos de conhecimento para duplicação, limites de módulos, nomenclatura, organização estrutural e contratos; atualizados manifestos, gatilhos, guia, README, versão do pacote e o template distribuído para manter a capacidade sincronizada.
+
+### Adicionado
+
+- Booster `architecture-audit.md` na raiz e no template.
+- Artigos de conhecimento sobre princípios de auditoria arquitetural, duplicação de código, limites e dependências de módulos, nomenclatura e responsabilidades, estrutura de projetos e organização de tipos e contratos, na raiz e no template.
+
+### Alterado
+
+- Manifestos, guia de boosters, gatilhos e índice da base de conhecimento para registrar o novo Architecture Audit.
+- README atualizado de 43 para 44 boosters e versão do pacote atualizada para `1.19.2`.
+- Template `.devbooster/` sincronizado com as novas capacidades.
+
+### Arquivos modificados
+
+- `.devbooster/MANIFEST.md`
+- `.devbooster/boosters/architecture-audit.md`
+- `.devbooster/hub/knowledge/architecture-audit-principles.md`
+- `.devbooster/hub/knowledge/code-duplication-patterns.md`
+- `.devbooster/hub/knowledge/index.md`
+- `.devbooster/hub/knowledge/module-boundaries-dependencies.md`
+- `.devbooster/hub/knowledge/naming-responsibility-patterns.md`
+- `.devbooster/hub/knowledge/project-structure-patterns.md`
+- `.devbooster/hub/knowledge/types-contracts-organization.md`
+- `.devbooster/rules/GUIDE.md`
+- `.devbooster/rules/TRIGGERS.md`
+- `README.md`
+- `package.json`
+- `template/.devbooster/MANIFEST.md`
+- `template/.devbooster/boosters/architecture-audit.md`
+- `template/.devbooster/hub/knowledge/architecture-audit-principles.md`
+- `template/.devbooster/hub/knowledge/code-duplication-patterns.md`
+- `template/.devbooster/hub/knowledge/index.md`
+- `template/.devbooster/hub/knowledge/module-boundaries-dependencies.md`
+- `template/.devbooster/hub/knowledge/naming-responsibility-patterns.md`
+- `template/.devbooster/hub/knowledge/project-structure-patterns.md`
+- `template/.devbooster/hub/knowledge/types-contracts-organization.md`
+- `template/.devbooster/rules/GUIDE.md`
+- `template/.devbooster/rules/TRIGGERS.md`
+
+---
+
+Autor: MaikonRodrigss
+Branch de origem: `main`
 Arquivos modificados: 199
 Linhas adicionadas: +32.324
 Linhas removidas: -7.556
@@ -232,8 +282,8 @@ Resumo técnico: Expandidos os boosters, personas, skills e regras do Dev Booste
 - `template/.devbooster/rules/TRIGGERS.md`
 - `template/.devbooster/rules/USER_PREFERENCES.md`
 - `template/DEVBOOSTER_INIT.md`
----
 
+---
 
 ## 29/07/2026
 

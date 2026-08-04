@@ -91,6 +91,9 @@ It has been formatted as a code block to facilitate direct reading in the IDE.
                        the change history.
 • audit.md          -> Audit. Makes terminal lint and typecheck operational, checks bypasses,
                        diagnoses coverage/setup issues, and separates safe fixes from deep review.
+• architecture-audit.md
+                    -> Architecture Audit. Audits codebase structure, duplication, naming,
+                       responsibility, and dependencies while preserving project conventions.
 • check-build.md    -> Check Build. Clean cache + node_modules, fresh install, lint, typecheck,
                        build, and optional tests. Simple pre-merge sanity gate. If complex errors, recommends audit.md.
 

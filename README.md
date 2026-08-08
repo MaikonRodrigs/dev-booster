@@ -37,7 +37,7 @@ After running the command, your project gets:
 ```
 .devbooster/
 ├── MANIFEST.md          ← inventory of all agents, skills, and boosters
-├── boosters/            ← 44 expert activators (intel, auto triage, commit, debug, review, design, deploy, enhance, ui-ux-pro-max, smart-task, save-reference, check-build, obsidian, forger, init...)
+├── boosters/            ← 45 expert activators (intel, auto triage, commit, debug, review, design, design-engineer, deploy, enhance, ui-ux-pro-max, smart-task, save-reference, check-build, obsidian, forger, init...)
 ├── hub/                 ← 43+ skills and operational scripts
 └── rules/
     ├── PROTOCOL.md      ← governance and conduct rules
@@ -113,6 +113,7 @@ Boosters are expert activators you invoke manually during development.
 | `debug.md`                  | Systematic root cause analysis                                                                                                                |
 | `review.md`                 | Pre-PR code audit                                                                                                                             |
 | `design.md`                 | UI/UX component review                                                                                                                        |
+| `design-engineer.md`        | Roadmap-based discovery of frontend, component, motion, visual, and prototyping solutions                                                     |
 | `deploy.md`                 | Pre-flight deployment checks                                                                                                                  |
 | `security.md`               | Security posture audit                                                                                                                        |
 | `stack-refresh.md`          | Audit outdated runtimes/frameworks/dependencies and propose phased upgrades                                                                   |
@@ -127,7 +128,7 @@ Boosters are expert activators you invoke manually during development.
 | `commit.md`                 | Worktree checkpoint commit with conversational preflight, security gate, and root `CHANGELOG.md` update                                       |
 | `init.md`                   | Read-only project investigation that answers focused technical questions from codebase evidence                                               |
 | `obsidian.md`               | Contextual Obsidian MCP memory with canonical project notes and explicit approval before writes                                               |
-| + 27 more                   | See `.devbooster/MANIFEST.md`                                                                                                                 |
+| + 28 more                   | See `.devbooster/MANIFEST.md`                                                                                                                 |
 
 The practical activation flow is simple:
 

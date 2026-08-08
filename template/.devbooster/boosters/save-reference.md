@@ -1,5 +1,4 @@
 # 📸 BOOSTER: SAVE UX REFERENCE (VISUAL CATALOGER)
-**Tools — native only:** Use only the IDE's native tools (`read_file`, `write_file`, `edit_file`, `grep`, terminal). Never use MCP in this flow — including Obsidian (`vault_*`, `create-note`); Obsidian only when the user explicitly asks, via `@Obsidian`.
 
 Lazy trigger for saving new visual references into the UX reference library.
 
@@ -10,6 +9,7 @@ Activation is on-demand only. This booster does not activate automatically.
 This booster behaves as a lazy command trigger. It only responds when explicitly invoked.
 
 If the user invokes this booster:
+
 - Do NOT analyze the project.
 - Do NOT load any context.
 - Do NOT run any scripts.
@@ -91,25 +91,25 @@ Determine the next available sequential number in the target folder.
 
 Naming patterns by category:
 
-| Category | Pattern | Example |
-|---|---|---|
-| `404` | `404-XX.png` | `404-15.png` |
-| `contact` | `contact-XX.png` | `contact-11.png` |
-| `dashboards` | `dashboard-XX.png` | `dashboard-20.png` |
-| `email-templates` | `email-XX.png` | `email-11.png` |
-| `feature-sections` | `feature-XX.png` | `feature-47.png` |
-| `footer` | `footer-XX.png` | `footer-41.png` |
-| `forgot-password` | `forgot-XX.png` | `forgot-06.png` |
-| `header-sections` | `header-XX.png` | `header-75.png` |
-| `informational-pages` | `info-XX.png` | `info-21.png` |
-| `landing-pages` | `landing-XX.webp` | `landing-21.webp` |
-| `payments` | `payment-XX.png` | `payment-11.png` |
-| `pricing` | `pricing-XX.png` | `pricing-XX.png` |
-| `profile` | `profile-XX.png` | `profile-07.png` |
-| `settings` | `settings-XX.png` | `settings-22.png` |
-| `sign-in` | `login-XX.png` | `login-17.png` |
-| `sign-up` | `signup-XX.png` | `signup-22.png` |
-| `verification` | `verify-XX.png` | `verify-04.png` |
+| Category              | Pattern            | Example            |
+| --------------------- | ------------------ | ------------------ |
+| `404`                 | `404-XX.png`       | `404-15.png`       |
+| `contact`             | `contact-XX.png`   | `contact-11.png`   |
+| `dashboards`          | `dashboard-XX.png` | `dashboard-20.png` |
+| `email-templates`     | `email-XX.png`     | `email-11.png`     |
+| `feature-sections`    | `feature-XX.png`   | `feature-47.png`   |
+| `footer`              | `footer-XX.png`    | `footer-41.png`    |
+| `forgot-password`     | `forgot-XX.png`    | `forgot-06.png`    |
+| `header-sections`     | `header-XX.png`    | `header-75.png`    |
+| `informational-pages` | `info-XX.png`      | `info-21.png`      |
+| `landing-pages`       | `landing-XX.webp`  | `landing-21.webp`  |
+| `payments`            | `payment-XX.png`   | `payment-11.png`   |
+| `pricing`             | `pricing-XX.png`   | `pricing-XX.png`   |
+| `profile`             | `profile-XX.png`   | `profile-07.png`   |
+| `settings`            | `settings-XX.png`  | `settings-22.png`  |
+| `sign-in`             | `login-XX.png`     | `login-17.png`     |
+| `sign-up`             | `signup-XX.png`    | `signup-22.png`    |
+| `verification`        | `verify-XX.png`    | `verify-04.png`    |
 
 If the existing files use `.png`, keep `.png`. If they use `.webp`, keep `.webp`. Maintain consistency with the existing format in that folder.
 
@@ -151,6 +151,7 @@ If the user confirms they want a new category:
 Visual references for [description of what belongs here].
 
 Use this category to explore:
+
 - [aspect 1]
 - [aspect 2]
 

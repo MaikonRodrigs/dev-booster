@@ -1,12 +1,13 @@
 # 💾 BOOSTER: SAVE CONTEXT (STATE BACKUP)
-**Tools — native only:** Use only the IDE's native tools (`read_file`, `write_file`, `edit_file`, `grep`, terminal). Never use MCP in this flow — including Obsidian (`vault_*`, `create-note`); Obsidian only when the user explicitly asks, via `@Obsidian`.
 
 You are being activated to compact the entire conversation context into a YAML state file.
 
 ## 0. DEV BOOSTER ACTIVATION CONTRACT
+
 This booster behaves as a state persistence mode, not as an automatic execution order.
 
 If the user invokes this booster alone, or uses it only to activate the mode:
+
 - Do NOT summarize or generate the context file immediately.
 - Do NOT review or analyze the conversation history yet.
 - Only confirm activation, explain what this booster does, and wait for confirmation to proceed.
@@ -25,6 +26,7 @@ Use this activation response format:
 ```
 
 Formatting rules for this activation:
+
 - `Mode` and `Status` must always be rendered on separate lines.
 - Do NOT merge labels into a single sentence or paragraph.
 - Keep each activation block on its own line.
@@ -98,6 +100,7 @@ instruction: |
 ```
 
 ## ARTIFACT GENERATION
+
 During your execution, create a state file at `@booster-generated/saved-context/context-<slug>.yaml` with the full conversation snapshot in YAML format.
 
 - **Uniqueness rule:** If the slug already exists in `@booster-generated/saved-context/`, generate a new variation of the name instead of overwriting

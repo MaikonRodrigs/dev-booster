@@ -7,6 +7,191 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 
 ---
 
+## 08/08/2026
+
+Autor: MaikonRodrigss
+Branch de origem: `main`
+Arquivos modificados: 154
+Linhas adicionadas: +3.718
+Linhas removidas: -335
+
+### feature: add design engineer roadmap and lazy booster routing
+
+Resumo técnico: Adicionado o booster Design Engineer com roadmap técnico indexado para referências, componentes, motion, utilities, prototipação, 3D, pesquisa e outras soluções de design engineering. Incluídas skills de composição, motion, utilities e validação visual; configurada consulta lazy pelo índice nos boosters relevantes; registrados os encaminhamentos condicionais no Auto Triage e Smart Task; atualizados manifesto, guia, README e metadados do pacote, juntamente com o conteúdo correspondente no template presente no worktree.
+
+### Adicionado
+
+- Booster `design-engineer.md`.
+- Roadmap técnico indexado em `.devbooster/hub/roadmap/`.
+- Skills de `component-composition`, `design-engineering-utilities`, `motion-design` e `visual-validation`.
+- Referências de `21st.dev` e `NumberFlow` no roadmap de componentes.
+
+### Alterado
+
+- Boosters relevantes com consulta lazy: primeiro `INDEX.md`, depois somente a categoria/entrada correspondente.
+- Auto Triage e Smart Task com seleção condicional do Design Engineer para descoberta de soluções visuais e frontend.
+- Manifesto, Guide, README, regras, metadados e conteúdo dos boosters atualizados.
+- Conteúdo correspondente do template atualizado conforme o estado atual do worktree.
+
+### Arquivos modificados
+
+- `.devbooster/boosters/accessibility.md`
+- `.devbooster/boosters/advisor.md`
+- `.devbooster/boosters/architecture-audit.md`
+- `.devbooster/boosters/atomic.md`
+- `.devbooster/boosters/audit.md`
+- `.devbooster/boosters/auto-triage.md`
+- `.devbooster/boosters/backend.md`
+- `.devbooster/boosters/builder.md`
+- `.devbooster/boosters/changelog.md`
+- `.devbooster/boosters/check-build.md`
+- `.devbooster/boosters/code-audit.md`
+- `.devbooster/boosters/coder.md`
+- `.devbooster/boosters/commit.md`
+- `.devbooster/boosters/context.md`
+- `.devbooster/boosters/create.md`
+- `.devbooster/boosters/debug.md`
+- `.devbooster/boosters/deploy.md`
+- `.devbooster/boosters/design-engineer.md`
+- `.devbooster/boosters/design.md`
+- `.devbooster/boosters/diff-review.md`
+- `.devbooster/boosters/discovery.md`
+- `.devbooster/boosters/enhance.md`
+- `.devbooster/boosters/forger.md`
+- `.devbooster/boosters/frontend.md`
+- `.devbooster/boosters/global-documentation.md`
+- `.devbooster/boosters/i18n.md`
+- `.devbooster/boosters/implementation.md`
+- `.devbooster/boosters/init.md`
+- `.devbooster/boosters/intel.md`
+- `.devbooster/boosters/internal-documentation.md`
+- `.devbooster/boosters/investigation.md`
+- `.devbooster/boosters/mobile.md`
+- `.devbooster/boosters/obsidian.md`
+- `.devbooster/boosters/performance.md`
+- `.devbooster/boosters/planning.md`
+- `.devbooster/boosters/refactor.md`
+- `.devbooster/boosters/review.md`
+- `.devbooster/boosters/save-context.md`
+- `.devbooster/boosters/save-reference.md`
+- `.devbooster/boosters/security.md`
+- `.devbooster/boosters/seo.md`
+- `.devbooster/boosters/smart-task.md`
+- `.devbooster/boosters/stack-refresh.md`
+- `.devbooster/boosters/testing.md`
+- `.devbooster/boosters/ui-ux-pro-max.md`
+- `.devbooster/hub/roadmap/INDEX.md`
+- `.devbooster/hub/roadmap/README.md`
+- `.devbooster/hub/roadmap/audio.md`
+- `.devbooster/hub/roadmap/components.md`
+- `.devbooster/hub/roadmap/digital-fashion.md`
+- `.devbooster/hub/roadmap/emoji.md`
+- `.devbooster/hub/roadmap/fonts.md`
+- `.devbooster/hub/roadmap/gltf.md`
+- `.devbooster/hub/roadmap/inspiration.md`
+- `.devbooster/hub/roadmap/interface.md`
+- `.devbooster/hub/roadmap/motion.md`
+- `.devbooster/hub/roadmap/organization.md`
+- `.devbooster/hub/roadmap/research.md`
+- `.devbooster/hub/roadmap/three-d.md`
+- `.devbooster/hub/roadmap/video-capture.md`
+- `.devbooster/hub/roadmap/volumetric.md`
+- `.devbooster/hub/roadmap/web-utilities.md`
+- `.devbooster/hub/roadmap/whiteboard.md`
+- `.devbooster/hub/skills/component-composition/README.md`
+- `.devbooster/hub/skills/design-engineering-utilities/README.md`
+- `.devbooster/hub/skills/design-engineering-utilities/color.md`
+- `.devbooster/hub/skills/design-engineering-utilities/developer-tools.md`
+- `.devbooster/hub/skills/design-engineering-utilities/gradients.md`
+- `.devbooster/hub/skills/design-engineering-utilities/motion.md`
+- `.devbooster/hub/skills/design-engineering-utilities/svg.md`
+- `.devbooster/hub/skills/motion-design/README.md`
+- `.devbooster/hub/skills/visual-validation/README.md`
+- `.devbooster/MANIFEST.md`
+- `.devbooster/rules/GUIDE.md`
+- `.devbooster/rules/PROTOCOL.md`
+- `.devbooster/rules/TRIGGERS.md`
+- `README.md`
+- `package.json`
+- `template/.devbooster/boosters/accessibility.md`
+- `template/.devbooster/boosters/advisor.md`
+- `template/.devbooster/boosters/architecture-audit.md`
+- `template/.devbooster/boosters/atomic.md`
+- `template/.devbooster/boosters/audit.md`
+- `template/.devbooster/boosters/auto-triage.md`
+- `template/.devbooster/boosters/backend.md`
+- `template/.devbooster/boosters/builder.md`
+- `template/.devbooster/boosters/changelog.md`
+- `template/.devbooster/boosters/check-build.md`
+- `template/.devbooster/boosters/code-audit.md`
+- `template/.devbooster/boosters/coder.md`
+- `template/.devbooster/boosters/commit.md`
+- `template/.devbooster/boosters/context.md`
+- `template/.devbooster/boosters/create.md`
+- `template/.devbooster/boosters/debug.md`
+- `template/.devbooster/boosters/deploy.md`
+- `template/.devbooster/boosters/design-engineer.md`
+- `template/.devbooster/boosters/design.md`
+- `template/.devbooster/boosters/diff-review.md`
+- `template/.devbooster/boosters/discovery.md`
+- `template/.devbooster/boosters/enhance.md`
+- `template/.devbooster/boosters/forger.md`
+- `template/.devbooster/boosters/frontend.md`
+- `template/.devbooster/boosters/global-documentation.md`
+- `template/.devbooster/boosters/i18n.md`
+- `template/.devbooster/boosters/implementation.md`
+- `template/.devbooster/boosters/init.md`
+- `template/.devbooster/boosters/intel.md`
+- `template/.devbooster/boosters/internal-documentation.md`
+- `template/.devbooster/boosters/investigation.md`
+- `template/.devbooster/boosters/mobile.md`
+- `template/.devbooster/boosters/obsidian.md`
+- `template/.devbooster/boosters/performance.md`
+- `template/.devbooster/boosters/planning.md`
+- `template/.devbooster/boosters/refactor.md`
+- `template/.devbooster/boosters/review.md`
+- `template/.devbooster/boosters/save-context.md`
+- `template/.devbooster/boosters/save-reference.md`
+- `template/.devbooster/boosters/security.md`
+- `template/.devbooster/boosters/seo.md`
+- `template/.devbooster/boosters/smart-task.md`
+- `template/.devbooster/boosters/stack-refresh.md`
+- `template/.devbooster/boosters/testing.md`
+- `template/.devbooster/boosters/ui-ux-pro-max.md`
+- `template/.devbooster/hub/roadmap/INDEX.md`
+- `template/.devbooster/hub/roadmap/README.md`
+- `template/.devbooster/hub/roadmap/audio.md`
+- `template/.devbooster/hub/roadmap/components.md`
+- `template/.devbooster/hub/roadmap/digital-fashion.md`
+- `template/.devbooster/hub/roadmap/emoji.md`
+- `template/.devbooster/hub/roadmap/fonts.md`
+- `template/.devbooster/hub/roadmap/gltf.md`
+- `template/.devbooster/hub/roadmap/inspiration.md`
+- `template/.devbooster/hub/roadmap/interface.md`
+- `template/.devbooster/hub/roadmap/motion.md`
+- `template/.devbooster/hub/roadmap/organization.md`
+- `template/.devbooster/hub/roadmap/research.md`
+- `template/.devbooster/hub/roadmap/three-d.md`
+- `template/.devbooster/hub/roadmap/video-capture.md`
+- `template/.devbooster/hub/roadmap/volumetric.md`
+- `template/.devbooster/hub/roadmap/web-utilities.md`
+- `template/.devbooster/hub/roadmap/whiteboard.md`
+- `template/.devbooster/hub/skills/component-composition/README.md`
+- `template/.devbooster/hub/skills/design-engineering-utilities/README.md`
+- `template/.devbooster/hub/skills/design-engineering-utilities/color.md`
+- `template/.devbooster/hub/skills/design-engineering-utilities/developer-tools.md`
+- `template/.devbooster/hub/skills/design-engineering-utilities/gradients.md`
+- `template/.devbooster/hub/skills/design-engineering-utilities/motion.md`
+- `template/.devbooster/hub/skills/design-engineering-utilities/svg.md`
+- `template/.devbooster/hub/skills/motion-design/README.md`
+- `template/.devbooster/hub/skills/visual-validation/README.md`
+- `template/.devbooster/MANIFEST.md`
+- `template/.devbooster/rules/GUIDE.md`
+- `template/.devbooster/rules/PROTOCOL.md`
+- `template/.devbooster/rules/TRIGGERS.md`
+
+---
+
 ## 04/08/2026
 
 Autor: MaikonRodrigss

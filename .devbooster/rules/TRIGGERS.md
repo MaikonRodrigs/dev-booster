@@ -48,7 +48,7 @@ Whenever the user references a `@` trigger, activate the mapped booster or actio
 - **`@InternalDoc`** ➔ `.devbooster/boosters/internal-documentation.md`
 - **`@Investigation`** ➔ `.devbooster/boosters/investigation.md`
 - **`@Mobile`** ➔ `.devbooster/boosters/mobile.md`
-- **`@Obsidian`** ➔ `.devbooster/boosters/obsidian.md` (sole MCP-authorized booster — see PROTOCOL)
+- **`@Obsidian`** ➔ `.devbooster/boosters/obsidian.md` (MCP — only usable when the user explicitly asks, per PROTOCOL)
 - **`@Performance`** ➔ `.devbooster/boosters/performance.md`
 - **`@Planning`** ➔ `.devbooster/boosters/planning.md`
 - **`@Refactor`** ➔ `.devbooster/boosters/refactor.md`

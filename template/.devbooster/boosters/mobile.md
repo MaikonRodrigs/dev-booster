@@ -1,5 +1,4 @@
 # 📱 BOOSTER: MOBILE DEV
-**Tools — native only:** Use only the IDE's native tools (`read_file`, `write_file`, `edit_file`, `grep`, terminal). Never use MCP in this flow — including Obsidian (`vault_*`, `create-note`); Obsidian only when the user explicitly asks, via `@Obsidian`.
 
 Activating Mobile-First and Responsive Development Mode.
 
@@ -52,6 +51,16 @@ Examples:
 - If the pain is UX, touch behavior, or responsiveness, prioritize mobile design.
 - If the pain is screen implementation or mobile architecture, prioritize the mobile developer persona.
 - If the pain is a native Apple app (SwiftUI on iOS/macOS/watchOS/tvOS) or an Xcode build/simulator problem, load the `swift-apps` / `xcode-cli` skills.
+
+## ROADMAP CONSULTATION — INDEX-FIRST, CONDITIONAL
+
+When the first concrete mobile request includes UI references, components, animation, visual assets, charts, forms, or another roadmap-supported solution, read only `.devbooster/hub/roadmap/INDEX.md` first.
+
+- Search by the request's problem, category, and tags.
+- If the index has no relevant match, do not open any roadmap category or solution entry.
+- If it has a match, read only the referenced entry and verify current official documentation plus mobile compatibility before recommending or adding a solution.
+- Do not consult the roadmap during activation-only mode or for native/mobile infrastructure work unrelated to its catalog.
+- Preserve the project's platform conventions and the user's tool preferences.
 
 ## 0.2 PROGRESSIVE REINFORCEMENT
 

@@ -1,5 +1,4 @@
 # 🚀 BOOSTER: DEPLOY AUDIT & DEVOPS
-**Tools — native only:** Use only the IDE's native tools (`read_file`, `write_file`, `edit_file`, `grep`, terminal). Never use MCP in this flow — including Obsidian (`vault_*`, `create-note`); Obsidian only when the user explicitly asks, via `@Obsidian`.
 
 Activating Infrastructure and Delivery Audit Specialist.
 

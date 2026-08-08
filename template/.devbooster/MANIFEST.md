@@ -90,6 +90,10 @@ The base is read-only. Only project maintainers update it.
 - `skill_mobile-design`: Specialized Mobile UX and touch patterns.
 - `skill_swift-apps`: Swift/SwiftUI native Apple apps (iOS, iPadOS, macOS, watchOS, tvOS) — language, SwiftUI, SwiftData, platform guides.
 - `skill_xcode-cli`: Xcode command-line mastery — builds, simulators, signing, notarization, SwiftPM CLI, release.
+- `skill_design-engineering-utilities`: Colors, contrast, gradients, easing, SVG, regex, and frontend communication utilities with official-source verification.
+- `skill_motion-design`: Motion-system selection, microinteractions, accessibility, and performance constraints.
+- `skill_component-composition`: Component-library selection and adaptation with framework/version verification.
+- `skill_visual-validation`: Screenshot, prototype, responsive, accessibility, and design-to-code validation.
 
 ### Backend, API & Database
 
@@ -187,6 +191,7 @@ _All boosters live at: `.devbooster/boosters/`_
 | `save-reference.md`         | Visual Cataloger — receives a screenshot, categorizes it, saves it to the correct UX reference folder, and updates the category index.                                     |
 | `check-build.md`            | Check Build (@CheckBuild) — clean cache, clean install, lint, typecheck, build, and optional tests. Sanity gate before merge/deploy.                                       |
 | `obsidian.md`               | Obsidian Memory (@Obsidian) — contextual MCP memory with fixed Markdown templates, canonical project notes, pre-flight, and explicit approval before writes.               |
+| `design-engineer.md`        | Design Engineer — roadmap-based solution discovery, visual direction, components, motion, web utilities, and official documentation verification.                          |
 
 ---
 

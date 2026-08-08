@@ -1,5 +1,4 @@
 # 🚀 BOOSTER: FRONTEND ULTRA (PRO-MAX)
-**Tools — native only:** Use only the IDE's native tools (`read_file`, `write_file`, `edit_file`, `grep`, terminal). Never use MCP in this flow — including Obsidian (`vault_*`, `create-note`); Obsidian only when the user explicitly asks, via `@Obsidian`.
 
 You are being activated for maximum Frontend execution level.
 
@@ -57,6 +56,16 @@ Examples:
 - If the pain is rendering, hydration, or React/Next.js behavior, add the React-specific skill only then.
 - If the pain expands into accessibility, performance, or testing, pull additional support only when needed.
 - If the pain is a native Apple app (SwiftUI views/state, iOS/macOS/watchOS/tvOS UI, .swift files) or an Xcode build/CLI problem, load the `swift-apps` / `xcode-cli` skills.
+
+## ROADMAP CONSULTATION — INDEX-FIRST, CONDITIONAL
+
+When the first concrete frontend task arrives, read only `.devbooster/hub/roadmap/INDEX.md` before loading roadmap details.
+
+- Search the index by the task's problem, domain, and tags (`#components`, `#react`, `#animation`, `#charts`, `#forms`, and similar).
+- If the index has no relevant match, do not read any roadmap category or solution entry.
+- If it indicates a relevant option, read only the referenced category/entry, inspect the project's installed versions and conventions, and verify the current official documentation before recommending or adding a library.
+- Do not load the roadmap during activation-only mode or for internal/state/data changes with no design or frontend solution question.
+- The roadmap is advisory and never replaces the project's local rules or official documentation.
 
 ## 0.2 PROGRESSIVE REINFORCEMENT
 

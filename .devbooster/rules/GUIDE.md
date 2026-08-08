@@ -105,6 +105,8 @@ It has been formatted as a code block to facilitate direct reading in the IDE.
 • backend.md        -> Backend Expert. Focused on APIs, tRPC, Databases, and Server.
 • design.md         -> UI/UX Audit. Verifies if components are following
                        premium standards and accessibility.
+• design-engineer.md -> Design Engineer. Consults the technical solution roadmap to discover
+                       components, animation, visual, frontend, and prototyping solutions, then verifies official documentation.
 • ui-ux-pro-max.md  -> Premium Design Intelligence. 50+ styles, 97 color palettes, 57 font pairings,
                        and 99 UX guidelines for complete design system generation.
 • seo.md            -> SEO Guardian. Validates semantic HTML and metatags for indexing.

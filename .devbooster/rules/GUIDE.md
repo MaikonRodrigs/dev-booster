@@ -107,6 +107,9 @@ It has been formatted as a code block to facilitate direct reading in the IDE.
                        premium standards and accessibility.
 • design-engineer.md -> Design Engineer. Consults the technical solution roadmap to discover
                        components, animation, visual, frontend, and prototyping solutions, then verifies official documentation.
+• motion.md          -> Motion. Brings finished routes to life with additive animation only —
+                       entrance, hover, scroll reveal, and background motion, with library
+                       discovery (user veto) and zero structural change.
 • ui-ux-pro-max.md  -> Premium Design Intelligence. 50+ styles, 97 color palettes, 57 font pairings,
                        and 99 UX guidelines for complete design system generation.
 • seo.md            -> SEO Guardian. Validates semantic HTML and metatags for indexing.

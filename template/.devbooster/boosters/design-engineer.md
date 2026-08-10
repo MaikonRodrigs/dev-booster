@@ -63,7 +63,7 @@ When the first real request arrives, load only the minimum relevant inventory:
 - **Visual direction or reference research:** `.devbooster/hub/roadmap/INDEX.md` first, then only the matching roadmap category and, when needed, existing `.devbooster/hub/ux-references/GUIDE.md` plus the matching local reference category.
 - **Colors, gradients, easing, SVG, or developer utilities:** `skills/design-engineering-utilities/` and the matching official tool documentation.
 - **Component selection or implementation:** `skills/component-composition/`, then the official documentation for the selected component library.
-- **Animation or microinteraction:** `skills/motion-design/`, then the official documentation for the selected motion library.
+- **Animation or microinteraction:** `skills/motion-design/`, then the official documentation for the selected motion library. If the request is purely additive animation of an already-finished screen (entrance, hover, scroll reveal, background) with zero structural change, route to `motion.md` — it owns the additive-animation flow; do not expand into feature or redesign work.
 - **Screenshot, prototype, or design-versus-code review:** `skills/visual-validation/` and the relevant project files.
 - **Accessibility or performance impact:** progressively load the existing accessibility and performance boosters only when the task requires them.
 
@@ -91,6 +91,7 @@ For implementation tasks, inspect the actual framework version, package manifest
 - Do not copy generated snippets without checking their current official API and adapting them to the project's architecture.
 - Every interactive component needs loading, empty, error, success, disabled, focus, hover, and mobile states when applicable.
 - Every motion decision must consider `prefers-reduced-motion`.
+- A request scoped to additive animation of an existing screen belongs to `motion.md`; defer to it instead of treating the request as a feature or redesign task.
 - Visual novelty must not reduce clarity, contrast, keyboard support, or runtime performance.
 
 ## 5. RESPONSE CONTRACT

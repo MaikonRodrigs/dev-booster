@@ -83,6 +83,11 @@ The knowledge base is read-only. Never create, modify, append to, or otherwise m
 
 This booster does NOT load `.devbooster/hub/ux-references/` directly. If the directory `.devbooster/hub/ux-references/` exists and the previous design or frontend stage produced visual conclusions based on it, those conclusions may be part of the context used to size the implementation. Do not reload the reference library independently. If the directory does not exist, no reference-based context is expected.
 
+### SUB-AGENT POLICY — parallel-agents
+
+- Load Skill: .devbooster/hub/skills/parallel-agents/SKILL.md
+- Sub-agent policy: types [D, E], personas: none — plan artifact offload
+
 ## 2. DECISION MATRIX (REPOSITY IMPLEMENTATION)
 
 Evaluate the task complexity and select the corresponding template file:

@@ -73,6 +73,11 @@ This booster does NOT load `.devbooster/hub/ux-references/` directly. If the dir
 3.  **Ask 2-4 Socratic questions** to refine the business rules (e.g., edge cases, user flow, data persistence).
 4.  **Wait for User Response**. Do NOT proceed to scaffolding until the user has clarified the functional scope.
 
+### SUB-AGENT POLICY — parallel-agents
+
+- Load Skill: .devbooster/hub/skills/parallel-agents/SKILL.md
+- Sub-agent policy: types [A, E], personas: matching specialist — units per scaffold layer, only after PLAN.md verified
+
 ## 2. PRE-FLIGHT (MANDATORY)
 
 1.  **Resolve Paths**: Use repository-relative references from `.devbooster/` and `.devbooster/hub/`.

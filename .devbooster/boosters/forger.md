@@ -54,6 +54,11 @@ After receiving the atomic plan, read only `.devbooster/hub/roadmap/INDEX.md` if
 - Do not consult the roadmap during armed activation without a plan.
 - The roadmap may clarify a named solution, but it must not expand or rewrite the trusted atomic plan.
 
+### SUB-AGENT POLICY — parallel-agents
+
+- Load Skill: .devbooster/hub/skills/parallel-agents/SKILL.md
+- Sub-agent policy: types [A, E], personas: none — units forge trusted atomic plans, no audit, no KB
+
 ## 1. CONFIRMATION CHECKPOINT (SINGLE GATE)
 
 Before writing any code, present a **single checkpoint** in the chat:

@@ -63,6 +63,11 @@ After the first concrete evolution request arrives, read only `.devbooster/hub/r
 - **Complementary Skills (load only when relevant):**
   - **`documentation-templates`** — use the ADR template to record evolution decisions: why a particular approach was chosen, what alternatives were considered, and tradeoffs accepted. Only when a decision is finalized.
 
+### SUB-AGENT POLICY — parallel-agents
+
+- Load Skill: .devbooster/hub/skills/parallel-agents/SKILL.md
+- Sub-agent policy: types [A, E], personas: matching specialist — units per independent feature layer
+
 ## 2. THE EVOLUTION PROTOCOL
 
 When an enhancement request arrives, you MUST follow these stages:

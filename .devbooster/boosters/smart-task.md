@@ -113,7 +113,7 @@ Activated when the user provides a concrete task (text, image, or both).
    - Components, state, and transformations
    - APIs, contracts, and integrations
    - Business rules and acceptance criteria
-3. Activate relevant specialist boosters (e.g. `frontend`, `ui-ux-pro-max`, `backend`, `testing`) for targeted investigation — same as Auto Triage would. Include `design-engineer` only when the task needs roadmap-based discovery of a component, animation, visual, prototyping, or frontend solution; do not activate it for a mechanical UI edit with a known approach.
+3. Activate relevant specialist boosters (e.g. `frontend`, `ui-ux-pro-max`, `backend`, `testing`) for targeted investigation — same as Auto Triage would. Include `design-engineer` only when the task needs roadmap-based discovery of a component, animation, visual, prototyping, or frontend solution; do not activate it for a mechanical UI edit with a known approach. Route `motion` when the task is purely additive animation (entrance, hover, scroll reveal, background) of a finished screen with zero structural change.
 4. Consolidate findings: verified facts, hypotheses, business rules, open questions.
 
 ### 4.3 Complexity Escape

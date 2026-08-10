@@ -192,6 +192,7 @@ _All boosters live at: `.devbooster/boosters/`_
 | `check-build.md`            | Check Build (@CheckBuild) — clean cache, clean install, lint, typecheck, build, and optional tests. Sanity gate before merge/deploy.                                       |
 | `obsidian.md`               | Obsidian Memory (@Obsidian) — contextual MCP memory with fixed Markdown templates, canonical project notes, pre-flight, and explicit approval before writes.               |
 | `design-engineer.md`        | Design Engineer — roadmap-based solution discovery, visual direction, components, motion, web utilities, and official documentation verification.                          |
+| `motion.md`                 | Motion — additive animation specialist for finished screens: entrance, hover, scroll reveal, and background motion with zero structural change, user-veto discovery, and sub-agent validation. |
 
 ---
 

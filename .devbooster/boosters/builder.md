@@ -63,6 +63,11 @@ The knowledge base is read-only. Never create, modify, append to, or otherwise m
 
 If the directory `.devbooster/hub/ux-references/` exists and the approved plan includes a visual direction derived from it, the Builder must respect that direction as part of the immutable specification. Builder does NOT load the reference library independently. If the directory does not exist, no reference-based direction is expected in the plan.
 
+### SUB-AGENT POLICY — parallel-agents
+
+- Load Skill: .devbooster/hub/skills/parallel-agents/SKILL.md
+- Sub-agent policy: types [A, E], personas: matching specialist — units execute approved stages, no auditing
+
 ## 1. PRE-EXECUTION SANITY CHECK & AUDIT (MANDATORY GATE)
 
 Before writing ANY code, you must perform a senior audit of the plan against the active codebase:

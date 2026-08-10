@@ -60,6 +60,11 @@ Only generate the documentation after the user confirms to proceed.
 
 - **`documentation-templates`** — use the ADR (Architecture Decision Record) template to document key architectural decisions: context → decision → consequences. Relevant when the feature involved non-obvious tradeoffs or rationale that must be preserved across stacks.
 
+### SUB-AGENT POLICY — parallel-agents
+
+- Load Skill: .devbooster/hub/skills/parallel-agents/SKILL.md
+- Sub-agent policy: types [D, E], personas: none — 17-section spec offload
+
 ## 2. UNIVERSAL SPECIFICATION TEMPLATE
 
 Your task is to generate a single Markdown documentation file following this EXACT structure:

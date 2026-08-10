@@ -37,7 +37,7 @@ After running the command, your project gets:
 ```
 .devbooster/
 ├── MANIFEST.md          ← inventory of all agents, skills, and boosters
-├── boosters/            ← 45 expert activators (intel, auto triage, commit, debug, review, design, design-engineer, deploy, enhance, ui-ux-pro-max, smart-task, save-reference, check-build, obsidian, forger, init...)
+├── boosters/            ← 46 expert activators (intel, auto triage, commit, debug, review, design, design-engineer, deploy, enhance, ui-ux-pro-max, smart-task, save-reference, check-build, obsidian, forger, init, motion...)
 ├── hub/                 ← 43+ skills and operational scripts
 └── rules/
     ├── PROTOCOL.md      ← governance and conduct rules
@@ -128,7 +128,7 @@ Boosters are expert activators you invoke manually during development.
 | `commit.md`                 | Worktree checkpoint commit with conversational preflight, security gate, and root `CHANGELOG.md` update                                       |
 | `init.md`                   | Read-only project investigation that answers focused technical questions from codebase evidence                                               |
 | `obsidian.md`               | Contextual Obsidian MCP memory with canonical project notes and explicit approval before writes                                               |
-| + 28 more                   | See `.devbooster/MANIFEST.md`                                                                                                                 |
+| + 29 more                   | See `.devbooster/MANIFEST.md`                                                                                                                 |
 
 The practical activation flow is simple:
 
@@ -155,6 +155,7 @@ Many boosters now use a two-step flow:
 | `global-documentation.md`   | Final documentation artifact only after confirmation                                                                                                                    |
 | `implementation.md`         | Final implementation artifact only after confirmation                                                                                                                   |
 | `internal-documentation.md` | Final documentation artifact only after confirmation                                                                                                                    |
+| `motion.md`                  | Single memory artifact at `@booster-generated/motion/` after the flow completes; never on activation                                                                    |
 | `investigation.md`          | No artifact by default; save only if the user explicitly asks                                                                                                           |
 | `intel.md`                  | Creates and continuously updates the canonical analysis, wave, authorization, and recovery artifact at `@booster-generated/intel/` after explicit analysis confirmation |
 | `auto-triage.md`            | Creates a visible evidence-board state artifact at `@booster-generated/auto-triage/` after a real demand; never on activation alone                                     |
@@ -375,6 +376,11 @@ This works well when:
 
 - you know the task belongs to a domain
 - but you still want alignment and execution discipline before building
+
+Example flow (animating a finished route):
+
+1. `frontend.md`
+2. `motion.md`
 
 ---
 

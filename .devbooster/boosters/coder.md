@@ -60,6 +60,11 @@ Coder MUST NOT consult `.devbooster/hub/knowledge/` directly. When discussion or
 
 The knowledge base is read-only. Never create, modify, append to, or otherwise maintain files in `.devbooster/hub/knowledge/`.
 
+### SUB-AGENT POLICY — parallel-agents
+
+- Load Skill: .devbooster/hub/skills/parallel-agents/SKILL.md
+- Sub-agent policy: types [A, E], personas: matching specialist — units execute approved design fronts
+
 ## 1. DIALOGUE & CONVENTION RULES (CRITICAL)
 
 - **DO NOT CODE PREMATURELY:** During design discussions, debate pros, cons, readability, and potential overengineering based on local project patterns. Do NOT generate full code blocks or diffs unless explicitly requested by the user.

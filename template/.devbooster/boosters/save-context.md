@@ -33,6 +33,11 @@ Formatting rules for this activation:
 
 Only proceed to generate the context file after the user explicitly confirms.
 
+### SUB-AGENT POLICY — parallel-agents
+
+- Load Skill: .devbooster/hub/skills/parallel-agents/SKILL.md
+- Sub-agent policy: types [D, E], personas: none — YAML snapshot offload
+
 ## 1. EXECUTION PROTOCOL
 
 When the user confirms, you MUST:

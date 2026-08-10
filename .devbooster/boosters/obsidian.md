@@ -62,6 +62,11 @@ The following transitions always require a new explicit user request:
 
 Do not proactively perform cleanup, stack refresh, metadata correction, note maintenance, artifact promotion, scope expansion, package updates, command execution, or MCP configuration changes. Wait for a request that explicitly names the next action.
 
+### SUB-AGENT POLICY — parallel-agents
+
+- Load Skill: .devbooster/hub/skills/parallel-agents/SKILL.md
+- Sub-agent policy: types [D, E], personas: none — content prep only; MCP approval gate kept
+
 ## 1. SOURCE OF TRUTH AND MCP
 
 The MCP configured in the environment is the only source of truth for the Obsidian connection.

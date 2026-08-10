@@ -7,6 +7,85 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 
 ---
 
+## 10/08/2026
+
+Autor: MaikonRodrigss
+Branch de origem: `main`
+Arquivos modificados: 49
+Linhas adicionadas: +2.132
+Linhas removidas: -10
+
+### feature: add motion booster and parallel-agents orchestration skill
+
+Resumo técnico: Adicionado o booster Motion, especialista em animação aditiva de telas finalizadas (entrance, hover, scroll reveal e motion de fundo) com zero alteração estrutural, discovery com veto de biblioteca, validação via sub-agente e artefato único de memória. Adicionada a skill Parallel Agents, fonte única para orquestração de sub-agentes com cinco padrões de dispatch (battery, council, single delegate, artifact offload e final verification), pacote de ativação em duas linhas e invariantes de escopo. Todos os boosters passaram a declarar a política SUB-AGENT POLICY — parallel-agents; Auto Triage, Smart Task e Design Engineer passaram a rotear tarefas de animação aditiva para `motion`; manifesto, gatilho `@Motion`, guia, README e template sincronizados.
+
+### Adicionado
+
+- Booster `motion.md` na raiz e no template — especialista em animação aditiva com estágios Armed/Discovery/Implementation, veto de biblioteca, respeito a `prefers-reduced-motion` e artefato único em `@booster-generated/motion/`.
+- Skill `parallel-agents` (`hub/skills/parallel-agents/SKILL.md` e persona `skill_parallel-agents.md`, raiz e template) — cinco padrões de dispatch, contrato de retorno, invariantes e ativação em duas linhas.
+- Trigger `@Motion` no TRIGGERS.md, registro no MANIFEST.md, entrada no GUIDE.md e contagem de boosters no README (45 → 46).
+
+### Alterado
+
+- Todos os boosters existentes passaram a declarar a seção SUB-AGENT POLICY — parallel-agents com tipos, personas e restrições de dispatch.
+- Auto Triage e Smart Task roteiam para `motion` quando a tarefa é animação aditiva de uma tela finalizada com zero mudança estrutural.
+- Design Engineer delega para `motion.md` pedidos de animação aditiva e não expande o escopo.
+- Template `.devbooster/` sincronizado com as mesmas capacidades do workspace.
+
+### Arquivos modificados
+
+- `.devbooster/MANIFEST.md`
+- `.devbooster/boosters/auto-triage.md`
+- `.devbooster/boosters/builder.md`
+- `.devbooster/boosters/changelog.md`
+- `.devbooster/boosters/coder.md`
+- `.devbooster/boosters/commit.md`
+- `.devbooster/boosters/create.md`
+- `.devbooster/boosters/design-engineer.md`
+- `.devbooster/boosters/enhance.md`
+- `.devbooster/boosters/forger.md`
+- `.devbooster/boosters/global-documentation.md`
+- `.devbooster/boosters/implementation.md`
+- `.devbooster/boosters/intel.md`
+- `.devbooster/boosters/internal-documentation.md`
+- `.devbooster/boosters/motion.md`
+- `.devbooster/boosters/obsidian.md`
+- `.devbooster/boosters/planning.md`
+- `.devbooster/boosters/review.md`
+- `.devbooster/boosters/save-context.md`
+- `.devbooster/boosters/smart-task.md`
+- `.devbooster/hub/personas/skill_parallel-agents.md`
+- `.devbooster/hub/skills/parallel-agents/SKILL.md`
+- `.devbooster/rules/GUIDE.md`
+- `.devbooster/rules/TRIGGERS.md`
+- `README.md`
+- `template/.devbooster/MANIFEST.md`
+- `template/.devbooster/boosters/auto-triage.md`
+- `template/.devbooster/boosters/builder.md`
+- `template/.devbooster/boosters/changelog.md`
+- `template/.devbooster/boosters/coder.md`
+- `template/.devbooster/boosters/commit.md`
+- `template/.devbooster/boosters/create.md`
+- `template/.devbooster/boosters/design-engineer.md`
+- `template/.devbooster/boosters/enhance.md`
+- `template/.devbooster/boosters/forger.md`
+- `template/.devbooster/boosters/global-documentation.md`
+- `template/.devbooster/boosters/implementation.md`
+- `template/.devbooster/boosters/intel.md`
+- `template/.devbooster/boosters/internal-documentation.md`
+- `template/.devbooster/boosters/motion.md`
+- `template/.devbooster/boosters/obsidian.md`
+- `template/.devbooster/boosters/planning.md`
+- `template/.devbooster/boosters/review.md`
+- `template/.devbooster/boosters/save-context.md`
+- `template/.devbooster/boosters/smart-task.md`
+- `template/.devbooster/hub/personas/skill_parallel-agents.md`
+- `template/.devbooster/hub/skills/parallel-agents/SKILL.md`
+- `template/.devbooster/rules/GUIDE.md`
+- `template/.devbooster/rules/TRIGGERS.md`
+
+---
+
 ## 08/08/2026
 
 Autor: MaikonRodrigss

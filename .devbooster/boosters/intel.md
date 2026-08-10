@@ -209,6 +209,11 @@ Use this routing order, adapting to evidence:
 
 Do not route every warning to a booster. Route by severity, applicability, confidence, and user intent.
 
+### SUB-AGENT POLICY — parallel-agents
+
+- Load Skill: .devbooster/hub/skills/parallel-agents/SKILL.md
+- Sub-agent policy: types [C], personas: none — one delegate per wave; waves serial
+
 ## 5. DELEGATED BOOSTER HANDOFF
 
 Before invoking a specialist, update the artifact and present the recommended wave to the user. Include an explicit envelope:

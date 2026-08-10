@@ -72,6 +72,11 @@ When no persistent artifact exists, keep the chat trace concise: state the proje
    - **Contextual:** `api_validator.py` (if API), `schema_validator.py` (if DB).
    - **Optional master check:** `checklist.py` — runs all checks in priority order (P0-P6) for a comprehensive review pass.
 
+### SUB-AGENT POLICY — parallel-agents
+
+- Load Skill: .devbooster/hub/skills/parallel-agents/SKILL.md
+- Sub-agent policy: types [B], personas: matching specialist — council, minimum 3 members
+
 ## 2. ORCHESTRATION PROTOCOL
 
 ### 🔴 CRITICAL: Minimum Agent Requirement

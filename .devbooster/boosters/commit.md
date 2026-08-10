@@ -18,6 +18,11 @@ This booster does not split files, split hunks, create multiple commits, or orde
 
 Do not create anything under `@booster-generated/`. Do not create an execution-state artifact. The only project file this booster may create or update during its normal flow is the root `CHANGELOG.md`, and only after the user approves the commit preflight and the security gate passes or is explicitly overridden.
 
+### SUB-AGENT POLICY — parallel-agents
+
+- Load Skill: .devbooster/hub/skills/parallel-agents/SKILL.md
+- Sub-agent policy: types [D, E], personas: none — changelog offload
+
 ## 1. STAGE 0 — PREFLIGHT
 
 Use Git as the source of truth. Inspect the complete current worktree, including tracked, untracked, staged, unstaged, modified, added, deleted, and renamed files when available.

@@ -65,6 +65,11 @@ Rules:
 - If the workspace is clean, accept compact input in the format: `<COMMITS_BACK> <MODE>`.
 - Example: `3 C`
 
+### SUB-AGENT POLICY — parallel-agents
+
+- Load Skill: .devbooster/hub/skills/parallel-agents/SKILL.md
+- Sub-agent policy: types [D, E], personas: none — changelog offload
+
 ## 1. SOURCE ANALYSIS (MANDATORY)
 
 1. Check `git status`.

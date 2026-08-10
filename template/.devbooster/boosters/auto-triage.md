@@ -85,6 +85,11 @@ Auto Triage MUST NOT consult `.devbooster/hub/knowledge/` directly. When triage 
 
 The knowledge base is read-only. Auto Triage and its work units MUST NOT create, modify, append to, or otherwise maintain files in `.devbooster/hub/knowledge/`.
 
+### SUB-AGENT POLICY — parallel-agents
+
+- Load Skill: .devbooster/hub/skills/parallel-agents/SKILL.md
+- Sub-agent policy: types [C], personas: none — investigation units per booster; council delegated to review
+
 ## 4. STAGE 1 — AUTOMATIC TRIAGE
 
 A concrete user demand starts Stage 1. Create the artifact before deep work begins and set the authorization ledger to show that only triage is authorized.
@@ -162,7 +167,7 @@ The following playbooks define minimum evaluation coverage. They do not authoriz
 | -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
 | Bug / Incident             | `context`, `investigation`, `debug`, `testing`, affected domain boosters                                                                                                            | Reproduction or observed symptom, hypotheses, evidence chain, root-cause status, regression boundary                          |
 | Feature / New flow         | `context`, `investigation`, `discovery`, `testing`, affected domain boosters; evaluate `enhance` when the feature targets an existing project, `planning` for Stage 2               | User/business value, acceptance criteria, rules, existing flows to reuse, unresolved product decisions                        |
-| UX/UI / Adjustment         | `context`, `frontend`, `design`, `ui-ux-pro-max`, `accessibility`, `testing`, `i18n` when relevant; evaluate `design-engineer` when the task needs roadmap-based solution discovery | User journey, UI states, design-system pattern, accessibility impact, API/data need or explicit absence                       |
+| UX/UI / Adjustment         | `context`, `frontend`, `design`, `ui-ux-pro-max`, `accessibility`, `testing`, `i18n` when relevant; evaluate `design-engineer` when the task needs roadmap-based solution discovery; route `motion` when the task is purely additive animation of an already-finished screen | User journey, UI states, design-system pattern, accessibility impact, API/data need or explicit absence                       |
 | Refactor / Maintainability | `context`, `investigation`, `refactor`, `testing`, affected domain boosters; evaluate `review` for Stage 2                                                                          | Current responsibilities, consumers, behavior-preservation boundary, module seams, regression tests                           |
 | Performance                | `context`, `investigation`, `performance`, `testing`, `debug`, frontend/backend/data boosters indicated by evidence                                                                 | Baseline symptom/metric, bottleneck hypothesis, runtime/data-flow evidence, performance regression criteria                   |
 | Security / Privacy         | `context`, `security`, `testing`, `investigation`, frontend/backend/data boosters indicated by evidence                                                                             | Threat boundary, permissions, sensitive-data handling, attack surface, remediation and validation needs                       |
@@ -178,7 +183,7 @@ The following playbooks define minimum evaluation coverage. They do not authoriz
 
 Regardless of primary intent, evaluate the listed front when evidence indicates it:
 
-- UI, route, component, interaction, state, re-render, layout, or rendering → `frontend`, `ui-ux-pro-max`, `performance`, `testing`, `debug`, `context`, `investigation`; add `design-engineer` when reference, library, animation, prototyping, or visual-solution discovery is needed.
+- UI, route, component, interaction, state, re-render, layout, or rendering → `frontend`, `ui-ux-pro-max`, `performance`, `testing`, `debug`, `context`, `investigation`; add `design-engineer` when reference, library, animation, prototyping, or visual-solution discovery is needed; route `motion` when the request is purely additive animation (entrance, hover, scroll reveal, background) of an existing screen with zero structural change.
 - Incorrect displayed data, API result, serialization, validation, or contract → `frontend`, `backend`, `debug`, `testing`, `context`, `investigation`.
 - Auth, permissions, sensitive data, secrets, or public exposure → `security`, `backend`, `testing`, `debug`, `investigation`.
 - Query, schema, migration, data consistency, or persistence → `backend`, `debug`, `testing`, `performance`, `investigation`.

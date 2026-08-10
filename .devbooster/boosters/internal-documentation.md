@@ -82,6 +82,11 @@ After the user confirms, load only what is necessary from this inventory:
 - Resolve absolute paths from the actual project root.
 - Document only what is supported by the current code, file tree, configuration, or conversation context.
 
+### SUB-AGENT POLICY — parallel-agents
+
+- Load Skill: .devbooster/hub/skills/parallel-agents/SKILL.md
+- Sub-agent policy: types [D, E], personas: none — doc + file maps offload
+
 ## 3. INTERNAL SPECIFICATION TEMPLATE
 
 Your task is to generate a single Markdown documentation file following this EXACT structure:

@@ -81,6 +81,11 @@ This booster MUST NOT consult `.devbooster/hub/knowledge/` directly. When planni
 
 The knowledge base is read-only. Never create, modify, append to, or otherwise maintain files in `.devbooster/hub/knowledge/`.
 
+### SUB-AGENT POLICY — parallel-agents
+
+- Load Skill: .devbooster/hub/skills/parallel-agents/SKILL.md
+- Sub-agent policy: types [C], personas: none — optional; only multi-stack risk verification
+
 ## 2. PLANNING ROLE
 
 This booster must:

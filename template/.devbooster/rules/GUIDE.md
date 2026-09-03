@@ -68,6 +68,14 @@ It has been formatted as a code block to facilitate direct reading in the IDE.
                        records evidence, and requires staged human approval before execution.
 • discovery.md      -> Strategic Consultant. Uses a 3-path brainstorm to validate
                        product ideas and business rules.
+• refine.md         -> Refine. Conversational business-rule refinement of raw ideas:
+                       verify-then-respond grounding in the codebase/schema, socratic
+                       questions, continuous summary, and a final "pode refinar" prompt
+                       artifact ready for Auto Triage / Smart Task.
+• pilot.md          -> Pilot. Technical direction planner between refine and execution.
+                       Studies the codebase read-only, decides reuse/extend/create, and
+                       recommends the execution route (auto-triage / smart-task / enhance)
+                       in a new artifact that never overwrites the refine output.
 • planning.md       -> Alignment & Readiness. Consolidates decisions, maps risks/gaps, and validates readiness
                        before proceeding to implementation.
 • investigation.md  -> Context Pre-Orchestrator. Performs deep repository analysis
@@ -76,6 +84,9 @@ It has been formatted as a code block to facilitate direct reading in the IDE.
 • init.md            -> Project Init Investigator. Answers focused project questions from codebase evidence with concise technical responses, without modifying files or routing to boosters automatically.
 • obsidian.md        -> Obsidian Memory. Uses MCP to classify context, search canonical project notes, and create or update fixed Markdown memories only after explicit approval.
 • advisor.md         -> Kit Consultant (GPS). Helps you choose the right booster to use.
+• interview.md       -> Intent Interview. Extracts what the user actually wants
+                       (not what they asked for) with one question at a time, an
+                       attached guess, and a confidence number — before any plan.
 
 ---
 
@@ -114,8 +125,7 @@ It has been formatted as a code block to facilitate direct reading in the IDE.
                        and 99 UX guidelines for complete design system generation.
 • seo.md            -> SEO Guardian. Validates semantic HTML and metatags for indexing.
 • mobile.md         -> Mobile Master. Activates patterns for React Native, Expo, and touch UX.
-• save-reference.md -> Visual Cataloger. Receives a screenshot, categorizes it into the UX reference library,
-                       saves the image to the correct folder, and updates the category index.
+
 • stack-refresh.md  -> Stack Refresh. Audits runtime, framework, and dependency drift,
                        separates security risk from modernization debt, and proposes phased upgrade waves.
 
@@ -127,6 +137,12 @@ It has been formatted as a code block to facilitate direct reading in the IDE.
                        and threat modeling.
 • deploy.md         -> Release Protocol. Runs "pre-flight checks" to ensure
                        the code is ready for production.
+• observability.md   -> Observability Audit. Audits telemetry — structured logs,
+                       correlation ID, RED/USE metrics, tracing, symptom-based
+                       alerting — using on-call questions as the bar. Read-only.
+• ci-cd.md           -> CI/CD Audit. Audits and proposes pipelines — Shift Left,
+                       quality gates, feedback loops, secrets hygiene, rollout safety.
+                       Read-only.
 
 ---
 

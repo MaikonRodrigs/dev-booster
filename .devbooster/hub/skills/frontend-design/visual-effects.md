@@ -24,21 +24,22 @@ Key Properties:
   /* Transparency: adjust opacity based on content readability */
   background: rgba(R, G, B, OPACITY);
   /* OPACITY: 0.1-0.3 for dark bg, 0.5-0.8 for light bg */
-  
+
   /* Blur: higher = more frosted */
   backdrop-filter: blur(AMOUNT);
   /* AMOUNT: 8-12px subtle, 16-24px strong */
-  
+
   /* Border: defines edges */
   border: 1px solid rgba(255, 255, 255, OPACITY);
   /* OPACITY: 0.1-0.3 typically */
-  
+
   /* Radius: match your design system */
   border-radius: YOUR_RADIUS;
 }
 ```
 
 ### When to Use Glassmorphism
+
 - ✅ Over colorful/image backgrounds
 - ✅ Modals, overlays, cards
 - ✅ Navigation bars with scrolling content behind
@@ -46,6 +47,7 @@ Key Properties:
 - ❌ Simple solid backgrounds (pointless)
 
 ### When NOT to Use
+
 - Low contrast situations
 - Accessibility-critical content
 - Performance-constrained devices
@@ -69,28 +71,30 @@ Key Concept: Soft, extruded elements using DUAL shadows
 .neo-raised {
   /* Background MUST match parent */
   background: SAME_AS_PARENT;
-  
+
   /* Two shadows: light direction + dark direction */
-  box-shadow: 
+  box-shadow:
     OFFSET OFFSET BLUR rgba(light-color),
     -OFFSET -OFFSET BLUR rgba(dark-color);
-  
+
   /* OFFSET: typically 6-12px */
   /* BLUR: typically 12-20px */
 }
 
 .neo-pressed {
   /* Inset creates "pushed in" effect */
-  box-shadow: 
+  box-shadow:
     inset OFFSET OFFSET BLUR rgba(dark-color),
     inset -OFFSET -OFFSET BLUR rgba(light-color);
 }
 ```
 
 ### Accessibility Warning
+
 ⚠️ **Low contrast** - use sparingly, ensure clear boundaries
 
 ### When to Use
+
 - Decorative elements
 - Subtle interactive states
 - Minimalist UI with flat colors
@@ -129,6 +133,7 @@ box-shadow: OFFSET-X OFFSET-Y BLUR SPREAD COLOR;
 4. **Blur scales with offset** (larger offset = larger blur)
 
 ### Dark Mode Shadows
+
 - Shadows less visible on dark backgrounds
 - May need to increase opacity
 - Or use glow/highlight instead
@@ -139,11 +144,11 @@ box-shadow: OFFSET-X OFFSET-Y BLUR SPREAD COLOR;
 
 ### Types and When to Use
 
-| Type | Pattern | Use Case |
-|------|---------|----------|
+| Type       | Pattern                      | Use Case                      |
+| ---------- | ---------------------------- | ----------------------------- |
 | **Linear** | Color A → Color B along line | Backgrounds, buttons, headers |
-| **Radial** | Center → outward | Spotlights, focal points |
-| **Conic** | Around center | Pie charts, creative effects |
+| **Radial** | Center → outward             | Spotlights, focal points      |
+| **Conic**  | Around center                | Pie charts, creative effects  |
 
 ### Creating Harmonious Gradients
 
@@ -160,10 +165,9 @@ Good Gradient Rules:
 ```css
 .gradient {
   background: linear-gradient(
-    DIRECTION,           /* angle or to-keyword */
-    COLOR-STOP-1,        /* color + optional position */
-    COLOR-STOP-2,
-    /* ... more stops */
+    DIRECTION,
+    /* angle or to-keyword */ COLOR-STOP-1,
+    /* color + optional position */ COLOR-STOP-2 /* ... more stops */
   );
 }
 
@@ -222,7 +226,7 @@ box-shadow:
 ### Text Glow
 
 ```css
-text-shadow: 
+text-shadow:
   0 0 BLUR-1 COLOR,
   0 0 BLUR-2 COLOR,
   0 0 BLUR-3 COLOR;
@@ -246,8 +250,13 @@ box-shadow:
 
 ```css
 @keyframes glow-pulse {
-  0%, 100% { box-shadow: 0 0 SMALL-BLUR COLOR; }
-  50% { box-shadow: 0 0 LARGE-BLUR COLOR; }
+  0%,
+  100% {
+    box-shadow: 0 0 SMALL-BLUR COLOR;
+  }
+  50% {
+    box-shadow: 0 0 LARGE-BLUR COLOR;
+  }
 }
 
 /* Easing and duration affect feel */
@@ -267,13 +276,13 @@ Position: Where text will appear
 
 ```css
 .overlay::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(
     DIRECTION,
     transparent PERCENTAGE,
-    rgba(0,0,0,OPACITY) 100%
+    rgba(0, 0, 0, OPACITY) 100%
   );
 }
 ```
@@ -282,14 +291,77 @@ Position: Where text will appear
 
 ```css
 /* Blend mode or layered gradient */
-background: 
-  linear-gradient(YOUR-COLOR-WITH-OPACITY),
-  url('image.jpg');
+background: linear-gradient(YOUR-COLOR-WITH-OPACITY), url("image.jpg");
 ```
 
 ---
 
-## 8. Modern CSS Techniques
+## 8. Holographic / Foil Sheen Principles
+
+### What Makes a Foil Sheen Work
+
+```
+Key Concept: a light source that moves with the pointer
+├── Specular highlight (bright gradient band)
+├── Sits on top of the artwork (overlay layer)
+├── Position tied to pointer/tilt position
+└── Subtle base tint so the "foil" reads as a material
+```
+
+### The Pattern (Customize Values)
+
+```css
+.foil-sheen {
+  /* Rested on top of the card/artwork */
+  position: absolute;
+  inset: 0;
+  /* Bright band that follows the pointer */
+  background: radial-gradient(
+    /* 0-100% coordinates from pointer */ circle at VAR-X VAR-Y,
+    rgba(255, 255, 255, HIGH) 0%,
+    rgba(255, 255, 255, LOW) SIZE%,
+    transparent SIZE + 1%
+  );
+  /* Conic-gradient variant for a rainbow/foil tint */
+  mix-blend-mode: overlay;
+}
+
+/* Tilt: perspective lives on the parent, rotation on the card */
+.foil-card {
+  transform: perspective(PX) rotateX(VAR-DEG) rotateY(VAR-DEG);
+  /* Smooth return on leave — animate transform/opacity only */
+  transition: transform 0.3s ease;
+}
+```
+
+### Pointer → Transform Bridge (Concept)
+
+```
+Pointer position (0-100%) → rotateX / rotateY (-DEG .. +DEG)
+├── Clamp the range (e.g. ±8deg) so tilt stays subtle
+├── Recenter to 0 on leave via CSS transition
+└── Throttle pointermove; update CSS vars only, never layout
+```
+
+### When to Use
+
+- ✅ Collectible/product cards — material realism
+- ✅ Badges, achievements, reward moments
+- ✅ Premium surfaces, celebratory states (limited use)
+- ❌ Content-heavy surfaces (competes with readability)
+- ❌ Flat/minimal UI (breaks the visual language)
+
+### Caveats
+
+- Pointer-driven by nature: provide a static/neutral fallback for `prefers-reduced-motion` and keyboard users.
+- Soften or disable below a touch/pointer threshold (mobile battery and jank).
+- GPU-friendly: animate transform/opacity and CSS variables only — never re-layout per pointer event.
+
+> Live reference: search "FeralUI Hologram" (https://feralui.dev/hologram) to see the foil sheen + tilt in action.
+
+---
+
+## 9. Modern CSS Techniques
 
 ### Container Queries (Concept)
 
@@ -321,7 +393,7 @@ Animation progress tied to scroll:
 
 ---
 
-## 9. Performance Principles
+## 10. Performance Principles
 
 ### GPU-Accelerated Properties
 
@@ -359,7 +431,7 @@ EXPENSIVE to animate (CPU):
 
 ---
 
-## 10. Effect Selection Checklist
+## 11. Effect Selection Checklist
 
 Before applying any effect:
 

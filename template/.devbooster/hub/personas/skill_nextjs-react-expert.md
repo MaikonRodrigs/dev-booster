@@ -6,7 +6,7 @@ allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 
 # Next.js & React Performance Expert
 
-> **From Vercel Engineering** - 57 optimization rules prioritized by impact
+> **From Vercel Engineering** - 58 optimization rules prioritized by impact
 > **Philosophy:** Eliminate waterfalls first, optimize bundles second, then micro-optimize.
 
 ---
@@ -23,7 +23,7 @@ allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 
 | File                                    | Impact             | Rules    | When to Read                                                    |
 | --------------------------------------- | ------------------ | -------- | --------------------------------------------------------------- |
-| `1-async-eliminating-waterfalls.md`     | 🔴 **CRITICAL**    | 5 rules  | Slow page loads, sequential API calls, data fetching waterfalls |
+| `1-async-eliminating-waterfalls.md`     | 🔴 **CRITICAL**    | 6 rules  | Slow page loads, sequential API calls, data fetching waterfalls |
 | `2-bundle-bundle-size-optimization.md`  | 🔴 **CRITICAL**    | 5 rules  | Large bundle size, slow Time to Interactive, First Load issues  |
 | `3-server-server-side-performance.md`   | 🟠 **HIGH**        | 7 rules  | Slow SSR, API route optimization, server-side waterfalls        |
 | `4-client-client-side-data-fetching.md` | 🟡 **MEDIUM-HIGH** | 4 rules  | Client data management, SWR patterns, deduplication             |
@@ -32,7 +32,7 @@ allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 | `7-js-javascript-performance.md`        | ⚪ **LOW-MEDIUM**  | 12 rules | Micro-optimizations, caching, loop performance                  |
 | `8-advanced-advanced-patterns.md`       | 🔵 **VARIABLE**    | 3 rules  | Advanced React patterns, useLatest, init-once                   |
 
-**Total: 57 rules across 8 categories**
+**Total: 58 rules across 8 categories**
 
 ---
 
@@ -221,7 +221,7 @@ Before shipping to production:
 ### Section 1: Eliminating Waterfalls (CRITICAL)
 
 **Impact:** Each waterfall adds 100-500ms+ latency
-**Key Concepts:** Parallel fetching, Promise.all(), Suspense boundaries, preloading
+**Key Concepts:** Parallel fetching, Promise.all(), Promise.allSettled(), Suspense boundaries, preloading
 
 ### Section 2: Bundle Size Optimization (CRITICAL)
 
@@ -283,7 +283,7 @@ Before shipping to production:
 **Source:** Vercel Engineering
 **Date:** January 2026
 **Version:** 1.0.0
-**Total Rules:** 57 across 8 categories
+**Total Rules:** 58 across 8 categories
 
 ---
 
@@ -298,7 +298,7 @@ Before shipping to production:
 
 ## Overview
 
-This section contains **5 rules** focused on eliminating waterfalls.
+This section contains **6 rules** focused on eliminating waterfalls.
 
 ---
 
@@ -601,6 +601,79 @@ Both components share the same promise, so only one fetch occurs. Layout renders
 - When you want to avoid layout shift (loading → content jump)
 
 **Trade-off:** Faster initial paint vs potential layout shift. Choose based on your UX priorities.
+
+---
+
+## Rule 1.6: Promise.allSettled() for Optional, Non-Critical Data
+
+**Impact:** MEDIUM  
+**Tags:** async, parallelization, resilience, optional-data, allSettled
+
+## Promise.allSettled() for Optional, Non-Critical Data
+
+`Promise.all()` is all-or-nothing: one rejection rejects the entire batch. That is the correct behavior for **mandatory** data — a failed critical request must surface as an error. But **optional/enhancement** data (widgets, recommendations, auxiliary panels, analytics) should degrade gracefully instead of taking down the whole screen when a single endpoint fails. Use `Promise.allSettled()` and handle each result individually.
+
+**Decision rule:**
+
+- **Mandatory data** (core content, layout, conversion) → `Promise.all()`. Fail fast and render the error state.
+- **Optional/enhancement data** (widgets, recommendations, auxiliary panels) → `Promise.allSettled()`. Each section renders its own fallback.
+
+**Incorrect (one optional endpoint blanks the whole page):**
+
+```tsx
+// Optional data treated as mandatory: one rejection
+// rejects the whole batch and the page renders nothing.
+const [profile, widget, feed] = await Promise.all([
+  fetchProfile(), // mandatory
+  fetchWidgetData(), // optional — failing here kills the page
+  fetchFeed(), // optional — failing here kills the page
+]);
+```
+
+**Correct (start everything in parallel, fail fast only for mandatory data):**
+
+```tsx
+// Start all requests immediately — no waterfall
+const profilePromise = fetchProfile();
+const widgetPromise = fetchWidgetData();
+
+// Mandatory data: still fail fast (rejects → error state/error boundary)
+const profile = await profilePromise;
+
+// Optional data: wait for the outcome, tolerate rejection
+const widgetResult = await Promise.allSettled([widgetPromise]).then(
+  (results) => results[0],
+);
+const widget = widgetResult.status === "fulfilled" ? widgetResult.value : null;
+
+return (
+  <div>
+    <ProfilePanel profile={profile} />
+    {widget ? <Widget data={widget} /> : <WidgetFallback />}
+  </div>
+);
+```
+
+Awaiting `profilePromise` first is not a waterfall: the widget request was already started, so both run in parallel.
+
+**Batch version for multiple optional endpoints:**
+
+```tsx
+const [widgetResult, feedResult] = await Promise.allSettled([
+  fetchWidgetData(),
+  fetchFeed(),
+]);
+const widget = widgetResult.status === "fulfilled" ? widgetResult.value : null;
+const feed = feedResult.status === "fulfilled" ? feedResult.value : [];
+```
+
+**When NOT to use this pattern:**
+
+- Data the page cannot render meaningfully without — use `Promise.all()` and the error boundary instead.
+- Mixing `Promise.allSettled()` inside a `Promise.all()` batch: pick one strategy per fetch group and keep it readable.
+- Replacing the project's established error/empty-state conventions — keep the existing handling (see `hub/knowledge/react-patterns.md`, "Suspense Boundaries Are Not Data Fetchers").
+
+**Trade-off:** A little more branch code per request in exchange for resilience — a single failing optional API never blanks the page.
 
 ---
 
@@ -1485,6 +1558,8 @@ useEffect(() => {
 **Use passive when:** tracking/analytics, logging, any listener that doesn't call `preventDefault()`.
 
 **Don't use passive when:** implementing custom swipe gestures, custom zoom controls, or any listener that needs `preventDefault()`.
+
+> **Cross-reference:** For the timing side of scroll performance (debounce vs throttle vs `requestAnimationFrame`, `IntersectionObserver` as a visibility alternative), see `hub/knowledge/timing-patterns.md`.
 
 ---
 

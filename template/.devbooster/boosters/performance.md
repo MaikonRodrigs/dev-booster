@@ -1,5 +1,9 @@
 # 🚀 BOOSTER: PERFORMANCE OPTIMIZER (EXPERT)
 
+## Required Kit Resources
+
+Every hub resource named by this booster is mandatory. The local Dev Booster may be hidden and Gitignored; a shallow search does not mean a resource is missing. Access the exact `.devbooster/...` path directly from the opened project root. If a required resource is not found, ALWAYS verify it via terminal before concluding it is missing — IDE/file-tree searches hide dotfiles and Gitignored paths. From the project root, run: `find .devbooster -maxdepth 5 -print -exec ls -ld {} \;` (or the equivalent recursive listing). Only if the terminal listing confirms the path is truly absent may you stop this booster and report the exact path. Never skip, replace, or improvise a required resource.
+
 You are the Performance Engineer. Your goal is to maximize speed and efficiency using Hub knowledge.
 
 ## 0. DEV BOOSTER ACTIVATION CONTRACT
@@ -89,6 +93,7 @@ When no persistent artifact exists, keep the chat trace concise: state the proje
 - `.devbooster/hub/skills/performance-profiling`
 - `.devbooster/hub/skills/nextjs-react-expert`
 - `agent_performance-optimizer`
+- `.devbooster/hub/knowledge/react-web-workers.md` — load when measured long tasks / blocking JS on the main thread are the bottleneck (Web Worker offload pattern for React: useRef holder, Effect lifecycle, typed message protocol, progress)
 
 ### Diagnostic Scripts (load only when relevant)
 

@@ -1,5 +1,9 @@
 # 🌐 BOOSTER: GLOBAL DOCUMENTATION (UNIVERSAL)
 
+## Required Kit Resources
+
+Every hub resource named by this booster is mandatory. The local Dev Booster may be hidden and Gitignored; a shallow search does not mean a resource is missing. Access the exact `.devbooster/...` path directly from the opened project root. If a required resource is not found, ALWAYS verify it via terminal before concluding it is missing — IDE/file-tree searches hide dotfiles and Gitignored paths. From the project root, run: `find .devbooster -maxdepth 5 -print -exec ls -ld {} \;` (or the equivalent recursive listing). Only if the terminal listing confirms the path is truly absent may you stop this booster and report the exact path. Never skip, replace, or improvise a required resource.
+
 You are being activated to create universal, transferable technical documentation.
 
 ## 0. DEV BOOSTER ACTIVATION CONTRACT
@@ -81,13 +85,12 @@ Your task is to generate a single Markdown documentation file following this EXA
 - which frontend and backend behaviors must be preserved
 - which parts are adaptable in another project
 
-======================== 2. OUTPUT FILE
-========================
+# ======================== 2. OUTPUT FILE
 
 - Create file at: `@booster-generated/global-documentation/<feature-context>-global-documentation.md`
 
-======================== 3. REQUIRED DOCUMENT STRUCTURE
-========================
+# ======================== 3. REQUIRED DOCUMENT STRUCTURE
+
 Use these 17 sections in this exact order:
 
 # 1. Feature Overview
@@ -124,8 +127,7 @@ Use these 17 sections in this exact order:
 
 # 17. Mini Context Summary
 
-======================== 4. WRITING RULES
-========================
+# ======================== 4. WRITING RULES
 
 - Use machine oriented language. Be deterministic and technical.
 - Document only what is supported by the current code.

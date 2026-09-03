@@ -1,7 +1,7 @@
 ---
 name: parallel-agents
 description: Multi-agent coordination and sub-agent orchestration. Use when a task spans multiple independent fronts (frontend, backend, tests), multiple independent stages or subtasks, requires multi-perspective validation, or can offload artifact generation to a dedicated sub-agent. Centralizes the five dispatch patterns (battery, council, single delegate, artifact offload, final verification), the activation package standard, return contracts, and safety invariants.
-allowed-tools: Read, Write, Edit, Glob, Grep, Bash, Agent
+allowed-tools: Read, Write, Edit, Bash, Agent
 ---
 
 # Parallel Agents — Sub-Agent Orchestration
@@ -39,6 +39,7 @@ The activating booster's own rules always win. If a booster forbids a pattern (e
 6. **Respect booster policy** — restrictions from the policy line (no audit, no KB, serial waves) are binding.
 7. **Mechanical gate** — batteries close with E2 owning the mechanical gates; single-unit flows without E2 close with the main agent running the project gate (`python .devbooster/hub/scripts/checklist.py .`).
 8. **Analysis-only final gate** — E1 and E2 only report; corrections are the main agent's job. Verifiers never fix, never improvise scope.
+9. **Terminal-only repository search** — never use the internal `Grep` or `Glob` tools for repository searches. All searches and file discovery MUST run through `Bash` in the terminal, with an explicit scope and exclusions where applicable. Known Kit paths may be accessed directly.
 
 ---
 
@@ -82,7 +83,7 @@ N sub-agents review the **same target** from different angles. Minimum **3** spe
 
 One sub-agent, bounded mission, **mandatory return** (`intel.md` envelope pattern).
 
-- **Used by:** `intel` (one delegate per remediation wave — waves remain serial by design), `auto-triage` (investigation units per booster).
+- **Used by:** `intel` (one delegate per remediation wave — waves remain serial by design), `auto-triage` (investigation units per booster), `smart-task` (mandatory single Forger unit per atomic plan).
 - Never parallelize waves the booster designed as serial.
 
 ### Pattern D — Artifact Offload
@@ -147,6 +148,8 @@ Both verifiers RETURN their findings in their response — a verification report
 **General rules:**
 
 - The package is the sub-agent's TOTAL scope. The sub-agent must NOT read the conversation history.
+- **Mandatory bootstrap:** before acting, every sub-agent reads `.devbooster/rules/PROTOCOL.md` directly from the opened project root. This required bootstrap is the sole exception to the package file list.
+- The local Dev Booster may be hidden and Gitignored. This never means it is absent: access known `.devbooster/...` paths directly from the project root instead of relying on a shallow search. If a required path is not found, verify it via terminal from the project root (`find .devbooster -maxdepth 5 -print -exec ls -ld {} \;`) before concluding it is missing — IDE/file-tree searches hide dotfiles and Gitignored paths. Do not improvise or continue without a required kit resource merely because it was not returned by a superficial search.
 - If the sub-agent needs more context, it asks or reads ONLY the files listed in the package.
 - The package is written in deterministic, machine-oriented language: imperative commands only (`Create`, `Update`, `Add`, `Replace`, `Remove`); vague terms banned (`adjust`, `handle`, `improve`, `refactor`); zero ambiguity.
 - **If the source already contains an atomic instruction** (`atomic.md` output, `smart-task` plan, template `EXECUTION PROMPTS PER STAGE`), the package WRAPS it — never rewrites it. `atomic.md` is the format authority for execution bodies.
@@ -158,7 +161,9 @@ Both verifiers RETURN their findings in their response — a verification report
 
 ```md
 # UNIT-<id> — <stage/front name>
+
 ENVELOPE
+
 - unit_id:
 - stage/front:
 - context anchor: [distilled decisions, contracts, business rules — NOT the conversation]
@@ -166,6 +171,7 @@ ENVELOPE
 - source: [plan path / atomic plan reference]
 
 BODY (atomic.md structure — the format authority)
+
 - Objective
 - Scope
   - Included
@@ -216,7 +222,9 @@ BODY (atomic.md structure — the format authority)
 
 ```md
 # VERIFY-<id> — Final verification of the flow
+
 E1 — MANUAL SEMANTIC VERIFIER
+
 - scope anchor: [plan + activation packages of the flow]
 - expected outcomes: [Validation section of each package]
 - files to inspect: [files touched, from return contracts]
@@ -225,6 +233,7 @@ E1 — MANUAL SEMANTIC VERIFIER
 - forbidden: fixing · reading the conversation · consulting executors
 
 E2 — MECHANICAL VERIFIER (parallel)
+
 - gate: [prettier → lint → typecheck → tests — check-build.md mechanics]
 - baseline rule: unhealthy baseline → bypass noise, record state
 - forbidden: fixing · complex fixes
@@ -240,6 +249,7 @@ Every sub-agent MUST return its result as a **FIXED FORM** — a structured outp
 
 ```md
 ## RETURN — <unit_id>
+
 - status: complete | blocked | needs_decision
 - objective: [restate the unit objective in 1 line]
 - files touched: [exact paths, one per line] | N/A
@@ -262,24 +272,25 @@ Rules:
 
 ## 8. Booster Activation Map (reference)
 
-| Booster | Types | Policy notes |
-| --- | --- | --- |
-| `builder` | A | Units execute approved stages; no auditing; personas: matching specialist |
-| `forger` | A | Units forge trusted atomic plans; no audit, no KB; personas: none |
-| `coder` | A | Units execute approved design fronts; personas: matching specialist |
-| `create` | A | Units per scaffold layer; only after PLAN.md verified; personas: matching specialist |
-| `enhance` | A | Units per independent feature layer; personas: matching specialist |
-| `review` | B | Council, minimum 3 members |
-| `auto-triage` | C | Investigation units per booster; council delegated to review |
-| `intel` | C | One delegate per wave; waves serial |
-| `implementation` | D | Plan artifact offload |
-| `planning` | C | Optional; only multi-stack risk verification |
-| `global-documentation` | D | 17-section spec offload |
-| `internal-documentation` | D | Doc + file maps offload |
-| `save-context` | D | YAML snapshot offload |
-| `changelog` / `commit` | D | Changelog offload |
-| `obsidian` | D | Content prep only; MCP approval gate kept |
+| Booster                  | Types | Policy notes                                                                          |
+| ------------------------ | ----- | ------------------------------------------------------------------------------------- |
+| `builder`                | A     | Units execute approved stages; no auditing; personas: matching specialist             |
+| `forger`                 | A     | Units forge trusted atomic plans; no audit, no KB; personas: none                     |
+| `coder`                  | A     | Units execute approved design fronts; personas: matching specialist                   |
+| `create`                 | A     | Units per scaffold layer; only after PLAN.md verified; personas: matching specialist  |
+| `enhance`                | A     | Units per independent feature layer; personas: matching specialist                    |
+| `review`                 | B     | Council, minimum 3 members                                                            |
+| `auto-triage`            | C     | Investigation units per booster; council delegated to review                          |
+| `smart-task`             | C     | MANDATORY single Forger unit per atomic plan; clean context — execution never in chat |
+| `intel`                  | C     | One delegate per wave; waves serial                                                   |
+| `implementation`         | D     | Plan artifact offload                                                                 |
+| `planning`               | C     | Optional; only multi-stack risk verification                                          |
+| `global-documentation`   | D     | 17-section spec offload                                                               |
+| `internal-documentation` | D     | Doc + file maps offload                                                               |
+| `save-context`           | D     | YAML snapshot offload                                                                 |
+| `changelog` / `commit`   | D     | Changelog offload                                                                     |
+| `obsidian`               | D     | Content prep only; MCP approval gate kept                                             |
 
 **Pattern E** is enabled for all `A` and `D` boosters: mandatory after batteries (≥2 units) and artifact offloads; optional for single-unit simple flows. `B` (council) and `C` (delegate) already carry their own validation loops.
 
-**Not applicable (by design):** `diff-review` (forbids councils), `refactor` (interdependent changes), `atomic` (generator, not orchestrator), `smart-task` (delegates execution to `builder`), `audit`/`code-audit` (delegatees), domain specialists (`frontend`, `backend`, `testing`, `design`, `seo`, `i18n`, `accessibility`, `performance`, `mobile`) — they are the UNITS of a battery, not orchestrators; serial analysis/ops boosters (`debug`, `discovery`, `investigation`, `context`, `init`, `advisor`, `deploy`, `check-build`, `stack-refresh`, `security`).
+**Not applicable (by design):** `diff-review` (forbids councils), `refactor` (interdependent changes), `atomic` (generator, not orchestrator), `audit`/`code-audit` (delegatees), domain specialists (`frontend`, `backend`, `testing`, `design`, `seo`, `i18n`, `accessibility`, `performance`, `mobile`) — they are the UNITS of a battery, not orchestrators; serial analysis/ops boosters (`debug`, `discovery`, `investigation`, `context`, `init`, `advisor`, `deploy`, `check-build`, `stack-refresh`, `security`).

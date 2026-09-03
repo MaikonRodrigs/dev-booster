@@ -1,5 +1,9 @@
 # 🧭 BOOSTER: INTERNAL DOCUMENTATION (PROJECT MAP)
 
+## Required Kit Resources
+
+Every hub resource named by this booster is mandatory. The local Dev Booster may be hidden and Gitignored; a shallow search does not mean a resource is missing. Access the exact `.devbooster/...` path directly from the opened project root. If a required resource is not found, ALWAYS verify it via terminal before concluding it is missing — IDE/file-tree searches hide dotfiles and Gitignored paths. From the project root, run: `find .devbooster -maxdepth 5 -print -exec ls -ld {} \;` (or the equivalent recursive listing). Only if the terminal listing confirms the path is truly absent may you stop this booster and report the exact path. Never skip, replace, or improvise a required resource.
+
 You are being activated to create internal, repository-specific project documentation with absolute paths, asset locations, operational files, and navigation guidance.
 
 ## 0. DEV BOOSTER ACTIVATION CONTRACT
@@ -103,15 +107,14 @@ Your task is to generate a single Markdown documentation file following this EXA
 - how an AI assistant should navigate the repository without guessing
 - which gaps could not be detected automatically
 
-======================== 2. OUTPUT FILE
-========================
+# ======================== 2. OUTPUT FILE
 
 - Create file at: `@booster-generated/internal-documentation/internal-project-documentation.md`
 - If the repository already has a stronger naming convention for internal docs, follow it only when it is obvious and already established.
 - Do not overwrite unrelated documentation unless the user explicitly asks.
 
-======================== 3. REQUIRED DOCUMENT STRUCTURE
-========================
+# ======================== 3. REQUIRED DOCUMENT STRUCTURE
+
 Use these 17 sections in this exact order:
 
 # 1. Project Identity
@@ -167,8 +170,7 @@ Este documento contém a especificação interna para replicação do projeto.
 O usuário vai decidir o direcionamento: resumo detalhado, plano de implementação, validação, ou execução.
 ```
 
-======================== 4. WRITING RULES
-========================
+# ======================== 4. WRITING RULES
 
 - Use machine oriented language. Be deterministic and technical.
 - Use absolute paths for the main path inventory.
@@ -181,8 +183,7 @@ O usuário vai decidir o direcionamento: resumo detalhado, plano de implementaç
 - **Section 17 (Mini Context Summary)** MUST include a dense, factual block with: entities, key contracts, critical business rules, main flows, and architectural decisions (ADR when applicable). This is the snapshot an AI needs to understand the project without executing.
 - **After section 17**, append an explicit **Directive for AI Readers** (see template below) that instructs any AI reading this document to memorize, analyze internally, and wait for the user — never implement or suggest next steps automatically.
 
-======================== 5. EXECUTION RULES
-========================
+# ======================== 5. EXECUTION RULES
 
 - First activation pass: summarize context and ask for confirmation.
 - After user confirmation: scan the repository, load only necessary inventory, and generate the full documentation.

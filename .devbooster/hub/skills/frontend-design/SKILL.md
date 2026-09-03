@@ -15,15 +15,16 @@ allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 
 **Read REQUIRED files always, OPTIONAL only when needed:**
 
-| File                                         | Status          | When to Read                      |
-| -------------------------------------------- | --------------- | --------------------------------- |
-| [ux-psychology.md](ux-psychology.md)         | 🔴 **REQUIRED** | Always read first!                |
-| [color-system.md](color-system.md)           | ⚪ Optional     | Color/palette decisions           |
-| [typography-system.md](typography-system.md) | ⚪ Optional     | Font selection/pairing            |
-| [visual-effects.md](visual-effects.md)       | ⚪ Optional     | Glassmorphism, shadows, gradients |
-| [animation-guide.md](animation-guide.md)     | ⚪ Optional     | Animation needed                  |
-| [motion-graphics.md](motion-graphics.md)     | ⚪ Optional     | Lottie, GSAP, 3D                  |
-| [decision-trees.md](decision-trees.md)       | ⚪ Optional     | Context templates                 |
+| File                                         | Status          | When to Read                             |
+| -------------------------------------------- | --------------- | ---------------------------------------- |
+| [ux-psychology.md](ux-psychology.md)         | 🔴 **REQUIRED** | Always read first!                       |
+| [color-system.md](color-system.md)           | ⚪ Optional     | Color/palette decisions                  |
+| [typography-system.md](typography-system.md) | ⚪ Optional     | Font selection/pairing                   |
+| [visual-effects.md](visual-effects.md)       | ⚪ Optional     | Glassmorphism, shadows, gradients        |
+| [animation-guide.md](animation-guide.md)     | ⚪ Optional     | Animation needed                         |
+| [motion-graphics.md](motion-graphics.md)     | ⚪ Optional     | Lottie, GSAP, 3D                         |
+| [decision-trees.md](decision-trees.md)       | ⚪ Optional     | Context templates                        |
+| [ai-tells.md](ai-tells.md)                   | ⚪ Optional     | Reviewing/detecting generated-looking UI |
 
 > 🔴 **ux-psychology.md = ALWAYS READ. Others = only if relevant.**
 
@@ -245,7 +246,7 @@ Elevation concept:
 ├── Higher elements = larger shadows
 ├── Y-offset > X-offset (light from above)
 ├── Multiple layers = more realistic
-└── Dark mode: may need glow instead
+└── Dark mode: layered shadows + surface tints, not glow (glow = AI tell)
 ```
 
 ### Gradient Usage
@@ -277,12 +278,12 @@ Duration based on:
 
 ### Easing Selection
 
-| Action   | Easing      | Why                   |
-| -------- | ----------- | --------------------- |
-| Entering | Ease-out    | Decelerate, settle in |
-| Leaving  | Ease-in     | Accelerate, exit      |
-| Emphasis | Ease-in-out | Smooth, deliberate    |
-| Playful  | Bounce      | Fun, energetic        |
+| Action   | Easing        | Why                                        |
+| -------- | ------------- | ------------------------------------------ |
+| Entering | Ease-out      | Decelerate, settle in                      |
+| Leaving  | Ease-in       | Accelerate, exit                           |
+| Emphasis | Ease-in-out   | Smooth, deliberate                         |
+| Playful  | Fast ease-out | Energetic but grounded (no bounce/elastic) |
 
 ### Performance
 
@@ -393,6 +394,7 @@ For deeper guidance on specific areas:
 - [motion-graphics.md](motion-graphics.md) - Advanced: Lottie, GSAP, SVG, 3D, Particles
 - [decision-trees.md](decision-trees.md) - Context-specific templates
 - [ux-psychology.md](ux-psychology.md) - User psychology deep dive
+- [ai-tells.md](ai-tells.md) - AI-generated UI detection checklist (why it fails + fix)
 
 ---
 

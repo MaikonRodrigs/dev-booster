@@ -1,5 +1,9 @@
 # 🧪 BOOSTER: QA & TESTING ELITE
 
+## Required Kit Resources
+
+Every hub resource named by this booster is mandatory. The local Dev Booster may be hidden and Gitignored; a shallow search does not mean a resource is missing. Access the exact `.devbooster/...` path directly from the opened project root. If a required resource is not found, ALWAYS verify it via terminal before concluding it is missing — IDE/file-tree searches hide dotfiles and Gitignored paths. From the project root, run: `find .devbooster -maxdepth 5 -print -exec ls -ld {} \;` (or the equivalent recursive listing). Only if the terminal listing confirms the path is truly absent may you stop this booster and report the exact path. Never skip, replace, or improvise a required resource.
+
 Activating Quality Engineering and Testing.
 
 ## 0. DEV BOOSTER ACTIVATION CONTRACT
@@ -102,5 +106,17 @@ When no persistent artifact exists, keep the chat trace concise: state the proje
 - Cover happy path, edge cases, and failure paths.
 - Prefer the smallest test level that gives enough confidence.
 - Use browser or full-flow automation only when the risk justifies it.
+
+## 3.1 PROVE-IT PATTERN (BUG FIXES)
+
+When a bug is reported, do NOT start by attempting the fix. Start by writing a test that reproduces the bug:
+
+1. Write a test that demonstrates the bug with the current code.
+2. Run it and confirm it FAILS — this proves the bug exists and gives a regression guard.
+3. Implement the fix.
+4. Run the test again and confirm it PASSES — this proves the fix works.
+5. Run the related suite to confirm no regressions.
+
+A fix without a failing reproduction test is not proven — it is a guess that happened to be right. The reproduction test is the proof the bug existed and the proof the fix resolved it.
 
 **Reply:** On activation only, use the armed-mode banner above. On the first real task, load the minimum required testing context based on the user's pain, then execute.

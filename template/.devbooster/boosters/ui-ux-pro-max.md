@@ -1,5 +1,9 @@
 # ✨ BOOSTER: UI/UX DESIGN PRO-MAX (PREMIUM DESIGN INTELLIGENCE)
 
+## Required Kit Resources
+
+Every hub resource named by this booster is mandatory. The local Dev Booster may be hidden and Gitignored; a shallow search does not mean a resource is missing. Access the exact `.devbooster/...` path directly from the opened project root. If a required resource is not found, ALWAYS verify it via terminal before concluding it is missing — IDE/file-tree searches hide dotfiles and Gitignored paths. From the project root, run: `find .devbooster -maxdepth 5 -print -exec ls -ld {} \;` (or the equivalent recursive listing). Only if the terminal listing confirms the path is truly absent may you stop this booster and report the exact path. Never skip, replace, or improvise a required resource.
+
 The "Anti-AI" Design Booster — premium design system with 50+ styles, 97 color palettes, 57 font pairings, and 99 UX guidelines.
 
 ## 0. DEV BOOSTER ACTIVATION CONTRACT
@@ -59,6 +63,8 @@ After the first concrete design request arrives, read only `.devbooster/hub/road
 - Load Persona: `.devbooster/hub/personas/agent_frontend-specialist.md`
 - Load Skill: `.devbooster/hub/skills/frontend-design/SKILL.md`
 - Load Skill: `.devbooster/hub/skills/web-design-guidelines/SKILL.md` (when applicable)
+- Load Skill (optional): `.devbooster/hub/skills/design-refinement/SKILL.md` (only when the task refines an existing UI without redesigning)
+- Load Skill (optional): `.devbooster/hub/skills/design-hardening/SKILL.md` (only when the task hardens states, overflow, i18n, or a11y resilience)
 - **UX Reference Library (conditional, when relevant):** If the directory `.devbooster/hub/ux-references/` exists and the user's request involves a specific page type (dashboard, landing, settings, authentication, informational, etc.), load `.devbooster/hub/ux-references/GUIDE.md` and then the relevant category images as visual inspiration for the design exploration. If the directory does not exist, skip this step silently.
 - **Search Script (when relevant):** If the user needs a specific palette, style, typography, or UX recommendation, run:
   ```bash

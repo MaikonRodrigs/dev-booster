@@ -6,7 +6,7 @@ allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 
 # Next.js & React Performance Expert
 
-> **From Vercel Engineering** - 57 optimization rules prioritized by impact
+> **From Vercel Engineering** - 58 optimization rules prioritized by impact
 > **Philosophy:** Eliminate waterfalls first, optimize bundles second, then micro-optimize.
 
 ---
@@ -23,7 +23,7 @@ allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 
 | File                                    | Impact             | Rules    | When to Read                                                    |
 | --------------------------------------- | ------------------ | -------- | --------------------------------------------------------------- |
-| `1-async-eliminating-waterfalls.md`     | 🔴 **CRITICAL**    | 5 rules  | Slow page loads, sequential API calls, data fetching waterfalls |
+| `1-async-eliminating-waterfalls.md`     | 🔴 **CRITICAL**    | 6 rules  | Slow page loads, sequential API calls, data fetching waterfalls |
 | `2-bundle-bundle-size-optimization.md`  | 🔴 **CRITICAL**    | 5 rules  | Large bundle size, slow Time to Interactive, First Load issues  |
 | `3-server-server-side-performance.md`   | 🟠 **HIGH**        | 7 rules  | Slow SSR, API route optimization, server-side waterfalls        |
 | `4-client-client-side-data-fetching.md` | 🟡 **MEDIUM-HIGH** | 4 rules  | Client data management, SWR patterns, deduplication             |
@@ -32,7 +32,7 @@ allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 | `7-js-javascript-performance.md`        | ⚪ **LOW-MEDIUM**  | 12 rules | Micro-optimizations, caching, loop performance                  |
 | `8-advanced-advanced-patterns.md`       | 🔵 **VARIABLE**    | 3 rules  | Advanced React patterns, useLatest, init-once                   |
 
-**Total: 57 rules across 8 categories**
+**Total: 58 rules across 8 categories**
 
 ---
 
@@ -221,7 +221,7 @@ Before shipping to production:
 ### Section 1: Eliminating Waterfalls (CRITICAL)
 
 **Impact:** Each waterfall adds 100-500ms+ latency
-**Key Concepts:** Parallel fetching, Promise.all(), Suspense boundaries, preloading
+**Key Concepts:** Parallel fetching, Promise.all(), Promise.allSettled(), Suspense boundaries, preloading
 
 ### Section 2: Bundle Size Optimization (CRITICAL)
 
@@ -283,4 +283,4 @@ Before shipping to production:
 **Source:** Vercel Engineering
 **Date:** January 2026
 **Version:** 1.0.0
-**Total Rules:** 57 across 8 categories
+**Total Rules:** 58 across 8 categories

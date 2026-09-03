@@ -37,7 +37,7 @@ After running the command, your project gets:
 ```
 .devbooster/
 ├── MANIFEST.md          ← inventory of all agents, skills, and boosters
-├── boosters/            ← 46 expert activators (intel, auto triage, commit, debug, review, design, design-engineer, deploy, enhance, ui-ux-pro-max, smart-task, save-reference, check-build, obsidian, forger, init, motion...)
+├── boosters/            ← 50 expert activators (intel, auto triage, commit, debug, review, design, design-engineer, deploy, enhance, ui-ux-pro-max, smart-task, pilot, save-reference, check-build, obsidian, forger, init, refine, motion, observability, ci-cd, interview...)
 ├── hub/                 ← 43+ skills and operational scripts
 └── rules/
     ├── PROTOCOL.md      ← governance and conduct rules
@@ -105,30 +105,34 @@ And preserves:
 
 Boosters are expert activators you invoke manually during development.
 
-| Booster                     | When to use                                                                                                                                   |
-| --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| `intel.md`                  | Optional post-bootstrap project health analysis with adaptive diagnostics, persistent artifact, bounded remediation waves, and reanalysis     |
-| `auto-triage.md`            | Manual activation with automatic, artifact-centered engineering triage; requires separate Plan + Review and reviewed-plan execution approvals |
-| `implementation.md`         | Selecting the right implementation plan after context is mature                                                                               |
-| `debug.md`                  | Systematic root cause analysis                                                                                                                |
-| `review.md`                 | Pre-PR code audit                                                                                                                             |
-| `design.md`                 | UI/UX component review                                                                                                                        |
-| `design-engineer.md`        | Roadmap-based discovery of frontend, component, motion, visual, and prototyping solutions                                                     |
-| `deploy.md`                 | Pre-flight deployment checks                                                                                                                  |
-| `security.md`               | Security posture audit                                                                                                                        |
-| `stack-refresh.md`          | Audit outdated runtimes/frameworks/dependencies and propose phased upgrades                                                                   |
-| `refactor.md`               | Cleaning technical debt                                                                                                                       |
-| `planning.md`               | Validating readiness, risks, and gaps before implementation                                                                                   |
-| `global-documentation.md`   | Transferable technical documentation for mature feature context                                                                               |
-| `internal-documentation.md` | Internal project map with absolute paths, files, assets, scripts, and edit boundaries                                                         |
-| `discovery.md`              | Product brainstorm                                                                                                                            |
-| `performance.md`            | Core Web Vitals / bundle issues                                                                                                               |
-| `code-audit.md`             | Strict Code Auditor (Syntax, React Doctor) before PR                                                                                          |
-| `audit.md`                  | Make terminal lint and typecheck operational, check bypasses, and separate safe fixes from deep review                                        |
-| `commit.md`                 | Worktree checkpoint commit with conversational preflight, security gate, and root `CHANGELOG.md` update                                       |
-| `init.md`                   | Read-only project investigation that answers focused technical questions from codebase evidence                                               |
-| `obsidian.md`               | Contextual Obsidian MCP memory with canonical project notes and explicit approval before writes                                               |
-| + 29 more                   | See `.devbooster/MANIFEST.md`                                                                                                                 |
+| Booster                     | When to use                                                                                                                                        |
+| --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `intel.md`                  | Optional post-bootstrap project health analysis with adaptive diagnostics, persistent artifact, bounded remediation waves, and reanalysis          |
+| `auto-triage.md`            | Manual activation with automatic, artifact-centered engineering triage; requires separate Plan + Review and reviewed-plan execution approvals      |
+| `implementation.md`         | Selecting the right implementation plan after context is mature                                                                                    |
+| `debug.md`                  | Systematic root cause analysis                                                                                                                     |
+| `review.md`                 | Pre-PR code audit                                                                                                                                  |
+| `design.md`                 | UI/UX component review                                                                                                                             |
+| `design-engineer.md`        | Roadmap-based discovery of frontend, component, motion, visual, and prototyping solutions                                                          |
+| `deploy.md`                 | Pre-flight deployment checks                                                                                                                       |
+| `security.md`               | Security posture audit                                                                                                                             |
+| `stack-refresh.md`          | Audit outdated runtimes/frameworks/dependencies and propose phased upgrades                                                                        |
+| `refactor.md`               | Cleaning technical debt                                                                                                                            |
+| `planning.md`               | Validating readiness, risks, and gaps before implementation                                                                                        |
+| `pilot.md`                  | Technical direction planning from a refine artifact — studies the codebase and recommends the execution route (smart-task / auto-triage / enhance) |
+| `global-documentation.md`   | Transferable technical documentation for mature feature context                                                                                    |
+| `internal-documentation.md` | Internal project map with absolute paths, files, assets, scripts, and edit boundaries                                                              |
+| `discovery.md`              | Product brainstorm                                                                                                                                 |
+| `performance.md`            | Core Web Vitals / bundle issues                                                                                                                    |
+| `code-audit.md`             | Strict Code Auditor (Syntax, React Doctor) before PR                                                                                               |
+| `audit.md`                  | Make terminal lint and typecheck operational, check bypasses, and separate safe fixes from deep review                                             |
+| `commit.md`                 | Worktree checkpoint commit with conversational preflight, security gate, and root `CHANGELOG.md` update                                            |
+| `init.md`                   | Read-only project investigation that answers focused technical questions from codebase evidence                                                    |
+| `obsidian.md`               | Contextual Obsidian MCP memory with canonical project notes and explicit approval before writes                                                    |
+| `observability.md`          | Observability audit — structured logs, correlation ID, RED/USE metrics, tracing, and symptom-based alerting                                        |
+| `ci-cd.md`                  | CI/CD pipeline audit — Shift Left, quality gates, feedback loops, secrets hygiene, and rollout safety                                              |
+| `interview.md`              | Intent interview — one question at a time with attached guess to extract what you actually want before any plan                                    |
+| + 34 more                   | See `.devbooster/MANIFEST.md`                                                                                                                      |
 
 The practical activation flow is simple:
 
@@ -155,7 +159,7 @@ Many boosters now use a two-step flow:
 | `global-documentation.md`   | Final documentation artifact only after confirmation                                                                                                                    |
 | `implementation.md`         | Final implementation artifact only after confirmation                                                                                                                   |
 | `internal-documentation.md` | Final documentation artifact only after confirmation                                                                                                                    |
-| `motion.md`                  | Single memory artifact at `@booster-generated/motion/` after the flow completes; never on activation                                                                    |
+| `motion.md`                 | Single memory artifact at `@booster-generated/motion/` after the flow completes; never on activation                                                                    |
 | `investigation.md`          | No artifact by default; save only if the user explicitly asks                                                                                                           |
 | `intel.md`                  | Creates and continuously updates the canonical analysis, wave, authorization, and recovery artifact at `@booster-generated/intel/` after explicit analysis confirmation |
 | `auto-triage.md`            | Creates a visible evidence-board state artifact at `@booster-generated/auto-triage/` after a real demand; never on activation alone                                     |
@@ -168,6 +172,9 @@ Many boosters now use a two-step flow:
 | `diff-review.md`            | Must not generate files, artifacts, logs, or review documents                                                                                                           |
 | `obsidian.md`               | Does not generate local artifacts; writes only to Obsidian through MCP after explicit approval                                                                          |
 | `commit.md`                 | No `@booster-generated` artifact; updates only the root `CHANGELOG.md` after approval                                                                                   |
+| `observability.md`          | Always writes an execution-state artifact to `@booster-generated/observability/` during its run                                                                         |
+| `ci-cd.md`                  | Always writes an execution-state artifact to `@booster-generated/ci-cd/` during its run                                                                                 |
+| `interview.md`              | Never creates artifacts; the final intent block is delivered in chat as a single code block                                                                             |
 
 ---
 
@@ -214,10 +221,16 @@ This keeps the conversation faster while still preserving the option to material
 - `audit.md`
 - `stack-refresh.md`
 - `auto-triage.md`
+- `observability.md`
+- `ci-cd.md`
+
+> `interview.md` never creates artifacts — its final deliverable is a single code block in chat.
 
 ### Artifact locations
 
 When a user explicitly asks to save or confirms final generation, artifacts are organized under `@booster-generated/`, with each booster writing to its own folder. Execution-state boosters — including `auto-triage.md` after it receives a real demand — are the explicit exception and create their visible state artifact during the flow.
+
+Artifacts are **local project files only**: always write them with local file tools under `@booster-generated/`, never through MCP. Requesting an artifact is not a request to use MCP; the only MCP user in the kit is the Obsidian memory booster (`@Obsidian`) for vault notes, and only when explicitly invoked.
 
 ### Manual & Shortcut Triggers
 

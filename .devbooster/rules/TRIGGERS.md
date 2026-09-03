@@ -28,6 +28,7 @@ Whenever the user references a `@` trigger, activate the mapped booster or actio
 - **`@Builder`** ➔ `.devbooster/boosters/builder.md`
 - **`@Changelog`** ➔ `.devbooster/boosters/changelog.md`
 - **`@CheckBuild`** ➔ `.devbooster/boosters/check-build.md`
+- **`@CICD`** ➔ `.devbooster/boosters/ci-cd.md`
 - **`@CodeAudit`** ➔ `.devbooster/boosters/code-audit.md`
 - **`@Coder`** ➔ `.devbooster/boosters/coder.md`
 - **`@Commit`** ➔ `.devbooster/boosters/commit.md`
@@ -46,16 +47,20 @@ Whenever the user references a `@` trigger, activate the mapped booster or actio
 - **`@Intel`** ➔ `.devbooster/boosters/intel.md`
 - **`@Implementation`** ➔ `.devbooster/boosters/implementation.md`
 - **`@InternalDoc`** ➔ `.devbooster/boosters/internal-documentation.md`
+- **`@Interview`** ➔ `.devbooster/boosters/interview.md`
 - **`@Investigation`** ➔ `.devbooster/boosters/investigation.md`
 - **`@Mobile`** ➔ `.devbooster/boosters/mobile.md`
 - **`@Motion`** ➔ `.devbooster/boosters/motion.md`
+- **`@Observability`** ➔ `.devbooster/boosters/observability.md`
 - **`@Obsidian`** ➔ `.devbooster/boosters/obsidian.md` (MCP — only usable when the user explicitly asks, per PROTOCOL)
 - **`@Performance`** ➔ `.devbooster/boosters/performance.md`
 - **`@Planning`** ➔ `.devbooster/boosters/planning.md`
 - **`@Refactor`** ➔ `.devbooster/boosters/refactor.md`
+- **`@Refine`** ➔ `.devbooster/boosters/refine.md`
+- **`@Pilot`** ➔ `.devbooster/boosters/pilot.md`
 - **`@Review`** ➔ `.devbooster/boosters/review.md`
 - **`@ReviewDiff`** ➔ `.devbooster/boosters/diff-review.md`
-- **`@SaveReference`** ➔ `.devbooster/boosters/save-reference.md`
+
 - **`@Security`** ➔ `.devbooster/boosters/security.md`
 - **`@Seo`** ➔ `.devbooster/boosters/seo.md`
 - **`@SmartTask`** ➔ `.devbooster/boosters/smart-task.md`

@@ -1,5 +1,9 @@
 # ✨ BOOSTER: UI/UX DESIGN PRO-MAX
 
+## Required Kit Resources
+
+Every hub resource named by this booster is mandatory. The local Dev Booster may be hidden and Gitignored; a shallow search does not mean a resource is missing. Access the exact `.devbooster/...` path directly from the opened project root. If a required resource is not found, ALWAYS verify it via terminal before concluding it is missing — IDE/file-tree searches hide dotfiles and Gitignored paths. From the project root, run: `find .devbooster -maxdepth 5 -print -exec ls -ld {} \;` (or the equivalent recursive listing). Only if the terminal listing confirms the path is truly absent may you stop this booster and report the exact path. Never skip, replace, or improvise a required resource.
+
 The "Anti-AI" Booster.
 
 ## 0. DEV BOOSTER ACTIVATION CONTRACT
@@ -73,6 +77,9 @@ Rules:
 
 - `.devbooster/hub/personas/skill_frontend-design.md`
 - `.devbooster/hub/skills/frontend-design/anti-generic-guide.md`
+- `.devbooster/hub/skills/frontend-design/ai-tells.md` (optional — detection checklist when reviewing generated-looking UI)
+- `.devbooster/hub/skills/design-refinement/SKILL.md` (optional — only when refining an existing UI without redesigning)
+- `.devbooster/hub/skills/design-hardening/SKILL.md` (optional — only when hardening states, overflow, i18n, or accessibility resilience)
 - `.devbooster/hub/ux-references/GUIDE.md` (conditional — only if the directory `.devbooster/hub/ux-references/` exists and the task involves a page type represented in the reference library; load only the matching category. If the directory does not exist, skip silently.)
 
 **Reply:** On activation only, use the armed-mode banner above. On the first real task, load the minimum required design context based on the user's pain, then execute.

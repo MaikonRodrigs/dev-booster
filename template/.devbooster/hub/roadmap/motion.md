@@ -56,4 +56,11 @@
 - **URL:** https://www.theatrejs.com/
 - **Tags:** `#motion #animation #javascript #web`
 
+## MorphIcons
+
+- **Resolve:** animar a transição entre ícones SVG de traço (Lucide, Tabler, Heroicons) com rotação ótima em forma fechada (Procrustes 2D) e springs interrompíveis.
+- **Resumo:** biblioteca de morphing de ícones, zero dependências (~6.5 KB), ícones consumidos como dados; suporta React, Vue, Svelte, React Native e Astro.
+- **URL:** https://www.morphicons.com/
+- **Tags:** `#motion #icons #svg #animation #microinteraction`
+
 Para qualquer solução, verificar primeiro a documentação oficial, integração com o framework atual, bundle, suporte a `prefers-reduced-motion` e comportamento de teclado/leitor de tela.

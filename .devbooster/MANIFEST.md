@@ -54,27 +54,29 @@ The knowledge base at `.devbooster/hub/knowledge/` contains curated, field-valid
 
 The base is read-only. Only project maintainers update it.
 
-| Article                                                                                    | Content                                                                               |
-| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------- |
-| [`index.md`](.devbooster/hub/knowledge/index.md)                                           | Global catalog, usage protocol, trusted official source matrix, and maintenance rules |
-| [`react-patterns.md`](.devbooster/hub/knowledge/react-patterns.md)                         | Effects, derived state, async UI strategy, Suspense boundaries, hooks, state mutation |
-| [`nextjs-pitfalls.md`](.devbooster/hub/knowledge/nextjs-pitfalls.md)                       | Build/lint changes, config drift, Server/Client boundaries, route loading, hydration  |
-| [`eslint-migration.md`](.devbooster/hub/knowledge/eslint-migration.md)                     | ESLint 9 flat config migration, masking, inline suppressions                          |
-| [`typescript-patterns.md`](.devbooster/hub/knowledge/typescript-patterns.md)               | Import paths, suppressions, discriminated UI states, runtime validation, null safety  |
-| [`dependency-guide.md`](.devbooster/hub/knowledge/dependency-guide.md)                     | Safe update model, dependency analysis, audit interpretation                          |
-| [`upgrade-fallout.md`](.devbooster/hub/knowledge/upgrade-fallout.md)                       | Upgrade fallout: scripts, config, new lint rules, validation                          |
-| [`migration-guides.md`](.devbooster/hub/knowledge/migration-guides.md)                     | Library-specific migrations (react-to-print, Formik, Radix, shadcn)                   |
-| [`nodejs-patterns.md`](.devbooster/hub/knowledge/nodejs-patterns.md)                       | Runtime alignment, ESM/CJS, environment, async failures, scripts                      |
-| [`package-manager-patterns.md`](.devbooster/hub/knowledge/package-manager-patterns.md)     | Lockfiles, peers, overrides, audit, workspace, immutable installs                     |
-| [`monorepo-patterns.md`](.devbooster/hub/knowledge/monorepo-patterns.md)                   | Package boundaries, dependency resolution, shared config, cache                       |
-| [`trpc-patterns.md`](.devbooster/hub/knowledge/trpc-patterns.md)                           | Context/auth, input validation, errors, type integrity, router design                 |
-| [`tanstack-patterns.md`](.devbooster/hub/knowledge/tanstack-patterns.md)                   | Query ownership, keys, invalidation, async UI states, caching, SSR hydration          |
-| [`prisma-postgresql-patterns.md`](.devbooster/hub/knowledge/prisma-postgresql-patterns.md) | Generation drift, migrations, query loading, transactions, indexes                    |
-| [`nestjs-patterns.md`](.devbooster/hub/knowledge/nestjs-patterns.md)                       | Modules, DI, validation, guards, exceptions, configuration                            |
-| [`vite-patterns.md`](.devbooster/hub/knowledge/vite-patterns.md)                           | Env exposure, base paths, aliases, ESM/CJS, optimizer, plugins, React integration     |
-| [`tailwind-shadcn-patterns.md`](.devbooster/hub/knowledge/tailwind-shadcn-patterns.md)     | v3/v4 migration, source scanning, tokens, themes, design-system reuse                 |
-| [`testing-patterns.md`](.devbooster/hub/knowledge/testing-patterns.md)                     | Environments, determinism, mocks, async UI behavior, CI parity, validation            |
-| [`angular-patterns.md`](.devbooster/hub/knowledge/angular-patterns.md)                     | Standalone APIs, DI, signals/RxJS, forms, HTTP, routing                               |
+| Article                                                                                    | Content                                                                                                                |
+| ------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------- |
+| [`index.md`](.devbooster/hub/knowledge/index.md)                                           | Global catalog, usage protocol, trusted official source matrix, and maintenance rules                                  |
+| [`react-patterns.md`](.devbooster/hub/knowledge/react-patterns.md)                         | Effects, derived state, async UI strategy, Suspense boundaries, hooks, state mutation                                  |
+| [`react-web-workers.md`](.devbooster/hub/knowledge/react-web-workers.md)                   | Web Worker offload of CPU-heavy work, useRef holder, Effect lifecycle, typed message protocol, progress, transferables |
+| [`timing-patterns.md`](.devbooster/hub/knowledge/timing-patterns.md)                       | Debounce/throttle decision model, leading/trailing, maxWait, cancellation, rAF, passive listeners, stale responses     |
+| [`nextjs-pitfalls.md`](.devbooster/hub/knowledge/nextjs-pitfalls.md)                       | Build/lint changes, config drift, Server/Client boundaries, route loading, hydration                                   |
+| [`eslint-migration.md`](.devbooster/hub/knowledge/eslint-migration.md)                     | ESLint 9 flat config migration, masking, inline suppressions                                                           |
+| [`typescript-patterns.md`](.devbooster/hub/knowledge/typescript-patterns.md)               | Import paths, suppressions, discriminated UI states, runtime validation, null safety                                   |
+| [`dependency-guide.md`](.devbooster/hub/knowledge/dependency-guide.md)                     | Safe update model, dependency analysis, audit interpretation                                                           |
+| [`upgrade-fallout.md`](.devbooster/hub/knowledge/upgrade-fallout.md)                       | Upgrade fallout: scripts, config, new lint rules, validation                                                           |
+| [`migration-guides.md`](.devbooster/hub/knowledge/migration-guides.md)                     | Library-specific migrations (react-to-print, Formik, Radix, shadcn)                                                    |
+| [`nodejs-patterns.md`](.devbooster/hub/knowledge/nodejs-patterns.md)                       | Runtime alignment, ESM/CJS, environment, async failures, scripts                                                       |
+| [`package-manager-patterns.md`](.devbooster/hub/knowledge/package-manager-patterns.md)     | Lockfiles, peers, overrides, audit, workspace, immutable installs                                                      |
+| [`monorepo-patterns.md`](.devbooster/hub/knowledge/monorepo-patterns.md)                   | Package boundaries, dependency resolution, shared config, cache                                                        |
+| [`trpc-patterns.md`](.devbooster/hub/knowledge/trpc-patterns.md)                           | Context/auth, input validation, errors, type integrity, router design                                                  |
+| [`tanstack-patterns.md`](.devbooster/hub/knowledge/tanstack-patterns.md)                   | Query ownership, keys, invalidation, async UI states, caching, SSR hydration                                           |
+| [`prisma-postgresql-patterns.md`](.devbooster/hub/knowledge/prisma-postgresql-patterns.md) | Generation drift, migrations, query loading, transactions, indexes                                                     |
+| [`nestjs-patterns.md`](.devbooster/hub/knowledge/nestjs-patterns.md)                       | Modules, DI, validation, guards, exceptions, configuration                                                             |
+| [`vite-patterns.md`](.devbooster/hub/knowledge/vite-patterns.md)                           | Env exposure, base paths, aliases, ESM/CJS, optimizer, plugins, React integration                                      |
+| [`tailwind-shadcn-patterns.md`](.devbooster/hub/knowledge/tailwind-shadcn-patterns.md)     | v3/v4 migration, source scanning, tokens, themes, design-system reuse                                                  |
+| [`testing-patterns.md`](.devbooster/hub/knowledge/testing-patterns.md)                     | Environments, determinism, mocks, async UI behavior, CI parity, validation                                             |
+| [`angular-patterns.md`](.devbooster/hub/knowledge/angular-patterns.md)                     | Standalone APIs, DI, signals/RxJS, forms, HTTP, routing                                                                |
 
 ---
 
@@ -84,7 +86,7 @@ The base is read-only. Only project maintainers update it.
 
 - `skill_ui-ux-pro-max`: Premium UI Bible (50 styles, 21 palettes, 50 fonts).
 - `skill_frontend-design`: The "Anti-Generic" design patterns and system tokens.
-- `skill_react-best-practices`: 57+ Vercel rules for React & Next.js performance.
+- `skill_react-best-practices`: 58+ Vercel rules for React & Next.js performance.
 - `skill_web-design-guidelines`: UX Audit (100+ rules for accessibility & Web Vitals).
 - `skill_tailwind-patterns`: Atomic CSS v4 and modern utility-first systems.
 - `skill_mobile-design`: Specialized Mobile UX and touch patterns.
@@ -94,6 +96,8 @@ The base is read-only. Only project maintainers update it.
 - `skill_motion-design`: Motion-system selection, microinteractions, accessibility, and performance constraints.
 - `skill_component-composition`: Component-library selection and adaptation with framework/version verification.
 - `skill_visual-validation`: Screenshot, prototype, responsive, accessibility, and design-to-code validation.
+- `skill_design-refinement`: Refinement playbook for existing UI — polish, typeset, layout, bolder, quieter, distill, clarify.
+- `skill_design-hardening`: Production-hardening playbook — overflow, i18n, errors, empty/loading states, edge cases, accessibility resilience.
 
 ### Backend, API & Database
 
@@ -145,54 +149,59 @@ The base is read-only. Only project maintainers update it.
 
 _All boosters live at: `.devbooster/boosters/`_
 
-| Booster                     | Purpose                                                                                                                                                                    |
-| --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `create.md`                 | Master Architect — builds new features and apps with structural scaffolding.                                                                                               |
-| `performance.md`            | Performance Engineer — optimizes loading speed and Core Web Vitals.                                                                                                        |
-| `i18n.md`                   | Localization Specialist — handles internationalization and translations.                                                                                                   |
-| `accessibility.md`          | Accessibility Auditor — ensures WCAG compliance and semantic HTML.                                                                                                         |
-| `refactor.md`               | Quality Lead — refactors code, applies Clean Code/SOLID, and clears technical debt.                                                                                        |
-| `implementation.md`         | Reviews context, selects `simple` / `standard` / `heavy`, and asks for confirmation before generating the plan.                                                            |
-| `global-documentation.md`   | Generates the 17-section universal technical documentation spec.                                                                                                           |
-| `internal-documentation.md` | Generates repository-specific internal documentation with absolute paths and file/asset maps.                                                                              |
-| `atomic.md`                 | Surgical, single-step implementation spec (final execution stage).                                                                                                         |
-| `auto-triage.md`            | Auto Triage Orchestrator — manually activated, artifact-centered engineering triage with separate approvals for Plan + Review and reviewed-plan execution.                 |
-| `intel.md`                  | Post-bootstrap project health orchestrator — runs adaptive diagnostics, records evidence, delegates bounded remediation waves, and reanalyzes progress.                    |
-| `advisor.md`                | Hub Consultant — recommends the best booster path for the user's task.                                                                                                     |
-| `review.md`                 | Elite Auditor — multi-agent orchestration for plan and architecture validation.                                                                                            |
-| `code-audit.md`             | Strict Code Auditor — syntax, linting, and React Doctor diagnostics for the codebase.                                                                                      |
-| `debug.md`                  | Systematic Root Cause Analysis with hypothesis engine.                                                                                                                     |
-| `discovery.md`              | Strategic Product Consultant — 3-path brainstorm protocol.                                                                                                                 |
-| `investigation.md`          | Context Pre-Orchestrator — no-code analysis before implementation.                                                                                                         |
-| `context.md`                | Context Assimilator — silent, non-proactive mapping of code flows and file context.                                                                                        |
-| `init.md`                   | Project Init Investigator — evidence-first, read-only answers about the current codebase with concise technical responses.                                                 |
-| `design.md`                 | UI/UX Design standards and component audit.                                                                                                                                |
-| `deploy.md`                 | Pre-flight checks and deployment execution protocol.                                                                                                                       |
-| `security.md`               | Security posture audit and threat modeling.                                                                                                                                |
-| `stack-refresh.md`          | Runtime, framework, and dependency modernization analysis with phased upgrade planning.                                                                                    |
-| `testing.md`                | Test generation strategy and runner coordination.                                                                                                                          |
-| `changelog.md`              | Structured release note and changelog generation.                                                                                                                          |
-| `commit.md`                 | Worktree checkpoint commit with conversational preflight, security gate, and root `CHANGELOG.md` update.                                                                   |
-| `planning.md`               | Consolidates context, maps risks/gaps, and validates whether the task is ready for implementation.                                                                         |
-| `frontend.md`               | Frontend specialist activation with stack-specific rules.                                                                                                                  |
-| `forger.md`                 | Forger — forjas atomic plans into code without auditing or questioning. Single confirmation, self-validation with KB, final report.                                        |
-| `backend.md`                | Backend specialist activation with API/DB constraints.                                                                                                                     |
-| `seo.md`                    | SEO audit and semantic HTML compliance check.                                                                                                                              |
-| `mobile.md`                 | Mobile UX activation (React Native / Expo patterns).                                                                                                                       |
-| `builder.md`                | Builder Specialist — executes implementation plans and writes actual code.                                                                                                 |
-| `coder.md`                  | Co-Creative Coder — debates folder patterns and code design, writes code only under command.                                                                               |
-| `save-context.md`           | Save Context — compacta a conversa em YAML para continuar em um novo chat sem perda de contexto.                                                                           |
-| `diff-review.md`            | Diff Review — analisa o diff como um dev sênior revisando PR, verificando naming, padrões, complexidade e boas práticas.                                                   |
-| `enhance.md`                | Evolution Specialist — adds new features and expands existing flows in running projects.                                                                                   |
-| `ui-ux-pro-max.md`          | Premium Design Intelligence — 50+ styles, 97 color palettes, 57 font pairings, 99 UX guidelines.                                                                           |
-| `audit.md`                  | Audit — faz lint e typecheck funcionarem no terminal, detecta bypasses e separa achados em Setup Issues / Lot 1 / Lot 2.                                                   |
-| `architecture-audit.md`     | Architecture Audit — audita estrutura, duplicações, nomenclatura e dependências, respeitando os padrões existentes do projeto.                                             |
-| `smart-task.md`             | Smart Task — lightweight triage with full investigation calibre, single "pode seguir" approval, atomic plan + Forger execution. Persisted artifact for debug and rollback. |
-| `save-reference.md`         | Visual Cataloger — receives a screenshot, categorizes it, saves it to the correct UX reference folder, and updates the category index.                                     |
-| `check-build.md`            | Check Build (@CheckBuild) — clean cache, clean install, lint, typecheck, build, and optional tests. Sanity gate before merge/deploy.                                       |
-| `obsidian.md`               | Obsidian Memory (@Obsidian) — contextual MCP memory with fixed Markdown templates, canonical project notes, pre-flight, and explicit approval before writes.               |
-| `design-engineer.md`        | Design Engineer — roadmap-based solution discovery, visual direction, components, motion, web utilities, and official documentation verification.                          |
-| `motion.md`                 | Motion — additive animation specialist for finished screens: entrance, hover, scroll reveal, and background motion with zero structural change, user-veto discovery, and sub-agent validation. |
+| Booster                     | Purpose                                                                                                                                                                                                       |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `create.md`                 | Master Architect — builds new features and apps with structural scaffolding.                                                                                                                                  |
+| `performance.md`            | Performance Engineer — optimizes loading speed and Core Web Vitals.                                                                                                                                           |
+| `i18n.md`                   | Localization Specialist — handles internationalization and translations.                                                                                                                                      |
+| `accessibility.md`          | Accessibility Auditor — ensures WCAG compliance and semantic HTML.                                                                                                                                            |
+| `refactor.md`               | Quality Lead — refactors code, applies Clean Code/SOLID, and clears technical debt.                                                                                                                           |
+| `implementation.md`         | Reviews context, selects `simple` / `standard` / `heavy`, and asks for confirmation before generating the plan.                                                                                               |
+| `global-documentation.md`   | Generates the 17-section universal technical documentation spec.                                                                                                                                              |
+| `internal-documentation.md` | Generates repository-specific internal documentation with absolute paths and file/asset maps.                                                                                                                 |
+| `atomic.md`                 | Surgical, single-step implementation spec (final execution stage).                                                                                                                                            |
+| `auto-triage.md`            | Auto Triage Orchestrator — manually activated, artifact-centered engineering triage with separate approvals for Plan + Review and reviewed-plan execution.                                                    |
+| `intel.md`                  | Post-bootstrap project health orchestrator — runs adaptive diagnostics, records evidence, delegates bounded remediation waves, and reanalyzes progress.                                                       |
+| `advisor.md`                | Hub Consultant — recommends the best booster path for the user's task.                                                                                                                                        |
+| `review.md`                 | Elite Auditor — multi-agent orchestration for plan and architecture validation.                                                                                                                               |
+| `code-audit.md`             | Strict Code Auditor — syntax, linting, and React Doctor diagnostics for the codebase.                                                                                                                         |
+| `debug.md`                  | Systematic Root Cause Analysis with hypothesis engine.                                                                                                                                                        |
+| `discovery.md`              | Strategic Product Consultant — 3-path brainstorm protocol.                                                                                                                                                    |
+| `investigation.md`          | Context Pre-Orchestrator — no-code analysis before implementation.                                                                                                                                            |
+| `context.md`                | Context Assimilator — silent, non-proactive mapping of code flows and file context.                                                                                                                           |
+| `init.md`                   | Project Init Investigator — evidence-first, read-only answers about the current codebase with concise technical responses.                                                                                    |
+| `design.md`                 | UI/UX Design standards and component audit.                                                                                                                                                                   |
+| `deploy.md`                 | Pre-flight checks and deployment execution protocol.                                                                                                                                                          |
+| `security.md`               | Security posture audit and threat modeling.                                                                                                                                                                   |
+| `stack-refresh.md`          | Runtime, framework, and dependency modernization analysis with phased upgrade planning.                                                                                                                       |
+| `testing.md`                | Test generation strategy and runner coordination.                                                                                                                                                             |
+| `changelog.md`              | Structured release note and changelog generation.                                                                                                                                                             |
+| `commit.md`                 | Worktree checkpoint commit with conversational preflight, security gate, and root `CHANGELOG.md` update.                                                                                                      |
+| `planning.md`               | Consolidates context, maps risks/gaps, and validates whether the task is ready for implementation.                                                                                                            |
+| `frontend.md`               | Frontend specialist activation with stack-specific rules.                                                                                                                                                     |
+| `forger.md`                 | Forger — forjas atomic plans into code without auditing or questioning. Single confirmation, self-validation with KB, final report.                                                                           |
+| `backend.md`                | Backend specialist activation with API/DB constraints.                                                                                                                                                        |
+| `seo.md`                    | SEO audit and semantic HTML compliance check.                                                                                                                                                                 |
+| `mobile.md`                 | Mobile UX activation (React Native / Expo patterns).                                                                                                                                                          |
+| `builder.md`                | Builder Specialist — executes implementation plans and writes actual code.                                                                                                                                    |
+| `coder.md`                  | Co-Creative Coder — debates folder patterns and code design, writes code only under command.                                                                                                                  |
+| `save-context.md`           | Save Context — compacta a conversa em YAML para continuar em um novo chat sem perda de contexto.                                                                                                              |
+| `diff-review.md`            | Diff Review — analisa o diff como um dev sênior revisando PR, verificando naming, padrões, complexidade e boas práticas.                                                                                      |
+| `enhance.md`                | Evolution Specialist — adds new features and expands existing flows in running projects.                                                                                                                      |
+| `ui-ux-pro-max.md`          | Premium Design Intelligence — 50+ styles, 97 color palettes, 57 font pairings, 99 UX guidelines.                                                                                                              |
+| `audit.md`                  | Audit — faz lint e typecheck funcionarem no terminal, detecta bypasses e separa achados em Setup Issues / Lot 1 / Lot 2.                                                                                      |
+| `architecture-audit.md`     | Architecture Audit — audita estrutura, duplicações, nomenclatura e dependências, respeitando os padrões existentes do projeto.                                                                                |
+| `smart-task.md`             | Smart Task — lightweight triage with full investigation calibre, single "pode seguir" approval, atomic plan + Forger execution. Persisted artifact for debug and rollback.                                    |
+| `pilot.md`                  | Pilot — turns a finalized refine artifact into a technical direction plan (reuse/extend/create) grounded in the codebase, plus a recommended execution route (auto-triage / smart-task / enhance). Read-only. |
+
+| `check-build.md` | Check Build (@CheckBuild) — clean cache, clean install, lint, typecheck, build, and optional tests. Sanity gate before merge/deploy. |
+| `obsidian.md` | Obsidian Memory (@Obsidian) — contextual MCP memory with fixed Markdown templates, canonical project notes, pre-flight, and explicit approval before writes. |
+| `design-engineer.md` | Design Engineer — roadmap-based solution discovery, visual direction, components, motion, web utilities, and official documentation verification. |
+| `motion.md` | Motion — additive animation specialist for finished screens: entrance, hover, scroll reveal, and background motion with zero structural change, user-veto discovery, and sub-agent validation. |
+| `refine.md` | Business Rule Refiner — conversational refinement of raw business ideas into a final business-rule prompt (verify-then-respond, business-only, Stage 0/1/2 contract, artifact on explicit "pode refinar"). |
+| `observability.md` | Observability Audit — audita telemetria do projeto: logs estruturados, correlation ID, métricas RED/USE, tracing e alertas por sintoma, usando perguntas de on-call como régua. Read-only. |
+| `ci-cd.md` | CI/CD Audit — audita e propõe pipelines: Shift Left, quality gates, feedback loops, secrets hygiene e rollout safety. Read-only. |
+| `interview.md` | Intent Interview — extrai o que o usuário realmente quer (não o que pediu) com 1 pergunta por vez, palpite anexado e % de confiança, antes de qualquer plano. |
 
 ---
 
@@ -240,9 +249,9 @@ _Canonical path: `.devbooster/hub/scripts/`_
 | Metric                      | Value                                   |
 | --------------------------- | --------------------------------------- |
 | **Total Agents**            | 20                                      |
-| **Total Skills**            | 43+                                     |
-| **Master Boosters**         | 37                                      |
-| **Knowledge Base Articles** | 18                                      |
+| **Total Skills**            | 45+                                     |
+| **Master Boosters**         | 49                                      |
+| **Knowledge Base Articles** | 19                                      |
 | **Operational Scripts**     | 2 (Master) + 20 (Skill-level)           |
 | **Coverage**                | ~95% Full-stack Web/Mobile/Native Apple |
 
@@ -311,3 +320,5 @@ These boosters should maintain an execution state artifact during their run to t
 - When an artifact is written, the AI must notify the user after writing.
 - Exploratory and advisory boosters should prefer chat output over file generation.
 - Documentation and persistence boosters should treat artifact creation as a finalization step, not as a continuous side effect.
+- **Artifacts are local project files only:** always write them to `@booster-generated/` with local file tools. MCP is never used for artifact persistence.
+- **"Generate/save an artifact" is NOT an MCP request:** requesting an artifact authorizes a local write under `@booster-generated/`, nothing else. If MCP tools appear in the session, ignore them unless the user explicitly invoked the Obsidian memory booster (`@Obsidian`).

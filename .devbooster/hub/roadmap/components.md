@@ -71,6 +71,14 @@
 - **URL:** https://magicui.design/docs/components/marquee
 - **Tags:** `#react #components #animation #tailwind`
 
+## FeralUI
+
+- **Resolve:** adicionar elementos React lúdicos e dirigidos por física — foil holográfico de carta, corda que balança, mascote reativo, textura de pelo, peças sugadas a vácuo etc.
+- **Resumo:** vitrine de componentes React/TypeScript com física real e animação artesanal; cada componente é um demo independente (Hologram, PullCord, ClawCaptcha, Gradient Builder, Screenery, DeskFolio, Blob, AniMaps, Fur, Vacuum, Crumple, Matchday).
+- **URL:** https://feralui.dev/
+- **Exemplo:** https://feralui.dev/hologram
+- **Tags:** `#react #components #physics #motion #animation #inspiration`
+
 ## shadcn/ui ecosystem
 
 - **Resolve:** pesquisar alternativas e extensões no ecossistema shadcn.
